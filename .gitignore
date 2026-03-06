@@ -1,0 +1,5 @@
+.DS_Store
+.firecrawl/
+.sisyphus/
+node_modules/
+pdf-reader.__preinit_backup/

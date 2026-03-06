@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Teacher"
+  short_description: "Step-by-step coding lessons + code review"
+  default_prompt: "Use $coding-teacher to teach me step-by-step and review my submission."

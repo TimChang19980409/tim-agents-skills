@@ -1,0 +1,150 @@
+version: v1
+
+domain_vision: >-
+  Describe the product mission and the core business outcomes this system must enable.
+
+ubiquitous_language:
+  - term: Order
+    definition: A customer commitment to purchase one or more items.
+  - term: Inventory Reservation
+    definition: Temporary hold of stock for a requested order quantity.
+  - term: Payment Authorization
+    definition: Confirmation that a payment instrument can cover the order amount.
+
+subdomains:
+  - name: Ordering
+    type: core
+    capabilities:
+      - create-order
+      - validate-order
+  - name: Inventory
+    type: core
+    capabilities:
+      - reserve-stock
+      - release-stock
+  - name: Billing
+    type: supporting
+    capabilities:
+      - authorize-payment
+      - capture-payment
+
+bounded_contexts:
+  - name: Order Management
+    subdomain: Ordering
+    purpose: Manage order lifecycle and enforce order invariants.
+    responsibilities:
+      - Accept order commands
+      - Transition order state
+  - name: Inventory Management
+    subdomain: Inventory
+    purpose: Manage stock allocation and replenishment triggers.
+    responsibilities:
+      - Reserve stock
+      - Release stock
+  - name: Payment Processing
+    subdomain: Billing
+    purpose: Authorize and capture payment.
+    responsibilities:
+      - Authorize payment
+      - Capture payment
+
+context_map_relationships:
+  - upstream: Inventory Management
+    downstream: Order Management
+    pattern: open_host_service
+    notes: Inventory exposes stock reservation API.
+  - upstream: Payment Processing
+    downstream: Order Management
+    pattern: customer_supplier
+    notes: Order Management collaborates on payment contract evolution.
+
+aggregates:
+  - context: Order Management
+    name: Order
+    repository: OrderRepository
+    entities:
+      - OrderLine
+    value_objects:
+      - Money
+      - Address
+    invariants:
+      - Order total must equal the sum of order lines.
+      - Cancelled order cannot transition to paid.
+  - context: Inventory Management
+    name: Reservation
+    repository: ReservationRepository
+    entities:
+      - StockItem
+    value_objects:
+      - Quantity
+    invariants:
+      - Reserved quantity cannot exceed available quantity.
+  - context: Payment Processing
+    name: Payment
+    repository: PaymentRepository
+    entities:
+      - PaymentAttempt
+    value_objects:
+      - PaymentMethod
+    invariants:
+      - Captured amount cannot exceed authorized amount.
+
+domain_events:
+  - name: OrderPlaced
+    context: Order Management
+    trigger: Order status moved to PLACED.
+    payload:
+      order_id: uuid
+      customer_id: uuid
+      total_amount: decimal
+    consumers:
+      - Inventory Management
+      - Payment Processing
+  - name: StockReserved
+    context: Inventory Management
+    trigger: Reservation aggregate accepted reservation command.
+    payload:
+      reservation_id: uuid
+      order_id: uuid
+      reserved_items: list
+    consumers:
+      - Order Management
+
+integration_events:
+  - name: PaymentAuthorized
+    source_context: Payment Processing
+    target_contexts:
+      - Order Management
+    version: 1
+    contract:
+      payment_id: uuid
+      order_id: uuid
+      status: string
+
+api_contracts:
+  - context: Order Management
+    name: CreateOrder
+    method: POST
+    path: /orders
+    request_schema_ref: schemas/create-order-request.json
+    response_schema_ref: schemas/order-response.json
+
+frontend_slices:
+  - context: Order Management
+    route_prefix: /orders
+    state_scope: order
+    api_adapter: orderApiAdapter
+    query_boundary: orderReadModel
+    mutation_boundary: orderCommandApi
+
+non_functional_requirements:
+  - id: NFR-001
+    category: reliability
+    statement: Order placement command processing success rate must exceed 99.9% monthly.
+
+decision_log:
+  - id: ADR-001
+    date: 2026-02-10
+    decision: Use separate bounded contexts for Order, Inventory, and Payment.
+    rationale: Team ownership and model language differ significantly.
+    status: accepted

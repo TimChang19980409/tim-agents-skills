@@ -1,0 +1,16 @@
+{
+  "name": "stagehand-aria-e2e-skill-runtime",
+  "private": true,
+  "scripts": {
+    "check:install": "bun scripts/check-stagehand-install.ts",
+    "print:spec-template": "bun scripts/new-stagehand-aria-spec.ts"
+  },
+  "dependencies": {
+    "@browserbasehq/stagehand": "^3.0.8",
+    "@playwright/test": "^1.58.2",
+    "deepmerge": "^4.3.1",
+    "dotenv": "^17.2.4",
+    "playwright-core": "^1.58.2",
+    "zod": "^4.3.6"
+  }
+}
