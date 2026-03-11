@@ -1,0 +1,35 @@
+skill	family	U	C	R	F	O	V	disposition	host_or_note
+firecrawl	Research / Web	4	2	5	4	2	5	core	Keep as family host; rewrite trigger language later
+context7-auto-research	Research / Web	3	3	4	4	2	4	archive	Keep as official-doc extension, not default active skill
+defuddle	Research / Web	1	3	5	2	1	2	retire	Use Firecrawl main-content extraction instead
+find-skills	Research / Web	3	4	2	3	1	3	archive	Useful, but better as secondary meta utility
+frontend-dev-guidelines	Frontend / React / UI	4	4	3	4	2	5	core	Primary frontend implementation host
+react-component-designer	Frontend / React / UI	5	4	2	4	1	5	core	Keep as API-design specialist
+react-best-practices	Frontend / React / UI	2	3	5	4	1	3	merge	Fold performance rules into frontend host
+vercel-react-best-practices	Frontend / React / UI	3	3	4	4	2	4	merge	Use as reference pack inside frontend host
+web-design-guidelines	Frontend / React / UI	3	4	4	4	1	4	merge	Live-review guidance should sit under frontend review flow
+ui-ux-pro-max	Frontend / React / UI	2	1	5	3	4	3	archive	Too broad to remain in primary layer
+react-storybook-vite-workflow	Frontend / React / UI	4	4	2	4	1	4	archive	Strong extension, but too narrow for core
+ladle-component-workflow	Frontend / React / UI	3	4	3	3	1	3	archive	Keep as niche component-workbench extension
+tailwind-best-practices	Frontend / React / UI	2	4	4	3	1	3	archive	Repo-specific styling policy
+solidjs-patterns	Frontend / React / UI	4	4	1	3	1	3	archive	Distinct, but niche to OpenWork / SolidJS
+java-pro	Java / Spring / Backend	5	5	1	4	1	5	core	Best-bounded skill in portfolio
+spring-boot-engineer	Java / Spring / Backend	5	4	2	4	2	5	core	Keep split from java-pro; tune later
+backend-ddd-architect-spring	Java / Spring / Backend	5	4	1	4	2	4	core	Unique architecture specialty
+pebble-official-best-practices	Java / Spring / Backend	4	4	1	4	1	3	archive	Legit niche extension, not core
+stagehand-aria-e2e	Testing / Browser Automation	4	4	2	5	3	4	core	Family host for behavior-driven browser validation
+e2e-tests-studio	Testing / Browser Automation	3	4	3	3	2	3	archive	Valuable repo-specific extension
+obsidian-cli	Obsidian / Knowledge	5	4	1	4	3	4	core	Operational host for Obsidian workflows
+pdf-reader	Obsidian / Knowledge	5	4	1	4	4	4	core	Distinct OCR / PDF ingestion utility
+obsidian-markdown	Obsidian / Knowledge	4	4	2	4	1	4	archive	Keep as syntax extension, not primary trigger
+obsidian-bases	Obsidian / Knowledge	4	4	1	5	1	3	archive	Keep as Bases extension
+json-canvas	Obsidian / Knowledge	4	4	1	5	1	3	archive	Keep as canvas-format extension
+book-translation	Obsidian / Knowledge	3	4	1	3	1	2	archive	Project-specific workflow, not core global skill
+bun-ts-scripting-policy	Workflow / Meta / General	4	4	2	4	1	5	core	Strong repo-wide policy skill
+skill-creator	Workflow / Meta / General	5	4	2	4	3	5	core	Highest-value portfolio maintenance skill
+opencode-configurator	Workflow / Meta / General	4	4	1	4	2	4	core	Narrow and current
+coding-teacher	Workflow / Meta / General	4	4	1	4	2	3	archive	Valuable mode skill, but not part of default active layer
+monorepo-management	Workflow / Meta / General	3	4	2	2	1	3	archive	Refresh before re-promoting to core
+typescript-advanced-types	Workflow / Meta / General	4	4	2	3	1	3	archive	Useful deep reference, too broad for core
+developer-growth-analysis	Workflow / Meta / General	4	3	1	2	4	2	archive	Specialized workflow with external delivery dependency
+pdf-reader.__preinit_backup	Noise / Backup	1	1	1	1	1	1	retire	Backup artifact; should not remain visible

@@ -1,0 +1,311 @@
+{
+  "skills": [
+    {
+      "name": "backend-ddd-architect-spring",
+      "family": "Java / Spring / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "backend-ddd-architect-spring",
+      "entry_file": "SKILL.md",
+      "notes": "Architecture-level DDD specialty."
+    },
+    {
+      "name": "book-translation",
+      "family": "Obsidian / Knowledge",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/book-translation",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Project-specific translation workflow."
+    },
+    {
+      "name": "bun-ts-scripting-policy",
+      "family": "Workflow / Meta / General",
+      "status": "core",
+      "host": null,
+      "storage_path": "bun-ts-scripting-policy",
+      "entry_file": "SKILL.md",
+      "notes": "Default script policy for this portfolio."
+    },
+    {
+      "name": "coding-teacher",
+      "family": "Workflow / Meta / General",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/coding-teacher",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Useful teaching mode, not part of the active default roster."
+    },
+    {
+      "name": "context7-auto-research",
+      "family": "Research / Web",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/context7-auto-research",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Official-doc extension kept outside the active trigger surface."
+    },
+    {
+      "name": "defuddle",
+      "family": "Research / Web",
+      "status": "retire",
+      "host": null,
+      "storage_path": "_retired/defuddle",
+      "entry_file": "RETIRED.md",
+      "notes": "Retired because Firecrawl now covers clean main-content extraction."
+    },
+    {
+      "name": "developer-growth-analysis",
+      "family": "Workflow / Meta / General",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/developer-growth-analysis",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Specialized workflow with external delivery dependencies."
+    },
+    {
+      "name": "e2e-tests-studio",
+      "family": "Testing / Browser Automation",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/e2e-tests-studio",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Repo-specific Playwright extension."
+    },
+    {
+      "name": "find-skills",
+      "family": "Research / Web",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/find-skills",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Secondary discovery helper."
+    },
+    {
+      "name": "firecrawl",
+      "family": "Research / Web",
+      "status": "core",
+      "host": null,
+      "storage_path": "firecrawl",
+      "entry_file": "SKILL.md",
+      "notes": "Primary host for live web content and current facts."
+    },
+    {
+      "name": "frontend-dev-guidelines",
+      "family": "Frontend / React / UI",
+      "status": "core",
+      "host": null,
+      "storage_path": "frontend-dev-guidelines",
+      "entry_file": "SKILL.md",
+      "notes": "Primary frontend implementation and review host."
+    },
+    {
+      "name": "java-pro",
+      "family": "Java / Spring / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "java-pro",
+      "entry_file": "SKILL.md",
+      "notes": "Java platform and JVM specialist."
+    },
+    {
+      "name": "json-canvas",
+      "family": "Obsidian / Knowledge",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/json-canvas",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Format-specific Obsidian extension."
+    },
+    {
+      "name": "ladle-component-workflow",
+      "family": "Frontend / React / UI",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/ladle-component-workflow",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Niche component workbench workflow."
+    },
+    {
+      "name": "monorepo-management",
+      "family": "Workflow / Meta / General",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/monorepo-management",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Archived until refreshed against current tooling."
+    },
+    {
+      "name": "obsidian-bases",
+      "family": "Obsidian / Knowledge",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/obsidian-bases",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Specialist Bases extension."
+    },
+    {
+      "name": "obsidian-cli",
+      "family": "Obsidian / Knowledge",
+      "status": "core",
+      "host": null,
+      "storage_path": "obsidian-cli",
+      "entry_file": "SKILL.md",
+      "notes": "Operational host for vault workflows and plugin debugging."
+    },
+    {
+      "name": "obsidian-markdown",
+      "family": "Obsidian / Knowledge",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/obsidian-markdown",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Syntax specialist kept outside the active layer."
+    },
+    {
+      "name": "opencode-configurator",
+      "family": "Workflow / Meta / General",
+      "status": "core",
+      "host": null,
+      "storage_path": "opencode-configurator",
+      "entry_file": "SKILL.md",
+      "notes": "Focused OpenCode configuration specialist."
+    },
+    {
+      "name": "pdf-reader",
+      "family": "Obsidian / Knowledge",
+      "status": "core",
+      "host": null,
+      "storage_path": "pdf-reader",
+      "entry_file": "SKILL.md",
+      "notes": "Distinct PDF/OCR ingestion skill."
+    },
+    {
+      "name": "pdf-reader.__preinit_backup",
+      "family": "Noise / Backup",
+      "status": "retire",
+      "host": null,
+      "storage_path": "_retired/pdf-reader.__preinit_backup",
+      "entry_file": "RETIRED.md",
+      "notes": "Backup artifact removed from discovery."
+    },
+    {
+      "name": "pebble-official-best-practices",
+      "family": "Java / Spring / Backend",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/pebble-official-best-practices",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Valid niche extension for Pebble."
+    },
+    {
+      "name": "react-best-practices",
+      "family": "Frontend / React / UI",
+      "status": "merge",
+      "host": "frontend-dev-guidelines",
+      "storage_path": "_archive/react-best-practices",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Merged into frontend-dev-guidelines as a React performance reference pack."
+    },
+    {
+      "name": "react-component-designer",
+      "family": "Frontend / React / UI",
+      "status": "core",
+      "host": null,
+      "storage_path": "react-component-designer",
+      "entry_file": "SKILL.md",
+      "notes": "Reusable component API design specialist.",
+      "vendored_from": "/Users/ss105213025/.codex/skills/react-component-designer"
+    },
+    {
+      "name": "react-storybook-vite-workflow",
+      "family": "Frontend / React / UI",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/react-storybook-vite-workflow",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Storybook + Vite extension."
+    },
+    {
+      "name": "skill-creator",
+      "family": "Workflow / Meta / General",
+      "status": "core",
+      "host": null,
+      "storage_path": "skill-creator",
+      "entry_file": "SKILL.md",
+      "notes": "Meta-skill for creating, tuning, and evaluating skills."
+    },
+    {
+      "name": "solidjs-patterns",
+      "family": "Frontend / React / UI",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/solidjs-patterns",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Distinct but niche SolidJS extension."
+    },
+    {
+      "name": "spring-boot-engineer",
+      "family": "Java / Spring / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "spring-boot-engineer",
+      "entry_file": "SKILL.md",
+      "notes": "Spring Boot implementation specialist with explicit boundary to java-pro."
+    },
+    {
+      "name": "stagehand-aria-e2e",
+      "family": "Testing / Browser Automation",
+      "status": "core",
+      "host": null,
+      "storage_path": "stagehand-aria-e2e",
+      "entry_file": "SKILL.md",
+      "notes": "Behavior-first browser testing host."
+    },
+    {
+      "name": "tailwind-best-practices",
+      "family": "Frontend / React / UI",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/tailwind-best-practices",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Repo-specific styling policy."
+    },
+    {
+      "name": "typescript-advanced-types",
+      "family": "Workflow / Meta / General",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/typescript-advanced-types",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Deep reference, not part of the active default layer."
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "family": "Frontend / React / UI",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/ui-ux-pro-max",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Broad inspiration library kept out of default discovery."
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "family": "Frontend / React / UI",
+      "status": "merge",
+      "host": "frontend-dev-guidelines",
+      "storage_path": "_archive/vercel-react-best-practices",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Merged into frontend-dev-guidelines as a React/Next performance reference pack."
+    },
+    {
+      "name": "web-design-guidelines",
+      "family": "Frontend / React / UI",
+      "status": "merge",
+      "host": "frontend-dev-guidelines",
+      "storage_path": "_archive/web-design-guidelines",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Merged into frontend-dev-guidelines as a UI/accessibility review reference."
+    }
+  ]
+}
