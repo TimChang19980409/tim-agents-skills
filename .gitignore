@@ -2,4 +2,6 @@
 .firecrawl/
 .sisyphus/
 node_modules/
-pdf-reader.__preinit_backup/
+/pdf-reader.__preinit_backup/
+!/_retired/pdf-reader.__preinit_backup/
+!/_retired/pdf-reader.__preinit_backup/RETIRED.md
