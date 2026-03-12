@@ -1,0 +1,10 @@
+2026-03-03 18:12:52 ERROR c.e.report.SalesExportService - Large export failed
+java.lang.OutOfMemoryError: Java heap space
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:724)
+	at net.sf.jasperreports.engine.JasperFillManager.fill(JasperFillManager.java:648)
+	at com.example.report.SalesExportService.exportLargeWorkbook(SalesExportService.java:17)
+
+Observed behavior:
+- The JSON payload regularly contains more than 500,000 order-item rows.
+- This code compiles the JRXML for every request.
+- No REPORT_VIRTUALIZER parameter is configured.

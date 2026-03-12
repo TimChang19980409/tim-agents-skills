@@ -1,0 +1,19 @@
+# Troubleshooting Matrix
+
+Use this matrix after reading local repo files and classifying the issue.
+
+| Symptom | Inspect First | Likely Root Cause | Fix Direction | Official Source | Community Backup |
+| --- | --- | --- | --- | --- | --- |
+| Subreport frame renders but no rows appear | Parent `subreport` block, child parameters, Java datasource setup | Parent report passes `REPORT_CONNECTION` or no child datasource when the child needs a collection or JSON datasource | Pass `JRBeanCollectionDataSource` or child datasource explicitly, and align parameter names | [Subreport sample](https://jasperreports.sourceforge.net/sample.reference/subreport/README.html) | [SO subreport blank](https://stackoverflow.com/questions/43978774/subreport-wont-display-in-the-mainreport-jasperreports) |
+| Table or list component is empty | `componentElement`, `datasetRun`, subDataset definition | Missing or wrong `datasetRun`, parameter mismatch, or empty subDataset datasource | Wire the correct subDataset and datasource expression | [Table component sample](https://jasperreports.sourceforge.net/sample.reference/table/README.html) | None by default |
+| `JRFontNotFoundException` during PDF export | JRXML font attributes, packaged fonts, runtime classpath | Font exists on dev machine or Studio but is not bundled in app runtime | Add a font extension and point JRXML to packaged fonts | [Fonts sample](https://jasperreports.sourceforge.net/sample.reference/fonts/README.html) | [SO font extension issue](https://stackoverflow.com/questions/14935914/jasperreports-font-extensions-does-not-work-cant-find-font-while-exporting) |
+| Chinese text renders as boxes or garbled characters | `pdfEncoding`, embedding, font extension packaging | PDF exporter uses non-Unicode encoding or non-embedded font | Use Unicode-safe encoding and embed the packaged font | [Fonts sample](https://jasperreports.sourceforge.net/sample.reference/fonts/README.html) | Same as above |
+| Preview works in Studio but app fails | Data adapter, runtime datasource setup, file paths | Studio-specific datasource or local asset path is not present in the app | Recreate runtime datasource and package referenced assets | [Jaspersoft Studio User Guide](https://community.jaspersoft.com/documentation/jaspersoft-studio-user-guide/v900/) | None by default |
+| `Unable to load template` after upgrade | Build version, precompiled `.jasper`, load path | Old compiled `.jasper` no longer matches runtime library | Recompile with the runtime version and remove stale binaries | [JasperReports releases](https://github.com/Jaspersoft/jasperreports/releases) | [GitHub issue #455](https://github.com/Jaspersoft/jasperreports/issues/455) |
+| JSON-backed report returns null fields | `queryString`, field names, JSON source configuration | JSON path, field expressions, or source property do not match the payload | Align query path and fields, and verify the JSON datasource setup | [JSON datasource sample](https://jasperreports.sourceforge.net/sample.reference/jsondatasource/README.html) | None by default |
+| Large report hits OOM or becomes extremely slow | Fill code, compile strategy, virtualizer usage | Full `JasperPrint` stays in heap, report recompiles each request, or exporter amplifies memory | Compile once, add `REPORT_VIRTUALIZER`, and measure fill versus export | [Virtualizer sample](https://jasperreports.sourceforge.net/sample.reference/virtualizer/README.html) | [SO virtualizer usage](https://stackoverflow.com/questions/11764598/proper-usage-of-jrswapfilevirtualizer) |
+
+## Escalation Rules
+
+- Only move to community material after checking the closest official sample, Javadoc, or Studio guide entry.
+- If the repo has no local JRXML or build file, state that the diagnosis is inferred and identify what artifact would confirm it.

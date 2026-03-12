@@ -1,0 +1,8 @@
+2026-03-01 08:43:10 ERROR c.e.report.CjkInvoiceReportService - PDF export failed
+net.sf.jasperreports.engine.util.JRFontNotFoundException: Font "Noto Sans CJK TC" is not available to the JVM. See the Javadoc for more details.
+	at net.sf.jasperreports.engine.fonts.FontUtil.checkAwtFont(FontUtil.java:582)
+	at net.sf.jasperreports.engine.fill.SimpleTextLineWrapper.loadFont(SimpleTextLineWrapper.java:359)
+
+Notes:
+- The report previews correctly in Jaspersoft Studio on the developer laptop.
+- Production does not bundle any JasperReports font extension JAR.

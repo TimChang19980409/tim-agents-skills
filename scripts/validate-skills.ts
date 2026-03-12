@@ -100,8 +100,8 @@ for (const skill of skills) {
 const coreSkills = skills.filter((skill) => skill.status === "core");
 const coreNames = new Set(coreSkills.map((skill) => skill.name));
 
-if (coreSkills.length !== 12) {
-  errors.push(`Expected 12 core skills, found ${coreSkills.length}`);
+if (coreSkills.length !== 13) {
+  errors.push(`Expected 13 core skills, found ${coreSkills.length}`);
 }
 
 for (const skill of skills.filter((item) => item.status === "merge")) {
@@ -117,8 +117,8 @@ const topLevelSkillDirs = readdirSync(root, { withFileTypes: true })
 
 const manifestTopLevelCore = coreSkills.map((skill) => skill.storage_path).sort();
 
-if (topLevelSkillDirs.length !== 12) {
-  errors.push(`Expected 12 top-level SKILL.md entrypoints, found ${topLevelSkillDirs.length}`);
+if (topLevelSkillDirs.length !== 13) {
+  errors.push(`Expected 13 top-level SKILL.md entrypoints, found ${topLevelSkillDirs.length}`);
 }
 
 if (JSON.stringify(topLevelSkillDirs) !== JSON.stringify(manifestTopLevelCore)) {

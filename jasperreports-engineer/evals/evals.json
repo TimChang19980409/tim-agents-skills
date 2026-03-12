@@ -1,0 +1,86 @@
+{
+  "skill_name": "jasperreports-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "subreport-bean-datasource",
+      "fixture_dir": "evals/files/subreport-datasource",
+      "prompt": "Read the attached Spring Boot and JRXML files. The main Jasper report renders, but the line-item subreport is blank. Diagnose the most likely root cause, propose the smallest safe fix, and give validation steps. Prefer official JasperReports or Jaspersoft sources.",
+      "expected_output": "The answer should ground the diagnosis in the local parent and child report files, identify the child datasource or parameter wiring issue, and recommend an explicit JRDataSource path instead of REPORT_CONNECTION for the bean-backed flow.",
+      "files": [
+        "evals/files/subreport-datasource/pom.xml",
+        "evals/files/subreport-datasource/src/main/java/com/example/report/InvoiceReportService.java",
+        "evals/files/subreport-datasource/src/main/resources/reports/invoice_main.jrxml",
+        "evals/files/subreport-datasource/src/main/resources/reports/line_items_subreport.jrxml"
+      ],
+      "expectations": [
+        "The answer cites at least one official JasperReports or Jaspersoft source.",
+        "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+        "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+        "The answer identifies the subreport datasource or parameter wiring issue."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "migration-6x-to-7x",
+      "fixture_dir": "evals/files/migration-7",
+      "prompt": "Read the attached upgrade files. After moving this app to JasperReports 7.0.1, loading an existing compiled report now fails with an Unable to load template error. Diagnose the likely migration problem, propose the minimum recovery plan, and cite official sources first.",
+      "expected_output": "The answer should call out the stale or version-mismatched compiled .jasper risk, recommend recompiling with the runtime JasperReports version, and mention 6.x to 7.x compatibility considerations.",
+      "files": [
+        "evals/files/migration-7/pom.xml",
+        "evals/files/migration-7/src/main/java/com/example/report/LegacyReportLoader.java",
+        "evals/files/migration-7/src/main/resources/reports/sales_legacy.jrxml",
+        "evals/files/migration-7/upgrade-error.log"
+      ],
+      "expectations": [
+        "The answer cites at least one official JasperReports or Jaspersoft source.",
+        "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+        "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+        "The answer recommends recompiling or regenerating templates with the runtime JasperReports version.",
+        "The answer calls out a 6.x to 7.x or stale .jasper version mismatch risk."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "unicode-pdf-fonts",
+      "fixture_dir": "evals/files/pdf-fonts",
+      "prompt": "Read the attached report and runtime files. PDF export fails for Chinese text in production with a JRFontNotFoundException. Diagnose the runtime gap, propose the minimum packaging fix, and explain what to validate after the change. Prefer official JasperReports or Jaspersoft sources.",
+      "expected_output": "The answer should identify the runtime font packaging gap, recommend a JasperReports font extension, mention Unicode-safe pdfEncoding such as Identity-H, and mention embedding the font.",
+      "files": [
+        "evals/files/pdf-fonts/pom.xml",
+        "evals/files/pdf-fonts/src/main/java/com/example/report/CjkInvoiceReportService.java",
+        "evals/files/pdf-fonts/src/main/resources/reports/invoice_zh.jrxml",
+        "evals/files/pdf-fonts/font-error.log"
+      ],
+      "expectations": [
+        "The answer cites at least one official JasperReports or Jaspersoft source.",
+        "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+        "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+        "The answer recommends packaging a JasperReports font extension or equivalent runtime font bundle.",
+        "The answer mentions Unicode-safe PDF encoding such as Identity-H or pdfEncoding.",
+        "The answer mentions embedding the font for PDF export portability."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "json-oom-performance",
+      "fixture_dir": "evals/files/json-oom",
+      "prompt": "Read the attached report, Java service, and production error log. A JSON-backed Jasper report now causes OutOfMemoryError and is very slow for large exports. Diagnose the highest-probability causes, propose the smallest high-impact improvements, and cite official JasperReports sources first.",
+      "expected_output": "The answer should identify the large fill-memory problem, recommend a JasperReports virtualizer, and distinguish compile strategy from runtime fill or export work.",
+      "files": [
+        "evals/files/json-oom/pom.xml",
+        "evals/files/json-oom/src/main/java/com/example/report/SalesExportService.java",
+        "evals/files/json-oom/src/main/resources/reports/sales_json.jrxml",
+        "evals/files/json-oom/production-error.log"
+      ],
+      "expectations": [
+        "The answer cites at least one official JasperReports or Jaspersoft source.",
+        "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+        "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+        "The answer recommends a JasperReports virtualizer for the large fill operation.",
+        "The answer distinguishes compile strategy from runtime fill or export work.",
+        "The answer recognizes the JSON datasource context."
+      ]
+    }
+  ]
+}

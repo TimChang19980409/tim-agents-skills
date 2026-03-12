@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="sales_json" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" language="java">
+  <queryString language="json"><![CDATA[orders.items]]></queryString>
+  <field name="sku" class="java.lang.String"/>
+  <field name="region" class="java.lang.String"/>
+  <field name="amount" class="java.math.BigDecimal"/>
+  <field name="description" class="java.lang.String"/>
+
+  <detail>
+    <band height="80">
+      <textField isStretchWithOverflow="true">
+        <reportElement x="0" y="0" width="120" height="20"/>
+        <textFieldExpression><![CDATA[$F{sku}]]></textFieldExpression>
+      </textField>
+      <textField isStretchWithOverflow="true">
+        <reportElement x="130" y="0" width="100" height="20"/>
+        <textFieldExpression><![CDATA[$F{region}]]></textFieldExpression>
+      </textField>
+      <textField isStretchWithOverflow="true">
+        <reportElement x="240" y="0" width="90" height="20"/>
+        <textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+      </textField>
+      <textField isStretchWithOverflow="true">
+        <reportElement x="0" y="25" width="540" height="40"/>
+        <textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+      </textField>
+    </band>
+  </detail>
+</jasperReport>

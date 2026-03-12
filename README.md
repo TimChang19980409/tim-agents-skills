@@ -26,6 +26,7 @@ The machine-readable source of truth is [skills.json](/Users/ss105213025/.agents
 | `frontend-dev-guidelines` | Frontend / React / UI | Primary host for frontend implementation, performance review, and UI/accessibility review |
 | `react-component-designer` | Frontend / React / UI | Reusable component API design specialist |
 | `java-pro` | Java / Spring / Backend | Java platform, concurrency, JVM, and profiling specialist |
+| `jasperreports-engineer` | Java / Spring / Backend | JasperReports Library and Jaspersoft Studio implementation specialist |
 | `spring-boot-engineer` | Java / Spring / Backend | Spring Boot application implementation specialist |
 | `backend-ddd-architect-spring` | Java / Spring / Backend | DDD and bounded-context architecture specialist |
 | `stagehand-aria-e2e` | Testing / Browser Automation | Behavior-first browser testing host |
@@ -82,6 +83,7 @@ Active skill-specific requirements:
 - `pdf-reader`: `bun install` in [pdf-reader](/Users/ss105213025/.agents/skills/pdf-reader); optional OCR tools such as `poppler` and `tesseract`
 - `stagehand-aria-e2e`: `bun install` in [stagehand-aria-e2e](/Users/ss105213025/.agents/skills/stagehand-aria-e2e), plus model/browser credentials as required
 - `obsidian-cli`: installed Obsidian app and `obsidian` CLI, with Obsidian running when needed
+- `jasperreports-engineer`: `bun` for helper scripts and `opencode` for MiniMax-based eval runs
 - [scripts/validate-skills.ts](/Users/ss105213025/.agents/skills/scripts/validate-skills.ts): Bun runtime
 
 ## Validation
@@ -94,7 +96,7 @@ bun /Users/ss105213025/.agents/skills/scripts/validate-skills.ts
 
 The validator checks:
 
-- exactly 12 top-level active `SKILL.md` files
+- exactly 13 top-level active `SKILL.md` files
 - `skills.json` consistency
 - no active skill stored as a symlink
 - no `SKILL.md` inside `_archive/` or `_retired/`

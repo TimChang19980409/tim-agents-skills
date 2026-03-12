@@ -109,6 +109,15 @@
       "notes": "Java platform and JVM specialist."
     },
     {
+      "name": "jasperreports-engineer",
+      "family": "Java / Spring / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "jasperreports-engineer",
+      "entry_file": "SKILL.md",
+      "notes": "JasperReports Library and Jaspersoft Studio implementation specialist."
+    },
+    {
       "name": "json-canvas",
       "family": "Obsidian / Knowledge",
       "status": "archive",
