@@ -1,0 +1,22 @@
+[
+  {
+    "path": "font-error.log",
+    "bytes": 558,
+    "lines": 9
+  },
+  {
+    "path": "pom.xml",
+    "bytes": 711,
+    "lines": 22
+  },
+  {
+    "path": "src/main/java/com/example/report/CjkInvoiceReportService.java",
+    "bytes": 750,
+    "lines": 19
+  },
+  {
+    "path": "src/main/resources/reports/invoice_zh.jrxml",
+    "bytes": 632,
+    "lines": 17
+  }
+]

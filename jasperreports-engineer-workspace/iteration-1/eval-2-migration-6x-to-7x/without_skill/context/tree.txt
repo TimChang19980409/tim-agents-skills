@@ -1,0 +1,12 @@
+├── pom.xml
+├── src
+│   └── main
+│       ├── java
+│       │   └── com
+│       │       └── example
+│       │           └── report
+│       │               └── LegacyReportLoader.java
+│       └── resources
+│           └── reports
+│               └── sales_legacy.jrxml
+└── upgrade-error.log

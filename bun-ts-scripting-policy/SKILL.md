@@ -1,6 +1,6 @@
 ---
 name: bun-ts-scripting-policy
-description: Default scripting policy for all script-related tasks. Use whenever the request involves creating, modifying, migrating, reviewing, or running scripts/CLI automation (keywords such as script, 腳本, 自動化, batch, CLI, tooling, codegen, migration, parser). Enforce Bun + TypeScript as the only default stack for scripts (`.ts` + Bun runtime), and update related docs/commands to Bun/TS conventions.
+description: Default scripting policy for script and CLI automation work. Use when the request involves creating, modifying, migrating, reviewing, or running scripts, codegen, parsers, or command helpers. Prefer Bun + TypeScript as the default stack and update related docs and commands to Bun/TS conventions unless the user or repo constraints explicitly require something else.
 ---
 
 # Bun TS Scripting Policy
@@ -9,15 +9,15 @@ description: Default scripting policy for all script-related tasks. Use whenever
 
 Standardize all scripting work to Bun + TypeScript. Prevent mixed script stacks and ensure script entrypoints, invocation commands, and skill documentation stay consistent.
 
-## Mandatory Rules
+## Default Rules
 
-1. Use Bun + TypeScript for every script task by default.
+1. Use Bun + TypeScript for script work by default.
 2. Create scripts as `*.ts` only.
 3. Use Bun-compatible execution:
 - Direct: `bun path/to/script.ts ...`
 - Within package scripts: `bun scripts/name.ts ...`
 4. For executable files, use shebang `#!/usr/bin/env bun`.
-5. Do not introduce Python, `.js`, or `.mjs` script entrypoints unless the user explicitly overrides this policy.
+5. Do not introduce Python, `.js`, or `.mjs` script entrypoints unless the user explicitly overrides this policy or the existing repo contract leaves no safe alternative.
 6. Keep script behavior deterministic and machine-readable where possible.
 
 ## Trigger Coverage

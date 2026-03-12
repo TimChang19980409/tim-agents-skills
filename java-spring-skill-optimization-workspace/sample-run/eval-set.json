@@ -1,0 +1,12 @@
+[
+  {
+    "id": "java-01",
+    "expected_skill": "java-pro",
+    "query": "I have a Java 21 batch processor that opens thousands of outbound HTTP calls. Redesign it around virtual threads and explain the ThreadLocal, connection pool, and carrier thread risks before we touch production."
+  },
+  {
+    "id": "java-02",
+    "expected_skill": "java-pro",
+    "query": "We captured GC logs and three thread dumps during a latency spike. I need help deciding whether the real bottleneck is allocation churn, lock contention, or a bad collector setting."
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "eval_id": 3,
+  "eval_name": "unicode-pdf-fonts",
+  "prompt": "Read the attached report and runtime files. PDF export fails for Chinese text in production with a JRFontNotFoundException. Diagnose the runtime gap, propose the minimum packaging fix, and explain what to validate after the change. Prefer official JasperReports or Jaspersoft sources.",
+  "assertions": [
+    "The answer cites at least one official JasperReports or Jaspersoft source.",
+    "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+    "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+    "The answer recommends packaging a JasperReports font extension or equivalent runtime font bundle.",
+    "The answer mentions Unicode-safe PDF encoding such as Identity-H or pdfEncoding.",
+    "The answer mentions embedding the font for PDF export portability."
+  ],
+  "expected_output": "The answer should identify the runtime font packaging gap, recommend a JasperReports font extension, mention Unicode-safe pdfEncoding such as Identity-H, and mention embedding the font."
+}

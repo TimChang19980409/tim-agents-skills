@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="line_items_subreport" pageWidth="500" pageHeight="120" columnWidth="500" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" language="java">
+  <field name="sku" class="java.lang.String"/>
+  <field name="quantity" class="java.lang.Integer"/>
+  <field name="subtotal" class="java.math.BigDecimal"/>
+
+  <detail>
+    <band height="20">
+      <textField>
+        <reportElement x="0" y="0" width="140" height="20"/>
+        <textFieldExpression><![CDATA[$F{sku}]]></textFieldExpression>
+      </textField>
+      <textField>
+        <reportElement x="150" y="0" width="80" height="20"/>
+        <textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+      </textField>
+      <textField>
+        <reportElement x="240" y="0" width="120" height="20"/>
+        <textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+      </textField>
+    </band>
+  </detail>
+</jasperReport>

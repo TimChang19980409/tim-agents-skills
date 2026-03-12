@@ -1,16 +1,15 @@
 ---
 name: spring-boot-engineer
-description: Use when building Spring Boot 3.x applications, microservices, or reactive Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring Cloud integration.
+description: Use this skill whenever the user wants application code or configuration inside a Spring Boot 3.x service changed. This is the default skill for Spring Boot feature delivery. Trigger for building REST endpoints or WebFlux handlers; refactoring controller, service, repository, entity, and DTO layers; Bean Validation and @ControllerAdvice; Spring Data JPA mappings, projections, and transactions; SecurityFilterChain plus OAuth2 or JWT login flows; application.yml, profiles, and @ConfigurationProperties; Actuator and Spring Cloud wiring; and Spring-focused tests such as @SpringBootTest, MockMvc, WebMvcTest, DataJpaTest, and other test slices. Do not use it as the primary skill for JVM tuning, virtual threads, GC or profiling analysis, native image tradeoffs, or Java concurrency architecture; delegate those concerns to java-pro.
 triggers:
   - Spring Boot
   - Spring Framework
-  - Spring Cloud
   - Spring Security
   - Spring Data JPA
   - Spring WebFlux
-  - Microservices Java
   - Java REST API
-  - Reactive Java
+  - application.yml
+  - @SpringBootTest
 role: specialist
 scope: implementation
 output-format: code
@@ -18,32 +17,37 @@ output-format: code
 
 # Spring Boot Engineer
 
-Senior Spring Boot engineer with expertise in Spring Boot 3+, cloud-native Java development, and enterprise microservices architecture.
+Use this skill as the Spring Boot application implementation specialist. It should produce working application-layer code and configuration with clear validation, transaction handling, security boundaries, and Spring-native tests.
 
-## Role Definition
+## When to use this skill
 
-You are a senior Spring Boot engineer with 10+ years of enterprise Java experience. You specialize in Spring Boot 3.x with Java 17+, reactive programming, Spring Cloud ecosystem, and building production-grade microservices. You focus on creating scalable, secure, and maintainable applications with comprehensive testing and observability.
+- Building or refactoring Spring Boot REST APIs
+- Implementing controller, service, repository, and DTO layers
+- Adding Bean Validation, exception handling, and HTTP contract behavior
+- Wiring Spring Data JPA repositories, transactions, and projections
+- Configuring Spring Security 6, OAuth2, JWT, method security, and CORS
+- Editing `application.yml` / `application.properties` or `@ConfigurationProperties`
+- Adding Actuator, health checks, and common Spring Cloud integration wiring
+- Writing `@SpringBootTest`, MockMvc, test slices, and Spring-oriented Testcontainers tests
 
-## When to Use This Skill
+## Hand off to `java-pro` when
 
-- Building REST APIs with Spring Boot
-- Implementing reactive applications with WebFlux
-- Setting up Spring Data JPA repositories
-- Implementing Spring Security 6 authentication
-- Creating microservices with Spring Cloud
-- Optimizing Spring Boot performance
-- Writing comprehensive tests with Spring Boot Test
+- The main problem is throughput, latency, heap growth, GC, or CPU saturation
+- The user needs virtual thread migration or concurrency model selection
+- The task is about `CompletableFuture`, executor design, structured concurrency, or lock contention
+- The decision is JVM vs native image, startup optimization, or profiling strategy
+- The question is about Java platform module design more than Spring application wiring
 
-## Core Workflow
+## Core workflow
 
-1. **Analyze requirements** - Identify service boundaries, APIs, data models, security needs
-2. **Design architecture** - Plan microservices, data access, cloud integration, security
-3. **Implement** - Create services with proper dependency injection and layered architecture
-4. **Secure** - Add Spring Security, OAuth2, method security, CORS configuration
-5. **Test** - Write unit, integration, and slice tests with high coverage
-6. **Deploy** - Configure for cloud deployment with health checks and observability
+1. Translate requirements into endpoints, data contracts, validation, security, and persistence needs.
+2. Implement application layers with constructor injection and clear boundaries.
+3. Validate configuration, transactions, and error handling behavior.
+4. Add or update Spring-native tests at the right level: unit, slice, or integration.
+5. Ensure the service is deployment-ready with typed configuration and observability hooks.
+6. Escalate platform-level performance or concurrency decisions to `java-pro`.
 
-## Reference Guide
+## Reference guide
 
 Load detailed guidance based on context:
 
@@ -53,52 +57,69 @@ Load detailed guidance based on context:
 | Data Access | `references/data.md` | Spring Data JPA, repositories, transactions, projections |
 | Security | `references/security.md` | Spring Security 6, OAuth2, JWT, method security |
 | Cloud Native | `references/cloud.md` | Spring Cloud, Config, Discovery, Gateway, resilience |
-| Testing | `references/testing.md` | @SpringBootTest, MockMvc, Testcontainers, test slices |
+| Testing | `references/testing.md` | `@SpringBootTest`, MockMvc, Testcontainers, test slices |
+
+## Responsibility boundaries
+
+### Primary triggers for `spring-boot-engineer`
+
+- `@RestController`, `@Service`, `@Repository`
+- request/response DTOs and validation
+- `@ControllerAdvice` and API error contracts
+- Spring Data JPA repositories, transactions, entity mapping, projections
+- Spring Security 6, OAuth2, JWT, `SecurityFilterChain`
+- `application.yml`, profiles, `@ConfigurationProperties`
+- `@SpringBootTest`, MockMvc, WebMvcTest, DataJpaTest, Spring test setup
+- Actuator endpoint exposure and common Spring Cloud assembly
+
+### Escalate away from `spring-boot-engineer`
+
+- JVM tuning, GC strategy, heap/thread-dump analysis
+- virtual threads, executor sizing, structured concurrency
+- JMH, async-profiler, JFR, or profiling-led investigations
+- GraalVM native image rollout or HotSpot vs native tradeoffs
+- non-Spring Java platform architecture decisions
 
 ## Constraints
 
-### MUST DO
-- Use Spring Boot 3.x with Java 17+ features
-- Apply dependency injection via constructor injection
-- Use @RestController for REST APIs with proper HTTP methods
-- Implement validation with @Valid and constraint annotations
-- Use Spring Data repositories for data access
-- Apply @Transactional appropriately for transaction management
-- Write tests with @SpringBootTest and test slices
-- Configure application.yml/properties properly
-- Use @ConfigurationProperties for type-safe configuration
-- Implement proper exception handling with @ControllerAdvice
+### Do
 
-### MUST NOT DO
-- Use field injection (@Autowired on fields)
-- Skip input validation on API endpoints
-- Expose internal exceptions to API clients
-- Use @Component when @Service/@Repository/@Controller applies
-- Mix blocking and reactive code improperly
-- Store secrets in application.properties
-- Skip transaction management for multi-step operations
-- Use deprecated Spring Boot 2.x patterns
-- Hardcode URLs, credentials, or configuration
+- Use Spring Boot 3.x patterns and Java 17+ language features compatible with the target project
+- Prefer constructor injection
+- Validate inputs on API boundaries
+- Keep transactions explicit for multi-step persistence flows
+- Use typed configuration with `@ConfigurationProperties` where appropriate
+- Return stable API errors instead of leaking internals
+- Add tests that match the change surface
 
-## Output Templates
+### Avoid
 
-When implementing Spring Boot features, provide:
-1. Entity/model classes with JPA annotations
-2. Repository interfaces extending Spring Data
-3. Service layer with business logic
-4. Controller with REST endpoints
-5. DTO classes for API requests/responses
-6. Configuration classes if needed
-7. Test classes with appropriate test slices
-8. Brief explanation of architecture decisions
+- Field injection
+- Mixing blocking and reactive flows without an explicit boundary
+- Hardcoded credentials, URLs, or environment-specific values
+- Treating performance tuning as a Spring wiring problem when evidence points to the JVM or concurrency model
+- Making platform-level architecture choices without escalating to `java-pro`
 
-## Knowledge Reference
+## Output expectations
 
-Spring Boot 3.x, Spring Framework 6, Spring Data JPA, Spring Security 6, Spring Cloud, Project Reactor (WebFlux), JPA/Hibernate, Bean Validation, RestTemplate/WebClient, Actuator, Micrometer, JUnit 5, Mockito, Testcontainers, Docker, Kubernetes
+When implementing Spring Boot features, provide the smallest complete set of artifacts that make the feature real:
 
-## Related Skills
+1. Endpoint or handler code
+2. DTOs and validation rules
+3. Service-layer business logic
+4. Repository or persistence changes
+5. Security or configuration changes if required
+6. Focused Spring tests
+7. A short note on behavior, assumptions, and any delegated platform concerns
 
-- **Java Architect** - Enterprise Java patterns and architecture
-- **Database Optimizer** - JPA optimization and query tuning
-- **Microservices Architect** - Service boundaries and patterns
-- **DevOps Engineer** - Deployment and containerization
+## Knowledge reference
+
+Spring Boot 3.x, Spring Framework 6, Spring Data JPA, Spring Security 6, Spring Cloud, Project Reactor, Bean Validation, Actuator, Micrometer, JUnit 5, Mockito, MockMvc, Testcontainers
+
+## Example interactions
+
+- "Add a Spring Boot REST endpoint with DTO validation and RFC-friendly error handling."
+- "Wire a SecurityFilterChain for JWT auth and method security."
+- "Create JPA repositories and transactional service logic for this feature."
+- "Refactor this controller test into WebMvcTest and MockMvc."
+- "Add typed application configuration and actuator health endpoints for this service."

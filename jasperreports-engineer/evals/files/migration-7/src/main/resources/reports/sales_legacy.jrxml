@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="sales_legacy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" language="java">
+  <parameter name="REPORT_TITLE" class="java.lang.String"/>
+  <detail>
+    <band height="40">
+      <textField>
+        <reportElement x="0" y="0" width="300" height="20"/>
+        <textFieldExpression><![CDATA[$P{REPORT_TITLE}]]></textFieldExpression>
+      </textField>
+    </band>
+  </detail>
+</jasperReport>

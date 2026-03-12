@@ -1,0 +1,13 @@
+{
+  "eval_id": 2,
+  "eval_name": "migration-6x-to-7x",
+  "prompt": "Read the attached upgrade files. After moving this app to JasperReports 7.0.1, loading an existing compiled report now fails with an Unable to load template error. Diagnose the likely migration problem, propose the minimum recovery plan, and cite official sources first.",
+  "assertions": [
+    "The answer cites at least one official JasperReports or Jaspersoft source.",
+    "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+    "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+    "The answer recommends recompiling or regenerating templates with the runtime JasperReports version.",
+    "The answer calls out a 6.x to 7.x or stale .jasper version mismatch risk."
+  ],
+  "expected_output": "The answer should call out the stale or version-mismatched compiled .jasper risk, recommend recompiling with the runtime JasperReports version, and mention 6.x to 7.x compatibility considerations."
+}

@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.
+description: Create new skills, improve existing skills, and evaluate how well they trigger and perform. Use when designing a skill from scratch, restructuring a skill portfolio, tuning descriptions or boundaries, running evals, or benchmarking skill behavior.
 ---
 
 # Skill Creator
@@ -64,7 +64,7 @@ Check available MCPs - if useful for research (searching docs, finding similar s
 Based on the user interview, fill in these components:
 
 - **name**: Skill identifier
-- **description**: When to trigger, what it does. This is the primary triggering mechanism - include both what the skill does AND specific contexts for when to use it. All "when to use" info goes here, not in the body. Note: currently Claude has a tendency to "undertrigger" skills -- to not use them when they'd be useful. To combat this, please make the skill descriptions a little bit "pushy". So for instance, instead of "How to build a simple fast dashboard to display internal Anthropic data.", you might write "How to build a simple fast dashboard to display internal Anthropic data. Make sure to use this skill whenever the user mentions dashboards, data visualization, internal metrics, or wants to display any kind of company data, even if they don't explicitly ask for a 'dashboard.'"
+- **description**: When to trigger, what it does. This is the primary triggering mechanism - include both what the skill does AND specific contexts for when to use it. All "when to use" info goes here, not in the body. Prefer concrete trigger contexts and clear boundaries over aggressive wording. Newer models are more likely to overtrigger when descriptions rely on absolutist phrases like "always use" or "no exceptions."
 - **compatibility**: Required tools, dependencies (optional, rarely needed)
 - **the rest of the skill :)**
 
@@ -136,7 +136,7 @@ Output: feat(auth): implement JWT-based authentication
 
 ### Writing Style
 
-Try to explain to the model why things are important in lieu of heavy-handed musty MUSTs. Use theory of mind and try to make the skill general and not super-narrow to specific examples. Start by writing a draft and then look at it with fresh eyes and improve it.
+Try to explain to the model why things are important in lieu of heavy-handed MUSTs. Use theory of mind and try to make the skill general and not super-narrow to specific examples. Good descriptions should be specific, high-signal, and bounded, not pushy for its own sake. Start by writing a draft and then look at it with fresh eyes and improve it.
 
 ### Test Cases
 

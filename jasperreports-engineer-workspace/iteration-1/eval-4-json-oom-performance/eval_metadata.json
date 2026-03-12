@@ -1,0 +1,14 @@
+{
+  "eval_id": 4,
+  "eval_name": "json-oom-performance",
+  "prompt": "Read the attached report, Java service, and production error log. A JSON-backed Jasper report now causes OutOfMemoryError and is very slow for large exports. Diagnose the highest-probability causes, propose the smallest high-impact improvements, and cite official JasperReports sources first.",
+  "assertions": [
+    "The answer cites at least one official JasperReports or Jaspersoft source.",
+    "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+    "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+    "The answer recommends a JasperReports virtualizer for the large fill operation.",
+    "The answer distinguishes compile strategy from runtime fill or export work.",
+    "The answer recognizes the JSON datasource context."
+  ],
+  "expected_output": "The answer should identify the large fill-memory problem, recommend a JasperReports virtualizer, and distinguish compile strategy from runtime fill or export work."
+}

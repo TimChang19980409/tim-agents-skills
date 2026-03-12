@@ -1,0 +1,23 @@
+[
+  {
+    "file": "src/main/resources/reports/sales_legacy.jrxml",
+    "language": "java",
+    "queryLanguage": null,
+    "queryText": "",
+    "parameters": [
+      {
+        "name": "REPORT_TITLE",
+        "class": "java.lang.String"
+      }
+    ],
+    "fields": [],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  }
+]

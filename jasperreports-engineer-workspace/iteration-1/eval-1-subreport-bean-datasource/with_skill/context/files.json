@@ -1,0 +1,22 @@
+[
+  {
+    "path": "pom.xml",
+    "bytes": 722,
+    "lines": 22
+  },
+  {
+    "path": "src/main/java/com/example/report/InvoiceReportService.java",
+    "bytes": 977,
+    "lines": 31
+  },
+  {
+    "path": "src/main/resources/reports/invoice_main.jrxml",
+    "bytes": 936,
+    "lines": 22
+  },
+  {
+    "path": "src/main/resources/reports/line_items_subreport.jrxml",
+    "bytes": 962,
+    "lines": 24
+  }
+]

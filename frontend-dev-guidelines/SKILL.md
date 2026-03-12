@@ -1,365 +1,121 @@
 ---
 name: frontend-dev-guidelines
 description: |
-  Opinionated frontend development standards for modern React + TypeScript applications.
-  Use when creating React components, setting up feature-based architecture, implementing
-  Suspense patterns, styling with MUI v7, or reviewing frontend code quality.
-  Triggers on: React component, useSuspenseQuery, lazy loading, MUI styling, TanStack Router,
-  feature-based structure, "how should I organize", frontend architecture review.
-  Covers: Suspense-first data fetching, performance optimization, strict TypeScript practices.
+  Primary implementation and review skill for modern React + TypeScript frontends.
+  Use when building or refactoring components, pages, routes, data-fetching flows,
+  or frontend architecture; reviewing React UI code for performance; or auditing UI
+  and accessibility behavior. This skill is the frontend family host. For reusable
+  component API design and pattern selection, delegate to react-component-designer.
 ---
-
 
 # Frontend Development Guidelines
 
-**(React · TypeScript · Suspense-First · Production-Grade)**
+Use this skill as the default host for React + TypeScript implementation and review work. It absorbs the active surface that used to be split across standalone React performance and UI guideline skills.
 
-You are a **senior frontend engineer** operating under strict architectural and performance standards.
+## Scope
 
-Your goal is to build **scalable, predictable, and maintainable React applications** using:
+Use this skill when the request is mainly about:
 
-* Suspense-first data fetching
-* Feature-based code organization
-* Strict TypeScript discipline
-* Performance-safe defaults
+- building or refactoring React components, pages, routes, forms, and feature modules
+- reviewing frontend code quality, maintainability, or architecture
+- investigating React performance problems
+- auditing UI, accessibility, and interaction quality
 
-This skill defines **how frontend code must be written**, not merely how it *can* be written.
+Hand off to:
 
----
+- `react-component-designer` for reusable component API design, slots, compound components, controlled/uncontrolled tradeoffs, and headless patterns
+- `stagehand-aria-e2e` when browser behavior must be validated through real user flows
 
-## 1. Frontend Feasibility & Complexity Index (FFCI)
+## Core workflow
 
-Before implementing a component, page, or feature, assess feasibility.
+1. Classify the task as `implementation`, `performance review`, or `UI/accessibility review`.
+2. Read local repo conventions before imposing generic patterns.
+3. Prefer the smallest change that improves correctness, clarity, and runtime behavior.
+4. Keep architecture, styling, and data-fetching choices consistent with the existing app.
+5. Verify the change with the narrowest useful tests or checks.
 
-### FFCI Dimensions (1–5)
+## Implementation
 
-| Dimension             | Question                                                         |
-| --------------------- | ---------------------------------------------------------------- |
-| **Architectural Fit** | Does this align with feature-based structure and Suspense model? |
-| **Complexity Load**   | How complex is state, data, and interaction logic?               |
-| **Performance Risk**  | Does it introduce rendering, bundle, or CLS risk?                |
-| **Reusability**       | Can this be reused without modification?                         |
-| **Maintenance Cost**  | How hard will this be to reason about in 6 months?               |
+### Default engineering posture
 
-### Score Formula
+- Preserve existing repo patterns unless they are clearly harmful.
+- Prefer function components with explicit props types.
+- Keep state local until multiple consumers genuinely need shared ownership.
+- Derive values during render instead of mirroring them in state.
+- Use effects only to synchronize with external systems, not to run interaction logic that can stay in events or render.
+- Keep async boundaries explicit and start independent work in parallel.
+- Add code-splitting where routes or heavy UI islands benefit from it.
+- Favor direct imports in hot paths over barrel imports when bundle size matters.
 
-```
-FFCI = (Architectural Fit + Reusability + Performance) − (Complexity + Maintenance Cost)
-```
+### Data and state
 
-**Range:** `-5 → +15`
+- Follow the repo's existing data layer first: router loaders, Suspense hooks, React Query, SWR, or framework-native fetch patterns.
+- Avoid introducing client waterfalls when requests can be parallelized.
+- Prefer stable, typed API boundaries between UI and data layers.
+- Use `startTransition`, `useDeferredValue`, and `useEffectEvent` when they materially improve UX or correctness and the project already supports them.
 
-### Interpretation
+### Component and feature structure
 
-| FFCI      | Meaning    | Action            |
-| --------- | ---------- | ----------------- |
-| **10–15** | Excellent  | Proceed           |
-| **6–9**   | Acceptable | Proceed with care |
-| **3–5**   | Risky      | Simplify or split |
-| **≤ 2**   | Poor       | Redesign          |
+- Keep feature code grouped by domain rather than by technical layer when the repo is feature-oriented.
+- Split a component when it mixes unrelated state machines, data concerns, or layout responsibilities.
+- Keep styling in the established system: MUI, Tailwind, CSS modules, or other repo-standard tooling.
+- Avoid broad rewrites of class names, tokens, or component boundaries unless the task is explicitly architectural.
 
----
+### Implementation deliverables
 
-## 2. Core Architectural Doctrine (Non-Negotiable)
+When you implement frontend changes, provide:
 
-### 1. Suspense Is the Default
+1. the smallest complete code change
+2. any required typing, routing, styling, or data-layer updates
+3. focused tests or verification notes
+4. short assumptions and known tradeoffs
 
-* `useSuspenseQuery` is the **primary** data-fetching hook
-* No `isLoading` conditionals
-* No early-return spinners
+## Performance Review
 
-### 2. Lazy Load Anything Heavy
+Review in this order so the highest-impact issues surface first:
 
-* Routes
-* Feature entry components
-* Data grids, charts, editors
-* Large dialogs or modals
+1. **Network waterfalls**
+   - parallelize independent async work
+   - move fetches earlier in the lifecycle when safe
+   - avoid duplicated client requests when a query library or loader can dedupe
+2. **Bundle size**
+   - replace barrel imports in hot paths with direct imports
+   - defer large third-party libraries or heavy UI islands
+   - keep server-only and client-only code separated where the framework supports it
+3. **Render churn**
+   - remove derived state stored in effects
+   - keep transient values in refs when they should not trigger renders
+   - use transitions for non-urgent updates instead of blocking urgent interactions
+4. **Rendering and layout**
+   - reduce needless DOM weight
+   - use virtualization or `content-visibility: auto` for long, mostly offscreen lists when appropriate
+   - avoid animation patterns that cause excessive layout or paint work
+5. **JavaScript hot paths**
+   - use `Set`/`Map` for repeated membership lookups
+   - avoid repeated sort/filter passes when a single pass is clearer and cheaper
+   - keep expensive computations outside frequently re-rendered code paths
 
-### 3. Feature-Based Organization
+When the user asks for a review, return findings first, ordered by impact, with concrete fixes rather than generic advice.
 
-* Domain logic lives in `features/`
-* Reusable primitives live in `components/`
-* Cross-feature coupling is forbidden
+## UI/Accessibility Review
 
-### 4. TypeScript Is Strict
+Check these areas before calling a UI change complete:
 
-* No `any`
-* Explicit return types
-* `import type` always
-* Types are first-class design artifacts
+- semantics: headings, landmarks, button vs link usage, form labeling
+- keyboard support: tab order, visible focus, shortcuts, escape paths
+- accessible names and state: labels, descriptions, selected/expanded/disabled states
+- feedback states: loading, empty, success, error, and retry behavior
+- visual clarity: spacing, hierarchy, contrast, touch targets, responsive layout
+- motion and perception: reduced-motion handling, no hidden critical state in animation alone
 
----
+For review tasks, prefer behavior-oriented findings such as "focus is lost after dialog close" or "error state has no announced message" over vague style comments.
 
-## 3. When to Use This Skill
+## Review output
 
-Use **frontend-dev-guidelines** when:
+Use these response modes:
 
-* Creating components or pages
-* Adding new features
-* Fetching or mutating data
-* Setting up routing
-* Styling with MUI
-* Addressing performance issues
-* Reviewing or refactoring frontend code
+- `implementation`: summarize the change, highlight the main tradeoff, and note verification
+- `performance review`: list concrete findings with file references and expected impact
+- `UI/accessibility review`: list concrete findings with severity and user-facing consequence
 
----
-
-## 4. Quick Start Checklists
-
-### New Component Checklist
-
-* [ ] `React.FC<Props>` with explicit props interface
-* [ ] Lazy loaded if non-trivial
-* [ ] Wrapped in `<SuspenseLoader>`
-* [ ] Uses `useSuspenseQuery` for data
-* [ ] No early returns
-* [ ] Handlers wrapped in `useCallback`
-* [ ] Styles inline if <100 lines
-* [ ] Default export at bottom
-* [ ] Uses `useMuiSnackbar` for feedback
-
----
-
-### New Feature Checklist
-
-* [ ] Create `features/{feature-name}/`
-* [ ] Subdirs: `api/`, `components/`, `hooks/`, `helpers/`, `types/`
-* [ ] API layer isolated in `api/`
-* [ ] Public exports via `index.ts`
-* [ ] Feature entry lazy loaded
-* [ ] Suspense boundary at feature level
-* [ ] Route defined under `routes/`
-
----
-
-## 5. Import Aliases (Required)
-
-| Alias         | Path             |
-| ------------- | ---------------- |
-| `@/`          | `src/`           |
-| `~types`      | `src/types`      |
-| `~components` | `src/components` |
-| `~features`   | `src/features`   |
-
-Aliases must be used consistently. Relative imports beyond one level are discouraged.
-
----
-
-## 6. Component Standards
-
-### Required Structure Order
-
-1. Types / Props
-2. Hooks
-3. Derived values (`useMemo`)
-4. Handlers (`useCallback`)
-5. Render
-6. Default export
-
-### Lazy Loading Pattern
-
-```ts
-const HeavyComponent = React.lazy(() => import('./HeavyComponent'));
-```
-
-Always wrapped in `<SuspenseLoader>`.
-
----
-
-## 7. Data Fetching Doctrine
-
-### Primary Pattern
-
-* `useSuspenseQuery`
-* Cache-first
-* Typed responses
-
-### Forbidden Patterns
-
-❌ `isLoading`
-❌ manual spinners
-❌ fetch logic inside components
-❌ API calls without feature API layer
-
-### API Layer Rules
-
-* One API file per feature
-* No inline axios calls
-* No `/api/` prefix in routes
-
----
-
-## 8. Routing Standards (TanStack Router)
-
-* Folder-based routing only
-* Lazy load route components
-* Breadcrumb metadata via loaders
-
-```ts
-export const Route = createFileRoute('/my-route/')({
-  component: MyPage,
-  loader: () => ({ crumb: 'My Route' }),
-});
-```
-
----
-
-## 9. Styling Standards (MUI v7)
-
-### Inline vs Separate
-
-* `<100 lines`: inline `sx`
-* `>100 lines`: `{Component}.styles.ts`
-
-### Grid Syntax (v7 Only)
-
-```tsx
-<Grid size={{ xs: 12, md: 6 }} /> // ✅
-<Grid xs={12} md={6} />          // ❌
-```
-
-Theme access must always be type-safe.
-
----
-
-## 10. Loading & Error Handling
-
-### Absolute Rule
-
-❌ Never return early loaders
-✅ Always rely on Suspense boundaries
-
-### User Feedback
-
-* `useMuiSnackbar` only
-* No third-party toast libraries
-
----
-
-## 11. Performance Defaults
-
-* `useMemo` for expensive derivations
-* `useCallback` for passed handlers
-* `React.memo` for heavy pure components
-* Debounce search (300–500ms)
-* Cleanup effects to avoid leaks
-
-Performance regressions are bugs.
-
----
-
-## 12. TypeScript Standards
-
-* Strict mode enabled
-* No implicit `any`
-* Explicit return types
-* JSDoc on public interfaces
-* Types colocated with feature
-
----
-
-## 13. Canonical File Structure
-
-```
-src/
-  features/
-    my-feature/
-      api/
-      components/
-      hooks/
-      helpers/
-      types/
-      index.ts
-
-  components/
-    SuspenseLoader/
-    CustomAppBar/
-
-  routes/
-    my-route/
-      index.tsx
-```
-
----
-
-## 14. Canonical Component Template
-
-```ts
-import React, { useState, useCallback } from 'react';
-import { Box, Paper } from '@mui/material';
-import { useSuspenseQuery } from '@tanstack/react-query';
-import { featureApi } from '../api/featureApi';
-import type { FeatureData } from '~types/feature';
-
-interface MyComponentProps {
-  id: number;
-  onAction?: () => void;
-}
-
-export const MyComponent: React.FC<MyComponentProps> = ({ id, onAction }) => {
-  const [state, setState] = useState('');
-
-  const { data } = useSuspenseQuery<FeatureData>({
-    queryKey: ['feature', id],
-    queryFn: () => featureApi.getFeature(id),
-  });
-
-  const handleAction = useCallback(() => {
-    setState('updated');
-    onAction?.();
-  }, [onAction]);
-
-  return (
-    <Box sx={{ p: 2 }}>
-      <Paper sx={{ p: 3 }}>
-        {/* Content */}
-      </Paper>
-    </Box>
-  );
-};
-
-export default MyComponent;
-```
-
----
-
-## 15. Anti-Patterns (Immediate Rejection)
-
-❌ Early loading returns
-❌ Feature logic in `components/`
-❌ Shared state via prop drilling instead of hooks
-❌ Inline API calls
-❌ Untyped responses
-❌ Multiple responsibilities in one component
-
----
-
-## 16. Integration With Other Skills
-
-* **frontend-design** → Visual systems & aesthetics
-* **page-cro** → Layout hierarchy & conversion logic
-* **analytics-tracking** → Event instrumentation
-* **backend-dev-guidelines** → API contract alignment
-* **error-tracking** → Runtime observability
-
----
-
-## 17. Operator Validation Checklist
-
-Before finalizing code:
-
-* [ ] FFCI ≥ 6
-* [ ] Suspense used correctly
-* [ ] Feature boundaries respected
-* [ ] No early returns
-* [ ] Types explicit and correct
-* [ ] Lazy loading applied
-* [ ] Performance safe
-
----
-
-## 18. Skill Status
-
-**Status:** Stable, opinionated, and enforceable
-**Intended Use:** Production React codebases with long-term maintenance horizons
-
+If there are no material findings, say so explicitly and mention residual risks or untested interaction paths.

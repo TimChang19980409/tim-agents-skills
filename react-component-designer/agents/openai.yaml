@@ -1,0 +1,10 @@
+version: 1
+display_name: React Component Designer
+short_description: Design React component APIs with the right pattern mix.
+default_prompt: >-
+  Design a React component API and choose an appropriate combination of patterns
+  (props-driven configuration, composition/children, named slots, compound components,
+  render props, controlled/uncontrolled, headless hooks, state reducer, prop getters,
+  polymorphic/asChild) based on requirements. Ask only the minimal clarifying questions,
+  then propose the API, TypeScript types, usage examples, and implementation outline.
+

@@ -1,0 +1,53 @@
+{
+  "eval_id": 1,
+  "eval_name": "subreport-bean-datasource",
+  "configuration": "without_skill",
+  "skill_enabled": false,
+  "model": "minimax-coding-plan/MiniMax-M2.5",
+  "timeout_ms": 180000,
+  "project_dir": "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project",
+  "prompt_path": "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/prompt.md",
+  "attached_files": [
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/pom.xml",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/src/main/java/com/example/report/InvoiceReportService.java",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/src/main/resources/reports/invoice_main.jrxml",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/src/main/resources/reports/line_items_subreport.jrxml"
+  ],
+  "opencode_config": "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/opencode.json",
+  "command": [
+    "opencode",
+    "run",
+    "Read the attached Spring Boot and JRXML files. The main Jasper report renders, but the line-item subreport is blank. Diagnose the most likely root cause, propose the smallest safe fix, and give validation steps. Prefer official JasperReports or Jaspersoft sources.",
+    "--model",
+    "minimax-coding-plan/MiniMax-M2.5",
+    "--format",
+    "json",
+    "--dir",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project",
+    "--title",
+    "jasperreports-eval-1-without_skill",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/pom.xml",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/src/main/java/com/example/report/InvoiceReportService.java",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/src/main/resources/reports/invoice_main.jrxml",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-1-subreport-bean-datasource/without_skill/project/src/main/resources/reports/line_items_subreport.jrxml"
+  ],
+  "status": "completed",
+  "exit_code": 0,
+  "signal": null,
+  "error": null,
+  "started_at": "2026-03-12T08:29:37.629Z",
+  "ended_at": "2026-03-12T08:30:30.121Z",
+  "session_id": "ses_31ed59221ffer7Hfty1Tdr5k7a",
+  "duration_ms": 43806,
+  "cost": 0,
+  "tokens": {
+    "total": 25811,
+    "input": 61,
+    "output": 662,
+    "reasoning": 0
+  }
+}

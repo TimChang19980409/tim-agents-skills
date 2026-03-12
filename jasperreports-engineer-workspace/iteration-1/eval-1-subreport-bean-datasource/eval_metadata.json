@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "subreport-bean-datasource",
+  "prompt": "Read the attached Spring Boot and JRXML files. The main Jasper report renders, but the line-item subreport is blank. Diagnose the most likely root cause, propose the smallest safe fix, and give validation steps. Prefer official JasperReports or Jaspersoft sources.",
+  "assertions": [
+    "The answer cites at least one official JasperReports or Jaspersoft source.",
+    "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+    "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+    "The answer identifies the subreport datasource or parameter wiring issue."
+  ],
+  "expected_output": "The answer should ground the diagnosis in the local parent and child report files, identify the child datasource or parameter wiring issue, and recommend an explicit JRDataSource path instead of REPORT_CONNECTION for the bean-backed flow."
+}

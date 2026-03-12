@@ -1,0 +1,53 @@
+{
+  "eval_id": 3,
+  "eval_name": "unicode-pdf-fonts",
+  "configuration": "with_skill",
+  "skill_enabled": true,
+  "model": "minimax-coding-plan/MiniMax-M2.5",
+  "timeout_ms": 180000,
+  "project_dir": "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project",
+  "prompt_path": "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/prompt.md",
+  "attached_files": [
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/pom.xml",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/src/main/java/com/example/report/CjkInvoiceReportService.java",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/src/main/resources/reports/invoice_zh.jrxml",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/font-error.log"
+  ],
+  "opencode_config": "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/opencode.json",
+  "command": [
+    "opencode",
+    "run",
+    "Read the attached report and runtime files. PDF export fails for Chinese text in production with a JRFontNotFoundException. Diagnose the runtime gap, propose the minimum packaging fix, and explain what to validate after the change. Prefer official JasperReports or Jaspersoft sources.",
+    "--model",
+    "minimax-coding-plan/MiniMax-M2.5",
+    "--format",
+    "json",
+    "--dir",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project",
+    "--title",
+    "jasperreports-eval-3-with_skill",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/pom.xml",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/src/main/java/com/example/report/CjkInvoiceReportService.java",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/src/main/resources/reports/invoice_zh.jrxml",
+    "--file",
+    "/Users/ss105213025/.agents/skills/jasperreports-engineer-workspace/iteration-1/eval-3-unicode-pdf-fonts/with_skill/project/font-error.log"
+  ],
+  "status": "completed",
+  "exit_code": 0,
+  "signal": null,
+  "error": null,
+  "started_at": "2026-03-12T08:56:45.228Z",
+  "ended_at": "2026-03-12T08:58:12.733Z",
+  "session_id": "ses_31ebcbd2effe2ekEUFFMCd7Cvb",
+  "duration_ms": 77430,
+  "cost": 0,
+  "tokens": {
+    "total": 30977,
+    "input": 1061,
+    "output": 1188,
+    "reasoning": 0
+  }
+}

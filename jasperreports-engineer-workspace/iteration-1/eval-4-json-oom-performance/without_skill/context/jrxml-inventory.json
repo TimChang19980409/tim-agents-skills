@@ -1,0 +1,35 @@
+[
+  {
+    "file": "src/main/resources/reports/sales_json.jrxml",
+    "language": "java",
+    "queryLanguage": "json",
+    "queryText": "orders.items",
+    "parameters": [],
+    "fields": [
+      {
+        "name": "sku",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "region",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "amount",
+        "class": "java.math.BigDecimal"
+      },
+      {
+        "name": "description",
+        "class": "java.lang.String"
+      }
+    ],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  }
+]

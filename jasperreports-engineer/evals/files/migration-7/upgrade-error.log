@@ -1,0 +1,10 @@
+2026-02-25 10:21:48 ERROR c.e.report.LegacyReportLoader - Failed to load compiled report
+net.sf.jasperreports.engine.JRRuntimeException: Unable to load template
+	at net.sf.jasperreports.engine.xml.JRXmlTemplateLoader.loadTemplate(JRXmlTemplateLoader.java:225)
+	at net.sf.jasperreports.engine.util.JRLoader.loadObject(JRLoader.java:131)
+	at com.example.report.LegacyReportLoader.loadAndFill(LegacyReportLoader.java:13)
+Caused by: java.io.InvalidClassException: net.sf.jasperreports.engine.base.JRBaseReport; incompatible class
+
+Notes:
+- The same sales.jasper worked when the application used JasperReports 6.20.5.
+- The repo still ships precompiled .jasper files from an older build job.

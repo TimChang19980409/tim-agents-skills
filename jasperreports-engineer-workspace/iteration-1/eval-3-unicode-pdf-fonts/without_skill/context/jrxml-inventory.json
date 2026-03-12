@@ -1,0 +1,30 @@
+[
+  {
+    "file": "src/main/resources/reports/invoice_zh.jrxml",
+    "language": "java",
+    "queryLanguage": null,
+    "queryText": "",
+    "parameters": [
+      {
+        "name": "CUSTOMER_NAME",
+        "class": "java.lang.String"
+      }
+    ],
+    "fields": [],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [
+      {
+        "fontName": "Noto Sans CJK TC",
+        "pdfFontName": null,
+        "pdfEncoding": "Cp1252",
+        "isPdfEmbedded": null
+      }
+    ],
+    "imports": [],
+    "warnings": []
+  }
+]

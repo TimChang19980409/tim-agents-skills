@@ -1,6 +1,6 @@
 ---
 name: opencode-configurator
-description: Configure, audit, migrate, and troubleshoot OpenCode and oh-my-opencode settings, including opencode.json, .opencode directories, and oh-my-opencode.json/jsonc. Use when requests mention opencode or oh-my-opencode setup/configuration (including Chinese terms like 配置/設定), model/provider selection, modes, agents, permissions, MCP servers, categories, skill loading, browser automation, or tmux integration.
+description: Configure, audit, migrate, and troubleshoot OpenCode and oh-my-opencode settings, including opencode.json, .opencode directories, and oh-my-opencode.json/jsonc. Use when requests are about opencode or oh-my-opencode setup, model/provider selection, modes, agents, permissions, MCP servers, categories, skill loading, browser automation, or tmux integration.
 ---
 
 # OpenCode Configurator

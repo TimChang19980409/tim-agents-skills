@@ -1,0 +1,446 @@
+{
+  "workspace": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full",
+  "skills": [
+    {
+      "name": "java-pro",
+      "path": "/Users/ss105213025/.agents/skills/java-pro",
+      "description": "Use this skill for Java 21+ platform work: concurrency models, JVM and GC behavior, profiling, benchmarking, runtime packaging, and Java module or runtime architecture decisions. Trigger when the user is migrating batch jobs or backend runtimes to virtual threads or structured concurrency; choosing between CompletableFuture, executors, and other Java concurrency approaches; diagnosing memory, thread-dump, CPU, startup, latency, or profiling issues; comparing HotSpot with GraalVM native image; or reasoning about module boundaries, modular-monolith tradeoffs, observability, and platform-level design. Do not use it for Spring Boot feature delivery such as REST endpoints, auth flows, transactional business services, JPA mappings, application.yml, or @SpringBootTest implementation; delegate those to spring-boot-engineer."
+    },
+    {
+      "name": "spring-boot-engineer",
+      "path": "/Users/ss105213025/.agents/skills/spring-boot-engineer",
+      "description": "Use this skill whenever the user wants application code or configuration inside a Spring Boot 3.x service changed. This is the default skill for Spring Boot feature delivery. Trigger for building REST endpoints or WebFlux handlers; refactoring controller, service, repository, entity, and DTO layers; Bean Validation and @ControllerAdvice; Spring Data JPA mappings, projections, and transactions; SecurityFilterChain plus OAuth2 or JWT login flows; application.yml, profiles, and @ConfigurationProperties; Actuator and Spring Cloud wiring; and Spring-focused tests such as @SpringBootTest, MockMvc, WebMvcTest, DataJpaTest, and other test slices. Do not use it as the primary skill for JVM tuning, virtual threads, GC or profiling analysis, native image tradeoffs, or Java concurrency architecture; delegate those concerns to java-pro."
+    }
+  ],
+  "overall": {
+    "total_queries": 20,
+    "passed_queries": 15,
+    "failed_queries": 5,
+    "total_runs": 20,
+    "passed_runs": 15
+  },
+  "summary": [
+    {
+      "id": "java-01",
+      "expected_skill": "java-pro",
+      "query": "I have a Java 21 batch processor that opens thousands of outbound HTTP calls. Redesign it around virtual threads and explain the ThreadLocal, connection pool, and carrier thread risks before we touch production.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-02",
+      "expected_skill": "java-pro",
+      "query": "We captured GC logs and three thread dumps during a latency spike. I need help deciding whether the real bottleneck is allocation churn, lock contention, or a bad collector setting.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-03",
+      "expected_skill": "java-pro",
+      "query": "Compare HotSpot and GraalVM native image for this internal CLI. Startup time matters, but we also use reflection-heavy libraries and care about build complexity.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-04",
+      "expected_skill": "java-pro",
+      "query": "Design the concurrency model for a high-throughput Java event consumer that does blocking I/O and some CPU-heavy enrichment. I need explicit guidance on executors, backpressure, and cancellation.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-05",
+      "expected_skill": "java-pro",
+      "query": "Review this Java 21 module layout and tell me how to separate platform code, adapters, and core business code without turning it into framework soup.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-06",
+      "expected_skill": "java-pro",
+      "query": "Should we migrate this CompletableFuture-heavy service to structured concurrency, or keep the current async graph? I care about cancellation semantics and debuggability more than elegance.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-07",
+      "expected_skill": "java-pro",
+      "query": "Help me tune a containerized Java service that is CPU-throttled and has ugly p99 latency after warmup. I want a JVM-level diagnosis plan, not generic app advice.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-08",
+      "expected_skill": "java-pro",
+      "query": "I need a JMH benchmark plan for a serialization hot path. Show me how to avoid dead-code elimination and misleading warmup numbers.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-09",
+      "expected_skill": "java-pro",
+      "query": "Our Java service leaks memory slowly under sustained load. Give me a profiling strategy using heap histograms, allocations, and low-overhead production-safe tools.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "java-10",
+      "expected_skill": "java-pro",
+      "query": "We are deciding between a modular monolith and more deployment units for a Java backend. I want the tradeoffs around runtime boundaries, observability, and failure isolation.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "spring-01",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Build a Spring Boot REST API for purchase requests with request and response DTOs, Bean Validation, and a ControllerAdvice that returns stable JSON errors.",
+      "runs": 1,
+      "correct_runs": 0,
+      "pass": false,
+      "first_triggered_skill": null,
+      "triggered_breakdown": {
+        "none": 1
+      }
+    },
+    {
+      "id": "spring-02",
+      "expected_skill": "spring-boot-engineer",
+      "query": "I need a Spring Security 6 SecurityFilterChain with JWT auth, method security, and CORS for a separate frontend app. Keep the wiring idiomatic for Boot 3.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-03",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Add a Spring Data JPA repository, entity mapping, and transactional service method for an invoice approval flow. I also need projections for the read side.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-04",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Write @SpringBootTest and MockMvc coverage for my user controller, plus a DataJpaTest for the repository. I want the test slices chosen correctly.",
+      "runs": 1,
+      "correct_runs": 0,
+      "pass": false,
+      "first_triggered_skill": null,
+      "triggered_breakdown": {
+        "none": 1
+      }
+    },
+    {
+      "id": "spring-05",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Refactor this Spring Boot feature into controller, service, repository, and DTO layers. The API already exists but validation and exception handling are a mess.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-06",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Set up typed application configuration with @ConfigurationProperties and profiles for local, test, and prod. I also want the related application.yml structure cleaned up.",
+      "runs": 1,
+      "correct_runs": 0,
+      "pass": false,
+      "first_triggered_skill": "java-pro",
+      "triggered_breakdown": {
+        "java-pro": 1
+      }
+    },
+    {
+      "id": "spring-07",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Add Spring Cloud Config client wiring and actuator health endpoints to this Boot service. Focus on the app-level configuration and readiness behavior.",
+      "runs": 1,
+      "correct_runs": 0,
+      "pass": false,
+      "first_triggered_skill": null,
+      "triggered_breakdown": {
+        "none": 1
+      }
+    },
+    {
+      "id": "spring-08",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Implement a WebFlux endpoint and make sure we do not mix blocking repository calls into the reactive path incorrectly.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-09",
+      "expected_skill": "spring-boot-engineer",
+      "query": "I need an OAuth2 login flow in Spring Boot with custom authorities mapping and method security. Please keep the configuration and tests aligned.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-10",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Create a new Spring Boot endpoint for employee onboarding that validates nested request payloads, uses a transactional service, and returns proper HTTP status codes.",
+      "runs": 1,
+      "correct_runs": 0,
+      "pass": false,
+      "first_triggered_skill": null,
+      "triggered_breakdown": {
+        "none": 1
+      }
+    }
+  ],
+  "runs": [
+    {
+      "evalId": "java-01",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-01/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-02",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-02/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-03",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-03/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-04",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-04/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-05",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-05/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-06",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-06/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-07",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-07/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-08",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-08/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-09",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-09/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "java-10",
+      "run": 1,
+      "expectedSkill": "java-pro",
+      "triggeredSkill": "java-pro",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/java-10/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-01",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": null,
+      "passed": false,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-01/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-02",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-02/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-03",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-03/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-04",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": null,
+      "passed": false,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-04/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-05",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-05/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-06",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "java-pro",
+      "passed": false,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-06/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-07",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": null,
+      "passed": false,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-07/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-08",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-08/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-09",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-09/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-10",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": null,
+      "passed": false,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-full/runs/spring-10/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    }
+  ]
+}
