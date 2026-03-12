@@ -1,0 +1,37 @@
+[
+  {
+    "id": "spring-03",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Add a Spring Data JPA repository, entity mapping, and transactional service method for an invoice approval flow. I also need projections for the read side."
+  },
+  {
+    "id": "spring-04",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Write @SpringBootTest and MockMvc coverage for my user controller, plus a DataJpaTest for the repository. I want the test slices chosen correctly."
+  },
+  {
+    "id": "spring-05",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Refactor this Spring Boot feature into controller, service, repository, and DTO layers. The API already exists but validation and exception handling are a mess."
+  },
+  {
+    "id": "spring-06",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Set up typed application configuration with @ConfigurationProperties and profiles for local, test, and prod. I also want the related application.yml structure cleaned up."
+  },
+  {
+    "id": "spring-08",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Implement a WebFlux endpoint and make sure we do not mix blocking repository calls into the reactive path incorrectly."
+  },
+  {
+    "id": "spring-09",
+    "expected_skill": "spring-boot-engineer",
+    "query": "I need an OAuth2 login flow in Spring Boot with custom authorities mapping and method security. Please keep the configuration and tests aligned."
+  },
+  {
+    "id": "spring-10",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Create a new Spring Boot endpoint for employee onboarding that validates nested request payloads, uses a transactional service, and returns proper HTTP status codes."
+  }
+]

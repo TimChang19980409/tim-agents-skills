@@ -1,0 +1,47 @@
+{
+  "workspace": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/spring-sample",
+  "skills": [
+    {
+      "name": "java-pro",
+      "path": "/Users/ss105213025/.agents/skills/java-pro",
+      "description": "Expert guidance for Java 21+ platform work: language features, concurrency, JVM/GC, profiling, runtime architecture, build pipelines, and performance engineering. Use proactively when the user asks about virtual threads, CompletableFuture, memory/latency tuning, native image tradeoffs, profiling, startup optimization, or Java-level architecture decisions. Do not use this as the primary skill for Spring Boot controllers, JPA repositories, SecurityFilterChain wiring, application.yml setup, or @SpringBootTest implementation; delegate those to spring-boot-engineer."
+    },
+    {
+      "name": "spring-boot-engineer",
+      "path": "/Users/ss105213025/.agents/skills/spring-boot-engineer",
+      "description": "Spring Boot 3.x application delivery skill for REST APIs, WebFlux handlers, validation, configuration, Spring Data JPA, Spring Security 6, Actuator, and Spring-focused testing. Use this whenever the user is building or changing Spring Boot application code such as controllers, services, repositories, DTOs, SecurityFilterChain, application.yml, @ConfigurationProperties, or @SpringBootTest suites. Do not use this as the primary skill for JVM tuning, virtual thread strategy, GC/profiling analysis, native image tradeoffs, or Java-level concurrency design; delegate those to java-pro."
+    }
+  ],
+  "overall": {
+    "total_queries": 1,
+    "passed_queries": 1,
+    "failed_queries": 0,
+    "total_runs": 1,
+    "passed_runs": 1
+  },
+  "summary": [
+    {
+      "id": "spring-01",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Build a Spring Boot REST API for purchase requests with request and response DTOs, Bean Validation, and a ControllerAdvice that returns stable JSON errors.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    }
+  ],
+  "runs": [
+    {
+      "evalId": "spring-01",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/spring-sample/runs/spring-01/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    }
+  ]
+}

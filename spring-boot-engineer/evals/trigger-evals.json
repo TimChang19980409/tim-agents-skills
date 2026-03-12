@@ -1,0 +1,34 @@
+[
+  {
+    "query": "Build a Spring Boot REST API for orders with request/response DTOs, Bean Validation, and a ControllerAdvice that returns clean API errors.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a SecurityFilterChain for Spring Security 6 with JWT auth, method security, and CORS for my frontend.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add a Spring Data JPA repository, entity mapping, and transactional service method for this invoice approval flow.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write @SpringBootTest and MockMvc tests for my controller, plus a DataJpaTest for the repository behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help me decide whether to migrate this Java 21 service to virtual threads or keep CompletableFuture orchestration.",
+    "should_trigger": false
+  },
+  {
+    "query": "We have GC pause spikes and heap growth under load. I need someone to interpret the GC logs and thread dumps.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare GraalVM native image against HotSpot for this CLI. Startup matters, but build time and reflection support also matter.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the executor and backpressure strategy for a high-throughput Java event consumer that mostly does blocking I/O.",
+    "should_trigger": false
+  }
+]

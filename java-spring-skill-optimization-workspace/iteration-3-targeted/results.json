@@ -1,0 +1,173 @@
+{
+  "workspace": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted",
+  "skills": [
+    {
+      "name": "java-pro",
+      "path": "/Users/ss105213025/.agents/skills/java-pro",
+      "description": "Use this skill for Java 21+ platform work: concurrency models, JVM and GC behavior, profiling, benchmarking, runtime packaging, and Java module or runtime architecture decisions. Trigger when the user is migrating batch jobs or backend runtimes to virtual threads or structured concurrency; choosing between CompletableFuture, executors, and other Java concurrency approaches; diagnosing memory, thread-dump, CPU, startup, latency, or profiling issues; comparing HotSpot with GraalVM native image; or reasoning about module boundaries, modular-monolith tradeoffs, observability, and platform-level design. Do not use it for Spring Boot feature delivery such as REST endpoints, auth flows, transactional business services, JPA mappings, application.yml, or @SpringBootTest implementation; delegate those to spring-boot-engineer."
+    },
+    {
+      "name": "spring-boot-engineer",
+      "path": "/Users/ss105213025/.agents/skills/spring-boot-engineer",
+      "description": "Use this skill whenever the user wants application code or configuration inside a Spring Boot 3.x service changed. This is the default skill for Spring Boot feature delivery. Trigger for building REST endpoints or WebFlux handlers; refactoring controller, service, repository, entity, and DTO layers; Bean Validation and @ControllerAdvice; Spring Data JPA mappings, projections, and transactions; SecurityFilterChain plus OAuth2 or JWT login flows; application.yml, profiles, and @ConfigurationProperties; Actuator and Spring Cloud wiring; and Spring-focused tests such as @SpringBootTest, MockMvc, WebMvcTest, DataJpaTest, and other test slices. Do not use it as the primary skill for JVM tuning, virtual threads, GC or profiling analysis, native image tradeoffs, or Java concurrency architecture; delegate those concerns to java-pro."
+    }
+  ],
+  "overall": {
+    "total_queries": 7,
+    "passed_queries": 7,
+    "failed_queries": 0,
+    "total_runs": 7,
+    "passed_runs": 7
+  },
+  "summary": [
+    {
+      "id": "spring-03",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Add a Spring Data JPA repository, entity mapping, and transactional service method for an invoice approval flow. I also need projections for the read side.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-04",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Write @SpringBootTest and MockMvc coverage for my user controller, plus a DataJpaTest for the repository. I want the test slices chosen correctly.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-05",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Refactor this Spring Boot feature into controller, service, repository, and DTO layers. The API already exists but validation and exception handling are a mess.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-06",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Set up typed application configuration with @ConfigurationProperties and profiles for local, test, and prod. I also want the related application.yml structure cleaned up.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-08",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Implement a WebFlux endpoint and make sure we do not mix blocking repository calls into the reactive path incorrectly.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-09",
+      "expected_skill": "spring-boot-engineer",
+      "query": "I need an OAuth2 login flow in Spring Boot with custom authorities mapping and method security. Please keep the configuration and tests aligned.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    },
+    {
+      "id": "spring-10",
+      "expected_skill": "spring-boot-engineer",
+      "query": "Create a new Spring Boot endpoint for employee onboarding that validates nested request payloads, uses a transactional service, and returns proper HTTP status codes.",
+      "runs": 1,
+      "correct_runs": 1,
+      "pass": true,
+      "first_triggered_skill": "spring-boot-engineer",
+      "triggered_breakdown": {
+        "spring-boot-engineer": 1
+      }
+    }
+  ],
+  "runs": [
+    {
+      "evalId": "spring-03",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-03/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-04",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-04/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-05",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-05/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-06",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-06/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-08",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-08/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-09",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-09/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    },
+    {
+      "evalId": "spring-10",
+      "run": 1,
+      "expectedSkill": "spring-boot-engineer",
+      "triggeredSkill": "spring-boot-engineer",
+      "passed": true,
+      "rawLogPath": "/Users/ss105213025/.agents/skills/java-spring-skill-optimization-workspace/iteration-3-targeted/runs/spring-10/run-1/codex.jsonl (exit 143)",
+      "timedOut": true
+    }
+  ]
+}

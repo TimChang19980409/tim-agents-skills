@@ -1,0 +1,34 @@
+[
+  {
+    "query": "I have a Java 21 batch job that opens thousands of HTTP connections to downstream services. Can you redesign it with virtual threads and explain what could go wrong with ThreadLocal and connection pools?",
+    "should_trigger": true
+  },
+  {
+    "query": "We captured a thread dump and GC logs during a latency spike. Help me figure out whether the main issue is lock contention, allocation churn, or a bad collector choice.",
+    "should_trigger": true
+  },
+  {
+    "query": "Should we keep running this service on HotSpot or move to GraalVM native image? Startup time matters, but we also use reflection-heavy libraries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design the concurrency model for a high-throughput Java event consumer. I need to choose between virtual threads, CompletableFuture orchestration, and a fixed worker pool.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build me a Spring Boot REST API for orders with @RestController, DTO validation, and a proper exception handler.",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a Spring Security 6 SecurityFilterChain with JWT auth, CORS config, and method security.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add a Spring Data JPA repository, entity mapping, and @Transactional service method for this payment flow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write @SpringBootTest and MockMvc tests for my user controller and repository.",
+    "should_trigger": false
+  }
+]

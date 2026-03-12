@@ -1,0 +1,102 @@
+[
+  {
+    "id": "java-01",
+    "expected_skill": "java-pro",
+    "query": "I have a Java 21 batch processor that opens thousands of outbound HTTP calls. Redesign it around virtual threads and explain the ThreadLocal, connection pool, and carrier thread risks before we touch production."
+  },
+  {
+    "id": "java-02",
+    "expected_skill": "java-pro",
+    "query": "We captured GC logs and three thread dumps during a latency spike. I need help deciding whether the real bottleneck is allocation churn, lock contention, or a bad collector setting."
+  },
+  {
+    "id": "java-03",
+    "expected_skill": "java-pro",
+    "query": "Compare HotSpot and GraalVM native image for this internal CLI. Startup time matters, but we also use reflection-heavy libraries and care about build complexity."
+  },
+  {
+    "id": "java-04",
+    "expected_skill": "java-pro",
+    "query": "Design the concurrency model for a high-throughput Java event consumer that does blocking I/O and some CPU-heavy enrichment. I need explicit guidance on executors, backpressure, and cancellation."
+  },
+  {
+    "id": "java-05",
+    "expected_skill": "java-pro",
+    "query": "Review this Java 21 module layout and tell me how to separate platform code, adapters, and core business code without turning it into framework soup."
+  },
+  {
+    "id": "java-06",
+    "expected_skill": "java-pro",
+    "query": "Should we migrate this CompletableFuture-heavy service to structured concurrency, or keep the current async graph? I care about cancellation semantics and debuggability more than elegance."
+  },
+  {
+    "id": "java-07",
+    "expected_skill": "java-pro",
+    "query": "Help me tune a containerized Java service that is CPU-throttled and has ugly p99 latency after warmup. I want a JVM-level diagnosis plan, not generic app advice."
+  },
+  {
+    "id": "java-08",
+    "expected_skill": "java-pro",
+    "query": "I need a JMH benchmark plan for a serialization hot path. Show me how to avoid dead-code elimination and misleading warmup numbers."
+  },
+  {
+    "id": "java-09",
+    "expected_skill": "java-pro",
+    "query": "Our Java service leaks memory slowly under sustained load. Give me a profiling strategy using heap histograms, allocations, and low-overhead production-safe tools."
+  },
+  {
+    "id": "java-10",
+    "expected_skill": "java-pro",
+    "query": "We are deciding between a modular monolith and more deployment units for a Java backend. I want the tradeoffs around runtime boundaries, observability, and failure isolation."
+  },
+  {
+    "id": "spring-01",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Build a Spring Boot REST API for purchase requests with request and response DTOs, Bean Validation, and a ControllerAdvice that returns stable JSON errors."
+  },
+  {
+    "id": "spring-02",
+    "expected_skill": "spring-boot-engineer",
+    "query": "I need a Spring Security 6 SecurityFilterChain with JWT auth, method security, and CORS for a separate frontend app. Keep the wiring idiomatic for Boot 3."
+  },
+  {
+    "id": "spring-03",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Add a Spring Data JPA repository, entity mapping, and transactional service method for an invoice approval flow. I also need projections for the read side."
+  },
+  {
+    "id": "spring-04",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Write @SpringBootTest and MockMvc coverage for my user controller, plus a DataJpaTest for the repository. I want the test slices chosen correctly."
+  },
+  {
+    "id": "spring-05",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Refactor this Spring Boot feature into controller, service, repository, and DTO layers. The API already exists but validation and exception handling are a mess."
+  },
+  {
+    "id": "spring-06",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Set up typed application configuration with @ConfigurationProperties and profiles for local, test, and prod. I also want the related application.yml structure cleaned up."
+  },
+  {
+    "id": "spring-07",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Add Spring Cloud Config client wiring and actuator health endpoints to this Boot service. Focus on the app-level configuration and readiness behavior."
+  },
+  {
+    "id": "spring-08",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Implement a WebFlux endpoint and make sure we do not mix blocking repository calls into the reactive path incorrectly."
+  },
+  {
+    "id": "spring-09",
+    "expected_skill": "spring-boot-engineer",
+    "query": "I need an OAuth2 login flow in Spring Boot with custom authorities mapping and method security. Please keep the configuration and tests aligned."
+  },
+  {
+    "id": "spring-10",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Create a new Spring Boot endpoint for employee onboarding that validates nested request payloads, uses a transactional service, and returns proper HTTP status codes."
+  }
+]

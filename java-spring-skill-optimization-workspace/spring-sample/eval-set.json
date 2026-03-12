@@ -1,0 +1,7 @@
+[
+  {
+    "id": "spring-01",
+    "expected_skill": "spring-boot-engineer",
+    "query": "Build a Spring Boot REST API for purchase requests with request and response DTOs, Bean Validation, and a ControllerAdvice that returns stable JSON errors."
+  }
+]
