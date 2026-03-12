@@ -1,0 +1,88 @@
+{
+  "skill_name": "jasperreports-engineer",
+  "generated_at": "2026-03-12T09:02:08.102Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "subreport-bean-datasource",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28748
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 25811
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "migration-6x-to-7x",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 5,
+        "passed": 5,
+        "tokens": 28079
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.8,
+        "total": 5,
+        "passed": 4,
+        "tokens": 28680
+      },
+      "delta": 0.2
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "unicode-pdf-fonts",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 6,
+        "passed": 6,
+        "tokens": 30977
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 6,
+        "passed": 6,
+        "tokens": 30326
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "json-oom-performance",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 6,
+        "passed": 6,
+        "tokens": 36895
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 6,
+        "passed": 6,
+        "tokens": 30556
+      },
+      "delta": 0
+    }
+  ],
+  "summary": {
+    "comparable_evals": 4,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.95,
+    "with_skill_wins": 1
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "pom.xml",
+    "bytes": 710,
+    "lines": 22
+  },
+  {
+    "path": "production-error.log",
+    "bytes": 565,
+    "lines": 11
+  },
+  {
+    "path": "src/main/java/com/example/report/SalesExportService.java",
+    "bytes": 1300,
+    "lines": 29
+  },
+  {
+    "path": "src/main/resources/reports/sales_json.jrxml",
+    "bytes": 1366,
+    "lines": 30
+  }
+]

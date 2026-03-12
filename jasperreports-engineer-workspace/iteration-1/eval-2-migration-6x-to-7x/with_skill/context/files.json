@@ -1,0 +1,22 @@
+[
+  {
+    "path": "pom.xml",
+    "bytes": 715,
+    "lines": 22
+  },
+  {
+    "path": "src/main/java/com/example/report/LegacyReportLoader.java",
+    "bytes": 690,
+    "lines": 18
+  },
+  {
+    "path": "src/main/resources/reports/sales_legacy.jrxml",
+    "bytes": 519,
+    "lines": 13
+  },
+  {
+    "path": "upgrade-error.log",
+    "bytes": 687,
+    "lines": 11
+  }
+]

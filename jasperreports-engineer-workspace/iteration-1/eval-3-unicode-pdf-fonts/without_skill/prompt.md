@@ -1,0 +1,1 @@
+Read the attached report and runtime files. PDF export fails for Chinese text in production with a JRFontNotFoundException. Diagnose the runtime gap, propose the minimum packaging fix, and explain what to validate after the change. Prefer official JasperReports or Jaspersoft sources.

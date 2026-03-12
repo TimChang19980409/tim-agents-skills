@@ -1,0 +1,1 @@
+Read the attached Spring Boot and JRXML files. The main Jasper report renders, but the line-item subreport is blank. Diagnose the most likely root cause, propose the smallest safe fix, and give validation steps. Prefer official JasperReports or Jaspersoft sources.

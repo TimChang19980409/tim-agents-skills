@@ -1,0 +1,183 @@
+[
+  {
+    "file": ".opencode/skills/jasperreports-engineer/evals/files/json-oom/src/main/resources/reports/sales_json.jrxml",
+    "language": "java",
+    "queryLanguage": "json",
+    "queryText": "orders.items",
+    "parameters": [],
+    "fields": [
+      {
+        "name": "sku",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "region",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "amount",
+        "class": "java.math.BigDecimal"
+      },
+      {
+        "name": "description",
+        "class": "java.lang.String"
+      }
+    ],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  },
+  {
+    "file": ".opencode/skills/jasperreports-engineer/evals/files/migration-7/src/main/resources/reports/sales_legacy.jrxml",
+    "language": "java",
+    "queryLanguage": null,
+    "queryText": "",
+    "parameters": [
+      {
+        "name": "REPORT_TITLE",
+        "class": "java.lang.String"
+      }
+    ],
+    "fields": [],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  },
+  {
+    "file": ".opencode/skills/jasperreports-engineer/evals/files/pdf-fonts/src/main/resources/reports/invoice_zh.jrxml",
+    "language": "java",
+    "queryLanguage": null,
+    "queryText": "",
+    "parameters": [
+      {
+        "name": "CUSTOMER_NAME",
+        "class": "java.lang.String"
+      }
+    ],
+    "fields": [],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [
+      {
+        "fontName": "Noto Sans CJK TC",
+        "pdfFontName": null,
+        "pdfEncoding": "Cp1252",
+        "isPdfEmbedded": null
+      }
+    ],
+    "imports": [],
+    "warnings": []
+  },
+  {
+    "file": ".opencode/skills/jasperreports-engineer/evals/files/subreport-datasource/src/main/resources/reports/invoice_main.jrxml",
+    "language": "java",
+    "queryLanguage": null,
+    "queryText": "",
+    "parameters": [
+      {
+        "name": "SUBREPORT_DIR",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "INVOICE_NO",
+        "class": "java.lang.String"
+      }
+    ],
+    "fields": [
+      {
+        "name": "customerName",
+        "class": "java.lang.String"
+      }
+    ],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [
+      {
+        "expression": "$P{SUBREPORT_DIR} + \"line_items_subreport.jasper\"",
+        "connectionExpression": "$P{REPORT_CONNECTION}",
+        "dataSourceExpression": null,
+        "parameters": []
+      }
+    ],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  },
+  {
+    "file": ".opencode/skills/jasperreports-engineer/evals/files/subreport-datasource/src/main/resources/reports/line_items_subreport.jrxml",
+    "language": "java",
+    "queryLanguage": null,
+    "queryText": "",
+    "parameters": [],
+    "fields": [
+      {
+        "name": "sku",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "quantity",
+        "class": "java.lang.Integer"
+      },
+      {
+        "name": "subtotal",
+        "class": "java.math.BigDecimal"
+      }
+    ],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  },
+  {
+    "file": "src/main/resources/reports/sales_json.jrxml",
+    "language": "java",
+    "queryLanguage": "json",
+    "queryText": "orders.items",
+    "parameters": [],
+    "fields": [
+      {
+        "name": "sku",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "region",
+        "class": "java.lang.String"
+      },
+      {
+        "name": "amount",
+        "class": "java.math.BigDecimal"
+      },
+      {
+        "name": "description",
+        "class": "java.lang.String"
+      }
+    ],
+    "variables": [],
+    "groups": [],
+    "datasets": [],
+    "subreports": [],
+    "components": [],
+    "fonts": [],
+    "imports": [],
+    "warnings": []
+  }
+]

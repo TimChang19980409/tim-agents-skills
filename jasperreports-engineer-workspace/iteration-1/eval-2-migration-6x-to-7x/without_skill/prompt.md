@@ -1,0 +1,1 @@
+Read the attached upgrade files. After moving this app to JasperReports 7.0.1, loading an existing compiled report now fails with an Unable to load template error. Diagnose the likely migration problem, propose the minimum recovery plan, and cite official sources first.

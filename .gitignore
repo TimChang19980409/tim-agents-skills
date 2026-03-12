@@ -2,6 +2,10 @@
 .firecrawl/
 .sisyphus/
 node_modules/
+.idea/
+/jasperreports-engineer-workspace/**/project/
+/jasperreports-engineer-workspace/**/outputs/raw.jsonl
+/jasperreports-engineer-workspace/**/outputs/stderr.log
 /pdf-reader.__preinit_backup/
 !/_retired/pdf-reader.__preinit_backup/
 !/_retired/pdf-reader.__preinit_backup/RETIRED.md

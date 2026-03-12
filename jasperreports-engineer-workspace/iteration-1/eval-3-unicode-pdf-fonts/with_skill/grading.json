@@ -1,0 +1,57 @@
+{
+  "expectations": [
+    {
+      "text": "The answer cites at least one official JasperReports or Jaspersoft source.",
+      "passed": true,
+      "evidence": "Matched official source marker: jasperreports.sourceforge.net"
+    },
+    {
+      "text": "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+      "passed": true,
+      "evidence": "Matched file reference: pom.xml"
+    },
+    {
+      "text": "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+      "passed": true,
+      "evidence": "No JasperReports Server drift detected."
+    },
+    {
+      "text": "The answer recommends packaging a JasperReports font extension or equivalent runtime font bundle.",
+      "passed": true,
+      "evidence": "Matched font packaging term: font extension"
+    },
+    {
+      "text": "The answer mentions Unicode-safe PDF encoding such as Identity-H or pdfEncoding.",
+      "passed": true,
+      "evidence": "Matched encoding term: Identity-H"
+    },
+    {
+      "text": "The answer mentions embedding the font for PDF export portability.",
+      "passed": true,
+      "evidence": "Matched embedding term: isPdfEmbedded"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 0,
+    "errors_encountered": 0,
+    "output_chars": 3983,
+    "transcript_chars": 30929
+  },
+  "timing": {
+    "total_duration_seconds": 77.4
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

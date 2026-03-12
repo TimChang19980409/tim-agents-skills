@@ -1,0 +1,1 @@
+Read the attached report, Java service, and production error log. A JSON-backed Jasper report now causes OutOfMemoryError and is very slow for large exports. Diagnose the highest-probability causes, propose the smallest high-impact improvements, and cite official JasperReports sources first.

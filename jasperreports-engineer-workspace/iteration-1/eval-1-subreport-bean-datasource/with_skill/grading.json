@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "text": "The answer cites at least one official JasperReports or Jaspersoft source.",
+      "passed": true,
+      "evidence": "Matched official source marker: jasperreports.sourceforge.net"
+    },
+    {
+      "text": "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+      "passed": true,
+      "evidence": "Matched file reference: pom.xml"
+    },
+    {
+      "text": "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+      "passed": true,
+      "evidence": "No JasperReports Server drift detected."
+    },
+    {
+      "text": "The answer identifies the subreport datasource or parameter wiring issue.",
+      "passed": true,
+      "evidence": "Matched datasource wiring term: REPORT_CONNECTION"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 0,
+    "errors_encountered": 0,
+    "output_chars": 2710,
+    "transcript_chars": 15492
+  },
+  "timing": {
+    "total_duration_seconds": 31.6
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

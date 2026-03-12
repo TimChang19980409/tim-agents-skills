@@ -1,0 +1,52 @@
+{
+  "expectations": [
+    {
+      "text": "The answer cites at least one official JasperReports or Jaspersoft source.",
+      "passed": false,
+      "evidence": "No official source URL found."
+    },
+    {
+      "text": "The answer grounds the diagnosis in local repo artifacts before proposing a fix.",
+      "passed": true,
+      "evidence": "Matched file reference: pom.xml"
+    },
+    {
+      "text": "The answer stays within JasperReports Library or Studio scope and does not prescribe JasperReports Server.",
+      "passed": true,
+      "evidence": "No JasperReports Server drift detected."
+    },
+    {
+      "text": "The answer recommends recompiling or regenerating templates with the runtime JasperReports version.",
+      "passed": true,
+      "evidence": "Matched recompilation term: recompile"
+    },
+    {
+      "text": "The answer calls out a 6.x to 7.x or stale .jasper version mismatch risk.",
+      "passed": true,
+      "evidence": "Matched migration term: 7.0"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 0,
+    "errors_encountered": 0,
+    "output_chars": 2196,
+    "transcript_chars": 20735
+  },
+  "timing": {
+    "total_duration_seconds": 42
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}
