@@ -7,6 +7,25 @@ description: |
   compatibility, or portability across PostgreSQL, MySQL, MariaDB, SQL Server, and Oracle. Delegate web, security,
   and general application wiring to spring-boot-engineer; JVM tuning and profiling to java-pro; bounded-context and
   aggregate discovery to backend-ddd-architect-spring.
+triggers:
+  - Spring Data JPA
+  - Hibernate 6
+  - Hibernate 7
+  - entity mapping
+  - fetch plan
+  - projection
+  - specification
+  - optimistic locking
+  - pessimistic locking
+  - batching
+  - PostgreSQL
+  - MySQL
+  - MariaDB
+  - SQL Server
+  - Oracle
+role: specialist
+scope: implementation
+output-format: code
 ---
 
 # Spring Persistence Engineer
@@ -24,6 +43,12 @@ Always identify the active compatibility lane before recommending mappings or AP
 
 If the repo uses one lane and the request mentions APIs from the other, call out the mismatch before proposing code.
 If the lane is unclear, inspect `pom.xml`, `build.gradle*`, dependency management, and lockfiles first.
+If no build metadata is present and the prompt does not name a Boot line, say the lane is unknown and avoid guessing a
+Boot or Hibernate minor version. In that case, give the smallest safe recommendation that is valid across both lanes or
+state the assumption explicitly as a risk.
+
+When the prompt mentions Spring Boot `3.5.x` or `4.0.x`, prefer the exact managed-version docs URLs from this skill
+instead of blog posts, source blobs, or guesswork.
 
 ## When To Use This Skill
 
@@ -67,6 +92,7 @@ If the lane is unclear, inspect `pom.xml`, `build.gradle*`, dependency managemen
 - End research-backed responses with `## Sources`.
 - Prefer Spring, Hibernate, and vendor documentation URLs over blog posts.
 - Use fully qualified `https://...` URLs in the final answer, not just document titles or source file paths.
+- Prefer `docs.spring.io`, `docs.hibernate.org`, `jakarta.ee`, and vendor docs over GitHub blobs or release blogs.
 
 ## Reference Guide
 
@@ -104,13 +130,18 @@ Use this exact structure unless the user explicitly asks for another format:
 - Include literal official URLs on separate bullets.
 - Do not cite `Context7`, GitHub source file paths, or vague document titles as the only source.
 
+The first characters of the answer must be the literal heading `## Context`.
+Do not write any sentence, preamble, or narration before that heading.
+Do not say things like "I'll analyze", "Let me", "I loaded the skill", or similar process commentary.
+
 Before sending, scan the final answer:
 
-1. If there is no literal `## Context`, rewrite it.
+1. If the answer does not start with literal `## Context`, rewrite it.
 2. If `## Context` does not name local files, rewrite it.
 3. If there is no literal `https://` URL in `## Sources`, rewrite it.
 4. If the only URLs are GitHub source blobs, rewrite them to docs URLs.
 5. If the answer uses `Context7` as a source, remove it.
+6. If the answer starts with filler such as "I'll analyze" or "Let me", rewrite it.
 
 ## Guardrails
 
@@ -147,6 +178,45 @@ Copy exact docs URLs when they match the task:
 - `https://learn.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver17`
 - `https://docs.oracle.com/en/database/oracle/oracle-database/26/adjsn/json-data-type.html`
 - `https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/SYS_GUID.html`
+
+Do not replace these with GitHub source files, generated javadocs, or blog announcements when the docs URLs above fit.
+
+## Task Checklists
+
+Use the checklist that matches the primary task before sending.
+
+### `lane-and-ids`
+
+- Name the observed build file such as `pom.xml`.
+- State whether the repo is in `lane-boot-3` or `lane-boot-4`.
+- If discussing UUID or key generation, mention the actual entity file names.
+- For Boot lane questions, prefer Boot dependency coordinates URLs over blog posts.
+
+### `json-mapping`
+
+- Name the entity file that owns the JSON-like field.
+- State whether the recommendation is portable JPA, Hibernate-specific, or vendor-specific.
+- Use Boot dependency coordinates plus either Hibernate user guide or vendor JSON docs.
+
+### `transaction-locking`
+
+- Name both the entity and service or repository files inspected.
+- If there is no build file, say the lane is unknown instead of guessing.
+- State whether optimistic or pessimistic locking is the default recommendation and why.
+- Mention `@Version` when optimistic locking is the minimum change.
+- Use the Spring Data JPA locking docs URL in `## Sources`.
+
+### `projection-search`
+
+- Name `AccountRepository.java` or the local repository file explicitly.
+- If the filters are optional and the list shape is smaller than the entity, default to `Specifications + projections`.
+- Use the Spring Data projections and specifications docs URLs in `## Sources`.
+
+### `portability-ledger`
+
+- Name the local requirements file or event-shape note explicitly.
+- Compare at least four vendors when the prompt asks for portability across four.
+- Prefer vendor docs URLs, not ORM docs alone.
 
 ## Example Interactions
 

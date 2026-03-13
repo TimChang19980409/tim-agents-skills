@@ -5,6 +5,20 @@ description: |
   SQL Server, and Oracle. Use when the task is primarily schema-first design, normalization vs denormalization,
   key strategy, constraints, indexes, JSON-vs-relational tradeoffs, temporal modeling, soft delete, audit columns,
   or cross-vendor comparison before application code exists.
+triggers:
+  - schema design
+  - normalization
+  - denormalization
+  - key strategy
+  - foreign key
+  - index design
+  - relational model
+  - RDBMS portability
+  - PostgreSQL
+  - MySQL
+  - MariaDB
+  - SQL Server
+  - Oracle
 ---
 
 # RDBMS Data Modeling
@@ -59,9 +73,12 @@ than Spring application delivery.
 - Official vendor URLs only when the answer depends on database behavior
 - Use literal `https://...` URLs, not document titles or GitHub source file paths
 
+The first characters of the answer must be the literal heading `## Context`.
+Do not write any sentence, preamble, or narration before that heading.
+
 Before sending, scan the final answer:
 
-1. If there is no literal `## Context`, rewrite it.
+1. If the answer does not start with literal `## Context`, rewrite it.
 2. If `## Context` does not name the inspected local notes or schema briefs, rewrite it.
 3. If there is no literal `https://` URL in `## Sources`, rewrite it.
 4. If the answer cites GitHub source paths or `Context7`, replace them with vendor docs URLs.

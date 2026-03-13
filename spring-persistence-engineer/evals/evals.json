@@ -27,8 +27,7 @@
       "expected_output": "The answer should identify the Boot 4 / Hibernate 7.2 lane and discuss JSON mapping or SQL type handling in a way that matches the attached entity and pom.",
       "files": [
         "evals/files/boot4-json-mapping/pom.xml",
-        "evals/files/boot4-json-mapping/src/main/java/com/example/profile/ProfileSettings.java",
-        "evals/files/boot4-json-mapping/src/main/java/com/example/profile/ProfileSettingsRepository.java"
+        "evals/files/boot4-json-mapping/src/main/java/com/example/profile/ProfileSettings.java"
       ],
       "expectations": [
         "The answer cites at least one official Spring, Hibernate, or vendor source.",

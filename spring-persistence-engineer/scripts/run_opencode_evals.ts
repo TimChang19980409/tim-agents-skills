@@ -276,9 +276,30 @@ function resolveRunConfigs(runSet: RunSet): RunConfig[] {
   ];
 }
 
+function shouldCopySkillEntry(sourceRoot: string, absolutePath: string): boolean {
+  const relativePath = relative(sourceRoot, absolutePath).replaceAll("\\", "/");
+  if (relativePath.length === 0) {
+    return true;
+  }
+
+  const topLevel = relativePath.split("/")[0];
+  if (topLevel === "evals" || topLevel.endsWith("-workspace") || topLevel === ".git" || topLevel === "node_modules") {
+    return false;
+  }
+
+  return true;
+}
+
+function copySkillTree(sourceRoot: string, targetRoot: string): void {
+  cpSync(sourceRoot, targetRoot, {
+    recursive: true,
+    filter: (sourcePath) => shouldCopySkillEntry(sourceRoot, sourcePath),
+  });
+}
+
 function stageArchiveSkill(archiveSkillRoot: string, projectDir: string): string {
   const archiveTarget = join(projectDir, ".opencode", "skills", "rdbms-data-modeling");
-  cpSync(archiveSkillRoot, archiveTarget, { recursive: true });
+  copySkillTree(archiveSkillRoot, archiveTarget);
   const archiveEntry = join(archiveTarget, "ARCHIVE.md");
   if (existsSync(archiveEntry)) {
     writeFileSync(join(archiveTarget, "SKILL.md"), readFileSync(archiveEntry, "utf8"), "utf8");
@@ -290,7 +311,7 @@ function stageSkills(skillRoot: string, archiveSkillRoot: string, projectDir: st
   const skillsDir = join(projectDir, ".opencode", "skills");
   ensureDir(skillsDir);
   const coreTarget = join(skillsDir, basename(skillRoot));
-  cpSync(skillRoot, coreTarget, { recursive: true });
+  copySkillTree(skillRoot, coreTarget);
   const staged = [coreTarget];
 
   if (existsSync(archiveSkillRoot) && statSync(archiveSkillRoot).isDirectory()) {
@@ -298,6 +319,23 @@ function stageSkills(skillRoot: string, archiveSkillRoot: string, projectDir: st
   }
 
   return staged;
+}
+
+function writeAgentsFile(projectDir: string): void {
+  const content = `## Skills
+A skill is a set of local instructions to follow that is stored in a \`SKILL.md\` file. Below is the list of skills available in this workspace.
+### Available skills
+- spring-persistence-engineer: Design and implement Spring Data JPA and Hibernate persistence work across Spring Boot 3.5 and 4.0 services. Use when requests involve entity or table modeling, fetch plans, projections, Specifications, locking, batching, schema migration strategy, Hibernate 6.x or 7.x compatibility, or portability across PostgreSQL, MySQL, MariaDB, SQL Server, and Oracle. (file: ${join(projectDir, ".opencode", "skills", "spring-persistence-engineer", "SKILL.md")})
+- rdbms-data-modeling: Deep schema and portability specialist for relational database modeling across PostgreSQL, MySQL, MariaDB, SQL Server, and Oracle. Use when the task is primarily schema-first design, normalization vs denormalization, key strategy, constraints, indexes, JSON-vs-relational tradeoffs, temporal modeling, soft delete, audit columns, or cross-vendor comparison before application code exists. (file: ${join(projectDir, ".opencode", "skills", "rdbms-data-modeling", "SKILL.md")})
+### How to use skills
+- Trigger rules: If the user request clearly matches a skill description shown above, you must use that skill for that turn.
+- If a matching skill defines an output contract, obey it exactly and do not add narration before the first heading.
+- How to use a skill:
+  1) Open its \`SKILL.md\`.
+  2) Read only enough to follow the workflow.
+  3) If \`references/\` exists, load only the files needed for the task.
+`;
+  writeFileSync(join(projectDir, "AGENTS.md"), content, "utf8");
 }
 
 function main(): void {
@@ -351,6 +389,9 @@ function main(): void {
       cpSync(fixtureDir, projectDir, { recursive: true });
 
       const stagedSkills = config.skillEnabled ? stageSkills(options.skillRoot, options.archiveSkillRoot, projectDir) : [];
+      if (config.skillEnabled) {
+        writeAgentsFile(projectDir);
+      }
 
       const stagedFiles = listFiles(projectDir);
       writeJson(join(contextDir, "files.json"), stagedFiles);
@@ -381,10 +422,14 @@ function main(): void {
         return join(projectDir, relativeFromFixture);
       });
 
+      const taskPrompt = config.skillEnabled
+        ? `${evalCase.prompt}\n\nUse any matching local skill in this workspace and follow its response contract exactly.`
+        : evalCase.prompt;
+
       const command = [
         "opencode",
         "run",
-        evalCase.prompt,
+        taskPrompt,
         "--model",
         options.model,
         "--format",
@@ -414,6 +459,7 @@ function main(): void {
         staged_skills: stagedSkills,
         opencode_config: workspaceConfigPath,
         command,
+        task_prompt: taskPrompt,
       };
 
       if (options.prepareOnly) {
