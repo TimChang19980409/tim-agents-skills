@@ -32,4 +32,4 @@ Use this reference when the task is about how Java work is scheduled, isolated, 
 
 ## Things this reference does not cover
 
-Delegate to `spring-boot-engineer` when the main question is Spring MVC/WebFlux controller wiring, `@Async`, Spring scheduling configuration, or other framework-specific assembly.
+Delegate to `spring-boot-engineer` when the main question is Spring MVC/WebFlux controller wiring, `@Async`, Spring scheduling configuration, or other framework-specific assembly. Delegate to `spring-persistence-engineer` when the real question is transaction scope, lock behavior, or database write concurrency.

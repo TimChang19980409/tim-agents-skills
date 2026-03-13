@@ -236,6 +236,15 @@
       "notes": "Storybook + Vite extension."
     },
     {
+      "name": "rdbms-data-modeling",
+      "family": "Data / Database",
+      "status": "archive",
+      "host": null,
+      "storage_path": "_archive/rdbms-data-modeling",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Deep schema and cross-vendor RDBMS modeling reference pack."
+    },
+    {
       "name": "skill-creator",
       "family": "Workflow / Meta / General",
       "status": "core",
@@ -261,6 +270,15 @@
       "storage_path": "spring-boot-engineer",
       "entry_file": "SKILL.md",
       "notes": "Spring Boot implementation specialist with explicit boundary to java-pro."
+    },
+    {
+      "name": "spring-persistence-engineer",
+      "family": "Java / Spring / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "spring-persistence-engineer",
+      "entry_file": "SKILL.md",
+      "notes": "Spring Data JPA and Hibernate persistence host with cross-RDBMS portability guidance."
     },
     {
       "name": "stagehand-aria-e2e",

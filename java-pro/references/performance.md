@@ -40,4 +40,4 @@ Use this reference for JVM, memory, startup, latency, and throughput investigati
 
 ## Things this reference does not cover
 
-Delegate to `spring-boot-engineer` when the performance change is primarily about controller serialization, JPA query wiring, Spring Security filter order, or Spring configuration mistakes.
+Delegate to `spring-boot-engineer` when the performance change is primarily about controller serialization, Spring Security filter order, or Spring configuration mistakes. Delegate to `spring-persistence-engineer` when the bottleneck is mainly JPA query shape, fetch planning, batching, or Hibernate behavior.

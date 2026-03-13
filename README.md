@@ -17,6 +17,7 @@ The machine-readable source of truth is [skills.json](/Users/ss105213025/.agents
 - `skills.json`: status, family, host, and storage metadata
 - `GLOBAL_SKILL_AUDIT_2026-03-11.md`: historical audit memo
 - `GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.tsv`: historical scoring matrix
+- `JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.md`: delta note for the new persistence host split
 
 ## Active core skills
 
@@ -27,6 +28,7 @@ The machine-readable source of truth is [skills.json](/Users/ss105213025/.agents
 | `react-component-designer` | Frontend / React / UI | Reusable component API design specialist |
 | `java-pro` | Java / Spring / Backend | Java platform, concurrency, JVM, and profiling specialist |
 | `jasperreports-engineer` | Java / Spring / Backend | JasperReports Library and Jaspersoft Studio implementation specialist |
+| `spring-persistence-engineer` | Java / Spring / Backend | Spring Data JPA, Hibernate 6/7, and RDBMS portability persistence host |
 | `spring-boot-engineer` | Java / Spring / Backend | Spring Boot application implementation specialist |
 | `backend-ddd-architect-spring` | Java / Spring / Backend | DDD and bounded-context architecture specialist |
 | `stagehand-aria-e2e` | Testing / Browser Automation | Behavior-first browser testing host |
@@ -61,6 +63,7 @@ The machine-readable source of truth is [skills.json](/Users/ss105213025/.agents
 - `book-translation`
 - `coding-teacher`
 - `monorepo-management`
+- `rdbms-data-modeling`
 - `typescript-advanced-types`
 - `developer-growth-analysis`
 
@@ -84,6 +87,7 @@ Active skill-specific requirements:
 - `stagehand-aria-e2e`: `bun install` in [stagehand-aria-e2e](/Users/ss105213025/.agents/skills/stagehand-aria-e2e), plus model/browser credentials as required
 - `obsidian-cli`: installed Obsidian app and `obsidian` CLI, with Obsidian running when needed
 - `jasperreports-engineer`: `bun` for helper scripts and `opencode` for MiniMax-based eval runs
+- `spring-persistence-engineer`: `bun` for helper scripts and `opencode` for MiniMax-based eval runs
 - [scripts/validate-skills.ts](/Users/ss105213025/.agents/skills/scripts/validate-skills.ts): Bun runtime
 
 ## Validation
@@ -96,7 +100,7 @@ bun /Users/ss105213025/.agents/skills/scripts/validate-skills.ts
 
 The validator checks:
 
-- exactly 13 top-level active `SKILL.md` files
+- exactly 14 top-level active `SKILL.md` files
 - `skills.json` consistency
 - no active skill stored as a symlink
 - no `SKILL.md` inside `_archive/` or `_retired/`

@@ -1,5 +1,9 @@
 # Data Access - Spring Data JPA
 
+If the user needs entity design, repository strategy, fetch planning, locking, batching, or Hibernate 6.x / 7.x
+compatibility work, delegate the task to `spring-persistence-engineer` and use this file only for application-layer
+integration once the persistence approach is already settled.
+
 ## JPA Entity Pattern
 
 ```java

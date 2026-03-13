@@ -53,6 +53,7 @@ Work from one shared contract file and produce architecture artifacts that front
 - Map each bounded context to a module or service.
 - Keep layering explicit: `controller`, `application`, `domain`, `infrastructure`.
 - Keep anti-corruption adapter at inbound or outbound integration edges.
+- Hand off ORM mapping, repository strategy, and Hibernate-specific persistence concerns to `spring-persistence-engineer` once the aggregate boundaries are clear.
 
 7. Emit architecture outputs.
 - `architecture/backend-ddd-blueprint.md`
@@ -79,6 +80,7 @@ bun run scripts/generate_context_map_mermaid.ts --input architecture/ddd-contrac
 3. Explain any cross-aggregate transaction as event choreography or saga.
 4. Keep terminology consistent with `ubiquitous_language`.
 5. Produce architecture outputs that are directly actionable for Spring teams.
+6. Avoid embedding Hibernate-specific mapping tactics into the DDD blueprint unless they are invariant-critical.
 
 ## Resources
 

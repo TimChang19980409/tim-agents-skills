@@ -1,6 +1,6 @@
 ---
 name: java-pro
-description: Use this skill for Java 21+ platform work: concurrency models, JVM and GC behavior, profiling, benchmarking, runtime packaging, and Java module or runtime architecture decisions. Trigger when the user is migrating batch jobs or backend runtimes to virtual threads or structured concurrency; choosing between CompletableFuture, executors, and other Java concurrency approaches; diagnosing memory, thread-dump, CPU, startup, latency, or profiling issues; comparing HotSpot with GraalVM native image; or reasoning about module boundaries, modular-monolith tradeoffs, observability, and platform-level design. Do not use it for Spring Boot feature delivery such as REST endpoints, auth flows, transactional business services, JPA mappings, application.yml, or @SpringBootTest implementation; delegate those to spring-boot-engineer.
+description: Use this skill for Java 21+ platform work: concurrency models, JVM and GC behavior, profiling, benchmarking, runtime packaging, and Java module or runtime architecture decisions. Trigger when the user is migrating batch jobs or backend runtimes to virtual threads or structured concurrency; choosing between CompletableFuture, executors, and other Java concurrency approaches; diagnosing memory, thread-dump, CPU, startup, latency, or profiling issues; comparing HotSpot with GraalVM native image; or reasoning about module boundaries, modular-monolith tradeoffs, observability, and platform-level design. Do not use it for Spring Boot feature delivery such as REST endpoints, auth flows, transactional business services, JPA mappings, Hibernate compatibility, application.yml, or @SpringBootTest implementation; delegate those to spring-boot-engineer or spring-persistence-engineer.
 metadata:
   model: opus
 ---
@@ -19,11 +19,11 @@ Use this skill as the Java platform and runtime specialist. It should help with 
 - Designing Java platform architecture, module boundaries, or observability strategy
 - Reviewing Java code for performance, safety, resilience, and maintainability
 
-## Delegate to `spring-boot-engineer` when
+## Delegate to `spring-boot-engineer` or `spring-persistence-engineer` when
 
 - Building or refactoring Spring Boot REST APIs and layered application code
-- Implementing `@RestController`, `@Service`, `@Repository`, DTOs, or validation
-- Writing Spring Data JPA entities, repositories, transactions, or projections
+- Implementing `@RestController`, `@Service`, DTOs, validation, security, or configuration
+- Writing Spring Data JPA entities, repositories, transactions, projections, fetch plans, or Hibernate compatibility changes
 - Configuring Spring Security 6, OAuth2, JWT, CORS, or `SecurityFilterChain`
 - Editing `application.yml`, `@ConfigurationProperties`, Actuator endpoint wiring, or Spring Cloud integration
 - Writing `@SpringBootTest`, MockMvc, WebMvcTest, DataJpaTest, or Spring-focused Testcontainers setups
@@ -35,7 +35,7 @@ Use this skill as the Java platform and runtime specialist. It should help with 
 3. Load only the relevant reference file for that concern.
 4. Recommend the smallest change that improves correctness, operability, or throughput.
 5. Explain tradeoffs and verification steps, especially benchmarks or profiling evidence.
-6. If the work crosses into Spring application implementation, hand off that part to `spring-boot-engineer`.
+6. If the work crosses into Spring application implementation, hand off web and config work to `spring-boot-engineer` and persistence-heavy work to `spring-persistence-engineer`.
 
 ## Reference guide
 
@@ -65,7 +65,7 @@ Load detailed guidance only when needed:
 
 - CRUD endpoint design and HTTP semantics
 - DTO validation and controller exception handling
-- JPA entity/repository implementation details
+- JPA entity/repository implementation details or Hibernate compatibility decisions
 - Spring Security filter chains and auth server wiring
 - Spring configuration properties and profile files
 - Spring Boot test slices and app-context integration tests
@@ -115,7 +115,7 @@ Load detailed guidance only when needed:
 2. Make a recommendation with explicit tradeoffs.
 3. Call out failure modes, measurement strategy, or rollback path.
 4. Prefer verification via profiling, benchmarking, or targeted tests.
-5. Delegate Spring application wiring to `spring-boot-engineer` when relevant.
+5. Delegate Spring application wiring to `spring-boot-engineer` and persistence-heavy mapping or repository work to `spring-persistence-engineer` when relevant.
 
 ## Example interactions
 

@@ -1,0 +1,206 @@
+{
+  "skill_name": "spring-persistence-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "boot3-lane-and-keys",
+      "fixture_dir": "evals/files/boot3-lane-and-keys",
+      "prompt": "Read the attached Boot 3.5 persistence files. The team wants a safer primary-key strategy for new Order and Payment entities without accidentally crossing into Hibernate 7-only guidance. Identify the active compatibility lane, recommend the smallest safe key strategy change, and cite official Spring or Hibernate sources.",
+      "expected_output": "The answer should identify the Boot 3.5 / Hibernate 6.6 lane, ground the recommendation in the pom and entities, and discuss sequence, identity, or UUID tradeoffs without pretending Boot 3 is already on Hibernate 7.",
+      "files": [
+        "evals/files/boot3-lane-and-keys/pom.xml",
+        "evals/files/boot3-lane-and-keys/src/main/java/com/example/order/OrderRecord.java",
+        "evals/files/boot3-lane-and-keys/src/main/java/com/example/payment/PaymentAttempt.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer identifies the Boot 3.5 / Hibernate 6.6 lane.",
+        "The answer discusses identifier strategy tradeoffs for Boot 3 / Hibernate 6."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "boot4-json-mapping",
+      "fixture_dir": "evals/files/boot4-json-mapping",
+      "prompt": "Read the attached Boot 4 persistence files. The team wants to map a flexible settings payload and assumes the old Boot 3 lane rules still apply. Identify the compatibility lane, explain whether Hibernate 7 JSON mapping is in play, and recommend the smallest safe mapping approach with official sources.",
+      "expected_output": "The answer should identify the Boot 4 / Hibernate 7.2 lane and discuss JSON mapping or SQL type handling in a way that matches the attached entity and pom.",
+      "files": [
+        "evals/files/boot4-json-mapping/pom.xml",
+        "evals/files/boot4-json-mapping/src/main/java/com/example/profile/ProfileSettings.java",
+        "evals/files/boot4-json-mapping/src/main/java/com/example/profile/ProfileSettingsRepository.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer identifies the Boot 4 / Hibernate 7.2 lane.",
+        "The answer mentions JSON mapping or SQL type handling for Hibernate 7."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "postgres-jsonb-vs-normalized",
+      "fixture_dir": "evals/files/postgres-jsonb-vs-normalized",
+      "prompt": "Read the attached schema brief and repository code. The team wants to keep per-merchant alert rules in PostgreSQL and is torn between a normalized table set and a jsonb column. Compare the choices, recommend a default, and cite official sources.",
+      "expected_output": "The answer should ground the recommendation in the attached query pattern, mention PostgreSQL jsonb explicitly, and explain when normalization is the safer default.",
+      "files": [
+        "evals/files/postgres-jsonb-vs-normalized/requirements.md",
+        "evals/files/postgres-jsonb-vs-normalized/src/main/java/com/example/alert/MerchantAlertRepository.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer distinguishes PostgreSQL jsonb from a fully normalized design."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "mysql-uuid-storage",
+      "fixture_dir": "evals/files/mysql-uuid-storage",
+      "prompt": "Read the attached MySQL-oriented persistence files. The team wants UUID identifiers for customer sessions but has not decided between binary and text storage. Recommend the storage strategy, explain the portability tradeoff, and cite official sources.",
+      "expected_output": "The answer should mention MySQL explicitly, discuss UUID storage options such as BINARY(16) or CHAR(36), and stay grounded in the attached entity.",
+      "files": [
+        "evals/files/mysql-uuid-storage/requirements.md",
+        "evals/files/mysql-uuid-storage/src/main/java/com/example/session/CustomerSession.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer discusses MySQL UUID storage explicitly."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "mariadb-json-alias",
+      "fixture_dir": "evals/files/mariadb-json-alias",
+      "prompt": "Read the attached MariaDB migration note and entity sketch. The team assumes MariaDB JSON behaves exactly like MySQL JSON. Explain the risk, recommend the safer modeling choice, and cite official sources.",
+      "expected_output": "The answer should call out MariaDB JSON alias behavior and avoid treating MariaDB as identical to MySQL for JSON decisions.",
+      "files": [
+        "evals/files/mariadb-json-alias/notes.md",
+        "evals/files/mariadb-json-alias/src/main/java/com/example/catalog/ProductAttributes.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer calls out MariaDB JSON alias behavior instead of assuming MySQL parity."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "cross-vendor-ledger-design",
+      "fixture_dir": "evals/files/cross-vendor-ledger-design",
+      "prompt": "Use the rdbms-data-modeling skill if it is available. Read the attached ledger requirements and recommend a schema approach that can survive PostgreSQL, SQL Server, and Oracle deployments. Compare at least three vendors, explain identifier and timestamp choices, and cite official sources.",
+      "expected_output": "The answer should make this a portability decision, compare multiple vendors, and discuss identity, sequence, uniqueidentifier, or SYS_GUID tradeoffs with timestamps.",
+      "files": [
+        "evals/files/cross-vendor-ledger-design/requirements.md",
+        "evals/files/cross-vendor-ledger-design/access-patterns.md"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer compares at least three distinct RDBMS vendors.",
+        "The answer discusses SQL Server or Oracle identity and UUID tradeoffs."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "n-plus-one-entitygraph",
+      "fixture_dir": "evals/files/n-plus-one-entitygraph",
+      "prompt": "Read the attached JPA entities and repository. The team sees an N+1 problem on invoice listing and wants the smallest safe fetch-plan fix. Diagnose the likely cause, recommend whether @EntityGraph, join fetch, or projection fits best, and cite official sources.",
+      "expected_output": "The answer should mention a concrete fetch-plan fix, not just say to make the association eager.",
+      "files": [
+        "evals/files/n-plus-one-entitygraph/src/main/java/com/example/invoice/Invoice.java",
+        "evals/files/n-plus-one-entitygraph/src/main/java/com/example/invoice/InvoiceLine.java",
+        "evals/files/n-plus-one-entitygraph/src/main/java/com/example/invoice/InvoiceRepository.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer proposes a fetch-plan fix such as @EntityGraph, join fetch, or projection."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "locking-lost-update",
+      "fixture_dir": "evals/files/locking-lost-update",
+      "prompt": "Read the attached wallet service and entity. Two concurrent balance updates sometimes overwrite each other. Explain whether optimistic or pessimistic locking fits better here, show the minimum persistence change, and cite official sources.",
+      "expected_output": "The answer should mention optimistic or pessimistic locking, transaction boundaries, and the local entity or service code.",
+      "files": [
+        "evals/files/locking-lost-update/src/main/java/com/example/wallet/Wallet.java",
+        "evals/files/locking-lost-update/src/main/java/com/example/wallet/WalletService.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer mentions optimistic or pessimistic locking and a transaction boundary."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "projections-specifications",
+      "fixture_dir": "evals/files/projections-specifications",
+      "prompt": "Read the attached search endpoint note and repository interface. The team has too many almost-identical query methods for admin search. Recommend whether projections, Specifications, or both fit best, explain why, and cite official sources.",
+      "expected_output": "The answer should recommend projections, Specifications, or both in a way that matches the local search use case.",
+      "files": [
+        "evals/files/projections-specifications/requirements.md",
+        "evals/files/projections-specifications/src/main/java/com/example/account/AccountRepository.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer recommends projections, Specifications, or both."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "batching-import",
+      "fixture_dir": "evals/files/batching-import",
+      "prompt": "Read the attached import service and entity mapping. Large imports are slow and memory usage grows during the run. Recommend the smallest high-impact batching changes, including what to do about identity or sequence generation, and cite official sources.",
+      "expected_output": "The answer should discuss batching, flush or clear behavior, and identity or sequence implications.",
+      "files": [
+        "evals/files/batching-import/pom.xml",
+        "evals/files/batching-import/src/main/java/com/example/importer/ProductImportService.java",
+        "evals/files/batching-import/src/main/java/com/example/importer/ProductSnapshot.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer discusses batching and persistence-context hygiene.",
+        "The answer calls out identity or sequence implications for batching."
+      ]
+    },
+    {
+      "id": 11,
+      "name": "soft-delete-audit",
+      "fixture_dir": "evals/files/soft-delete-audit",
+      "prompt": "Read the attached member entity and migration note. The team wants soft delete, auditing columns, and safe rollout without relying on ddl-auto in production. Recommend the persistence design and cite official sources.",
+      "expected_output": "The answer should mention soft delete, auditing, and migration-first rollout strategy grounded in the local note or entity.",
+      "files": [
+        "evals/files/soft-delete-audit/notes.md",
+        "evals/files/soft-delete-audit/src/main/java/com/example/member/MemberRecord.java"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer mentions soft delete, auditing, and migration-first strategy."
+      ]
+    },
+    {
+      "id": 12,
+      "name": "archive-ledger-portability",
+      "fixture_dir": "evals/files/archive-ledger-portability",
+      "prompt": "Use the rdbms-data-modeling skill if it is available. Read the attached requirements for a cross-border settlement ledger and recommend a portable relational model across PostgreSQL, MySQL, SQL Server, and Oracle. Compare the vendors directly, explain the tradeoffs, and cite official sources.",
+      "expected_output": "The answer should frame this as a portability decision, compare at least four vendors, and avoid giving a one-vendor-only answer.",
+      "files": [
+        "evals/files/archive-ledger-portability/requirements.md",
+        "evals/files/archive-ledger-portability/event-shape.md"
+      ],
+      "expectations": [
+        "The answer cites at least one official Spring, Hibernate, or vendor source.",
+        "The answer grounds the recommendation in local repo artifacts before proposing a fix.",
+        "The answer compares at least four distinct RDBMS vendors.",
+        "The answer frames the result as a portability decision rather than one-vendor syntax."
+      ]
+    }
+  ]
+}

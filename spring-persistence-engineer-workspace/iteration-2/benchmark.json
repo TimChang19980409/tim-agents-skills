@@ -1,0 +1,101 @@
+{
+  "skill_name": "spring-persistence-engineer",
+  "generated_at": "2026-03-13T03:37:29.275Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "boot3-lane-and-keys",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 29420
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27469
+      },
+      "delta": -0.25
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "boot4-json-mapping",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 31519
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 30790
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 8,
+      "eval_name": "locking-lost-update",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 28883
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 31165
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 9,
+      "eval_name": "projections-specifications",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 28266
+      },
+      "without_skill": null,
+      "delta": null
+    },
+    {
+      "eval_id": 12,
+      "eval_name": "archive-ledger-portability",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 29403
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28482
+      },
+      "delta": -0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 4,
+    "with_skill_average_pass_rate": 0.7292,
+    "without_skill_average_pass_rate": 0.8542,
+    "with_skill_wins": 0
+  }
+}

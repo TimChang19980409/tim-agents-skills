@@ -30,4 +30,4 @@ Use this reference when the task is about Java module boundaries, runtime archit
 
 ## Things this reference does not cover
 
-Delegate to `spring-boot-engineer` when the user needs concrete Spring Boot project assembly such as controllers, repositories, security config, or configuration properties. Delegate to a DDD-specific skill when the question is primarily about bounded contexts, aggregates, or context mapping.
+Delegate to `spring-boot-engineer` when the user needs concrete Spring Boot project assembly such as controllers, security config, or configuration properties. Delegate to `spring-persistence-engineer` when the decision is primarily about repositories, entity mapping, or cross-RDBMS persistence tradeoffs. Delegate to a DDD-specific skill when the question is primarily about bounded contexts, aggregates, or context mapping.
