@@ -5,6 +5,12 @@ description: Master monorepo management with Turborepo, Nx, and pnpm workspaces 
 
 # Monorepo Management
 
+## Extension Metadata
+
+- Host owner: `skill-creator`
+- Load when: Load when the user explicitly needs archived Turborepo/Nx monorepo guidance and accepts that it may need freshness review.
+
+
 Build efficient, scalable monorepos that enable code sharing, consistent tooling, and atomic changes across multiple packages and applications.
 
 ## When to Use This Skill

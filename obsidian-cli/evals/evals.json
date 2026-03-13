@@ -1,0 +1,102 @@
+{
+  "skill_name": "obsidian-cli",
+  "evals": [
+    {
+      "id": 1,
+      "name": "vault-ops-note-update",
+      "prompt": "Start with `Selected: <playbook or decision>`. Give the exact Obsidian CLI commands to read a note, append a task, and keep the file from opening.",
+      "expected_output": "Selects vault-ops and provides concrete obsidian commands.",
+      "fixture_dir": "evals/files/vault-ops-note-update",
+      "files": [
+        "evals/files/vault-ops-note-update/request.md"
+      ],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: vault-ops",
+        "contains:obsidian",
+        "containsAny:read|append",
+        "contains:silent"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "plugin-debug-loop",
+      "prompt": "Start with `Selected: <playbook or decision>`. Outline the smallest command loop to reload the plugin, check runtime errors, and capture evidence.",
+      "expected_output": "Selects plugin-debug and uses reload plus debug commands.",
+      "fixture_dir": "evals/files/plugin-debug-loop",
+      "files": [
+        "evals/files/plugin-debug-loop/request.md"
+      ],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: plugin-debug",
+        "containsAny:plugin:reload|dev:errors",
+        "containsAny:dev:screenshot|dev:dom|dev:console"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "dom-inspect-theme",
+      "prompt": "Start with `Selected: <playbook or decision>`. Recommend the exact command to inspect the workspace leaf text and one CSS value for the target selector.",
+      "expected_output": "Selects dom-inspect and uses DOM or CSS inspection commands.",
+      "fixture_dir": "evals/files/dom-inspect-theme",
+      "files": [
+        "evals/files/dom-inspect-theme/request.md"
+      ],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: dom-inspect",
+        "containsAny:dev:dom|dev:css",
+        "containsAny:selector=|workspace-leaf"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "property-task-management",
+      "prompt": "Start with `Selected: <playbook or decision>`. Give the exact commands to update a note status property and append a daily task.",
+      "expected_output": "Selects property-task-management and uses property or daily-note commands.",
+      "fixture_dir": "evals/files/property-task-management",
+      "files": [
+        "evals/files/property-task-management/request.md"
+      ],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: property-task-management",
+        "containsAny:property:set|property set|daily:append|task add|tasks",
+        "contains:obsidian"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "choose-surface-bases",
+      "prompt": "Start with `Selected: choose-obsidian-surface`. This is a routing-only decision. Do not create the `.base` file. Use the router id in the `Selected:` line, not the downstream skill name. Decide which surface should own this request: \"Create a `.base` file with filters, formulas, and a card view for reading notes.\" After the `Selected:` line, add one short sentence naming the downstream surface and why `.base` authoring changes the choice.",
+      "expected_output": "Selects the choose-obsidian-surface guide and routes to obsidian-bases.",
+      "fixture_dir": "evals/files/choose-surface-bases",
+      "files": [
+        "evals/files/choose-surface-bases/request.md"
+      ],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: choose-obsidian-surface",
+        "contains:obsidian-bases",
+        "notContains:pdf-reader"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "handoff-pdf-reader",
+      "prompt": "Start with `Selected: handoff-to-pdf-reader`. This is a routing-only decision. Use the router id in the `Selected:` line, not the downstream skill name. Do not attempt to open a real PDF file. Decide the right surface for this request: \"Extract the tables from an attached PDF, OCR the scanned pages, and summarize by page.\" After the `Selected:` line, add one short sentence that mentions OCR, page extraction, or structured JSON output.",
+      "expected_output": "Selects the handoff-to-pdf-reader guide and delegates to pdf-reader.",
+      "fixture_dir": "evals/files/handoff-pdf-reader",
+      "files": [
+        "evals/files/handoff-pdf-reader/request.md"
+      ],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: handoff-to-pdf-reader",
+        "contains:pdf-reader",
+        "containsAny:OCR|page|JSON|extract"
+      ]
+    }
+  ]
+}

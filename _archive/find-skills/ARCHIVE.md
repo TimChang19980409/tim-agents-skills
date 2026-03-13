@@ -5,6 +5,12 @@ description: Helps users discover and install agent skills when they ask questio
 
 # Find Skills
 
+## Extension Metadata
+
+- Host owner: `firecrawl`
+- Load when: Load when the user is asking whether a skill exists or wants to discover/install capabilities.
+
+
 This skill helps you discover and install skills from the open agent skills ecosystem.
 
 ## When to Use This Skill

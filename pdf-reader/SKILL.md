@@ -1,9 +1,18 @@
 ---
 name: pdf-reader
 description: Read and summarize PDF text and image content with Bun. Use this skill when users need page extraction, OCR fallback for scanned PDFs, section-focused reading, or per-page JSON output for token planning.
+metadata:
+  framework_role: specialist
+  execution_mode: inline
 ---
 
 # PDF Reader
+
+Use this skill as the PDF/OCR specialist. When an Obsidian task is really about extracting text or structure from a PDF, accept the handoff from `obsidian-cli` instead of routing it through vault commands.
+
+Decision guide:
+
+- [references/decisions/obsidian-handoff.md](/Users/ss105213025/.agents/skills/pdf-reader/references/decisions/obsidian-handoff.md)
 
 ## Quick Start
 
@@ -46,6 +55,7 @@ bun ~/.agents/skills/pdf-reader/scripts/read-pdf.ts --help
 ## Usage
 
 - Use this skill for text-first PDFs (reports, contracts, manuals, exported invoices) and scanned PDFs.
+- Accept handoff from `obsidian-cli` when the task is extraction, OCR, or per-page JSON rather than vault mutation.
 - Prefer focused reads with `--pages` before full reads to reduce token cost and improve relevance.
 - Ask for target sections (for example, "only budget table pages") and convert them into `--pages` ranges.
 - Use `--json` when you need deterministic post-processing or batching.

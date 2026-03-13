@@ -5,6 +5,12 @@ description: Master TypeScript's advanced type system including generics, condit
 
 # TypeScript Advanced Types
 
+## Extension Metadata
+
+- Host owner: `skill-creator`
+- Load when: Load when the user explicitly wants deep TypeScript type-system guidance beyond the active policy layer.
+
+
 Comprehensive guidance for mastering TypeScript's advanced type system including generics, conditional types, mapped types, template literal types, and utility types for building robust, type-safe applications.
 
 ## When to Use This Skill

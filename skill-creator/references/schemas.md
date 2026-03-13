@@ -17,9 +17,11 @@ Defines the evals for a skill. Located at `evals/evals.json` within the skill di
       "prompt": "User's example prompt",
       "expected_output": "Description of expected result",
       "files": ["evals/files/sample1.pdf"],
+      "fixture_dir": "evals/files/sample-fixture",
+      "support_skills": ["pdf-reader"],
       "expectations": [
-        "The output includes X",
-        "The skill used script Y"
+        "contains:Selected: vault-ops",
+        "containsAny:pdf-reader|obsidian-cli"
       ]
     }
   ]
@@ -32,7 +34,17 @@ Defines the evals for a skill. Located at `evals/evals.json` within the skill di
 - `evals[].prompt`: The task to execute
 - `evals[].expected_output`: Human-readable description of success
 - `evals[].files`: Optional list of input file paths (relative to skill root)
+- `evals[].fixture_dir`: Optional fixture directory copied into the benchmark workspace
+- `evals[].support_skills`: Optional extra skills to stage alongside the primary skill
 - `evals[].expectations`: List of verifiable statements
+
+For deterministic OpenCode grading, `expectations` may use these prefixes:
+
+- `contains:<text>`
+- `notContains:<text>`
+- `containsAny:<text>|<text>`
+- `containsAll:<text>|<text>`
+- `regex:<pattern>`
 
 ---
 

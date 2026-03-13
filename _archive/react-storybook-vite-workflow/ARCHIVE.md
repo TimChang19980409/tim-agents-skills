@@ -5,6 +5,12 @@ description: Implement and optimize React component development workflow with St
 
 # React Storybook Vite Workflow
 
+## Extension Metadata
+
+- Host owner: `frontend-dev-guidelines`
+- Load when: Load when the task is specifically Storybook + Vite setup, migration, or story quality gates.
+
+
 ## Overview
 
 Set up and standardize Storybook on top of Vite for React projects. Keep Storybook config aligned with app Vite config and enforce story quality as component contracts.

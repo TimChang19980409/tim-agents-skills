@@ -5,6 +5,12 @@ description: Create and edit Obsidian Bases (.base files) with views, filters, f
 
 # Obsidian Bases Skill
 
+## Extension Metadata
+
+- Host owner: `obsidian-cli`
+- Load when: Load when the task edits `.base` files, formulas, filters, views, or Bases schemas.
+
+
 ## Workflow
 
 1. **Create the file**: Create a `.base` file in the vault with valid YAML content

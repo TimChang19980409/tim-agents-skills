@@ -10,6 +10,12 @@ description: |
 
 # Developer Growth Analysis
 
+## Extension Metadata
+
+- Host owner: `skill-creator`
+- Load when: Load when the user wants an explicit developer-growth report or coaching-style delivery artifact.
+
+
 This skill provides personalized feedback on your recent coding work by analyzing your Codex chat interactions and identifying patterns that reveal strengths and areas for growth.
 
 ## When to Use This Skill

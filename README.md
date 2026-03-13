@@ -1,6 +1,6 @@
 # Tim Agent Skills
 
-This repository now uses a `Core + Archive` portfolio model.
+This repository now uses a `Core + Archive` portfolio model with a framework layer on top.
 
 - `core`: top-level skills with active `SKILL.md` entrypoints
 - `merge`: preserved skills whose trigger surface has been folded into a core host
@@ -9,12 +9,24 @@ This repository now uses a `Core + Archive` portfolio model.
 
 The machine-readable source of truth is [skills.json](/Users/ss105213025/.agents/skills/skills.json). Run [scripts/validate-skills.ts](/Users/ss105213025/.agents/skills/scripts/validate-skills.ts) after any structural change.
 
+The framework layer adds these concepts:
+
+- `role`: `host`, `specialist`, `policy`, `utility`, or `extension`
+- `execution_mode`: `inline`, `manual`, or `forked`
+- `task playbooks`: `references/tasks/*.md`
+- `decision guides`: `references/decisions/*.md`
+- `archive extensions`: archived packs owned by a host and loaded explicitly
+
+See [AGENT_SKILL_FRAMEWORK.md](/Users/ss105213025/.agents/skills/AGENT_SKILL_FRAMEWORK.md) for the full framework contract.
+
 ## Portfolio layout
 
 - Top-level `*/SKILL.md`: the active core roster only
 - `_archive/<skill>/ARCHIVE.md`: preserved non-core skills, including merged sources
 - `_retired/<skill>/RETIRED.md`: retired skills and backup artifacts
 - `skills.json`: status, family, host, and storage metadata
+- `references/tasks/*.md`: task-oriented playbooks owned by a host
+- `references/decisions/*.md`: decision-oriented guides owned by a host
 - `GLOBAL_SKILL_AUDIT_2026-03-11.md`: historical audit memo
 - `GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.tsv`: historical scoring matrix
 - `JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.md`: delta note for the new persistence host split
@@ -102,7 +114,11 @@ The validator checks:
 
 - exactly 14 top-level active `SKILL.md` files
 - `skills.json` consistency
+- `skills.json` framework schema (`schema_version: 2`, roles, execution modes, playbook paths)
 - no active skill stored as a symlink
+- core `SKILL.md` files stay within the router-size limit
+- core host skills declare task playbooks, decision guides, and eval coverage
+- archive extensions declare host ownership in both `skills.json` and `ARCHIVE.md`
 - no `SKILL.md` inside `_archive/` or `_retired/`
 - valid `merge -> core host` relationships
 
@@ -113,3 +129,5 @@ The validator checks:
 3. Archived skills must use `ARCHIVE.md`; retired skills must use `RETIRED.md`.
 4. Prefer vendored content over symlinked skills.
 5. If a change alters trigger boundaries, update both the relevant skill file and the audit metadata.
+6. Only `role=host` skills should own a broad trigger surface; put deep or narrow guidance in playbooks, decision guides, or archive extensions.
+7. Commit compact benchmark summaries, not raw OpenCode transcripts or staged project copies.

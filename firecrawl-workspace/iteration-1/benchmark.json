@@ -1,0 +1,126 @@
+{
+  "skill_name": "firecrawl",
+  "generated_at": "2026-03-13T09:12:32.418Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "search-react-docs",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 29268
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26742
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "scrape-one-page",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 26080
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 24460
+      },
+      "delta": 0.3333
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "map-docs-site",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26054
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25038
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "verify-current-facts",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26931
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 24968
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "when-to-browse-local-task",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 25123
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.3333333333333333,
+        "total": 3,
+        "passed": 1,
+        "tokens": 25446
+      },
+      "delta": 0.3333
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "source-priority-tech-docs",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26048
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 24607
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 6,
+    "with_skill_average_pass_rate": 0.9028,
+    "without_skill_average_pass_rate": 0.625,
+    "with_skill_wins": 5
+  }
+}

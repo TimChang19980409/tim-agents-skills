@@ -5,6 +5,12 @@ description: React performance optimization guidelines from Mastra Engineering. 
 
 # React Best Practices
 
+## Extension Metadata
+
+- Host owner: `frontend-dev-guidelines`
+- Load when: Load when a frontend task is mostly about React performance heuristics and render/bundle optimization patterns.
+
+
 ## Overview
 
 Comprehensive performance optimization guide for React applications, containing 12 rules across 6 categories. Rules are prioritized by impact to guide automated refactoring and code generation.

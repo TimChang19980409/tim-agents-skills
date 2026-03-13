@@ -9,6 +9,12 @@ metadata:
 
 # Web Interface Guidelines
 
+## Extension Metadata
+
+- Host owner: `frontend-dev-guidelines`
+- Load when: Load when the task is specifically a UI/accessibility review against archived guideline checklists.
+
+
 Review files for compliance with Web Interface Guidelines.
 
 ## How It Works

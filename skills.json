@@ -1,4 +1,10 @@
 {
+  "schema_version": 2,
+  "framework": {
+    "name": "Core + Archive + Host Playbooks",
+    "canonical_root": "~/.agents/skills",
+    "portability": "portable-first"
+  },
   "skills": [
     {
       "name": "backend-ddd-architect-spring",
@@ -7,16 +13,42 @@
       "host": null,
       "storage_path": "backend-ddd-architect-spring",
       "entry_file": "SKILL.md",
-      "notes": "Architecture-level DDD specialty."
+      "notes": "Architecture-level DDD specialty.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "bounded context design",
+        "aggregate modeling",
+        "domain invariants",
+        "context mapping"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [
+        "spring-boot-engineer",
+        "spring-persistence-engineer"
+      ],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "book-translation",
       "family": "Obsidian / Knowledge",
       "status": "archive",
-      "host": null,
+      "host": "obsidian-cli",
       "storage_path": "_archive/book-translation",
       "entry_file": "ARCHIVE.md",
-      "notes": "Project-specific translation workflow."
+      "notes": "Project-specific translation workflow.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "bun-ts-scripting-policy",
@@ -25,25 +57,57 @@
       "host": null,
       "storage_path": "bun-ts-scripting-policy",
       "entry_file": "SKILL.md",
-      "notes": "Default script policy for this portfolio."
+      "notes": "Default script policy for this portfolio.",
+      "role": "policy",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "bun scripts",
+        "typescript cli",
+        "codegen policy",
+        "script migration"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "coding-teacher",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": null,
+      "host": "skill-creator",
       "storage_path": "_archive/coding-teacher",
       "entry_file": "ARCHIVE.md",
-      "notes": "Useful teaching mode, not part of the active default roster."
+      "notes": "Useful teaching mode, not part of the active default roster.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "context7-auto-research",
       "family": "Research / Web",
       "status": "archive",
-      "host": null,
+      "host": "firecrawl",
       "storage_path": "_archive/context7-auto-research",
       "entry_file": "ARCHIVE.md",
-      "notes": "Official-doc extension kept outside the active trigger surface."
+      "notes": "Official-doc extension kept outside the active trigger surface.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "defuddle",
@@ -52,34 +116,70 @@
       "host": null,
       "storage_path": "_retired/defuddle",
       "entry_file": "RETIRED.md",
-      "notes": "Retired because Firecrawl now covers clean main-content extraction."
+      "notes": "Retired because Firecrawl now covers clean main-content extraction.",
+      "role": null,
+      "execution_mode": null,
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "developer-growth-analysis",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": null,
+      "host": "skill-creator",
       "storage_path": "_archive/developer-growth-analysis",
       "entry_file": "ARCHIVE.md",
-      "notes": "Specialized workflow with external delivery dependencies."
+      "notes": "Specialized workflow with external delivery dependencies.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "e2e-tests-studio",
       "family": "Testing / Browser Automation",
       "status": "archive",
-      "host": null,
+      "host": "stagehand-aria-e2e",
       "storage_path": "_archive/e2e-tests-studio",
       "entry_file": "ARCHIVE.md",
-      "notes": "Repo-specific Playwright extension."
+      "notes": "Repo-specific Playwright extension.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "find-skills",
       "family": "Research / Web",
       "status": "archive",
-      "host": null,
+      "host": "firecrawl",
       "storage_path": "_archive/find-skills",
       "entry_file": "ARCHIVE.md",
-      "notes": "Secondary discovery helper."
+      "notes": "Secondary discovery helper.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "firecrawl",
@@ -88,7 +188,32 @@
       "host": null,
       "storage_path": "firecrawl",
       "entry_file": "SKILL.md",
-      "notes": "Primary host for live web content and current facts."
+      "notes": "Primary host for live web content and current facts.",
+      "role": "host",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "web search",
+        "scrape page",
+        "map site",
+        "verify current facts"
+      ],
+      "task_playbooks": [
+        "references/tasks/search.md",
+        "references/tasks/scrape.md",
+        "references/tasks/map.md",
+        "references/tasks/verify-current-facts.md"
+      ],
+      "decision_guides": [
+        "references/decisions/when-to-browse.md",
+        "references/decisions/source-priority.md"
+      ],
+      "archive_extensions": [
+        "context7-auto-research",
+        "find-skills"
+      ],
+      "delegates_to": [],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first"
     },
     {
       "name": "frontend-dev-guidelines",
@@ -97,7 +222,43 @@
       "host": null,
       "storage_path": "frontend-dev-guidelines",
       "entry_file": "SKILL.md",
-      "notes": "Primary frontend implementation and review host."
+      "notes": "Primary frontend implementation and review host.",
+      "role": "host",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "react build",
+        "frontend refactor",
+        "ui review",
+        "accessibility audit",
+        "performance review"
+      ],
+      "task_playbooks": [
+        "references/tasks/build.md",
+        "references/tasks/refactor.md",
+        "references/tasks/review.md",
+        "references/tasks/accessibility-audit.md",
+        "references/tasks/performance-review.md"
+      ],
+      "decision_guides": [
+        "references/decisions/component-boundaries.md",
+        "references/decisions/delivery-surface.md"
+      ],
+      "archive_extensions": [
+        "react-best-practices",
+        "vercel-react-best-practices",
+        "web-design-guidelines",
+        "react-storybook-vite-workflow",
+        "ladle-component-workflow",
+        "tailwind-best-practices",
+        "solidjs-patterns",
+        "ui-ux-pro-max"
+      ],
+      "delegates_to": [
+        "react-component-designer",
+        "stagehand-aria-e2e"
+      ],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first"
     },
     {
       "name": "java-pro",
@@ -106,7 +267,21 @@
       "host": null,
       "storage_path": "java-pro",
       "entry_file": "SKILL.md",
-      "notes": "Java platform and JVM specialist."
+      "notes": "Java platform and JVM specialist.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "virtual threads migration",
+        "heap dump profiling",
+        "structured concurrency",
+        "graalvm native image"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "jasperreports-engineer",
@@ -115,43 +290,93 @@
       "host": null,
       "storage_path": "jasperreports-engineer",
       "entry_file": "SKILL.md",
-      "notes": "JasperReports Library and Jaspersoft Studio implementation specialist."
+      "notes": "JasperReports Library and Jaspersoft Studio implementation specialist.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "jrxml troubleshooting",
+        "jasper export",
+        "subreports",
+        "jaspersoft migration"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first"
     },
     {
       "name": "json-canvas",
       "family": "Obsidian / Knowledge",
       "status": "archive",
-      "host": null,
+      "host": "obsidian-cli",
       "storage_path": "_archive/json-canvas",
       "entry_file": "ARCHIVE.md",
-      "notes": "Format-specific Obsidian extension."
+      "notes": "Format-specific Obsidian extension.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "ladle-component-workflow",
       "family": "Frontend / React / UI",
       "status": "archive",
-      "host": null,
+      "host": "frontend-dev-guidelines",
       "storage_path": "_archive/ladle-component-workflow",
       "entry_file": "ARCHIVE.md",
-      "notes": "Niche component workbench workflow."
+      "notes": "Niche component workbench workflow.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "monorepo-management",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": null,
+      "host": "skill-creator",
       "storage_path": "_archive/monorepo-management",
       "entry_file": "ARCHIVE.md",
-      "notes": "Archived until refreshed against current tooling."
+      "notes": "Archived until refreshed against current tooling.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "obsidian-bases",
       "family": "Obsidian / Knowledge",
       "status": "archive",
-      "host": null,
+      "host": "obsidian-cli",
       "storage_path": "_archive/obsidian-bases",
       "entry_file": "ARCHIVE.md",
-      "notes": "Specialist Bases extension."
+      "notes": "Specialist Bases extension.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "obsidian-cli",
@@ -160,16 +385,54 @@
       "host": null,
       "storage_path": "obsidian-cli",
       "entry_file": "SKILL.md",
-      "notes": "Operational host for vault workflows and plugin debugging."
+      "notes": "Operational host for vault workflows and plugin debugging.",
+      "role": "host",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "obsidian daily note cli",
+        "obsidian plugin:reload",
+        "obsidian dev:dom selector",
+        "obsidian property:set"
+      ],
+      "task_playbooks": [
+        "references/tasks/vault-ops.md",
+        "references/tasks/plugin-debug.md",
+        "references/tasks/dom-inspect.md",
+        "references/tasks/property-task-management.md"
+      ],
+      "decision_guides": [
+        "references/decisions/choose-obsidian-surface.md",
+        "references/decisions/handoff-to-pdf-reader.md"
+      ],
+      "archive_extensions": [
+        "obsidian-markdown",
+        "obsidian-bases",
+        "json-canvas",
+        "book-translation"
+      ],
+      "delegates_to": [
+        "pdf-reader"
+      ],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first"
     },
     {
       "name": "obsidian-markdown",
       "family": "Obsidian / Knowledge",
       "status": "archive",
-      "host": null,
+      "host": "obsidian-cli",
       "storage_path": "_archive/obsidian-markdown",
       "entry_file": "ARCHIVE.md",
-      "notes": "Syntax specialist kept outside the active layer."
+      "notes": "Syntax specialist kept outside the active layer.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "opencode-configurator",
@@ -178,7 +441,21 @@
       "host": null,
       "storage_path": "opencode-configurator",
       "entry_file": "SKILL.md",
-      "notes": "Focused OpenCode configuration specialist."
+      "notes": "Focused OpenCode configuration specialist.",
+      "role": "utility",
+      "execution_mode": "manual",
+      "intent_tags": [
+        "opencode.json model config",
+        "oh-my-opencode permissions",
+        "OpenCode MCP server config",
+        ".opencode agent setup"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "pdf-reader",
@@ -187,7 +464,23 @@
       "host": null,
       "storage_path": "pdf-reader",
       "entry_file": "SKILL.md",
-      "notes": "Distinct PDF/OCR ingestion skill."
+      "notes": "Distinct PDF/OCR ingestion skill.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "OCR scanned PDF",
+        "per-page JSON output",
+        "PDF page extraction",
+        "tesseract OCR fallback"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [
+        "references/decisions/obsidian-handoff.md"
+      ],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first"
     },
     {
       "name": "pdf-reader.__preinit_backup",
@@ -196,16 +489,34 @@
       "host": null,
       "storage_path": "_retired/pdf-reader.__preinit_backup",
       "entry_file": "RETIRED.md",
-      "notes": "Backup artifact removed from discovery."
+      "notes": "Backup artifact removed from discovery.",
+      "role": null,
+      "execution_mode": null,
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "pebble-official-best-practices",
       "family": "Java / Spring / Backend",
       "status": "archive",
-      "host": null,
+      "host": "spring-boot-engineer",
       "storage_path": "_archive/pebble-official-best-practices",
       "entry_file": "ARCHIVE.md",
-      "notes": "Valid niche extension for Pebble."
+      "notes": "Valid niche extension for Pebble.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "react-best-practices",
@@ -214,7 +525,16 @@
       "host": "frontend-dev-guidelines",
       "storage_path": "_archive/react-best-practices",
       "entry_file": "ARCHIVE.md",
-      "notes": "Merged into frontend-dev-guidelines as a React performance reference pack."
+      "notes": "Merged into frontend-dev-guidelines as a React performance reference pack.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "react-component-designer",
@@ -224,25 +544,57 @@
       "storage_path": "react-component-designer",
       "entry_file": "SKILL.md",
       "notes": "Reusable component API design specialist.",
-      "vendored_from": "/Users/ss105213025/.codex/skills/react-component-designer"
+      "vendored_from": "/Users/ss105213025/.codex/skills/react-component-designer",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "component api design",
+        "compound components",
+        "headless patterns",
+        "controlled vs uncontrolled"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "react-storybook-vite-workflow",
       "family": "Frontend / React / UI",
       "status": "archive",
-      "host": null,
+      "host": "frontend-dev-guidelines",
       "storage_path": "_archive/react-storybook-vite-workflow",
       "entry_file": "ARCHIVE.md",
-      "notes": "Storybook + Vite extension."
+      "notes": "Storybook + Vite extension.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "rdbms-data-modeling",
       "family": "Data / Database",
       "status": "archive",
-      "host": null,
+      "host": "spring-persistence-engineer",
       "storage_path": "_archive/rdbms-data-modeling",
       "entry_file": "ARCHIVE.md",
-      "notes": "Deep schema and cross-vendor RDBMS modeling reference pack."
+      "notes": "Deep schema and cross-vendor RDBMS modeling reference pack.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "skill-creator",
@@ -251,16 +603,39 @@
       "host": null,
       "storage_path": "skill-creator",
       "entry_file": "SKILL.md",
-      "notes": "Meta-skill for creating, tuning, and evaluating skills."
+      "notes": "Meta-skill for creating, tuning, and evaluating skills.",
+      "role": "utility",
+      "execution_mode": "manual",
+      "intent_tags": [
+        "create a new skill",
+        "tune skill description",
+        "evals/evals.json benchmark",
+        "skill trigger benchmark"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "solidjs-patterns",
       "family": "Frontend / React / UI",
       "status": "archive",
-      "host": null,
+      "host": "frontend-dev-guidelines",
       "storage_path": "_archive/solidjs-patterns",
       "entry_file": "ARCHIVE.md",
-      "notes": "Distinct but niche SolidJS extension."
+      "notes": "Distinct but niche SolidJS extension.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "spring-boot-engineer",
@@ -269,7 +644,21 @@
       "host": null,
       "storage_path": "spring-boot-engineer",
       "entry_file": "SKILL.md",
-      "notes": "Spring Boot implementation specialist with explicit boundary to java-pro."
+      "notes": "Spring Boot implementation specialist with explicit boundary to java-pro.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "SecurityFilterChain configuration",
+        "application.yml setup",
+        "@SpringBootTest slice tests",
+        "Spring REST endpoint implementation"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "spring-persistence-engineer",
@@ -278,7 +667,25 @@
       "host": null,
       "storage_path": "spring-persistence-engineer",
       "entry_file": "SKILL.md",
-      "notes": "Spring Data JPA and Hibernate persistence host with cross-RDBMS portability guidance."
+      "notes": "Spring Data JPA and Hibernate persistence host with cross-RDBMS portability guidance.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "JPA entity mapping",
+        "@EntityGraph fetch plan",
+        "Hibernate 7 compatibility",
+        "optimistic locking"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [
+        "rdbms-data-modeling"
+      ],
+      "delegates_to": [
+        "backend-ddd-architect-spring"
+      ],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first"
     },
     {
       "name": "stagehand-aria-e2e",
@@ -287,34 +694,75 @@
       "host": null,
       "storage_path": "stagehand-aria-e2e",
       "entry_file": "SKILL.md",
-      "notes": "Behavior-first browser testing host."
+      "notes": "Behavior-first browser testing host.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "Playwright ARIA snapshot",
+        "Stagehand browser flow",
+        "layout tree assertions",
+        "semantic DOM verification"
+      ],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "tailwind-best-practices",
       "family": "Frontend / React / UI",
       "status": "archive",
-      "host": null,
+      "host": "frontend-dev-guidelines",
       "storage_path": "_archive/tailwind-best-practices",
       "entry_file": "ARCHIVE.md",
-      "notes": "Repo-specific styling policy."
+      "notes": "Repo-specific styling policy.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "typescript-advanced-types",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": null,
+      "host": "skill-creator",
       "storage_path": "_archive/typescript-advanced-types",
       "entry_file": "ARCHIVE.md",
-      "notes": "Deep reference, not part of the active default layer."
+      "notes": "Deep reference, not part of the active default layer.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "ui-ux-pro-max",
       "family": "Frontend / React / UI",
       "status": "archive",
-      "host": null,
+      "host": "frontend-dev-guidelines",
       "storage_path": "_archive/ui-ux-pro-max",
       "entry_file": "ARCHIVE.md",
-      "notes": "Broad inspiration library kept out of default discovery."
+      "notes": "Broad inspiration library kept out of default discovery.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "vercel-react-best-practices",
@@ -323,7 +771,16 @@
       "host": "frontend-dev-guidelines",
       "storage_path": "_archive/vercel-react-best-practices",
       "entry_file": "ARCHIVE.md",
-      "notes": "Merged into frontend-dev-guidelines as a React/Next performance reference pack."
+      "notes": "Merged into frontend-dev-guidelines as a React/Next performance reference pack.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     },
     {
       "name": "web-design-guidelines",
@@ -332,7 +789,16 @@
       "host": "frontend-dev-guidelines",
       "storage_path": "_archive/web-design-guidelines",
       "entry_file": "ARCHIVE.md",
-      "notes": "Merged into frontend-dev-guidelines as a UI/accessibility review reference."
+      "notes": "Merged into frontend-dev-guidelines as a UI/accessibility review reference.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
+      "archive_extensions": [],
+      "delegates_to": [],
+      "eval_suite": null,
+      "portability": "portable-first"
     }
   ]
 }

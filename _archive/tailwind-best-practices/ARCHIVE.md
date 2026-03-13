@@ -5,6 +5,12 @@ description: Tailwind CSS styling guidelines for Mastra Playground UI. This skil
 
 # Tailwind Best Practices
 
+## Extension Metadata
+
+- Host owner: `frontend-dev-guidelines`
+- Load when: Load when the task is tied to Tailwind token discipline or archived Playground UI styling rules.
+
+
 ## Overview
 
 Styling guidelines for the Mastra Playground UI, containing 5 rules across 3 categories. Rules are prioritized by impact to guide automated refactoring and code generation. These rules ensure design system consistency, prevent token drift, and maintain component library integrity.

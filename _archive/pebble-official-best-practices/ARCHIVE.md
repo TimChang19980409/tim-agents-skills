@@ -5,6 +5,12 @@ description: Use when users ask about the Java Pebble Template Engine (pebbletem
 
 # Pebble Official Best Practices (Java Template Engine)
 
+## Extension Metadata
+
+- Host owner: `spring-boot-engineer`
+- Load when: Load when the task is specifically about Pebble templates or server-side view concerns.
+
+
 ## Scope
 
 This skill targets **Pebble Java Template Engine**:

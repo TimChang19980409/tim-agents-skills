@@ -5,6 +5,12 @@ description: Create and edit JSON Canvas files (.canvas) with nodes, edges, grou
 
 # JSON Canvas Skill
 
+## Extension Metadata
+
+- Host owner: `obsidian-cli`
+- Load when: Load when the task edits `.canvas` files or needs JSON Canvas node/edge rules.
+
+
 ## File Structure
 
 A canvas file (`.canvas`) contains two top-level arrays following the [JSON Canvas Spec 1.0](https://jsoncanvas.org/spec/1.0/):

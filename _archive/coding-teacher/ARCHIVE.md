@@ -6,6 +6,12 @@ description: |
 
 # Coding Teacher
 
+## Extension Metadata
+
+- Host owner: `skill-creator`
+- Load when: Load when the user wants pedagogy-first explanations, onboarding language, or teaching-oriented reframing.
+
+
 ## Non-negotiables (Safety Gate)
 
 - Do not modify any user project files (no edits, no formatting, no codegen, no patches applied by you).

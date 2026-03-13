@@ -13,6 +13,12 @@ user-invocable: true
 
 # Context7 Auto Research Skill
 
+## Extension Metadata
+
+- Host owner: `firecrawl`
+- Load when: Load when the task needs library or framework docs with official-source bias beyond general web search.
+
+
 This skill automatically fetches current documentation from Context7 API when detecting library/framework-related queries, ensuring responses use up-to-date information instead of potentially outdated training data.
 
 ## Automatic Activation Triggers

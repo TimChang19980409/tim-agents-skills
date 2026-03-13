@@ -5,6 +5,12 @@ description: Translate "The Interactive Book of Prompting" chapters and UI strin
 
 # Book Translation Skill
 
+## Extension Metadata
+
+- Host owner: `obsidian-cli`
+- Load when: Load when the user is translating prompt-book chapters, locale files, or other Obsidian-managed longform book content.
+
+
 This skill guides translation of book content for **The Interactive Book of Prompting** at prompts.chat.
 
 ## Overview

@@ -5,6 +5,12 @@ description: Ladle-based component development workflow for React/TypeScript pro
 
 # Ladle Component Workflow
 
+## Extension Metadata
+
+- Host owner: `frontend-dev-guidelines`
+- Load when: Load when the request is specifically about Ladle setup, stories, or Storybook-to-Ladle migration.
+
+
 ## Overview
 
 Adopt Ladle as the component development environment and enforce consistent story quality. Design stories that cover Props and State behavior with deterministic, testable outputs.

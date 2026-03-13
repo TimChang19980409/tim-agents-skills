@@ -1,106 +1,49 @@
 ---
 name: obsidian-cli
-description: Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from the command line, or develop and debug Obsidian plugins and themes.
+description: |
+  Obsidian operational host for vault actions, plugin debugging, DOM inspection, and property/task work.
+  Use when the user is operating on a running Obsidian instance or wants help choosing the right
+  Obsidian surface. Load archived syntax, Bases, Canvas, or translation extensions only when the
+  task is narrower than the CLI host. Hand PDF extraction off to pdf-reader.
+metadata:
+  framework_role: host
+  execution_mode: inline
 ---
 
 # Obsidian CLI
 
-Use the `obsidian` CLI to interact with a running Obsidian instance. Requires Obsidian to be open.
+Use this skill as the Obsidian operational host. Pick one task playbook or decision guide first, then load an extension or delegate only when needed.
 
-## Command reference
+## Intent Router
 
-Run `obsidian help` to see all available commands. This is always up to date. Full docs: https://help.obsidian.md/cli
+- `vault ops`: [references/tasks/vault-ops.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/vault-ops.md)
+- `plugin debug`: [references/tasks/plugin-debug.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/plugin-debug.md)
+- `dom inspect`: [references/tasks/dom-inspect.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/dom-inspect.md)
+- `property and task management`: [references/tasks/property-task-management.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/property-task-management.md)
+- `choose surface`: [references/decisions/choose-obsidian-surface.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/decisions/choose-obsidian-surface.md)
+- `handoff to pdf-reader`: [references/decisions/handoff-to-pdf-reader.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/decisions/handoff-to-pdf-reader.md)
 
-## Syntax
+## Extension Packs
 
-**Parameters** take a value with `=`. Quote values with spaces:
+- `obsidian-markdown` for wikilinks, embeds, callouts, and properties syntax
+- `obsidian-bases` for `.base` files, formulas, filters, and views
+- `json-canvas` for `.canvas` nodes and edges
+- `book-translation` for archived prompt-book translation work
 
-```bash
-obsidian create name="My Note" content="Hello world"
-```
+## Delegation
 
-**Flags** are boolean switches with no value:
+- Delegate to `pdf-reader` when the task is primarily PDF extraction, OCR, or per-page JSON output.
 
-```bash
-obsidian create name="My Note" silent overwrite
-```
+## Host Workflow
 
-For multiline content use `\n` for newline and `\t` for tab.
+1. Decide whether the work is operational CLI usage, plugin debugging, DOM inspection, or note/property manipulation.
+2. Load an extension only when the task is mostly about an archived Obsidian surface.
+3. Use `obsidian help` or app-specific commands when exact syntax matters.
+4. Keep commands explicit with `vault=`, `file=`, or `path=` when ambiguity would cause mistakes.
 
-## File targeting
+## Response Guardrails
 
-Many commands accept `file` or `path` to target a file. Without either, the active file is used.
-
-- `file=<name>` — resolves like a wikilink (name only, no path or extension needed)
-- `path=<path>` — exact path from vault root, e.g. `folder/note.md`
-
-## Vault targeting
-
-Commands target the most recently focused vault by default. Use `vault=<name>` as the first parameter to target a specific vault:
-
-```bash
-obsidian vault="My Vault" search query="test"
-```
-
-## Common patterns
-
-```bash
-obsidian read file="My Note"
-obsidian create name="New Note" content="# Hello" template="Template" silent
-obsidian append file="My Note" content="New line"
-obsidian search query="search term" limit=10
-obsidian daily:read
-obsidian daily:append content="- [ ] New task"
-obsidian property:set name="status" value="done" file="My Note"
-obsidian tasks daily todo
-obsidian tags sort=count counts
-obsidian backlinks file="My Note"
-```
-
-Use `--copy` on any command to copy output to clipboard. Use `silent` to prevent files from opening. Use `total` on list commands to get a count.
-
-## Plugin development
-
-### Develop/test cycle
-
-After making code changes to a plugin or theme, follow this workflow:
-
-1. **Reload** the plugin to pick up changes:
-   ```bash
-   obsidian plugin:reload id=my-plugin
-   ```
-2. **Check for errors** — if errors appear, fix and repeat from step 1:
-   ```bash
-   obsidian dev:errors
-   ```
-3. **Verify visually** with a screenshot or DOM inspection:
-   ```bash
-   obsidian dev:screenshot path=screenshot.png
-   obsidian dev:dom selector=".workspace-leaf" text
-   ```
-4. **Check console output** for warnings or unexpected logs:
-   ```bash
-   obsidian dev:console level=error
-   ```
-
-### Additional developer commands
-
-Run JavaScript in the app context:
-
-```bash
-obsidian eval code="app.vault.getFiles().length"
-```
-
-Inspect CSS values:
-
-```bash
-obsidian dev:css selector=".workspace-leaf" prop=background-color
-```
-
-Toggle mobile emulation:
-
-```bash
-obsidian dev:mobile on
-```
-
-Run `obsidian help` to see additional developer commands including CDP and debugger controls.
+- Assume Obsidian must be open for live CLI interaction unless the task is only planning.
+- Prefer exact commands over vague procedural advice.
+- If the user explicitly asks you to start with `Selected:`, output `Selected: <exact router id>` using one of `vault-ops`, `plugin-debug`, `dom-inspect`, `property-task-management`, `choose-obsidian-surface`, or `handoff-to-pdf-reader` before any other text.
+- Do not route PDF extraction through Obsidian commands when `pdf-reader` is the real tool.

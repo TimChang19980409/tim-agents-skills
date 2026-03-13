@@ -7,6 +7,13 @@ description: |
   reactivity issues, "UI stuck" bugs.
 ---
 
+# SolidJS Patterns
+
+## Extension Metadata
+
+- Host owner: `frontend-dev-guidelines`
+- Load when: Load when the frontend task is SolidJS-specific rather than React-specific.
+
 ## Why this skill exists
 
 OpenWork’s UI is SolidJS: it updates via **signals**, not React-style rerenders.

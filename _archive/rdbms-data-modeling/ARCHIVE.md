@@ -23,6 +23,12 @@ triggers:
 
 # RDBMS Data Modeling
 
+## Extension Metadata
+
+- Host owner: `spring-persistence-engineer`
+- Load when: Load when the task is schema-first, vendor-comparison-heavy, or needs deeper database design than the host skill should inline.
+
+
 This archive skill is a deep reference pack for schema-first design and vendor-specific tradeoffs. It is not part of
 the default core roster, so load it explicitly when the problem is mostly about data modeling or portability rather
 than Spring application delivery.

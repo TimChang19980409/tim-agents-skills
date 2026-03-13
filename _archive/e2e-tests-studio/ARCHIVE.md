@@ -10,6 +10,12 @@ model: claude-opus-4-5
 
 # E2E Behavior Validation for Frontend Modifications
 
+## Extension Metadata
+
+- Host owner: `stagehand-aria-e2e`
+- Load when: Load when Stagehand guidance is not enough and the task is a repo-specific Playwright studio workflow.
+
+
 ## Core Principle: Test Product Behavior, Not UI States
 
 **CRITICAL**: Tests must verify that product features WORK correctly, not just that UI elements render.
