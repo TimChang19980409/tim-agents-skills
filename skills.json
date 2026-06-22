@@ -103,10 +103,14 @@
         "design before implementation"
       ],
       "task_playbooks": [
-        "references/tasks/explore-project-context.md"
+        "references/tasks/explore-project-context.md",
+        "references/tasks/ask-clarifying-questions.md",
+        "references/tasks/present-design.md",
+        "references/tasks/write-spec.md"
       ],
       "decision_guides": [
-        "references/decisions/when-to-brainstorm.md"
+        "references/decisions/when-to-brainstorm.md",
+        "references/decisions/terminal-handoff-target.md"
       ],
       "archive_extensions": [],
       "delegates_to": [
