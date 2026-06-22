@@ -1,0 +1,58 @@
+{
+  "skill_name": "brainstorming",
+  "evals": [
+    {
+      "id": 1,
+      "name": "from-scratch-feature-should-trigger",
+      "prompt": "Design a new authentication system from scratch for a web application.",
+      "expected_router": "brainstorming",
+      "expected_output": "Triggers brainstorming and explores project context before proposing designs.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:explore project context|understand the existing|read the project",
+        "containsAny:design options|architectural choices|brainstorm",
+        "notContains:Let me implement|I'll build|Here's the code"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "refactor-should-not-trigger",
+      "prompt": "Refactor the user authentication module to use a new JWT library.",
+      "expected_router": "spring-boot-engineer",
+      "expected_output": "Does NOT trigger brainstorming; routes to implementation specialist.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:refactor|migrate|update",
+        "notContains:explore project context|design options|brainstorming"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "bug-fix-should-not-trigger",
+      "prompt": "Fix the bug where the login button doesn't submit the form.",
+      "expected_router": "frontend-dev-guidelines",
+      "expected_output": "Does NOT trigger brainstorming; routes to implementation specialist.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:fix|bug|debug",
+        "notContains:explore project context|design options|brainstorming"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "host-skill-match-should-not-steal",
+      "prompt": "Build a React component for a user profile card with avatar and bio.",
+      "expected_router": "frontend-dev-guidelines",
+      "expected_output": "Does NOT trigger brainstorming; routes to frontend-dev-guidelines host.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:React|component|build",
+        "notContains:explore project context|design options|brainstorming|from scratch"
+      ]
+    }
+  ]
+}

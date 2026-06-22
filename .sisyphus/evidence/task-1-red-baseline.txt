@@ -1,0 +1,7 @@
+Warning: skill react-component-designer has vendored_from and status=core — ensure source is maintained: /Users/ss105213025/.codex/skills/react-component-designer
+Skill portfolio validation failed:
+
+- Expected 16 top-level SKILL.md entrypoints, found 17
+- Top-level SKILL.md entries do not match manifest core roster.
+Manifest: backend-ddd-architect-spring, bun-ts-scripting-policy, firecrawl, frontend-dev-guidelines, jasperreports-engineer, java-pro, obsidian-cli, opencode-configurator, pdf-reader, ppt-generation, react-component-designer, skill-creator, spring-boot-engineer, spring-persistence-engineer, stagehand-aria-e2e, teaching-content-designer
+Actual: backend-ddd-architect-spring, brainstorming, bun-ts-scripting-policy, firecrawl, frontend-dev-guidelines, jasperreports-engineer, java-pro, obsidian-cli, opencode-configurator, pdf-reader, ppt-generation, react-component-designer, skill-creator, spring-boot-engineer, spring-persistence-engineer, stagehand-aria-e2e, teaching-content-designer

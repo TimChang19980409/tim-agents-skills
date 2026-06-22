@@ -1,0 +1,3 @@
+10:type SkillRole = "host" | "specialist" | "policy" | "utility" | "extension" | "gate";
+134:const allowedRoles = new Set<SkillRole>(["host", "specialist", "policy", "utility", "extension", "gate"]);
+310:    if (skill.role === "host" || skill.role === "gate") {

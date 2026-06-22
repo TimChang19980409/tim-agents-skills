@@ -1,0 +1,3 @@
+Warning: skill react-component-designer has vendored_from and status=core — ensure source is maintained: /Users/ss105213025/.codex/skills/react-component-designer
+Skill portfolio validation passed.
+core=17 merge=3 archive=18 retire=2

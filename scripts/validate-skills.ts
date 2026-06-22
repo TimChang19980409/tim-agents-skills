@@ -3,9 +3,20 @@
 import { existsSync, lstatSync, readdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
+import { expandHomePath, skillWorkspaceDir, waveBenchmarkSummaryPath, waveGroupPath } from "./lib/layout.ts";
+import { buildProjectionSpec, type SkillsManifest } from "./lib/projections.ts";
+
 type SkillStatus = "core" | "merge" | "archive" | "retire";
-type SkillRole = "host" | "specialist" | "policy" | "utility" | "extension";
+type SkillRole = "host" | "specialist" | "policy" | "utility" | "extension" | "gate";
 type ExecutionMode = "inline" | "manual" | "forked";
+type WaveGroup = {
+  wave: string;
+  skills: string[];
+  trigger_regressions?: Array<{
+    file: string;
+    skill?: string;
+  }>;
+};
 
 type SkillRecord = {
   name: string;
@@ -29,6 +40,7 @@ type SkillRecord = {
 
 const root = resolve(import.meta.dir, "..");
 const manifestPath = join(root, "skills.json");
+const EXPECTED_CORE_SKILLS = 17;
 
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as {
   schema_version?: number;
@@ -37,17 +49,80 @@ const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as {
     canonical_root?: string;
     portability?: string;
   };
+  projections?: {
+    codex?: {
+      global_agents?: string;
+    };
+    claude?: {
+      global_memory?: string;
+      skill_dir?: string;
+    };
+    gemini?: {
+      global_memory?: string;
+    };
+    antigravity?: {
+      global_memory?: string;
+      skill_dir?: string;
+    };
+    cursor?: {
+      user_rules?: string;
+    };
+    opencode?: {
+      global_agents?: string;
+      global_agents_dir?: string;
+      global_config?: string;
+    };
+  };
   skills: SkillRecord[];
 };
 
 const errors: string[] = [];
 
-if (manifest.schema_version !== 2) {
-  errors.push(`skills.json must declare schema_version 2 (found: ${manifest.schema_version ?? "missing"})`);
+const NAME_REGEX = /^[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9_]+)*$/;
+
+function validateName(name: string): void {
+  if (!NAME_REGEX.test(name)) {
+    errors.push(`Skill name "${name}" must match kebab-case or backup pattern ^[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9_]+)*$`);
+  }
+}
+
+if (manifest.schema_version !== 4) {
+  errors.push(`skills.json must declare schema_version 4 (found: ${manifest.schema_version ?? "missing"})`);
 }
 
 if (!manifest.framework?.canonical_root || !manifest.framework.portability) {
   errors.push("skills.json must declare framework.canonical_root and framework.portability.");
+}
+
+const hasProjectionConfig =
+  Boolean(
+    manifest.projections?.codex?.global_agents &&
+      manifest.projections?.claude?.global_memory &&
+      manifest.projections?.claude?.skill_dir &&
+      manifest.projections?.gemini?.global_memory &&
+      manifest.projections?.antigravity?.global_memory &&
+      manifest.projections?.antigravity?.skill_dir &&
+      manifest.projections?.cursor?.user_rules &&
+      manifest.projections?.opencode?.global_agents &&
+      manifest.projections?.opencode?.global_agents_dir &&
+      manifest.projections?.opencode?.global_config
+  );
+
+if (
+  !manifest.projections?.codex?.global_agents ||
+  !manifest.projections?.claude?.global_memory ||
+  !manifest.projections?.claude?.skill_dir ||
+  !manifest.projections?.gemini?.global_memory ||
+  !manifest.projections?.antigravity?.global_memory ||
+  !manifest.projections?.antigravity?.skill_dir ||
+  !manifest.projections?.cursor?.user_rules ||
+  !manifest.projections?.opencode?.global_agents ||
+  !manifest.projections?.opencode?.global_agents_dir ||
+  !manifest.projections?.opencode?.global_config
+) {
+  errors.push(
+    "skills.json must declare projections.codex.global_agents, projections.claude.{global_memory,skill_dir}, projections.gemini.global_memory, projections.antigravity.{global_memory,skill_dir}, projections.cursor.user_rules, and projections.opencode.{global_agents,global_agents_dir,global_config}."
+  );
 }
 
 if (!Array.isArray(manifest.skills)) {
@@ -56,7 +131,7 @@ if (!Array.isArray(manifest.skills)) {
 
 const skills = manifest.skills ?? [];
 const allowedStatuses = new Set<SkillStatus>(["core", "merge", "archive", "retire"]);
-const allowedRoles = new Set<SkillRole>(["host", "specialist", "policy", "utility", "extension"]);
+const allowedRoles = new Set<SkillRole>(["host", "specialist", "policy", "utility", "extension", "gate"]);
 const allowedExecutionModes = new Set<ExecutionMode>(["inline", "manual", "forked"]);
 const seenNames = new Set<string>();
 
@@ -111,11 +186,42 @@ function archiveDocHasMetadata(absoluteEntry: string): boolean {
   return /- Host owner:\s*`[^`]+`/m.test(text) && /- Load when:\s*\S/m.test(text);
 }
 
+function validateWaveWorkspace(skillName: string): void {
+  const workspace = skillWorkspaceDir(root, skillName);
+  for (const relativePath of ["README.md", "opencode.json", "benchmark.json", "benchmark.md"]) {
+    if (!existsSync(join(workspace, relativePath))) {
+      errors.push(`${skillName} is missing workspace artifact: _benchmarks/${skillName}-workspace/iteration-1/${relativePath}`);
+    }
+  }
+}
+
+function validateProjectionSymlink(source: string, target: string): void {
+  const absoluteSource = expandHomePath(source);
+
+  try {
+    const stats = lstatSync(absoluteSource);
+    if (stats.isSymbolicLink() && !existsSync(absoluteSource)) {
+      errors.push(`Broken projection symlink: ${source} -> ${target}`);
+    }
+  } catch (error) {
+    const code = (error as NodeJS.ErrnoException).code;
+    if (code !== "ENOENT") {
+      errors.push(`Could not inspect projection path ${source}: ${String(error)}`);
+    }
+  }
+}
+
 for (const skill of skills) {
   if (seenNames.has(skill.name)) {
     errors.push(`Duplicate skill name in manifest: ${skill.name}`);
   }
   seenNames.add(skill.name);
+
+  validateName(skill.name);
+
+  if (skill.vendored_from && skill.status === "core") {
+    console.warn(`Warning: skill ${skill.name} has vendored_from and status=core — ensure source is maintained: ${skill.vendored_from}`);
+  }
 
   if (!allowedStatuses.has(skill.status)) {
     errors.push(`Invalid status for ${skill.name}: ${skill.status}`);
@@ -137,6 +243,21 @@ for (const skill of skills) {
     errors.push(`${skill.name} must currently declare portability as portable-first.`);
   }
 
+  const absoluteDir = join(root, skill.storage_path);
+  const absoluteEntry = join(absoluteDir, skill.entry_file);
+
+  if (!existsSync(absoluteDir)) {
+    errors.push(`Missing directory for ${skill.name}: ${skill.storage_path}`);
+    continue;
+  }
+
+  if (!existsSync(absoluteEntry)) {
+    errors.push(`Missing entry file for ${skill.name}: ${skill.storage_path}/${skill.entry_file}`);
+    continue;
+  }
+
+  ensureRelativePaths(skill, absoluteDir);
+
   if (skill.status === "retire") {
     if (skill.role !== null) {
       errors.push(`Retired skill ${skill.name} must use role=null.`);
@@ -152,21 +273,6 @@ for (const skill of skills) {
       errors.push(`Invalid execution_mode for ${skill.name}: ${skill.execution_mode ?? "null"}`);
     }
   }
-
-  const absoluteDir = join(root, skill.storage_path);
-  const absoluteEntry = join(absoluteDir, skill.entry_file);
-
-  if (!existsSync(absoluteDir)) {
-    errors.push(`Missing directory for ${skill.name}: ${skill.storage_path}`);
-    continue;
-  }
-
-  if (!existsSync(absoluteEntry)) {
-    errors.push(`Missing entry file for ${skill.name}: ${skill.storage_path}/${skill.entry_file}`);
-    continue;
-  }
-
-  ensureRelativePaths(skill, absoluteDir);
 
   if (skill.status === "core") {
     if (skill.entry_file !== "SKILL.md") {
@@ -201,7 +307,7 @@ for (const skill of skills) {
       errors.push(`Description for ${skill.name} exceeds 1024 characters (${descriptionLength}).`);
     }
 
-    if (skill.role === "host") {
+    if (skill.role === "host" || skill.role === "gate") {
       if (skill.task_playbooks.length === 0) {
         errors.push(`Host skill ${skill.name} must declare task_playbooks.`);
       }
@@ -246,8 +352,67 @@ const skillMap = new Map(skills.map((skill) => [skill.name, skill]));
 const coreSkills = skills.filter((skill) => skill.status === "core");
 const coreNames = new Set(coreSkills.map((skill) => skill.name));
 
-if (coreSkills.length !== 14) {
-  errors.push(`Expected 14 core skills, found ${coreSkills.length}`);
+const waveGroupPaths = ["wave-1", "wave-2", "wave-3"].map((wave) => waveGroupPath(root, wave));
+const groupedSkills = new Set<string>();
+
+for (const groupPath of waveGroupPaths) {
+  if (!existsSync(groupPath)) {
+    errors.push(`Missing benchmark group manifest: ${groupPath.replace(`${root}/`, "")}`);
+    continue;
+  }
+
+  const group = JSON.parse(readFileSync(groupPath, "utf8")) as WaveGroup;
+  if (!Array.isArray(group.skills) || group.skills.length === 0) {
+    errors.push(`Benchmark group must declare at least one skill: ${groupPath.replace(`${root}/`, "")}`);
+    continue;
+  }
+
+  for (const skillName of group.skills) {
+    groupedSkills.add(skillName);
+    const skill = skillMap.get(skillName);
+    if (!skill) {
+      errors.push(`Benchmark group references unknown skill ${skillName}: ${groupPath.replace(`${root}/`, "")}`);
+      continue;
+    }
+    if (skill.status !== "core") {
+      errors.push(`Benchmark group skill ${skillName} must be core: ${groupPath.replace(`${root}/`, "")}`);
+      continue;
+    }
+    if (skill.task_playbooks.length < 4) {
+      errors.push(`Benchmark group skill ${skillName} must declare at least 4 task_playbooks.`);
+    }
+    if (skill.decision_guides.length < 1) {
+      errors.push(`Benchmark group skill ${skillName} must declare at least 1 decision guide.`);
+    }
+    if (!skill.eval_suite) {
+      errors.push(`Benchmark group skill ${skillName} must declare an eval_suite.`);
+    }
+    validateWaveWorkspace(skillName);
+  }
+
+  if (group.trigger_regressions) {
+    for (const entry of group.trigger_regressions) {
+      if (!entry.file || !existsSync(join(root, entry.file))) {
+        errors.push(`Missing trigger regression source in ${groupPath.replace(`${root}/`, "")}: ${entry.file ?? "missing file key"}`);
+      }
+      if (entry.skill && !skillMap.has(entry.skill)) {
+        errors.push(`Trigger regression entry references unknown skill ${entry.skill}: ${groupPath.replace(`${root}/`, "")}`);
+      }
+    }
+  }
+}
+
+if (coreSkills.length !== EXPECTED_CORE_SKILLS) {
+  errors.push(`Expected ${EXPECTED_CORE_SKILLS} core skills, found ${coreSkills.length}`);
+}
+
+for (const wave of ["wave-1", "wave-2", "wave-3"]) {
+  for (const extension of ["json", "md"]) {
+    const summaryPath = waveBenchmarkSummaryPath(root, wave, extension as "json" | "md");
+    if (!existsSync(summaryPath)) {
+      errors.push(`Missing wave benchmark summary: ${summaryPath.replace(`${root}/`, "")}`);
+    }
+  }
 }
 
 for (const skill of skills.filter((item) => item.status === "merge" || item.status === "archive")) {
@@ -288,14 +453,41 @@ const topLevelSkillDirs = readdirSync(root, { withFileTypes: true })
 
 const manifestTopLevelCore = coreSkills.map((skill) => skill.storage_path).sort();
 
-if (topLevelSkillDirs.length !== 14) {
-  errors.push(`Expected 14 top-level SKILL.md entrypoints, found ${topLevelSkillDirs.length}`);
+if (topLevelSkillDirs.length !== EXPECTED_CORE_SKILLS) {
+  errors.push(`Expected ${EXPECTED_CORE_SKILLS} top-level SKILL.md entrypoints, found ${topLevelSkillDirs.length}`);
 }
 
 if (JSON.stringify(topLevelSkillDirs) !== JSON.stringify(manifestTopLevelCore)) {
   errors.push(
     `Top-level SKILL.md entries do not match manifest core roster.\nManifest: ${manifestTopLevelCore.join(", ")}\nActual: ${topLevelSkillDirs.join(", ")}`
   );
+}
+
+if (!existsSync(join(root, "_shared"))) {
+  errors.push("Missing _shared directory.");
+}
+
+if (!existsSync(join(root, "_benchmarks"))) {
+  errors.push("Missing _benchmarks directory.");
+}
+
+if (hasProjectionConfig) {
+  const projectionSpec = buildProjectionSpec(manifest as unknown as SkillsManifest);
+  const links = [
+    ...projectionSpec.projections.codex,
+    ...projectionSpec.projections.claude.memory,
+    ...projectionSpec.projections.claude.skill_links,
+    ...projectionSpec.projections.gemini.memory,
+    ...projectionSpec.projections.antigravity.memory,
+    ...projectionSpec.projections.antigravity.skill_links,
+    ...projectionSpec.projections.cursor.user_rules,
+    ...projectionSpec.projections.opencode.global_links,
+    ...projectionSpec.projections.opencode.agent_links,
+  ];
+
+  for (const link of links) {
+    validateProjectionSymlink(link.source, link.target);
+  }
 }
 
 function collectSkillFiles(dir: string): string[] {
