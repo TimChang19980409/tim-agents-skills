@@ -1,0 +1,231 @@
+{
+  "canonical_root": "~/.agents/skills",
+  "shared": {
+    "global_agents": "~/.agents/skills/_shared/global/AGENTS.md",
+    "global_claude": "~/.agents/skills/_shared/global/CLAUDE.md",
+    "global_gemini": "~/.agents/skills/_shared/global/GEMINI.md",
+    "global_docs": [
+      "~/.agents/skills/_shared/global/docs/coding-principles.md",
+      "~/.agents/skills/_shared/global/docs/task-execution.md",
+      "~/.agents/skills/_shared/global/docs/testing-and-verification.md",
+      "~/.agents/skills/_shared/global/docs/repo-discovery.md",
+      "~/.agents/skills/_shared/global/docs/skill-routing.md"
+    ],
+    "cursor_user_rules": "~/.agents/skills/_shared/cursor/user-rules.md",
+    "opencode_config": "~/.agents/skills/_shared/opencode/opencode.json",
+    "opencode_agents_dir": "~/.agents/skills/_shared/opencode/agents"
+  },
+  "projections": {
+    "codex": [
+      {
+        "source": "~/.codex/AGENTS.md",
+        "target": "~/.agents/skills/_shared/global/AGENTS.md"
+      }
+    ],
+    "claude": {
+      "memory": [
+        {
+          "source": "~/.claude/CLAUDE.md",
+          "target": "~/.agents/skills/_shared/global/CLAUDE.md"
+        }
+      ],
+      "skill_links": [
+        {
+          "source": "~/.claude/skills/backend-ddd-architect-spring",
+          "target": "~/.agents/skills/backend-ddd-architect-spring"
+        },
+        {
+          "source": "~/.claude/skills/brainstorming",
+          "target": "~/.agents/skills/brainstorming"
+        },
+        {
+          "source": "~/.claude/skills/bun-ts-scripting-policy",
+          "target": "~/.agents/skills/bun-ts-scripting-policy"
+        },
+        {
+          "source": "~/.claude/skills/firecrawl",
+          "target": "~/.agents/skills/firecrawl"
+        },
+        {
+          "source": "~/.claude/skills/frontend-dev-guidelines",
+          "target": "~/.agents/skills/frontend-dev-guidelines"
+        },
+        {
+          "source": "~/.claude/skills/jasperreports-engineer",
+          "target": "~/.agents/skills/jasperreports-engineer"
+        },
+        {
+          "source": "~/.claude/skills/java-pro",
+          "target": "~/.agents/skills/java-pro"
+        },
+        {
+          "source": "~/.claude/skills/obsidian-cli",
+          "target": "~/.agents/skills/obsidian-cli"
+        },
+        {
+          "source": "~/.claude/skills/opencode-configurator",
+          "target": "~/.agents/skills/opencode-configurator"
+        },
+        {
+          "source": "~/.claude/skills/pdf-reader",
+          "target": "~/.agents/skills/pdf-reader"
+        },
+        {
+          "source": "~/.claude/skills/ppt-generation",
+          "target": "~/.agents/skills/ppt-generation"
+        },
+        {
+          "source": "~/.claude/skills/react-component-designer",
+          "target": "~/.agents/skills/react-component-designer"
+        },
+        {
+          "source": "~/.claude/skills/skill-creator",
+          "target": "~/.agents/skills/skill-creator"
+        },
+        {
+          "source": "~/.claude/skills/spring-boot-engineer",
+          "target": "~/.agents/skills/spring-boot-engineer"
+        },
+        {
+          "source": "~/.claude/skills/spring-persistence-engineer",
+          "target": "~/.agents/skills/spring-persistence-engineer"
+        },
+        {
+          "source": "~/.claude/skills/stagehand-aria-e2e",
+          "target": "~/.agents/skills/stagehand-aria-e2e"
+        },
+        {
+          "source": "~/.claude/skills/teaching-content-designer",
+          "target": "~/.agents/skills/teaching-content-designer"
+        }
+      ]
+    },
+    "gemini": {
+      "memory": [
+        {
+          "source": "~/.gemini/GEMINI.md",
+          "target": "~/.agents/skills/_shared/global/GEMINI.md"
+        }
+      ]
+    },
+    "antigravity": {
+      "memory": [
+        {
+          "source": "~/.gemini/GEMINI.md",
+          "target": "~/.agents/skills/_shared/global/GEMINI.md"
+        }
+      ],
+      "skill_links": [
+        {
+          "source": "~/.gemini/antigravity/skills/backend-ddd-architect-spring",
+          "target": "~/.agents/skills/backend-ddd-architect-spring"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/brainstorming",
+          "target": "~/.agents/skills/brainstorming"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/bun-ts-scripting-policy",
+          "target": "~/.agents/skills/bun-ts-scripting-policy"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/firecrawl",
+          "target": "~/.agents/skills/firecrawl"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/frontend-dev-guidelines",
+          "target": "~/.agents/skills/frontend-dev-guidelines"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/jasperreports-engineer",
+          "target": "~/.agents/skills/jasperreports-engineer"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/java-pro",
+          "target": "~/.agents/skills/java-pro"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/obsidian-cli",
+          "target": "~/.agents/skills/obsidian-cli"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/opencode-configurator",
+          "target": "~/.agents/skills/opencode-configurator"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/pdf-reader",
+          "target": "~/.agents/skills/pdf-reader"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/ppt-generation",
+          "target": "~/.agents/skills/ppt-generation"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/react-component-designer",
+          "target": "~/.agents/skills/react-component-designer"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/skill-creator",
+          "target": "~/.agents/skills/skill-creator"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/spring-boot-engineer",
+          "target": "~/.agents/skills/spring-boot-engineer"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/spring-persistence-engineer",
+          "target": "~/.agents/skills/spring-persistence-engineer"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/stagehand-aria-e2e",
+          "target": "~/.agents/skills/stagehand-aria-e2e"
+        },
+        {
+          "source": "~/.gemini/antigravity/skills/teaching-content-designer",
+          "target": "~/.agents/skills/teaching-content-designer"
+        }
+      ]
+    },
+    "cursor": {
+      "user_rules": [
+        {
+          "source": "~/.cursor/rules/agent-skills-user-rules.md",
+          "target": "~/.agents/skills/_shared/cursor/user-rules.md"
+        }
+      ]
+    },
+    "opencode": {
+      "global_links": [
+        {
+          "source": "~/.config/opencode/AGENTS.md",
+          "target": "~/.agents/skills/_shared/global/AGENTS.md"
+        },
+        {
+          "source": "~/.config/opencode/opencode.json",
+          "target": "~/.agents/skills/_shared/opencode/opencode.json"
+        }
+      ],
+      "agent_links": [
+        {
+          "source": "~/.config/opencode/agents/planner.md",
+          "target": "~/.agents/skills/_shared/opencode/agents/planner.md"
+        },
+        {
+          "source": "~/.config/opencode/agents/researcher.md",
+          "target": "~/.agents/skills/_shared/opencode/agents/researcher.md"
+        },
+        {
+          "source": "~/.config/opencode/agents/reviewer.md",
+          "target": "~/.agents/skills/_shared/opencode/agents/reviewer.md"
+        }
+      ],
+      "instructions": [
+        "~/.agents/skills/_shared/global/docs/coding-principles.md",
+        "~/.agents/skills/_shared/global/docs/task-execution.md",
+        "~/.agents/skills/_shared/global/docs/testing-and-verification.md",
+        "~/.agents/skills/_shared/global/docs/repo-discovery.md",
+        "~/.agents/skills/_shared/global/docs/skill-routing.md"
+      ]
+    }
+  }
+}
