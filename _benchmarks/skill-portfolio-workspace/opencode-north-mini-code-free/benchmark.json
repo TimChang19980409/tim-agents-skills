@@ -1,0 +1,427 @@
+{
+  "generated_at": "2026-07-11T06:21:30.359Z",
+  "model": "opencode/north-mini-code-free",
+  "suite": "boundary",
+  "cases": 36,
+  "runs_per_case": 2,
+  "status": "completed_with_infra_failures",
+  "metrics": {
+    "macro_first_skill_accuracy": 0,
+    "boundary_accuracy": 0.5833333333333334,
+    "wrong_skill_rate": 0.013888888888888888,
+    "null_case_precision": 1,
+    "timeout_rate": 0,
+    "infra_failures": 3
+  },
+  "thresholds": {
+    "boundary_accuracy": 0.75,
+    "null_precision": 0.75,
+    "timeout_rate_max": 0.05
+  },
+  "per_skill": [],
+  "results": [
+    {
+      "id": "b01-frontend",
+      "kind": "boundary",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 1
+    },
+    {
+      "id": "b02-react",
+      "kind": "boundary",
+      "expected_skill": "react-component-designer",
+      "first_skill_counts": {
+        "react-component-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b03-frontend",
+      "kind": "boundary",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "frontend-dev-guidelines": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b04-stagehand",
+      "kind": "boundary",
+      "expected_skill": "stagehand-aria-e2e",
+      "first_skill_counts": {
+        "<none>": 1,
+        "stagehand-aria-e2e": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b05-elysia",
+      "kind": "boundary",
+      "expected_skill": "elysia-backend-engineer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b06-drizzle",
+      "kind": "boundary",
+      "expected_skill": "drizzle-persistence-engineer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b07-java",
+      "kind": "boundary",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "spring-boot-engineer": 1,
+        "java-pro": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b08-boot",
+      "kind": "boundary",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "spring-boot-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b09-boot",
+      "kind": "boundary",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b10-persistence",
+      "kind": "boundary",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "<none>": 1,
+        "spring-persistence-engineer": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 1
+    },
+    {
+      "id": "b11-persistence",
+      "kind": "boundary",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "spring-persistence-engineer": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b12-ddd",
+      "kind": "boundary",
+      "expected_skill": "backend-ddd-architect-spring",
+      "first_skill_counts": {
+        "backend-ddd-architect-spring": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b13-java",
+      "kind": "boundary",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "java-pro": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b14-jasper",
+      "kind": "boundary",
+      "expected_skill": "jasperreports-engineer",
+      "first_skill_counts": {
+        "jasperreports-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b15-obsidian",
+      "kind": "boundary",
+      "expected_skill": "obsidian-cli",
+      "first_skill_counts": {
+        "obsidian-cli": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b16-pdf",
+      "kind": "boundary",
+      "expected_skill": "pdf-reader",
+      "first_skill_counts": {
+        "pdf-reader": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b17-firecrawl",
+      "kind": "boundary",
+      "expected_skill": "firecrawl",
+      "first_skill_counts": {
+        "firecrawl": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b18-native",
+      "kind": "boundary",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b19-maintainer",
+      "kind": "boundary",
+      "expected_skill": "skill-portfolio-maintainer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b20-opencode",
+      "kind": "boundary",
+      "expected_skill": "opencode-configurator",
+      "first_skill_counts": {
+        "opencode-configurator": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b21-teaching",
+      "kind": "boundary",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "<none>": 1,
+        "teaching-content-designer": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b22-java",
+      "kind": "boundary",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b23-teaching",
+      "kind": "boundary",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b24-native-ppt",
+      "kind": "boundary",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 1
+    },
+    {
+      "id": "null-01",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-02",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-03",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-04",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-05",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-06",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-07",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-08",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-09",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-10",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-11",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-12",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    }
+  ]
+}

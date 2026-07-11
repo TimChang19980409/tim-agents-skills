@@ -1,0 +1,7 @@
+{
+  "model": "opencode/north-mini-code-free",
+  "pure": true,
+  "runs_per_case": 2,
+  "timeout_seconds": 120,
+  "concurrency": 2
+}
