@@ -1,11 +1,11 @@
 ---
 name: skill-portfolio-maintainer
 description: |
-  Govern this local skill portfolio: migrate skills into the host-playbook framework, maintain
-  trigger and outcome evals, refresh metadata, and reconcile runtime projections. Use when changing
-  skills.json, multiple skill boundaries, eval suites, freshness policy, or cross-host projections.
-  Do not use for ordinary app code or OpenCode-only configuration; route the latter
-  to opencode-configurator.
+  Govern a multi-skill agent portfolio: edit trigger descriptions and boundaries, skills.json
+  schema or freshness, natural-prompt evals and native skill-event parsing, thin-router migrations,
+  compact benchmark artifacts, and cross-host projections. Use when a change affects skill
+  governance or multiple skills. Do not use for ordinary app code or OpenCode-only configuration;
+  route the latter to opencode-configurator.
 metadata:
   framework_role: utility
   execution_mode: manual

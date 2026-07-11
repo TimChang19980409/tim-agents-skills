@@ -1,9 +1,11 @@
 ---
 name: java-pro
 description: |
-  Solve Java runtime, concurrency, diagnostics, benchmarking, and packaging problems.
-  Use when diagnosing the JVM or choosing Java concurrency, runtime, benchmark, or packaging behavior. Do not use for Spring application or persistence features;
-  route those to spring-boot-engineer or spring-persistence-engineer.
+  Use for JVM- or JDK-specific work: Java 21/25/26 version and preview-versus-stable decisions such
+  as Structured Concurrency, virtual-thread migrations with ThreadLocal/pinning/connection-limit
+  audits, JFR/thread-dump/GC diagnosis, JMH benchmarks, concurrency, and packaging. Do not use for
+  Spring application or persistence features; route those to spring-boot-engineer or
+  spring-persistence-engineer.
 metadata:
   framework_role: specialist
   execution_mode: inline
