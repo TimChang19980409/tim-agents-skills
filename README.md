@@ -7,7 +7,7 @@ This repository now uses a `Core + Archive` portfolio model with a shared cross-
 - `archive`: preserved specialist skills kept out of automatic discovery
 - `retire`: removed from active use, kept only for history or migration context
 
-The machine-readable source of truth is [skills.json](/Users/ss105213025/.agents/skills/skills.json). Run [scripts/validate-skills.ts](/Users/ss105213025/.agents/skills/scripts/validate-skills.ts) and [scripts/validate-agent-context.ts](/Users/ss105213025/.agents/skills/scripts/validate-agent-context.ts) after any structural change.
+The machine-readable source of truth is [skills.json](skills.json). Run [scripts/validate-skills.ts](scripts/validate-skills.ts) and [scripts/validate-agent-context.ts](scripts/validate-agent-context.ts) after structural changes.
 
 The framework layer adds these concepts:
 
@@ -17,7 +17,7 @@ The framework layer adds these concepts:
 - `decision guides`: `references/decisions/*.md`
 - `archive extensions`: archived packs owned by a host and loaded explicitly
 
-See [AGENT_SKILL_FRAMEWORK.md](/Users/ss105213025/.agents/skills/AGENT_SKILL_FRAMEWORK.md) for the full framework contract.
+See [AGENT_SKILL_FRAMEWORK.md](AGENT_SKILL_FRAMEWORK.md) for the framework contract.
 
 ## Portfolio layout
 
@@ -43,20 +43,19 @@ See [AGENT_SKILL_FRAMEWORK.md](/Users/ss105213025/.agents/skills/AGENT_SKILL_FRA
 | --- | --- | --- |
 | `firecrawl` | Research / Web | Primary host for live web content, online docs, and current facts |
 | `frontend-dev-guidelines` | Frontend / React / UI | Primary host for frontend implementation, performance review, and UI/accessibility review |
+| `elysia-backend-engineer` | TypeScript / Bun / Backend | ElysiaJS routes, validation, plugins, Eden clients, tests, and runtime decisions |
+| `drizzle-persistence-engineer` | TypeScript / Bun / Backend | Drizzle ORM schema, query, migration, and Elysia TypeBox bridge specialist |
 | `react-component-designer` | Frontend / React / UI | Reusable component API design specialist |
 | `java-pro` | Java / Spring / Backend | Java platform, concurrency, JVM, and profiling specialist |
 | `jasperreports-engineer` | Java / Spring / Backend | JasperReports Library and Jaspersoft Studio implementation specialist |
 | `spring-persistence-engineer` | Java / Spring / Backend | Spring Data JPA, Hibernate 6/7, and RDBMS portability persistence host |
 | `spring-boot-engineer` | Java / Spring / Backend | Spring Boot application implementation specialist |
 | `backend-ddd-architect-spring` | Java / Spring / Backend | DDD and bounded-context architecture specialist |
-| `brainstorming` | Workflow / Meta / General | Process gate skill: forces design before implementation for from-scratch feature/module/subsystem work |
 | `stagehand-aria-e2e` | Testing / Browser Automation | Behavior-first browser testing host |
 | `obsidian-cli` | Obsidian / Knowledge | Obsidian vault and plugin/debug operations host |
 | `pdf-reader` | Obsidian / Knowledge | PDF/OCR ingestion and extraction |
-| `bun-ts-scripting-policy` | Workflow / Meta / General | Default script and CLI policy |
-| `skill-creator` | Workflow / Meta / General | Skill creation, evaluation, and portfolio tuning |
+| `skill-portfolio-maintainer` | Workflow / Meta / General | Portfolio governance, migration, eval, freshness, and projection maintenance |
 | `opencode-configurator` | Workflow / Meta / General | OpenCode and oh-my-opencode configuration specialist |
-| `ppt-generation` | Content.Media | Presentation and PPT/PPTX generation specialist |
 | `teaching-content-designer` | Education / Teaching / Content | Teaching content design host for lesson outlines, scripts, documents, interaction, and concept progression |
 
 ## Merged and archived skills
@@ -87,6 +86,9 @@ See [AGENT_SKILL_FRAMEWORK.md](/Users/ss105213025/.agents/skills/AGENT_SKILL_FRA
 - `rdbms-data-modeling`
 - `typescript-advanced-types`
 - `developer-growth-analysis`
+- `brainstorming`
+- `bun-ts-scripting-policy`
+- `ppt-generation` (including its legacy `image-generation` helper)
 
 ### Retired
 
@@ -104,39 +106,37 @@ Reading skill docs requires no installation. Running the full portfolio is easie
 Active skill-specific requirements:
 
 - `firecrawl`: `npm install -g firecrawl-cli`, plus Firecrawl auth
-- `pdf-reader`: `bun install` in [pdf-reader](/Users/ss105213025/.agents/skills/pdf-reader); optional OCR tools such as `poppler` and `tesseract`
-- `stagehand-aria-e2e`: `bun install` in [stagehand-aria-e2e](/Users/ss105213025/.agents/skills/stagehand-aria-e2e), plus model/browser credentials as required
+- `pdf-reader`: `bun install` in [pdf-reader](pdf-reader); optional OCR tools such as `poppler` and `tesseract`
+- `stagehand-aria-e2e`: `bun install` in [stagehand-aria-e2e](stagehand-aria-e2e), plus model/browser credentials as required
 - `obsidian-cli`: installed Obsidian app and `obsidian` CLI, with Obsidian running when needed
-- `jasperreports-engineer`: `bun` for helper scripts and `opencode` for MiniMax-based eval runs
-- `spring-persistence-engineer`: `bun` for helper scripts and `opencode` for MiniMax-based eval runs
-- `teaching-content-designer`: future OpenCode eval runs should use `github-copilot/gpt-5-mini`; no benchmark workspace is retained until those evals are explicitly run
-- [scripts/validate-skills.ts](/Users/ss105213025/.agents/skills/scripts/validate-skills.ts): Bun runtime
+- `jasperreports-engineer` and `spring-persistence-engineer`: `bun` for helper scripts and `opencode` for eval runs
+- [scripts/validate-skills.ts](scripts/validate-skills.ts): Bun runtime
 
 ## Validation
 
 Run:
 
 ```bash
-bun /Users/ss105213025/.agents/skills/scripts/validate-skills.ts
+bun scripts/validate-skills.ts
 ```
 
 The validator checks:
 
-- exactly 17 top-level active `SKILL.md` files
+- exactly 16 top-level active `SKILL.md` files, read from `framework.expected_core_skills`
 - `skills.json` consistency
-- `skills.json` framework schema (`schema_version: 4`, projections, roles, execution modes, playbook paths)
+- `skills.json` schema v5, projections, roles, execution modes, trigger suites, freshness, and official sources
 - no active skill stored as a symlink
 - core `SKILL.md` files stay within the router-size limit
 - core host skills declare task playbooks, decision guides, and eval coverage
 - archive extensions declare host ownership in both `skills.json` and `ARCHIVE.md`
 - no `SKILL.md` inside `_archive/` or `_retired/`
 - valid `merge -> core host` relationships
-- wave-group roster coverage, retained workspace artifacts, wave benchmark summaries, and broken projection symlinks
+- benchmark-group roster coverage, wave summaries, and broken projection symlinks
 
 Run the agent-context validator with:
 
 ```bash
-bun /Users/ss105213025/.agents/skills/scripts/validate-agent-context.ts
+bun scripts/validate-agent-context.ts
 ```
 
 It checks:
@@ -149,7 +149,7 @@ It checks:
 ## Maintenance rules
 
 1. Do not add a new top-level `SKILL.md` unless the skill is explicitly approved for the core roster.
-2. Add every portfolio entry to [skills.json](/Users/ss105213025/.agents/skills/skills.json).
+2. Add every portfolio entry to [skills.json](skills.json).
 3. Archived skills must use `ARCHIVE.md`; retired skills must use `RETIRED.md`.
 4. Prefer vendored content over symlinked skills.
 5. If a change alters trigger boundaries, update both the relevant skill file and the audit metadata.
@@ -157,24 +157,6 @@ It checks:
 7. Commit compact benchmark summaries, not raw OpenCode transcripts or staged project copies.
 8. Keep root and global entrypoint files thin; route durable detail into `_shared/global/docs/` or `_shared/repo/`.
 
-## Benchmark Commands
+## Benchmark targets
 
-Run wave summaries with pinned MiniMax M2.5:
-
-```bash
-bun /Users/ss105213025/.agents/skills/skill-creator/scripts/run_wave_opencode_skill_evals.ts --wave wave-1 --model minimax-coding-plan/MiniMax-M2.5
-bun /Users/ss105213025/.agents/skills/skill-creator/scripts/run_wave_opencode_skill_evals.ts --wave wave-2 --model minimax-coding-plan/MiniMax-M2.5
-bun /Users/ss105213025/.agents/skills/skill-creator/scripts/run_wave_opencode_skill_evals.ts --wave wave-3 --model minimax-coding-plan/MiniMax-M2.5
-```
-
-Aggregate-only reruns:
-
-```bash
-bun /Users/ss105213025/.agents/skills/skill-creator/scripts/aggregate_wave_benchmarks.ts --wave wave-1
-bun /Users/ss105213025/.agents/skills/skill-creator/scripts/aggregate_wave_benchmarks.ts --wave wave-2
-bun /Users/ss105213025/.agents/skills/skill-creator/scripts/aggregate_wave_benchmarks.ts --wave wave-3
-```
-
-Compact `benchmark.json` files retain `Selected:` router pass data, so wave summaries stay complete even after `eval-*` workspaces are cleaned.
-
-`teaching-content-designer` is intentionally not added to the current wave benchmark groups yet. When benchmarking it later, use OpenCode model `github-copilot/gpt-5-mini` instead of the MiniMax M2.5 model used by the historical wave summaries.
+Natural trigger acceptance uses `opencode/nemotron-3-ultra-free` for all 100 cases and `opencode/north-mini-code-free` for boundary/null smoke. The runner observes OpenCode's native `skill` tool events under `--pure` isolation. Historical wave summaries remain reference material, not the current acceptance baseline.

@@ -1,0 +1,42 @@
+[
+  {
+    "query": "My React component is re-rendering too often and slowing down the UI. Can you review the code and suggest optimizations?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm building a new feature in our Next.js app and need to follow the team conventions for component structure and props.",
+    "should_trigger": true
+  },
+  {
+    "query": "Run an accessibility audit on our login form. It should work with screen readers and meet WCAG 2.1 AA standards.",
+    "should_trigger": true
+  },
+  {
+    "query": "We're deploying to production but the bundle size grew by 40%. Help me figure out what changed and how to tree-shake the dependencies.",
+    "should_trigger": true
+  },
+  {
+    "query": "Refactor this class component to hooks and make sure we preserve the same behavior, especially around the useEffect cleanup logic.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to design a headless dropdown component with proper ARIA roles for a design system we're building from scratch.",
+    "should_trigger": true
+  },
+  {
+    "query": "Set up a Spring Boot REST API with JWT authentication and method-level security for our microservices.",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me configure PostgreSQL connection pooling with HikariCP and tune the fetch size for a read-heavy reporting query.",
+    "should_trigger": false
+  },
+  {
+    "query": "I want to extract text from a scanned PDF and get structured JSON output for each page.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write JMH benchmarks to compare virtual threads vs platform threads for our batch processing workloads.",
+    "should_trigger": false
+  }
+]

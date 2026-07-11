@@ -1,0 +1,26 @@
+[
+  {
+    "query": "Create a 45-minute lesson outline that teaches dependency inversion to junior developers with retrieval checks and one guided exercise.",
+    "should_trigger": true
+  },
+  {
+    "query": "請把 DDD Aggregate 設計成適合初學者的教學腳本，包含常見誤解、停頓與互動提問。",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn this dense concurrency reference into a learner-facing teaching document with concept progression and checks for understanding.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design the interaction plan for a 90-minute workshop, including retrieval, practice, feedback, and debrief timing.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tell me whether Structured Concurrency is stable in Java 26 and cite the official API docs.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an editable PPTX from this approved slide outline.",
+    "should_trigger": false
+  }
+]

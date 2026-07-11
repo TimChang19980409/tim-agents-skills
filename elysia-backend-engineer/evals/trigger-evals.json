@@ -1,0 +1,34 @@
+[
+  {
+    "query": "Add an Elysia route with TypeBox validation, typed error responses, and a Bun unit test using app.handle.",
+    "should_trigger": true
+  },
+  {
+    "query": "Wire @elysia/openapi and Eden Treaty for this API so the frontend has end-to-end types.",
+    "should_trigger": true
+  },
+  {
+    "query": "This Elysia plugin lifecycle hook is not applying to child routes. Help me fix the scope and dependency setup.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a WebSocket endpoint in Elysia with validation and a small test plan.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a Bun script that renames files and prints JSON to stdout.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a React accessible combobox component with controlled and uncontrolled state.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose a Drizzle migration flow and update drizzle.config.ts for PostgreSQL.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map a Spring Data JPA entity and fix a Hibernate N+1 query.",
+    "should_trigger": false
+  }
+]

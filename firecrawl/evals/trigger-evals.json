@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Search for the latest pricing changes for AWS EC2 instances and give me a summary with dates.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to scrape the main content from this article URL and extract the key points without ads or navigation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map out the entire documentation structure of example.com so I can understand what endpoints they expose.",
+    "should_trigger": true
+  },
+  {
+    "query": "Verify whether the release date for React 19 was actually March 2024 or if it slipped to later.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a PDF file with scanned pages. Extract all the text and return it as structured JSON per page.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build me a Spring Boot REST controller with request validation and a global exception handler.",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me design the bounded contexts and aggregate roots for an e-commerce domain with orders, inventory, and payments.",
+    "should_trigger": false
+  },
+  {
+    "query": "My Obsidian vault has a corrupted index. Can you reload the plugin and inspect the DOM to find what's broken?",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a Bun script that reads a CSV file and outputs the aggregated sums per category as JSON.",
+    "should_trigger": false
+  }
+]

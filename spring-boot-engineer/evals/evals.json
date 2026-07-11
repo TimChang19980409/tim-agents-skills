@@ -1,0 +1,75 @@
+{
+  "skill_name": "spring-boot-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "rest-feature-delivery",
+      "prompt": "Start with `Selected: <playbook or decision>`. Outline the smallest Spring Boot REST feature delivery plan for a purchase endpoint with DTO validation and clean API errors.",
+      "expected_output": "Selects rest-feature-delivery and mentions controller, DTO, validation, and error handling.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: rest-feature-delivery",
+        "containsAny:@RestController|ControllerAdvice|DTO|Bean Validation",
+        "containsAny:validation|error|service",
+        "containsAny:MockMvc|WebMvcTest|HTTP"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "security-wiring",
+      "prompt": "Start with `Selected: <playbook or decision>`. Recommend the first Spring Security wiring changes for JWT auth, method security, and CORS.",
+      "expected_output": "Selects security-wiring and uses SecurityFilterChain language.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: security-wiring",
+        "containsAny:SecurityFilterChain|JWT|OAuth2",
+        "containsAny:CORS|method security|authorizeHttpRequests",
+        "containsAny:test|MockMvc|filter"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "config-and-profiles",
+      "prompt": "The very first line must be exactly `Selected: config-and-profiles`. After that, reorganize application.yml and @ConfigurationProperties for local, test, and prod profiles.",
+      "expected_output": "Selects config-and-profiles and discusses YAML and typed configuration.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: config-and-profiles",
+        "containsAny:application.yml|profiles|@ConfigurationProperties",
+        "containsAny:local|test|prod",
+        "containsAny:binding|config|property"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "spring-test-slices",
+      "prompt": "Start with `Selected: <playbook or decision>`. Choose the smallest Spring test plan for a controller with security plus a repository method.",
+      "expected_output": "Selects spring-test-slices and distinguishes test slices.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:Selected: spring-test-slices|Selected: choose-test-scope",
+        "containsAny:WebMvcTest|MockMvc|DataJpaTest|@SpringBootTest",
+        "containsAny:controller|repository|security",
+        "containsAny:slice|scope|test"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "choose-test-scope",
+      "prompt": "Start with `Selected: <playbook or decision>`. Decide whether WebMvcTest, DataJpaTest, or @SpringBootTest fits a feature with controller validation and DB-backed behavior.",
+      "expected_output": "Selects choose-test-scope and explains the slice choice.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: choose-test-scope",
+        "containsAny:WebMvcTest|DataJpaTest|@SpringBootTest",
+        "containsAny:controller|DB|validation",
+        "containsAny:narrow|full context|slice"
+      ]
+    }
+  ]
+}

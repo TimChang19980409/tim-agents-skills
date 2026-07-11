@@ -1,0 +1,75 @@
+{
+  "skill_name": "java-pro",
+  "evals": [
+    {
+      "id": 1,
+      "name": "virtual-thread-migration",
+      "prompt": "Start with `Selected: <playbook or decision>`. Redesign a Java 21 batch processor around virtual threads and call out ThreadLocal, carrier-thread, and connection-pool risks.",
+      "expected_output": "Selects virtual-thread-migration and discusses migration risks.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: virtual-thread-migration",
+        "containsAny:virtual threads|StructuredTaskScope|Executors.newVirtualThreadPerTaskExecutor",
+        "containsAny:ThreadLocal|carrier thread|connection pool",
+        "containsAny:risk|migration|safe"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "jvm-diagnostics",
+      "prompt": "The very first line must be exactly `Selected: jvm-diagnostics`. A service has heap growth and p99 spikes. Explain the smallest JVM-level diagnosis plan using thread dumps, GC logs, or histograms.",
+      "expected_output": "Selects jvm-diagnostics and recommends JVM evidence gathering.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: jvm-diagnostics",
+        "containsAny:thread dump|GC log|histogram|JFR",
+        "containsAny:heap|allocation|lock|latency",
+        "containsAny:diagnose|evidence|confirm"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "benchmark-design",
+      "prompt": "Start with `Selected: <playbook or decision>`. Propose the first JMH benchmark for a serialization hot path and mention dead-code elimination or warmup hygiene.",
+      "expected_output": "Selects benchmark-design and uses JMH-specific guidance.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: benchmark-design",
+        "containsAny:JMH|@Benchmark|Blackhole",
+        "containsAny:warmup|fork|dead-code",
+        "containsAny:measure|benchmark|throughput"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "runtime-packaging",
+      "prompt": "Start with `Selected: <playbook or decision>`. Compare HotSpot, CDS/AppCDS, and native image for a startup-sensitive CLI with reflection-heavy libraries.",
+      "expected_output": "Selects runtime-packaging and frames packaging tradeoffs.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:Selected: runtime-packaging|Selected: hotspot-vs-native",
+        "containsAny:HotSpot|CDS|native image",
+        "containsAny:startup|reflection|build",
+        "containsAny:tradeoff|package|runtime"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "choose-concurrency-model",
+      "prompt": "Start with `Selected: <playbook or decision>`. Choose between virtual threads, CompletableFuture, and a fixed worker pool for a blocking I/O-heavy Java event consumer.",
+      "expected_output": "Selects choose-concurrency-model and explains why.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: choose-concurrency-model",
+        "containsAny:virtual threads|CompletableFuture|worker pool",
+        "containsAny:blocking I/O|backpressure|cancellation",
+        "containsAny:why|fit|tradeoff"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "skill_name": "react-component-designer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "trigger-with-skill",
+      "prompt": "Selected: <playbook or decision>. Design a reusable Button component with compound support for icon, text, and loading states.",
+      "expected_output": "Selects react-component-designer and addresses component API design.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected:",
+        "containsAny:component|API|props|interface|type",
+        "containsAny:Button|button|reusable|compound",
+        "containsAny:design|interface|state|props"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "trigger-without-skill",
+      "prompt": "Selected: <playbook or decision>. How do I configure my webpack build for production optimization?",
+      "expected_output": "Does NOT select react-component-designer; selects a different skill better suited for build configuration.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "notContains:react-component-designer",
+        "containsAny:webpack|build|production|optimization",
+        "containsAny:Selected:"
+      ]
+    }
+  ]
+}

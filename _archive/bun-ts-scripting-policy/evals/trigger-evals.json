@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Write a new Bun script that reads a CSV file and outputs aggregated statistics grouped by a date column.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a Node.js script using fs.promises and path. Migrate it to Bun with proper TypeScript types and faster file I/O.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review this CLI automation script for potential issues. It spawns child processes and might have a resource leak.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a parser script in Bun that reads a JSON schema and generates TypeScript interface definitions from it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Convert this npm-based build script to Bun. It uses shelljs and some exec calls. What should change?",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a React component that displays a list of items with proper accessibility roles and keyboard navigation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Configure OpenCode with a new project including MCP servers for filesystem and git operations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Set up a Spring Data JPA repository with pagination and sorting for our product catalog API.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract text from a scanned PDF using OCR and return the results as structured JSON per page.",
+    "should_trigger": false
+  }
+]

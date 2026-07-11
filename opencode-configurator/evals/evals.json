@@ -1,0 +1,75 @@
+{
+  "skill_name": "opencode-configurator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "project-config-setup",
+      "prompt": "The very first line must be exactly `Selected: project-config-setup`. Set up a project-level opencode.json that pins `minimax-coding-plan/MiniMax-M2.5` and allows bash while denying writes.",
+      "expected_output": "Selects project-config-setup and describes project-level config.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: project-config-setup",
+        "containsAny:opencode.json|project-level",
+        "containsAny:MiniMax-M2.5|minimax-coding-plan/MiniMax-M2.5",
+        "containsAny:permission|bash|write"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "model-and-permission-tuning",
+      "prompt": "Start with `Selected: <playbook or decision>`. Tighten permissions for a repo and pin the default model without changing unrelated config layers.",
+      "expected_output": "Selects model-and-permission-tuning and uses precedence-aware language.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: model-and-permission-tuning",
+        "containsAny:model|provider|permission",
+        "containsAny:allow|deny|ask",
+        "containsAny:layer|scope|config"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mcp-wiring",
+      "prompt": "Start with `Selected: <playbook or decision>`. This is a planning-only response. Use the exact router id in the `Selected:` line. Add an MCP server with the smallest config surface and call out any auth step.",
+      "expected_output": "Selects mcp-wiring and mentions auth or tool exposure.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: mcp-wiring",
+        "containsAny:MCP|mcp|tool exposure",
+        "containsAny:auth|oauth|server",
+        "containsAny:project|global|config"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "agent-mode-setup",
+      "prompt": "Start with `Selected: <playbook or decision>`. This is a planning-only response. Use the exact router id in the `Selected:` line. Configure project agents or modes for a tmux-heavy workflow without broad resets.",
+      "expected_output": "Selects agent-mode-setup and discusses agents/modes.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: agent-mode-setup",
+        "containsAny:agent|mode|tmux|browser automation",
+        "containsAny:project|harness|oh-my-opencode",
+        "containsAny:setup|workflow|config"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "project-vs-global-scope",
+      "prompt": "Start with `Selected: <playbook or decision>`. This is a planning-only response. Use the exact router id in the `Selected:` line. Decide whether a model pin and permission rule should live in project config or user defaults for one repo only.",
+      "expected_output": "Selects project-vs-global-scope and chooses project scope.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: project-vs-global-scope",
+        "containsAny:project|global|user defaults",
+        "containsAny:model|permission|repo",
+        "containsAny:portable|scope|override"
+      ]
+    }
+  ]
+}

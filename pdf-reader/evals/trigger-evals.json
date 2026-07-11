@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Extract all text from this PDF file page by page and return each page as a separate JSON object with page number and content.",
+    "should_trigger": true
+  },
+  {
+    "query": "This PDF is scanned so it has no selectable text. Run OCR on it and give me the extracted text organized by page.",
+    "should_trigger": true
+  },
+  {
+    "query": "Read a 200-page PDF in chunks to stay within token limits. Return structured JSON for each chunk with page references.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a PDF with tables in it. Extract the table data and return it as structured JSON without the surrounding text.",
+    "should_trigger": true
+  },
+  {
+    "query": "Hand off this PDF to Obsidian so I can embed the extracted content as notes in my vault.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a Spring Boot REST API for managing orders with request validation and exception handling.",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me design the bounded contexts and aggregates for a library management system using DDD principles.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run a performance review on our React dashboard. The charts are re-rendering on every data update.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a Bun script to parse command line arguments and validate them with a TypeScript types.",
+    "should_trigger": false
+  }
+]

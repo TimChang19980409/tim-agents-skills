@@ -1,0 +1,26 @@
+[
+  {
+    "query": "Design a reusable React combobox API that supports controlled and uncontrolled state, slots, and custom rendering without coupling it to our page layout.",
+    "should_trigger": true
+  },
+  {
+    "query": "我們的 design system 要做可組合的 Dialog，請決定 compound components、context 與 asChild API 的邊界。",
+    "should_trigger": true
+  },
+  {
+    "query": "Choose between render props, a headless hook, and prop getters for a reusable data-grid component API.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review this reusable input component's public TypeScript interface and propose a controlled/uncontrolled contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Implement this checkout page from the existing design and fix its responsive CSS.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use Stagehand to assert the dialog focus trap and keyboard behavior in Chrome.",
+    "should_trigger": false
+  }
+]

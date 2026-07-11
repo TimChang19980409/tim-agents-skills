@@ -1,0 +1,75 @@
+{
+  "skill_name": "stagehand-aria-e2e",
+  "evals": [
+    {
+      "id": 1,
+      "name": "aria-snapshot-flow",
+      "prompt": "Start with `Selected: <playbook or decision>`. Design the first Stagehand flow to verify a dialog opens and exposes the right ARIA structure.",
+      "expected_output": "Selects aria-snapshot-flow and uses ARIA snapshot language.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: aria-snapshot-flow",
+        "containsAny:ARIA snapshot|toMatchAriaSnapshot|getByRole",
+        "containsAny:dialog|semantic|role",
+        "containsAny:scope|flow|assert"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "layout-tree-assertion",
+      "prompt": "Start with `Selected: <playbook or decision>`. Recommend the first layout-tree assertion for a flex toolbar spacing regression.",
+      "expected_output": "Selects layout-tree-assertion and mentions DOMSnapshot or layout tree.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: layout-tree-assertion",
+        "containsAny:DOMSnapshot|layout tree|CDP",
+        "containsAny:flex|spacing|toolbar",
+        "containsAny:subtree|bounds|style"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "screenshot-migration",
+      "prompt": "Start with `Selected: <playbook or decision>`. Replace a screenshot-only check for a settings panel with a better Stagehand assertion strategy.",
+      "expected_output": "Selects screenshot-migration and reduces screenshot reliance.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: screenshot-migration",
+        "containsAny:screenshot|ARIA|layout",
+        "containsAny:migrate|replace|semantic",
+        "containsAny:panel|assertion|better"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "install-check",
+      "prompt": "Start with `Selected: <playbook or decision>`. Validate whether Stagehand and Playwright are installed correctly before writing tests.",
+      "expected_output": "Selects install-check and mentions the install script.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: install-check",
+        "containsAny:check-stagehand-install.ts|Playwright|Stagehand",
+        "containsAny:install|dependency|smoke check",
+        "containsAny:Bun|runtime|validate"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "assertion-layer",
+      "prompt": "Start with `Selected: <playbook or decision>`. Decide whether a browser test should use ARIA snapshots, layout-tree assertions, or screenshots for a menu alignment issue.",
+      "expected_output": "Selects assertion-layer and chooses layout-friendly proof.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: assertion-layer",
+        "containsAny:ARIA|layout tree|screenshot",
+        "containsAny:alignment|menu|layout",
+        "containsAny:choose|proof|assertion"
+      ]
+    }
+  ]
+}

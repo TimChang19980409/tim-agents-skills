@@ -1,0 +1,75 @@
+{
+  "skill_name": "backend-ddd-architect-spring",
+  "evals": [
+    {
+      "id": 1,
+      "name": "bounded-context-discovery",
+      "prompt": "Start with `Selected: <playbook or decision>`. Split an order platform into bounded contexts based on catalog, checkout, payments, and fulfillment language.",
+      "expected_output": "Selects bounded-context-discovery and names context boundaries.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: bounded-context-discovery",
+        "containsAny:bounded context|catalog|checkout|payments|fulfillment",
+        "containsAny:ownership|language|team",
+        "containsAny:split|context|boundary"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "aggregate-design",
+      "prompt": "Start with `Selected: <playbook or decision>`. Define the aggregate boundary and invariant for an invoice approval workflow with line items and payment state.",
+      "expected_output": "Selects aggregate-design and mentions invariant-driven aggregate shape.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: aggregate-design",
+        "containsAny:aggregate|invariant|transaction",
+        "containsAny:invoice|line item|approval|payment",
+        "containsAny:identity|boundary|consistency"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "context-map",
+      "prompt": "Start with `Selected: <playbook or decision>`. Build a context map between ordering, pricing, and ERP, and mention whether an anti-corruption layer is needed.",
+      "expected_output": "Selects context-map and discusses upstream/downstream or ACL.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: context-map",
+        "containsAny:context map|upstream|downstream",
+        "containsAny:anti-corruption|ACL|translation",
+        "containsAny:ordering|pricing|ERP"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "event-integration",
+      "prompt": "Start with `Selected: <playbook or decision>`. Define the event integration for shipment booked and invoice settled events across contexts.",
+      "expected_output": "Selects event-integration and distinguishes event roles.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: event-integration",
+        "containsAny:domain event|integration event|command",
+        "containsAny:shipment|invoice|context",
+        "containsAny:idempotency|ordering|replay"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "when-to-delegate-to-boot-or-persistence",
+      "prompt": "The very first line must be exactly `Selected: when-to-delegate-to-boot-or-persistence`. After that, decide whether a task about JPA locking and transaction annotations should stay in DDD or move to another skill.",
+      "expected_output": "Selects delegation decision and routes to persistence.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: when-to-delegate-to-boot-or-persistence",
+        "containsAny:spring-persistence-engineer|spring-boot-engineer",
+        "containsAny:JPA|locking|transaction",
+        "containsAny:delegate|owner|implementation"
+      ]
+    }
+  ]
+}

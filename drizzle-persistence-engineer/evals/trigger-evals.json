@@ -1,0 +1,34 @@
+[
+  {
+    "query": "Create a Drizzle schema with pgTable, relations, indexes, and foreign keys for a blog database.",
+    "should_trigger": true
+  },
+  {
+    "query": "Choose the safest Drizzle Kit migration flow for production and update drizzle.config.ts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Fix this Drizzle relational query that uses imported table columns inside nested where callbacks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use drizzle-typebox to generate Elysia validation schemas from a Drizzle table without TypeBox symbol conflicts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add an Elysia route with OpenAPI detail metadata and Eden Treaty client tests.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a Bun CLI script for parsing CSV and emitting deterministic JSON.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a React dashboard table with keyboard navigation and virtualized rows.",
+    "should_trigger": false
+  },
+  {
+    "query": "Map this Spring Data JPA entity and tune Hibernate fetch plans.",
+    "should_trigger": false
+  }
+]

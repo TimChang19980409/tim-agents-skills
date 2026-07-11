@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Help me discover the bounded contexts in our e-commerce domain. We have teams working on orders, inventory, shipping, and payments.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design the aggregate root for a Reservation context. Should it own the timeline of states or should Status be a separate value object?",
+    "should_trigger": true
+  },
+  {
+    "query": "Draw the context map for our system. Orders publishes events that Inventory and Shipping consume. What integration style should each use?",
+    "should_trigger": true
+  },
+  {
+    "query": "We need two microservices to stay consistent when an Order is placed. Should we use choreography or orchestration for the event flow?",
+    "should_trigger": true
+  },
+  {
+    "query": "Refactor this god entity into smaller aggregates with proper transactional boundaries. Right now everything is in one class with 40 fields.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a Spring Data JPA repository with a custom @Query that uses a nested projection to return only specific fields.",
+    "should_trigger": false
+  },
+  {
+    "query": "Configure a Spring Security filter chain with OAuth2 Resource Server and JWT validation for our REST API.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run JMH benchmarks to compare the throughput of our virtual thread implementation against the platform thread pool.",
+    "should_trigger": false
+  },
+  {
+    "query": "Debug this JasperReports subreport that's showing #PDF during export but renders fine in the preview.",
+    "should_trigger": false
+  }
+]

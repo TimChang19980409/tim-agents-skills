@@ -1,0 +1,23 @@
+{
+  "wave": "wave-2",
+  "skills": [
+    "java-pro",
+    "spring-boot-engineer",
+    "spring-persistence-engineer",
+    "backend-ddd-architect-spring",
+    "jasperreports-engineer"
+  ],
+  "trigger_regressions": [
+    {
+      "file": "java-pro/evals/trigger-evals.json",
+      "skill": "java-pro"
+    },
+    {
+      "file": "spring-boot-engineer/evals/trigger-evals.json",
+      "skill": "spring-boot-engineer"
+    },
+    {
+      "file": "skill-portfolio-maintainer/evals/java-spring-codex-trigger.json"
+    }
+  ]
+}

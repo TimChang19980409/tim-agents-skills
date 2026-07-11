@@ -1,0 +1,75 @@
+{
+  "skill_name": "skill-portfolio-maintainer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "draft-skill",
+      "prompt": "Start with `Selected: <playbook or decision>`. Draft a new local skill for reviewing SQL migration safety and list the first benchmark prompts.",
+      "expected_output": "Selects draft-skill and mentions triggers plus evals.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: draft-skill",
+        "containsAny:SKILL.md|trigger|description",
+        "containsAny:benchmark|eval|prompt",
+        "containsAny:local skill|workflow|reference"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "framework-migration",
+      "prompt": "The very first line must be exactly `Selected: framework-migration`. Do not add any intro before it. Migrate an old monolithic skill into thin router, playbooks, and decision guides without changing its role.",
+      "expected_output": "Selects framework-migration and uses framework terms.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: framework-migration",
+        "containsAny:thin router|playbooks|decision guides",
+        "containsAny:role|extension|delegate",
+        "containsAny:migrate|framework|skill"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "benchmark-skill",
+      "prompt": "Start with `Selected: <playbook or decision>`. Design a task-focused benchmark for a local skill and specify route + content-marker expectations.",
+      "expected_output": "Selects benchmark-skill and describes expectation contract.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: benchmark-skill",
+        "containsAny:with_skill|baseline|expectations",
+        "containsAny:Selected:|content marker|task-focused",
+        "containsAny:benchmark|artifact|cleanup"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "improve-triggering",
+      "prompt": "The very first line must be exactly `Selected: improve-triggering`. Tighten a skill description that overtriggers against neighboring Spring and Java skills.",
+      "expected_output": "Selects improve-triggering and mentions regression prompts.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: improve-triggering",
+        "containsAny:description|intent tag|boundary",
+        "containsAny:false positive|false negative|regression",
+        "containsAny:Spring|Java|neighbor"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "artifact-retention",
+      "prompt": "The very first line must be exactly `Selected: artifact-retention`. Decide which benchmark files should stay in the repo after running OpenCode evals.",
+      "expected_output": "Selects artifact-retention and keeps only compact artifacts.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: artifact-retention",
+        "containsAny:benchmark.json|benchmark.md|opencode.json|README",
+        "containsAny:raw transcripts|stderr|project tree|cleanup",
+        "containsAny:keep|delete|compact"
+      ]
+    }
+  ]
+}

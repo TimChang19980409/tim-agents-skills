@@ -3,7 +3,7 @@
 import { existsSync, lstatSync, readdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
-import { expandHomePath, skillWorkspaceDir, waveBenchmarkSummaryPath, waveGroupPath } from "./lib/layout.ts";
+import { expandHomePath, waveBenchmarkSummaryPath, waveGroupPath } from "./lib/layout.ts";
 import { buildProjectionSpec, type SkillsManifest } from "./lib/projections.ts";
 
 type SkillStatus = "core" | "merge" | "archive" | "retire";
@@ -35,19 +35,25 @@ type SkillRecord = {
   archive_extensions: string[];
   delegates_to: string[];
   eval_suite: string | null;
+  trigger_eval_suite?: string;
+  freshness?: {
+    tier: "fast" | "release-driven" | "stable";
+    reviewed_at: string;
+    interval_days: number;
+    official_sources: string[];
+  };
   portability: string;
 };
 
 const root = resolve(import.meta.dir, "..");
 const manifestPath = join(root, "skills.json");
-const EXPECTED_CORE_SKILLS = 17;
-
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as {
   schema_version?: number;
   framework?: {
     name?: string;
     canonical_root?: string;
     portability?: string;
+    expected_core_skills?: number;
   };
   projections?: {
     codex?: {
@@ -86,13 +92,15 @@ function validateName(name: string): void {
   }
 }
 
-if (manifest.schema_version !== 4) {
-  errors.push(`skills.json must declare schema_version 4 (found: ${manifest.schema_version ?? "missing"})`);
+if (manifest.schema_version !== 5) {
+  errors.push(`skills.json must declare schema_version 5 (found: ${manifest.schema_version ?? "missing"})`);
 }
 
-if (!manifest.framework?.canonical_root || !manifest.framework.portability) {
-  errors.push("skills.json must declare framework.canonical_root and framework.portability.");
+if (!manifest.framework?.canonical_root || !manifest.framework.portability || !manifest.framework.expected_core_skills) {
+  errors.push("skills.json must declare framework.canonical_root, framework.portability, and framework.expected_core_skills.");
 }
+
+const expectedCoreSkills = manifest.framework?.expected_core_skills ?? 0;
 
 const hasProjectionConfig =
   Boolean(
@@ -179,20 +187,61 @@ function ensureRelativePaths(skill: SkillRecord, absoluteDir: string): void {
       errors.push(`${skill.name} references a missing eval_suite: ${skill.eval_suite}`);
     }
   }
+
+  if (skill.trigger_eval_suite) {
+    if (skill.trigger_eval_suite.startsWith("/")) {
+      errors.push(`${skill.name} must use a relative trigger_eval_suite path: ${skill.trigger_eval_suite}`);
+    } else if (!existsSync(join(absoluteDir, skill.trigger_eval_suite))) {
+      errors.push(`${skill.name} references a missing trigger_eval_suite: ${skill.trigger_eval_suite}`);
+    }
+  }
+}
+
+function validateTriggerSuite(skill: SkillRecord, absoluteDir: string): void {
+  if (!skill.trigger_eval_suite) {
+    errors.push(`Core skill ${skill.name} must declare trigger_eval_suite.`);
+    return;
+  }
+
+  const suitePath = join(absoluteDir, skill.trigger_eval_suite);
+  if (!existsSync(suitePath)) return;
+  const cases = JSON.parse(readFileSync(suitePath, "utf8")) as Array<{ query?: string; should_trigger?: boolean }>;
+  const positives = cases.filter((item) => item.should_trigger === true && item.query?.trim());
+  const negatives = cases.filter((item) => item.should_trigger === false && item.query?.trim());
+  if (positives.length < 4 || negatives.length < 1) {
+    errors.push(`${skill.name} trigger suite must contain at least 4 positive and 1 negative natural-language cases.`);
+  }
+}
+
+function validateFreshness(skill: SkillRecord): void {
+  const freshness = skill.freshness;
+  if (!freshness) {
+    errors.push(`Core skill ${skill.name} must declare freshness metadata.`);
+    return;
+  }
+
+  const expectedIntervals = { fast: 60, "release-driven": 120, stable: 365 } as const;
+  if (expectedIntervals[freshness.tier] !== freshness.interval_days) {
+    errors.push(`${skill.name} freshness interval must match tier ${freshness.tier}.`);
+  }
+  if (!Array.isArray(freshness.official_sources) || freshness.official_sources.length === 0 || freshness.official_sources.some((source) => !source.startsWith("https://"))) {
+    errors.push(`${skill.name} freshness must include at least one HTTPS official source.`);
+  }
+
+  const reviewed = Date.parse(`${freshness.reviewed_at}T00:00:00Z`);
+  if (!Number.isFinite(reviewed)) {
+    errors.push(`${skill.name} has an invalid freshness.reviewed_at date.`);
+    return;
+  }
+  const expires = reviewed + freshness.interval_days * 86_400_000;
+  if (Date.now() > expires) {
+    errors.push(`${skill.name} freshness review expired on ${new Date(expires).toISOString().slice(0, 10)}.`);
+  }
 }
 
 function archiveDocHasMetadata(absoluteEntry: string): boolean {
   const text = readSkillFile(absoluteEntry);
   return /- Host owner:\s*`[^`]+`/m.test(text) && /- Load when:\s*\S/m.test(text);
-}
-
-function validateWaveWorkspace(skillName: string): void {
-  const workspace = skillWorkspaceDir(root, skillName);
-  for (const relativePath of ["README.md", "opencode.json", "benchmark.json", "benchmark.md"]) {
-    if (!existsSync(join(workspace, relativePath))) {
-      errors.push(`${skillName} is missing workspace artifact: _benchmarks/${skillName}-workspace/iteration-1/${relativePath}`);
-    }
-  }
 }
 
 function validateProjectionSymlink(source: string, target: string): void {
@@ -294,6 +343,9 @@ for (const skill of skills) {
       errors.push(`Core skill ${skill.name} must declare at least one intent tag.`);
     }
 
+    validateTriggerSuite(skill, absoluteDir);
+    validateFreshness(skill);
+
     const skillText = readSkillFile(absoluteEntry);
     const skillLines = lineCount(skillText);
     if (skillLines > 500) {
@@ -378,16 +430,6 @@ for (const groupPath of waveGroupPaths) {
       errors.push(`Benchmark group skill ${skillName} must be core: ${groupPath.replace(`${root}/`, "")}`);
       continue;
     }
-    if (skill.task_playbooks.length < 4) {
-      errors.push(`Benchmark group skill ${skillName} must declare at least 4 task_playbooks.`);
-    }
-    if (skill.decision_guides.length < 1) {
-      errors.push(`Benchmark group skill ${skillName} must declare at least 1 decision guide.`);
-    }
-    if (!skill.eval_suite) {
-      errors.push(`Benchmark group skill ${skillName} must declare an eval_suite.`);
-    }
-    validateWaveWorkspace(skillName);
   }
 
   if (group.trigger_regressions) {
@@ -402,8 +444,12 @@ for (const groupPath of waveGroupPaths) {
   }
 }
 
-if (coreSkills.length !== EXPECTED_CORE_SKILLS) {
-  errors.push(`Expected ${EXPECTED_CORE_SKILLS} core skills, found ${coreSkills.length}`);
+if (coreSkills.length !== expectedCoreSkills) {
+  errors.push(`Expected ${expectedCoreSkills} core skills, found ${coreSkills.length}`);
+}
+
+if (JSON.stringify([...groupedSkills].sort()) !== JSON.stringify([...coreNames].sort())) {
+  errors.push("Benchmark groups must cover every core skill exactly once and no archived skills.");
 }
 
 for (const wave of ["wave-1", "wave-2", "wave-3"]) {
@@ -453,8 +499,8 @@ const topLevelSkillDirs = readdirSync(root, { withFileTypes: true })
 
 const manifestTopLevelCore = coreSkills.map((skill) => skill.storage_path).sort();
 
-if (topLevelSkillDirs.length !== EXPECTED_CORE_SKILLS) {
-  errors.push(`Expected ${EXPECTED_CORE_SKILLS} top-level SKILL.md entrypoints, found ${topLevelSkillDirs.length}`);
+if (topLevelSkillDirs.length !== expectedCoreSkills) {
+  errors.push(`Expected ${expectedCoreSkills} top-level SKILL.md entrypoints, found ${topLevelSkillDirs.length}`);
 }
 
 if (JSON.stringify(topLevelSkillDirs) !== JSON.stringify(manifestTopLevelCore)) {

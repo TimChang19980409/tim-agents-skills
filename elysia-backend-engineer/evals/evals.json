@@ -1,0 +1,101 @@
+{
+  "skill_name": "elysia-backend-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "route-handler-contract",
+      "prompt": "Start with `Selected: <playbook or decision>`. Add an Elysia POST route with params, body, typed 201 and 404 responses, and explain the smallest test.",
+      "expected_output": "Selects route-handler-contract and preserves typed route behavior.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: route-handler-contract",
+        "containsAny:params|body|response",
+        "containsAny:status(201|status(404|status",
+        "containsAny:app.handle|Request|bun test"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "validation-openapi",
+      "prompt": "Start with `Selected: <playbook or decision>`. Wire Elysia validation and OpenAPI docs for a sign-in route using reference models and route detail metadata.",
+      "expected_output": "Selects validation-openapi and mentions schema reuse plus OpenAPI detail.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: validation-openapi",
+        "containsAny:Elysia.t|TypeBox|t.Object|Standard Schema",
+        "containsAny:openapi|@elysia/openapi|detail",
+        "containsAny:model|reference"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "plugin-lifecycle-context",
+      "prompt": "Start with `Selected: <playbook or decision>`. Design an Elysia auth plugin that adds context, uses a lifecycle hook, and avoids duplicate plugin execution.",
+      "expected_output": "Selects plugin-lifecycle-context and covers explicit dependency, lifecycle order, and dedup name.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: plugin-lifecycle-context",
+        "containsAny:.use|explicit dependency|dependency",
+        "containsAny:onBeforeHandle|resolve|derive|lifecycle",
+        "containsAny:name|seed|dedup"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "eden-testing-client",
+      "prompt": "Start with `Selected: <playbook or decision>`. Add an Eden Treaty client and a unit test for an exported Elysia app type.",
+      "expected_output": "Selects eden-testing-client and uses exported App type with Treaty or app.handle.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: eden-testing-client",
+        "containsAny:export type App|typeof app",
+        "containsAny:treaty|@elysia/eden",
+        "containsAny:app.handle|http://localhost|bun test"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "when-to-delegate-drizzle",
+      "prompt": "Start with `Selected: <playbook or decision>`. This is a routing-only answer. The request is to choose a Drizzle migration strategy for a production Elysia app. Decide whether to handle it here or delegate.",
+      "expected_output": "Selects when-to-delegate-drizzle and delegates migration strategy to Drizzle.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: when-to-delegate-drizzle",
+        "contains:drizzle-persistence-engineer",
+        "containsAny:migration|Drizzle Kit|schema",
+        "containsAny:delegate|boundary"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "version-lane",
+      "prompt": "Start with `Selected: <playbook or decision>`. Choose which Elysia version lane to use for a new project that will be deployed to Bun and needs long-term stability.",
+      "expected_output": "Selects version-lane and explains Elysia version lane selection criteria.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: version-lane",
+        "containsAny:version|lane|stable|latest|LTS",
+        "containsAny:Elysia|Bun|stability|release"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "runtime-deployment-surface",
+      "prompt": "Start with `Selected: <playbook or decision>`. Choose the appropriate runtime and deployment surface for an Elysia API that needs edge support.",
+      "expected_output": "Selects runtime-deployment-surface and explains runtime/deployment options.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: runtime-deployment-surface",
+        "containsAny:runtime|deployment|Bun|Node|edge|Cloudflare|Deno",
+        "containsAny:surface|platform|hosting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Map this Order entity to JPA with a one-to-many relationship to OrderLineItems. The child items should load lazily but I want to avoid N+1 queries.",
+    "should_trigger": true
+  },
+  {
+    "query": "We're seeing deadlocks under concurrent updates to the same row. Help me choose between optimistic vs pessimistic locking and implement it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Import 2 million rows from a CSV file into PostgreSQL using batch inserts with flush and clear per batch size of 1000.",
+    "should_trigger": true
+  },
+  {
+    "query": "Fix this Hibernate-generated SQL that is fetching the entire related entity when I only need the name field. The fetch plan seems wrong.",
+    "should_trigger": true
+  },
+  {
+    "query": "Switch our JPA configuration from Hibernate 5 to 6 and update the entity mappings to use the new jakarta.persistence namespace.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a Spring Boot REST API with JWT authentication, CORS configuration, and method-level security annotations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me design the bounded contexts for a multi-team microservices architecture using DDD aggregate and context mapping.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our JVM is having GC pause spikes. Can you analyze the GC logs and thread dumps to identify whether it's lock contention or allocation churn?",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the concurrency model for a high-throughput event consumer in Java using virtual threads or CompletableFuture.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Set up OpenCode for a new project with model permissions tuned for code review and refactoring tasks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Wire up the Filesystem MCP server and the GitHub MCP server into OpenCode so they work with natural language commands.",
+    "should_trigger": true
+  },
+  {
+    "query": "Configure agent mode for OpenCode so it can autonomously run tests and commit changes without prompting.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to set up a project-level OpenCode config that overrides the global defaults for my team's workflow.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add model permission for the Claude Opus model and set up quota limits for different team members.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a Bun script to batch rename all files in a directory by adding a timestamp prefix.",
+    "should_trigger": false
+  },
+  {
+    "query": "Debug this Spring Data JPA query that's returning duplicate results when using a @OneToMany lazy relationship.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run an accessibility audit on our React login form to ensure it meets WCAG 2.1 AA standards.",
+    "should_trigger": false
+  },
+  {
+    "query": "Search the web for the latest pricing changes for AWS Lambda invocations.",
+    "should_trigger": false
+  }
+]

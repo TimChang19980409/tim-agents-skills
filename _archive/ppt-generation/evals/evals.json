@@ -1,0 +1,44 @@
+{
+  "skill_name": "ppt-generation",
+  "evals": [
+    {
+      "id": 1,
+      "name": "presentation-routing-positive",
+      "prompt": "User: Can you create a PowerPoint presentation about our Q3 sales results?",
+      "expected_output": "ppt-generation should route to presentation-generation and start a slide deck workflow",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: presentation-generation",
+        "containsAny:presentation|slides|PPTX|PowerPoint|deck",
+        "containsAny:style|visual|layout|slide"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "image-generation-near-miss",
+      "prompt": "User: Create one standalone hero illustration that matches the visual language of my existing deck cover. I only need the image asset, not a presentation.",
+      "expected_output": "ppt-generation should not trigger on a single-image request",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "notContains:Selected: presentation-generation",
+        "containsAny:image|illustration|asset|visual language",
+        "containsAny:existing deck cover|only need the image|not a presentation"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "existing-deck-edit-negative",
+      "prompt": "User: Please rewrite the speaker notes and tighten the bullet copy in this existing board deck, but do not create new slides or change the visual design.",
+      "expected_output": "ppt-generation should not trigger on a pure edit request",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "notContains:Selected: presentation-generation",
+        "containsAny:rewrite|speaker notes|bullet copy|edit",
+        "containsAny:existing board deck|do not create new slides|change the visual design"
+      ]
+    }
+  ]
+}

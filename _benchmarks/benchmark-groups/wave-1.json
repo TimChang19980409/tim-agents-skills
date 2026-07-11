@@ -1,0 +1,12 @@
+{
+  "wave": "wave-1",
+  "skills": [
+    "frontend-dev-guidelines",
+    "react-component-designer",
+    "stagehand-aria-e2e",
+    "firecrawl",
+    "obsidian-cli",
+    "teaching-content-designer"
+  ],
+  "trigger_regressions": []
+}

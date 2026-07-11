@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Run the ARIA snapshot flow on our login page to verify the accessibility tree matches what we expect.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a Playwright test that asserts the layout tree contains the correct heading structure and landmarks.",
+    "should_trigger": true
+  },
+  {
+    "query": "I migrated our screenshots to retina resolution and they look blurry in the visual comparison. How do I fix the baseline?",
+    "should_trigger": true
+  },
+  {
+    "query": "Run the Stagehand install check to make sure the browser, model, and API keys are all configured correctly.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create an ARIA snapshot assertion that checks the modal has focus trapped inside it when open.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a Spring Boot REST API with Spring Security 6 and JWT token validation for our mobile app.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the bounded contexts and context map for a multi-team e-commerce platform using event-driven integration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract text from a scanned PDF and return structured JSON with page numbers for each extracted block.",
+    "should_trigger": false
+  },
+  {
+    "query": "Migrate this Node.js build script to Bun with proper TypeScript types and faster startup time.",
+    "should_trigger": false
+  }
+]

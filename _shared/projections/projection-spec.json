@@ -35,12 +35,12 @@
           "target": "~/.agents/skills/backend-ddd-architect-spring"
         },
         {
-          "source": "~/.claude/skills/brainstorming",
-          "target": "~/.agents/skills/brainstorming"
+          "source": "~/.claude/skills/drizzle-persistence-engineer",
+          "target": "~/.agents/skills/drizzle-persistence-engineer"
         },
         {
-          "source": "~/.claude/skills/bun-ts-scripting-policy",
-          "target": "~/.agents/skills/bun-ts-scripting-policy"
+          "source": "~/.claude/skills/elysia-backend-engineer",
+          "target": "~/.agents/skills/elysia-backend-engineer"
         },
         {
           "source": "~/.claude/skills/firecrawl",
@@ -71,16 +71,12 @@
           "target": "~/.agents/skills/pdf-reader"
         },
         {
-          "source": "~/.claude/skills/ppt-generation",
-          "target": "~/.agents/skills/ppt-generation"
-        },
-        {
           "source": "~/.claude/skills/react-component-designer",
           "target": "~/.agents/skills/react-component-designer"
         },
         {
-          "source": "~/.claude/skills/skill-creator",
-          "target": "~/.agents/skills/skill-creator"
+          "source": "~/.claude/skills/skill-portfolio-maintainer",
+          "target": "~/.agents/skills/skill-portfolio-maintainer"
         },
         {
           "source": "~/.claude/skills/spring-boot-engineer",
@@ -121,12 +117,12 @@
           "target": "~/.agents/skills/backend-ddd-architect-spring"
         },
         {
-          "source": "~/.gemini/antigravity/skills/brainstorming",
-          "target": "~/.agents/skills/brainstorming"
+          "source": "~/.gemini/antigravity/skills/drizzle-persistence-engineer",
+          "target": "~/.agents/skills/drizzle-persistence-engineer"
         },
         {
-          "source": "~/.gemini/antigravity/skills/bun-ts-scripting-policy",
-          "target": "~/.agents/skills/bun-ts-scripting-policy"
+          "source": "~/.gemini/antigravity/skills/elysia-backend-engineer",
+          "target": "~/.agents/skills/elysia-backend-engineer"
         },
         {
           "source": "~/.gemini/antigravity/skills/firecrawl",
@@ -157,16 +153,12 @@
           "target": "~/.agents/skills/pdf-reader"
         },
         {
-          "source": "~/.gemini/antigravity/skills/ppt-generation",
-          "target": "~/.agents/skills/ppt-generation"
-        },
-        {
           "source": "~/.gemini/antigravity/skills/react-component-designer",
           "target": "~/.agents/skills/react-component-designer"
         },
         {
-          "source": "~/.gemini/antigravity/skills/skill-creator",
-          "target": "~/.agents/skills/skill-creator"
+          "source": "~/.gemini/antigravity/skills/skill-portfolio-maintainer",
+          "target": "~/.agents/skills/skill-portfolio-maintainer"
         },
         {
           "source": "~/.gemini/antigravity/skills/spring-boot-engineer",

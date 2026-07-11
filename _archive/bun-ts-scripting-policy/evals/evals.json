@@ -1,0 +1,75 @@
+{
+  "skill_name": "bun-ts-scripting-policy",
+  "evals": [
+    {
+      "id": 1,
+      "name": "new-bun-script",
+      "prompt": "Start with `Selected: <playbook or decision>`. Outline a new Bun + TypeScript CLI script for bulk image metadata extraction with explicit flags and exit codes.",
+      "expected_output": "Selects new-bun-script and uses Bun/TS policy.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: new-bun-script",
+        "containsAny:Bun|TypeScript|#!/usr/bin/env bun",
+        "containsAny:--input|--output|flag",
+        "containsAny:exit code|stderr|JSON"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "node-to-bun-migration",
+      "prompt": "The very first line must be exactly `Selected: node-to-bun-migration`. Do not add a missing-file disclaimer before it. Migrate an existing Node .mjs reporting helper to Bun + TypeScript without changing its CLI behavior.",
+      "expected_output": "Selects node-to-bun-migration and preserves contract.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: node-to-bun-migration",
+        "containsAny:.mjs|Bun|TypeScript",
+        "containsAny:preserve|migration|entrypoint",
+        "containsAny:command|behavior|docs"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "cli-automation-review",
+      "prompt": "The very first line must be exactly `Selected: cli-automation-review`. This is a planning-only response. Do not ask for missing files. Review a CLI helper that currently mixes errors into stdout and uses inconsistent exit codes.",
+      "expected_output": "Selects cli-automation-review and fixes automation contract.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: cli-automation-review",
+        "containsAny:stdout|stderr|exit code",
+        "containsAny:automation|CLI|review",
+        "containsAny:JSON|flag|contract"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "parser-or-codegen-script",
+      "prompt": "Start with `Selected: <playbook or decision>`. This is a planning-only response. Do not run commands or ask for missing files. Design a Bun/TS parser script that reads CSV and emits deterministic JSON for a codegen pipeline.",
+      "expected_output": "Selects parser-or-codegen-script and stresses deterministic output.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: parser-or-codegen-script",
+        "containsAny:CSV|JSON|codegen",
+        "containsAny:deterministic|idempotent|parser",
+        "containsAny:Bun|TypeScript|flag"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "script-output-contract",
+      "prompt": "Start with `Selected: <playbook or decision>`. Decide whether an automation script should emit JSON, plain text, or both for CI consumption.",
+      "expected_output": "Selects script-output-contract and chooses output mode.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "contains:Selected: script-output-contract",
+        "containsAny:JSON|plain text|stdout|stderr",
+        "containsAny:CI|automation|parse",
+        "containsAny:contract|mode|choose"
+      ]
+    }
+  ]
+}

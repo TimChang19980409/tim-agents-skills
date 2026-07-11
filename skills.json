@@ -1,9 +1,10 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "framework": {
     "name": "Core + Archive + Host Playbooks",
     "canonical_root": "~/.agents/skills",
-    "portability": "portable-first"
+    "portability": "portable-first",
+    "expected_core_skills": 16
   },
   "projections": {
     "codex": {
@@ -64,7 +65,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "stable",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 365,
+        "official_sources": [
+          "https://docs.spring.io/spring-modulith/reference/"
+        ]
+      }
     },
     {
       "name": "book-translation",
@@ -84,77 +100,65 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "brainstorming",
       "family": "Workflow / Meta / General",
-      "status": "core",
-      "host": null,
-      "storage_path": "brainstorming",
-      "entry_file": "SKILL.md",
-      "notes": "Process gate skill: forces design before implementation for from-scratch feature/module/subsystem work.",
-      "role": "gate",
-      "execution_mode": "inline",
-      "intent_tags": [
-        "from-scratch feature brainstorm",
-        "new module design",
-        "new subsystem decomposition",
-        "design before implementation"
-      ],
-      "task_playbooks": [
-        "references/tasks/explore-project-context.md",
-        "references/tasks/ask-clarifying-questions.md",
-        "references/tasks/present-design.md",
-        "references/tasks/write-spec.md"
-      ],
-      "decision_guides": [
-        "references/decisions/when-to-brainstorm.md",
-        "references/decisions/terminal-handoff-target.md"
-      ],
+      "status": "archive",
+      "host": "skill-portfolio-maintainer",
+      "storage_path": "_archive/brainstorming",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Legacy explicit design gate; native host planning is preferred.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
       "archive_extensions": [],
-      "delegates_to": [
-        "skill-creator",
-        "frontend-dev-guidelines",
-        "spring-boot-engineer"
-      ],
-      "eval_suite": "evals/evals.json",
+      "delegates_to": [],
+      "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-06-22", "note": "Governed as 17th core skill with new gate role; vendored from obra/superpowers@brainstorming" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-22",
+          "note": "Governed as 17th core skill with new gate role; vendored from obra/superpowers@brainstorming"
+        }
+      ]
     },
     {
       "name": "bun-ts-scripting-policy",
       "family": "Workflow / Meta / General",
-      "status": "core",
-      "host": null,
-      "storage_path": "bun-ts-scripting-policy",
-      "entry_file": "SKILL.md",
-      "notes": "Default script policy for this portfolio.",
-      "role": "policy",
-      "execution_mode": "inline",
-      "intent_tags": [
-        "new bun script",
-        "node to bun migration",
-        "cli automation review",
-        "parser codegen script"
-      ],
-      "task_playbooks": [
-        "references/tasks/new-bun-script.md",
-        "references/tasks/node-to-bun-migration.md",
-        "references/tasks/cli-automation-review.md",
-        "references/tasks/parser-or-codegen-script.md"
-      ],
-      "decision_guides": [
-        "references/decisions/when-not-to-use-bun.md",
-        "references/decisions/script-output-contract.md"
-      ],
+      "status": "archive",
+      "host": "skill-portfolio-maintainer",
+      "storage_path": "_archive/bun-ts-scripting-policy",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Legacy Bun/TypeScript migration policy; normal defaults moved to shared coding principles.",
+      "role": "extension",
+      "execution_mode": "manual",
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
       "archive_extensions": [],
       "delegates_to": [],
-      "eval_suite": "evals/evals.json",
+      "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "coding-teacher",
@@ -174,7 +178,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "context7-auto-research",
@@ -194,7 +204,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "defuddle",
@@ -214,13 +230,19 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "developer-growth-analysis",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": "skill-creator",
+      "host": "skill-portfolio-maintainer",
       "storage_path": "_archive/developer-growth-analysis",
       "entry_file": "ARCHIVE.md",
       "notes": "Specialized workflow with external delivery dependencies.",
@@ -234,7 +256,69 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
+    },
+    {
+      "name": "drizzle-persistence-engineer",
+      "family": "TypeScript / Bun / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "drizzle-persistence-engineer",
+      "entry_file": "SKILL.md",
+      "notes": "Drizzle ORM schema, query, migration, and Elysia TypeBox bridge specialist.",
+      "role": "specialist",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "drizzle schema relations",
+        "drizzle query builder",
+        "drizzle kit migrations",
+        "elysia typebox bridge"
+      ],
+      "task_playbooks": [
+        "references/tasks/schema-relations.md",
+        "references/tasks/query-builder-rqb.md",
+        "references/tasks/migration-flow.md",
+        "references/tasks/elysia-typebox-bridge.md"
+      ],
+      "decision_guides": [
+        "references/decisions/dialect-driver.md",
+        "references/decisions/migration-strategy.md",
+        "references/decisions/connection-serverless.md"
+      ],
+      "archive_extensions": [],
+      "delegates_to": [
+        "elysia-backend-engineer"
+      ],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first",
+      "version": "1.1.0",
+      "changelog": [
+        {
+          "version": "1.1.0",
+          "date": "2026-07-06",
+          "note": "Add connection-serverless decision guide, framework-compliant playbooks, deeper references"
+        },
+        {
+          "version": "1.0.0",
+          "date": "2026-07-05",
+          "note": "Initial Elysia and Drizzle backend skill split"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "fast",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 60,
+        "official_sources": [
+          "https://orm.drizzle.team/docs/v0-v1-changes"
+        ]
+      }
     },
     {
       "name": "e2e-tests-studio",
@@ -254,7 +338,69 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
+    },
+    {
+      "name": "elysia-backend-engineer",
+      "family": "TypeScript / Bun / Backend",
+      "status": "core",
+      "host": null,
+      "storage_path": "elysia-backend-engineer",
+      "entry_file": "SKILL.md",
+      "notes": "ElysiaJS backend host for routes, validation, plugins, Eden clients, tests, and runtime decisions.",
+      "role": "host",
+      "execution_mode": "inline",
+      "intent_tags": [
+        "elysia routes handlers",
+        "elysia validation openapi",
+        "elysia plugin lifecycle",
+        "eden testing client"
+      ],
+      "task_playbooks": [
+        "references/tasks/route-handler-contract.md",
+        "references/tasks/validation-openapi.md",
+        "references/tasks/plugin-lifecycle-context.md",
+        "references/tasks/eden-testing-client.md"
+      ],
+      "decision_guides": [
+        "references/decisions/runtime-deployment-surface.md",
+        "references/decisions/when-to-delegate-drizzle.md",
+        "references/decisions/version-lane.md"
+      ],
+      "archive_extensions": [],
+      "delegates_to": [
+        "drizzle-persistence-engineer"
+      ],
+      "eval_suite": "evals/evals.json",
+      "portability": "portable-first",
+      "version": "1.1.0",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-05",
+          "note": "Initial Elysia and Drizzle backend skill split"
+        },
+        {
+          "version": "1.1.0",
+          "date": "2026-07-06",
+          "note": "Add version-lane decision guide, framework-compliant playbooks, deeper references"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "fast",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 60,
+        "official_sources": [
+          "https://elysiajs.com/blog/elysia-14"
+        ]
+      }
     },
     {
       "name": "find-skills",
@@ -274,7 +420,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "firecrawl",
@@ -310,7 +462,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "fast",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 60,
+        "official_sources": [
+          "https://docs.firecrawl.dev/api-reference/v2-introduction"
+        ]
+      }
     },
     {
       "name": "frontend-dev-guidelines",
@@ -357,7 +524,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://react.dev/learn"
+        ]
+      }
     },
     {
       "name": "java-pro",
@@ -390,7 +572,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://docs.oracle.com/en/java/javase/26/"
+        ]
+      }
     },
     {
       "name": "jasperreports-engineer",
@@ -423,7 +620,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://github.com/Jaspersoft/jasperreports/releases"
+        ]
+      }
     },
     {
       "name": "json-canvas",
@@ -443,7 +655,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "ladle-component-workflow",
@@ -463,13 +681,19 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "monorepo-management",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": "skill-creator",
+      "host": "skill-portfolio-maintainer",
       "storage_path": "_archive/monorepo-management",
       "entry_file": "ARCHIVE.md",
       "notes": "Archived until refreshed against current tooling.",
@@ -483,7 +707,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "obsidian-bases",
@@ -503,7 +733,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "obsidian-cli",
@@ -543,7 +779,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://help.obsidian.md/cli"
+        ]
+      }
     },
     {
       "name": "obsidian-markdown",
@@ -563,7 +814,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "opencode-configurator",
@@ -596,38 +853,48 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "fast",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 60,
+        "official_sources": [
+          "https://opencode.ai/docs/config/"
+        ]
+      }
     },
     {
       "name": "ppt-generation",
       "family": "Content.Media",
-      "status": "core",
-      "host": null,
-      "storage_path": "ppt-generation",
-      "entry_file": "SKILL.md",
-      "notes": "Use this skill when the user requests to generate, create, or make presentations (PPT/PPTX).",
-      "role": "utility",
+      "status": "archive",
+      "host": "teaching-content-designer",
+      "storage_path": "_archive/ppt-generation",
+      "entry_file": "ARCHIVE.md",
+      "notes": "Legacy sequential presentation pipeline; native presentation tooling is preferred.",
+      "role": "extension",
       "execution_mode": "manual",
-      "intent_tags": [
-        "ppt",
-        "簡報",
-        "投影片",
-        "presentation",
-        "slides",
-        "deck"
-      ],
-      "task_playbooks": [
-        "references/tasks/presentation-generation.md"
-      ],
-      "decision_guides": [
-        "references/decisions/choose-style.md"
-      ],
+      "intent_tags": [],
+      "task_playbooks": [],
+      "decision_guides": [],
       "archive_extensions": [],
       "delegates_to": [],
-      "eval_suite": "evals/evals.json",
+      "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "pdf-reader",
@@ -660,7 +927,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/"
+        ]
+      }
     },
     {
       "name": "pdf-reader.__preinit_backup",
@@ -680,7 +962,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "pebble-official-best-practices",
@@ -700,7 +988,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "react-best-practices",
@@ -720,7 +1014,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "react-component-designer",
@@ -746,7 +1046,22 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "stable",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 365,
+        "official_sources": [
+          "https://react.dev/reference/react"
+        ]
+      }
     },
     {
       "name": "react-storybook-vite-workflow",
@@ -766,7 +1081,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "rdbms-data-modeling",
@@ -786,16 +1107,22 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
-      "name": "skill-creator",
+      "name": "skill-portfolio-maintainer",
       "family": "Workflow / Meta / General",
       "status": "core",
       "host": null,
-      "storage_path": "skill-creator",
+      "storage_path": "skill-portfolio-maintainer",
       "entry_file": "SKILL.md",
-      "notes": "Meta-skill for creating, tuning, and evaluating skills.",
+      "notes": "Portfolio governance, framework migration, trigger/outcome evaluation, freshness, and runtime projection maintenance.",
       "role": "utility",
       "execution_mode": "manual",
       "intent_tags": [
@@ -814,12 +1141,36 @@
         "references/decisions/eval-strategy.md",
         "references/decisions/artifact-retention.md"
       ],
-      "archive_extensions": [],
+      "archive_extensions": [
+        "brainstorming",
+        "bun-ts-scripting-policy"
+      ],
       "delegates_to": [],
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
-      "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "version": "2.0.0",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        },
+        {
+          "version": "2.0.0",
+          "date": "2026-07-11",
+          "note": "Renamed from skill-creator and narrowed to portfolio governance."
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "fast",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 60,
+        "official_sources": [
+          "https://learn.chatgpt.com/docs/customization/overview#skills",
+          "https://dev.opencode.ai/docs/skills"
+        ]
+      }
     },
     {
       "name": "solidjs-patterns",
@@ -839,7 +1190,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "spring-boot-engineer",
@@ -872,7 +1229,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://docs.spring.io/spring-boot/system-requirements.html"
+        ]
+      }
     },
     {
       "name": "spring-persistence-engineer",
@@ -909,7 +1281,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "release-driven",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 120,
+        "official_sources": [
+          "https://hibernate.org/orm/releases/"
+        ]
+      }
     },
     {
       "name": "stagehand-aria-e2e",
@@ -942,7 +1329,22 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "fast",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 60,
+        "official_sources": [
+          "https://docs.stagehand.dev/v3/references/stagehand"
+        ]
+      }
     },
     {
       "name": "tailwind-best-practices",
@@ -962,7 +1364,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "teaching-content-designer",
@@ -993,10 +1401,10 @@
         "references/decisions/domain-delegation.md"
       ],
       "archive_extensions": [
-        "coding-teacher"
+        "coding-teacher",
+        "ppt-generation"
       ],
       "delegates_to": [
-        "ppt-generation",
         "java-pro",
         "frontend-dev-guidelines",
         "backend-ddd-architect-spring",
@@ -1006,13 +1414,28 @@
       "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-04-20", "note": "Initial active core teaching content design host" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-04-20",
+          "note": "Initial active core teaching content design host"
+        }
+      ],
+      "trigger_eval_suite": "evals/trigger-evals.json",
+      "freshness": {
+        "tier": "stable",
+        "reviewed_at": "2026-07-11",
+        "interval_days": 365,
+        "official_sources": [
+          "https://udlguidelines.cast.org/"
+        ]
+      }
     },
     {
       "name": "typescript-advanced-types",
       "family": "Workflow / Meta / General",
       "status": "archive",
-      "host": "skill-creator",
+      "host": "skill-portfolio-maintainer",
       "storage_path": "_archive/typescript-advanced-types",
       "entry_file": "ARCHIVE.md",
       "notes": "Deep reference, not part of the active default layer.",
@@ -1026,7 +1449,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "ui-ux-pro-max",
@@ -1046,7 +1475,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "vercel-react-best-practices",
@@ -1066,7 +1501,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     },
     {
       "name": "web-design-guidelines",
@@ -1086,7 +1527,13 @@
       "eval_suite": null,
       "portability": "portable-first",
       "version": "1.0.0",
-      "changelog": [{ "version": "1.0.0", "date": "2026-03-26", "note": "Initial version" }]
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-03-26",
+          "note": "Initial version"
+        }
+      ]
     }
   ]
 }

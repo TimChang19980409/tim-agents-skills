@@ -1,0 +1,38 @@
+[
+  {
+    "query": "Draft a new local skill called my-custom-skill that handles API documentation generation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Migrate an existing standalone skill into the host-playbook framework. It currently has its own README but no SKILL.md.",
+    "should_trigger": true
+  },
+  {
+    "query": "Run the benchmark suite for our skill with MiniMax M2.5 and tell me which queries are triggering the wrong skill.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our skill trigger descriptions are too broad and causing false positives. How do we tighten the intent_tags and evaluation criteria?",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a new skill that wraps an MCP server. What files do we need and where should they live?",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a React component with proper accessibility attributes and keyboard navigation support.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract text from a scanned PDF using OCR and return per-page JSON output for Obsidian import.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a Bun script that renames all files in a directory by appending a sequential index prefix.",
+    "should_trigger": false
+  },
+  {
+    "query": "Configure Spring Security 6 with OAuth2 Resource Server and JWT validation for a new microservice.",
+    "should_trigger": false
+  }
+]

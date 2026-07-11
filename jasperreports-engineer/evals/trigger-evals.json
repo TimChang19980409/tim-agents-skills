@@ -1,0 +1,38 @@
+[
+  {
+    "query": "My JasperReport is showing #PDF error in production but works in Jaspersoft Studio. How do I debug the datasource connection issue?",
+    "should_trigger": true
+  },
+  {
+    "query": "Migrate our reports from JasperReports 6 to 7. The compilation fails on a few expressions that used to work with the old version.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a font extension JAR so that our custom sans-serif font renders correctly in PDF exports on Linux servers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Exporting a report with 500k rows causes an OutOfMemoryError. How do I implement streaming export or pagination to avoid loading everything into memory?",
+    "should_trigger": true
+  },
+  {
+    "query": "This subreport compiles fine but renders empty during PDF export. The datasource query returns data when run directly.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a Spring Boot REST endpoint that returns a paginated list of orders with filtering and sorting support.",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me design the aggregate roots for a reservation system using event-driven context mapping between bounded contexts.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix the N+1 query problem in our JPA entity mapping where lazy-loaded collections are being fetched one at a time.",
+    "should_trigger": false
+  },
+  {
+    "query": "Scrape the pricing table from example.com and return it as structured JSON that I can import into our system.",
+    "should_trigger": false
+  }
+]
