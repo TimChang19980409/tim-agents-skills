@@ -1,42 +1,20 @@
 # Compatibility Lanes
 
-Use this file whenever version-sensitive persistence behavior is in play.
+Inspect the project's dependency management; do not infer an ORM version from a Boot major alone.
 
-## Lane Matrix
+| Lane | Use | Persistence baseline |
+| --- | --- | --- |
+| Boot 3.5 maintenance | Existing Boot 3 applications | Java 17+, Jakarta Persistence 3.1-era APIs, commonly Hibernate 6.6 |
+| Boot 4.1 current | New/current Boot 4 applications | Java 17–26; inspect resolved Spring Data and Hibernate versions |
+| Hibernate 6.6 maintenance | Long-lived compatibility | Maintain and migrate deliberately |
+| Hibernate 7.4 stable | Direct Hibernate 7 adoption | Preferred stable Hibernate 7 line when the platform permits |
+| Hibernate 7.2 limited | Existing pinned systems only | Upgrade planning; do not select for new independent work |
 
-| Lane | Spring Boot | Spring Framework | Spring Data JPA | Hibernate ORM | Jakarta Persistence |
-| --- | --- | --- | --- | --- | --- |
-| `lane-boot-3` | `3.5.x` | `6.2.x` | `3.5.x` | `6.6.x` | `3.1.x` |
-| `lane-boot-4` | `4.0.x` | `7.0.x` | `4.0.x` | `7.2.x` | `3.2.x` |
+## Rules
 
-## Verified Reference Points
+1. Read the effective Maven/Gradle dependency graph and Boot BOM before using version-specific APIs.
+2. Do not override Boot-managed Hibernate merely to reach 7.4 without testing Spring Data, enhancement, dialect, and Jakarta compatibility.
+3. Keep portable JPA mappings separate from Hibernate-only JSON, fetch, cache, and type features.
+4. Re-run schema validation, repository tests, generated-SQL assertions, and representative migrations after a lane change.
 
-- Spring Boot `3.5.9` manages `org.hibernate.orm:hibernate-core:6.6.41.Final`.
-- Spring Boot `4.0.3` manages `org.hibernate.orm:hibernate-core:7.2.4.Final`.
-- Spring Data JPA `4.0.3` documents a Spring Framework `7.0.3+` baseline.
-- Hibernate ORM `7.2` has a dedicated migration guide; do not assume `6.6` mappings or deprecated APIs remain unchanged.
-
-## Decision Rules
-
-1. If the repo is on Boot `3.5.x`, default to Hibernate `6.6` guidance and Jakarta Persistence `3.1` assumptions.
-2. If the repo is on Boot `4.0.x`, allow Hibernate `7.2` guidance and Jakarta Persistence `3.2` assumptions.
-3. Do not mix lanes casually:
-- Hibernate `7.x` APIs inside Boot `3.5.x` need explicit dependency-management override work and compatibility validation.
-- Boot `4.0.x` migrations should review removed or tightened Hibernate behaviors before copy-pasting `6.x` recipes.
-4. When the user says "Hibernate 6 | 7 compatible", prefer guidance that works in both lanes or explicitly separate the answer into `lane-boot-3` and `lane-boot-4`.
-
-## Migration Friction Points
-
-- JSON mapping and SQL type handling: confirm whether the code relies on Hibernate-specific annotations or pure JPA converters.
-- Identifier generation: re-check `IDENTITY` and `SEQUENCE` assumptions after a lane upgrade.
-- Query and fetch tuning: keep Spring Data repository abstractions stable when possible and isolate Hibernate-specific tuning.
-- Deprecated APIs: search for removed `org.hibernate` APIs before a Boot `3.5 -> 4.0` migration.
-
-## Official URLs
-
-- Spring Boot 3.5 dependency coordinates: `https://docs.spring.io/spring-boot/3.5/appendix/dependency-versions/coordinates.html`
-- Spring Boot 4.0 dependency coordinates: `https://docs.spring.io/spring-boot/4.0/appendix/dependency-versions/coordinates.html`
-- Spring Data JPA dependencies: `https://docs.spring.io/spring-data/jpa/reference/data-commons/dependencies.html`
-- Hibernate ORM 6.6 user guide: `https://docs.hibernate.org/orm/6.6/userguide/html_single/Hibernate_User_Guide.html`
-- Hibernate ORM 7.2 user guide: `https://docs.hibernate.org/orm/7.2/userguide/html_single/Hibernate_User_Guide.html`
-- Hibernate ORM 7.2 migration guide: `https://docs.hibernate.org/orm/7.2/migration-guide/`
+Official sources: [Spring Boot requirements](https://docs.spring.io/spring-boot/system-requirements.html), [Hibernate releases](https://hibernate.org/orm/releases/).

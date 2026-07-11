@@ -1,6 +1,6 @@
 # OpenCode Config Cheatsheet
 
-Verified against official docs on 2026-02-13:
+Verified against OpenCode 1.17 official docs on 2026-07-11:
 - https://opencode.ai/docs/config/
 - https://opencode.ai/docs/permissions/
 - https://opencode.ai/docs/agents/
@@ -9,6 +9,8 @@ Verified against official docs on 2026-02-13:
 - https://opencode.ai/docs/models/
 
 ## Core Paths And Precedence
+
+OpenCode 1.17 discovers Agent Skills natively and gates them through skill permissions. Use `--pure` to exclude external plugins during benchmark isolation.
 
 OpenCode config precedence (later overrides earlier):
 1. Remote config (`.well-known/opencode`)

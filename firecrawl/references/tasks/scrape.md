@@ -2,7 +2,7 @@
 
 ## When to use
 
-Use this playbook when the user already has a specific URL or the task is extracting one page's content.
+Use for repeatable Firecrawl v2 extraction of known URLs, especially when rendering or normalized formats are needed.
 
 ## Inputs
 
@@ -13,14 +13,14 @@ Use this playbook when the user already has a specific URL or the task is extrac
 ## Steps
 
 1. Quote the URL.
-2. Default to `firecrawl scrape "<url>" -o .firecrawl/...`.
+2. Confirm the v2 scrape request or CLI shape before running it.
 3. Add `--only-main-content` or `--wait-for` only when needed.
 4. Read the output incrementally instead of loading the whole file.
 
 ## Safety gates
 
 - Do not overuse full HTML when markdown or links are enough.
-- Avoid scraping more pages than the task needs.
+- Use native Web for an ordinary one-page read that needs no Firecrawl-specific output.
 
 ## Outputs
 

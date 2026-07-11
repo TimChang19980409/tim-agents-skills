@@ -2,23 +2,23 @@
 
 ## Decision
 
-Choose whether the task needs live browsing at all.
+Choose whether the task needs Firecrawl rather than the host's native Web capability.
 
 ## Signals/constraints
 
-- The fact may have changed recently
-- The user explicitly asked to search or verify
-- The answer needs citations, links, or current docs
+- The task needs a multi-page crawl, URL inventory, bulk scrape, or structured extraction
+- A large site must be processed repeatably or asynchronously
+- Firecrawl v2 job status and stored outputs add value
 
 ## Options
 
-- Browse now with Firecrawl
-- Stay local and answer from repo/context only
-- Escalate to an official-doc extension such as `context7-auto-research`
+- Use Firecrawl v2 for site-scale processing
+- Use native Web for ordinary search, current facts, and citations
+- Stay local when repository context is sufficient
 
 ## Recommendation rule
 
-Browse whenever the information is time-sensitive, externally sourced, or citation-heavy. Stay local only when the answer is stable and already grounded in local context.
+Use Firecrawl only when its crawl/map/bulk extraction surface adds value. Freshness alone is a native Web trigger, not a Firecrawl trigger.
 
 ## Tradeoffs
 

@@ -445,10 +445,10 @@
         "verify current facts"
       ],
       "task_playbooks": [
-        "references/tasks/search.md",
         "references/tasks/scrape.md",
+        "references/tasks/crawl.md",
         "references/tasks/map.md",
-        "references/tasks/verify-current-facts.md"
+        "references/tasks/structured-extraction.md"
       ],
       "decision_guides": [
         "references/decisions/when-to-browse.md",

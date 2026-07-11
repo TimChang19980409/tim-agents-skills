@@ -15,7 +15,7 @@ Use when creating or auditing a project-level opencode.json or .opencode setup.
 1. Classify the request into this task instead of a neighboring skill or decision.
 2. Load `references/opencode-config-cheatsheet.md` for deeper details only when needed.
 3. Recommend the smallest safe change or plan for project config setup.
-4. When the request names MiniMax M2.5, use `minimax-coding-plan/MiniMax-M2.5` in the example config unless the prompt explicitly asks for a different provider id.
+4. Preserve the user's provider and model unless the request explicitly changes them; use `opencode/nemotron-3-ultra-free` only for this portfolio's full trigger benchmark.
 4. End with concrete verification steps tied to the task.
 
 ## Safety gates

@@ -14,12 +14,12 @@ Choose the active Elysia version lane before giving guidance.
 ## Options
 
 - lane-pre-1.3: use error(), Eden .index, macro v1
-- lane-1.3: use status(), exact-mirror, Elysia.Ref
-- lane-1.4+: use Standard Schema, fromTypes(), no macro v1
+- lane-1.3: compatibility only; use `status()`, exact-mirror, and `Elysia.Ref`
+- lane-1.4: current; Standard Schema, lifecycle type soundness, macro schemas, and OpenAPI type generation
 
 ## Recommendation rule
 
-Detect lane from package.json/lockfile first; if ambiguous, recommend smallest cross-lane-safe change and flag the risk.
+Detect the installed lane first. For new work, use 1.4 and preserve method chaining and lifecycle registration order so inferred context stays sound.
 
 ## Tradeoffs
 

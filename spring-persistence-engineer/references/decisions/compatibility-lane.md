@@ -7,8 +7,8 @@ Choose the active Spring Boot / Hibernate compatibility lane before giving persi
 ## Signals/constraints
 
 - Build metadata or dependency versions
-- Boot 3.5 vs 4.0 APIs
-- Hibernate 6.x vs 7.x feature assumptions
+- Boot 3.5 maintenance vs 4.1 current APIs
+- Hibernate 6.6 maintenance, 7.4 stable, and 7.2 limited-support assumptions
 
 ## Options
 

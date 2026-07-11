@@ -38,5 +38,5 @@ Load this file for entity associations, identifier strategy, batching, fetch tun
 ## Official URLs
 
 - Hibernate ORM 6.6 user guide: `https://docs.hibernate.org/orm/6.6/userguide/html_single/Hibernate_User_Guide.html`
-- Hibernate ORM 7.2 user guide: `https://docs.hibernate.org/orm/7.2/userguide/html_single/Hibernate_User_Guide.html`
-- Hibernate ORM 7.2 migration guide: `https://docs.hibernate.org/orm/7.2/migration-guide/`
+- Hibernate ORM 7.4 user guide: `https://docs.hibernate.org/orm/7.4/userguide/html_single/Hibernate_User_Guide.html`
+- Hibernate ORM releases and support status: `https://hibernate.org/orm/releases/`

@@ -12,10 +12,10 @@ Use when upgrading JasperReports versions breaks compiled templates or runtime l
 
 ## Steps
 
-1. Classify the request into this task instead of a neighboring skill or decision.
-2. Load `references/studio-migration.md` for deeper details only when needed.
-3. Recommend the smallest safe change or plan for migration recompile.
-4. End with concrete verification steps tied to the task.
+1. Inventory JRXML, `.jasper`, serialization, extension jars, and Studio/runtime versions.
+2. Target JasperReports Library 7.0.6 and use the official Maven plugin for build-time compilation where appropriate.
+3. Convert 6.x JRXML with the supported Studio/library migration path; do not assume old JRXML parses unchanged.
+4. Rebuild compiled templates with the target runtime and smoke-test every export family in use.
 
 ## Safety gates
 
@@ -34,7 +34,7 @@ Use when upgrading JasperReports versions breaks compiled templates or runtime l
 - [ ] Mistake 3: Skipping version compatibility checks when upgrading both Jasper and the Java runtime together
 
 ### Negative Examples
-**Don't skip the recompile step when upgrading from JasperReports 6.x to 7.x** — compiled templates from 6.x are not guaranteed to load in 7.x; always recompile JRXML and re-run the full report smoke test suite after upgrading.
+**Do not carry 6.x compiled templates into 7.x.** Recompile from migrated JRXML and align Studio, Maven plugin, runtime library, and font extensions.
 
 ## Verification
 

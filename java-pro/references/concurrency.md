@@ -6,7 +6,7 @@ Use this reference when the task is about how Java work is scheduled, isolated, 
 
 - Prefer virtual threads for request/response or job orchestration dominated by blocking I/O.
 - Prefer `CompletableFuture` when the code already models an explicit async graph and the cost of keeping it is lower than rewriting.
-- Prefer structured concurrency when the task is "fan out, gather, cancel siblings on failure, return one result."
+- Consider Structured Concurrency for "fan out, gather, cancel siblings on failure," but only after confirming the target JDK's preview API and flags.
 - Prefer message queues or event-driven boundaries when the concern is cross-process load leveling, not in-process parallelism.
 
 ## Virtual thread checklist
@@ -17,6 +17,8 @@ Use this reference when the task is about how Java work is scheduled, isolated, 
 - Watch for libraries that pin carrier threads under synchronized or native-blocking sections.
 
 ## Structured concurrency guidance
+
+Structured Concurrency remains preview-version-sensitive in the Java 21/25/26 lanes. Do not expose it as a stable compatibility API; pin the JDK, compile/run with the required preview flags, and isolate the dependency behind an application boundary.
 
 - Group sibling tasks under one parent scope when they share lifecycle and cancellation rules.
 - Fail fast when one child failure invalidates the whole result.

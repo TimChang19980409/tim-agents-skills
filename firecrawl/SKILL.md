@@ -15,10 +15,10 @@ Use this skill as the web-research host. Choose exactly one task playbook or dec
 
 ## Intent Router
 
-- `search`: [references/tasks/search.md](references/tasks/search.md)
 - `scrape`: [references/tasks/scrape.md](references/tasks/scrape.md)
+- `crawl`: [references/tasks/crawl.md](references/tasks/crawl.md)
 - `map`: [references/tasks/map.md](references/tasks/map.md)
-- `verify current facts`: [references/tasks/verify-current-facts.md](references/tasks/verify-current-facts.md)
+- `structured extraction`: [references/tasks/structured-extraction.md](references/tasks/structured-extraction.md)
 - `when to browse`: [references/decisions/when-to-browse.md](references/decisions/when-to-browse.md)
 - `source priority`: [references/decisions/source-priority.md](references/decisions/source-priority.md)
 
@@ -29,15 +29,13 @@ Use this skill as the web-research host. Choose exactly one task playbook or dec
 
 ## Host Workflow
 
-1. Decide whether the user actually needs browsing before opening the network path.
-2. Pick one playbook or decision guide based on the user's intent.
-3. Prefer structured output written to `.firecrawl/` over dumping large responses into context.
-4. Quote URLs, keep commands reproducible, and read scraped files incrementally.
-5. Include dates and source links when answering time-sensitive questions.
+1. Use Firecrawl only for a site-scale scrape, crawl, map, or schema-driven extraction.
+2. Confirm v2 request fields and limits before starting a bulk operation.
+3. Write outputs to `.firecrawl/<task>/` and inspect only relevant result sections.
+4. Prefer native host browsing for ordinary search, current facts, and citation work.
 
 ## Response Guardrails
 
-- Do not browse for local-only work.
-- Prefer primary or official sources for technical questions and high-stakes guidance.
-- For current-fact verification, compare multiple sources and state the concrete date.
+- Do not use Firecrawl for local-only work or an ordinary one-page lookup.
+- Keep crawl scope, job IDs, partial failures, and provenance explicit.
 - Use archive extensions only when the task is more specific than general web research.
