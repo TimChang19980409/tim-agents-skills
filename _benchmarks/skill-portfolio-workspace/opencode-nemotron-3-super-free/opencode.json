@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/nemotron-3-super-free",
+  "permission": {
+    "bash": {
+      "*": "allow"
+    },
+    "edit": {
+      "*": "deny"
+    },
+    "write": {
+      "*": "deny"
+    }
+  }
+}

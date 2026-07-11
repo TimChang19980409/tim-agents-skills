@@ -1,0 +1,150 @@
+{
+  "skill_name": "opencode-configurator",
+  "generated_at": "2026-03-14T13:03:34.440Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "project-config-setup",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28772,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: project-config-setup\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26845,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: project-config-setup\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "model-and-permission-tuning",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 43793,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: model-and-permission-tuning\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 44385,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: model-and-permission-tuning\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "mcp-wiring",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28498,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: mcp-wiring\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26459,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: mcp-wiring\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "agent-mode-setup",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26725,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: agent-mode-setup\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 29148,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: agent-mode-setup\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "project-vs-global-scope",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27197,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: project-vs-global-scope\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25252,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: project-vs-global-scope\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.9,
+    "with_skill_wins": 2,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

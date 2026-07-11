@@ -1,0 +1,150 @@
+{
+  "skill_name": "pdf-reader",
+  "generated_at": "2026-03-14T08:01:01.947Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "page-extraction",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26371,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: page-extraction\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26055,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: page-extraction\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "ocr-pass",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27126,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: ocr-pass\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26692,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: ocr-pass\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "json-chunking",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26600,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: json-chunking\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25208,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: json-chunking\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "obsidian-handoff",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25247,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: obsidian-handoff, Selected: json-chunking",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 25068,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: obsidian-handoff, Selected: json-chunking",
+          "passed": true
+        }
+      },
+      "delta": -0.5
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "text-vs-json-output",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26347,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: text-vs-json-output\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25475,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: text-vs-json-output\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 0.9,
+    "without_skill_average_pass_rate": 0.85,
+    "with_skill_wins": 2,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

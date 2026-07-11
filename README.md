@@ -161,3 +161,11 @@ It checks:
 ## Benchmark targets
 
 Natural trigger acceptance uses `opencode/nemotron-3-ultra-free` for all 100 cases and `opencode/north-mini-code-free` for boundary/null smoke. The runner observes OpenCode's native `skill` tool events under `--pure` isolation. Historical wave summaries remain reference material, not the current acceptance baseline.
+
+```bash
+bun skill-portfolio-maintainer/scripts/run_portfolio_opencode_trigger_eval.ts --suite full
+bun skill-portfolio-maintainer/scripts/run_portfolio_opencode_trigger_eval.ts --suite boundary
+bun test scripts/lib/opencode-skill-events.test.ts
+```
+
+The runner uses raw user questions, a temporary HOME/config/project, the existing `XDG_DATA_HOME` for authentication, and no retained transcripts or staged skill trees.

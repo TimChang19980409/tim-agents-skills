@@ -8,7 +8,7 @@
     "should_trigger": true
   },
   {
-    "query": "Run the benchmark suite for our skill with MiniMax M2.5 and tell me which queries are triggering the wrong skill.",
+    "query": "Run the isolated OpenCode free-model benchmark for our portfolio and diagnose first-skill routing errors.",
     "should_trigger": true
   },
   {

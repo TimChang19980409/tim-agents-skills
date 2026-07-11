@@ -1,0 +1,150 @@
+{
+  "skill_name": "spring-boot-engineer",
+  "generated_at": "2026-03-14T08:50:41.795Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "rest-feature-delivery",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26669,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: rest-feature-delivery\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25057,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: rest-feature-delivery\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "security-wiring",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 30676,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: security-wiring\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26325,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: security-wiring\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "config-and-profiles",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 34184,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: config-and-profiles\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 27919,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: config-and-profiles\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "spring-test-slices",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26827,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: spring-test-slices, Selected: choose-test-scope",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25165,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: spring-test-slices, Selected: choose-test-scope",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "choose-test-scope",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26605,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: choose-test-scope\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25193,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: choose-test-scope\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.7,
+    "with_skill_wins": 5,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

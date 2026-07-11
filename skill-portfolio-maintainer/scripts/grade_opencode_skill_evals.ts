@@ -38,16 +38,7 @@ type RunSummary = {
   total: number;
   passed: number;
   tokens: number | null;
-  selectedExpectation: {
-    text: string;
-    passed: boolean;
-  } | null;
 };
-
-function hasSelectedExpectation(evalCase: EvalCase): boolean {
-  const firstExpectation = evalCase.expectations[0] ?? "";
-  return firstExpectation.startsWith("contains:Selected:") || firstExpectation.startsWith("containsAny:Selected:");
-}
 
 const HELP_TEXT = `Usage:
   bun scripts/grade_opencode_skill_evals.ts [--skill-root <path>] [--workspace <path>] [--eval <ids>]
@@ -249,13 +240,6 @@ function main(): void {
         total,
         passed,
         tokens: runMetadata.tokens?.total ?? null,
-        selectedExpectation:
-          hasSelectedExpectation(evalCase) && expectations[0]
-            ? {
-                text: expectations[0].text,
-                passed: expectations[0].passed,
-              }
-            : null,
       });
     }
 
@@ -272,7 +256,6 @@ function main(): void {
 
   const comparableRows = benchmarkRows.filter((row) => row.with_skill && row.without_skill);
   const wins = comparableRows.filter((row) => row.delta !== null && row.delta > 0).length;
-  const withSkillSelectedRows = benchmarkRows.filter((row) => row.with_skill?.selectedExpectation);
 
   const average = (selector: (row: typeof benchmarkRows[number]) => number | null): number | null => {
     const values = comparableRows.map(selector).filter((value): value is number => value !== null);
@@ -289,44 +272,23 @@ function main(): void {
       with_skill_average_pass_rate: average((row) => row.with_skill?.passRate ?? null),
       without_skill_average_pass_rate: average((row) => row.without_skill?.passRate ?? null),
       with_skill_wins: wins,
-      selected_pass_count: withSkillSelectedRows.filter((row) => row.with_skill?.selectedExpectation?.passed).length,
-      selected_total: withSkillSelectedRows.length,
-      selected_pass_rate:
-        withSkillSelectedRows.length === 0
-          ? null
-          : Number(
-              (
-                withSkillSelectedRows.filter((row) => row.with_skill?.selectedExpectation?.passed).length /
-                withSkillSelectedRows.length
-              ).toFixed(4)
-            ),
     },
   });
 
   const markdown = [
     `# ${manifest.skill_name} Benchmark`,
     "",
-    "| Eval | With Skill | Baseline | Selected | Delta |",
-    "| --- | --- | --- | --- | --- |",
+    "| Eval | With Skill | Baseline | Delta |",
+    "| --- | --- | --- | --- |",
     ...benchmarkRows.map((row) => {
       const withSkill = row.with_skill ? `${Math.round(row.with_skill.passRate * 100)}% (${row.with_skill.passed}/${row.with_skill.total})` : "n/a";
       const withoutSkill = row.without_skill ? `${Math.round(row.without_skill.passRate * 100)}% (${row.without_skill.passed}/${row.without_skill.total})` : "n/a";
-      const selected = row.with_skill?.selectedExpectation
-        ? row.with_skill.selectedExpectation.passed
-          ? "pass"
-          : "fail"
-        : "n/a";
       const delta = row.delta === null ? "n/a" : `${row.delta > 0 ? "+" : ""}${(row.delta * 100).toFixed(0)}%`;
-      return `| ${row.eval_name} | ${withSkill} | ${withoutSkill} | ${selected} | ${delta} |`;
+      return `| ${row.eval_name} | ${withSkill} | ${withoutSkill} | ${delta} |`;
     }),
     "",
     `- comparable evals: ${comparableRows.length}`,
     `- with-skill wins: ${wins}`,
-    `- selected router pass: ${
-      withSkillSelectedRows.length === 0
-        ? "n/a"
-        : `${withSkillSelectedRows.filter((row) => row.with_skill?.selectedExpectation?.passed).length}/${withSkillSelectedRows.length}`
-    }`,
   ].join("\n");
 
   writeFileSync(join(options.workspace, "benchmark.md"), `${markdown}\n`, "utf8");

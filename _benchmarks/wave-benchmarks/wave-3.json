@@ -1,0 +1,84 @@
+{
+  "wave": "wave-3",
+  "generated_at": "2026-03-26T11:10:26.610Z",
+  "skills": [
+    {
+      "skill": "bun-ts-scripting-policy",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/bun-ts-scripting-policy-workspace/iteration-1",
+      "comparable_evals": 5,
+      "with_skill_average_pass_rate": 1,
+      "without_skill_average_pass_rate": 0.8,
+      "with_skill_wins": 3,
+      "evals_at_or_above_75": 5,
+      "total_evals": 5,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 5,
+      "selected_total": 5,
+      "passes_threshold": true
+    },
+    {
+      "skill": "skill-creator",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/skill-creator-workspace/iteration-1",
+      "comparable_evals": 5,
+      "with_skill_average_pass_rate": 1,
+      "without_skill_average_pass_rate": 0.7,
+      "with_skill_wins": 3,
+      "evals_at_or_above_75": 5,
+      "total_evals": 5,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 5,
+      "selected_total": 5,
+      "passes_threshold": true
+    },
+    {
+      "skill": "opencode-configurator",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/opencode-configurator-workspace/iteration-1",
+      "comparable_evals": 5,
+      "with_skill_average_pass_rate": 1,
+      "without_skill_average_pass_rate": 0.9,
+      "with_skill_wins": 2,
+      "evals_at_or_above_75": 5,
+      "total_evals": 5,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 5,
+      "selected_total": 5,
+      "passes_threshold": true
+    },
+    {
+      "skill": "pdf-reader",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/pdf-reader-workspace/iteration-1",
+      "comparable_evals": 5,
+      "with_skill_average_pass_rate": 0.9,
+      "without_skill_average_pass_rate": 0.85,
+      "with_skill_wins": 2,
+      "evals_at_or_above_75": 4,
+      "total_evals": 5,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 5,
+      "selected_total": 5,
+      "passes_threshold": true
+    },
+    {
+      "skill": "stagehand-aria-e2e",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/stagehand-aria-e2e-workspace/iteration-1",
+      "comparable_evals": 5,
+      "with_skill_average_pass_rate": 0.95,
+      "without_skill_average_pass_rate": 0.75,
+      "with_skill_wins": 3,
+      "evals_at_or_above_75": 5,
+      "total_evals": 5,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 5,
+      "selected_total": 5,
+      "passes_threshold": true
+    }
+  ],
+  "summary": {
+    "skill_count": 5,
+    "passing_skills": 5,
+    "all_skills_green": true,
+    "with_skill_average_pass_rate": 0.97,
+    "without_skill_average_pass_rate": 0.8,
+    "trigger_regressions": null
+  }
+}

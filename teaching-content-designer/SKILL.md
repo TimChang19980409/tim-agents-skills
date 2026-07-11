@@ -2,7 +2,7 @@
 name: teaching-content-designer
 description: |
   Design lesson outlines, teaching scripts, learner documents, interaction plans, and concept progression.
-  Use when learning flow and audience calibration are central. Do not use to establish technical truth or
+  Use when creating a lesson, teaching script, workshop interaction, learner document, or concept progression. Do not use to establish technical truth or
   produce a deck; route correctness to domain skills and deck production to native presentation tooling.
 metadata:
   framework_role: host

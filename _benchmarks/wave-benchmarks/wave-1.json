@@ -1,0 +1,56 @@
+{
+  "wave": "wave-1",
+  "generated_at": "2026-03-26T11:10:04.428Z",
+  "skills": [
+    {
+      "skill": "frontend-dev-guidelines",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/frontend-dev-guidelines-workspace/iteration-1",
+      "comparable_evals": 5,
+      "with_skill_average_pass_rate": 1,
+      "without_skill_average_pass_rate": 0.65,
+      "with_skill_wins": 4,
+      "evals_at_or_above_75": 5,
+      "total_evals": 5,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 5,
+      "selected_total": 5,
+      "passes_threshold": true
+    },
+    {
+      "skill": "firecrawl",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/firecrawl-workspace/iteration-1",
+      "comparable_evals": 6,
+      "with_skill_average_pass_rate": 1,
+      "without_skill_average_pass_rate": 0.7778,
+      "with_skill_wins": 5,
+      "evals_at_or_above_75": 6,
+      "total_evals": 6,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 6,
+      "selected_total": 6,
+      "passes_threshold": true
+    },
+    {
+      "skill": "obsidian-cli",
+      "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/obsidian-cli-workspace/iteration-1",
+      "comparable_evals": 6,
+      "with_skill_average_pass_rate": 0.9444,
+      "without_skill_average_pass_rate": 0.9167,
+      "with_skill_wins": 1,
+      "evals_at_or_above_75": 5,
+      "total_evals": 6,
+      "selected_pass_rate": 1,
+      "selected_pass_count": 6,
+      "selected_total": 6,
+      "passes_threshold": true
+    }
+  ],
+  "summary": {
+    "skill_count": 3,
+    "passing_skills": 3,
+    "all_skills_green": true,
+    "with_skill_average_pass_rate": 0.9815,
+    "without_skill_average_pass_rate": 0.7815,
+    "trigger_regressions": null
+  }
+}

@@ -2,7 +2,7 @@
 name: java-pro
 description: |
   Solve Java runtime, concurrency, diagnostics, benchmarking, and packaging problems.
-  Use when the JVM/platform decision is central. Do not use for Spring application or persistence features;
+  Use when diagnosing the JVM or choosing Java concurrency, runtime, benchmark, or packaging behavior. Do not use for Spring application or persistence features;
   route those to spring-boot-engineer or spring-persistence-engineer.
 metadata:
   framework_role: specialist

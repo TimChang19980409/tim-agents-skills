@@ -4,12 +4,11 @@
     {
       "id": 1,
       "name": "schema-relations",
-      "prompt": "Start with `Selected: <playbook or decision>`. Design Drizzle schema and relations for users, posts, and comments, including database foreign keys where appropriate.",
-      "expected_output": "Selects schema-relations and distinguishes relations from foreign keys.",
+      "prompt": "Design Drizzle schema and relations for users, posts, and comments, including database foreign keys where appropriate.",
+      "expected_output": "distinguishes relations from foreign keys.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: schema-relations",
         "containsAny:pgTable|mysqlTable|sqliteTable|schema",
         "containsAny:relations|one|many",
         "containsAny:foreign key|references|constraint"
@@ -18,12 +17,11 @@
     {
       "id": 2,
       "name": "query-builder-rqb",
-      "prompt": "Start with `Selected: <playbook or decision>`. Write a Drizzle relational query with nested posts and comments, filters, and a transaction for a follow-up update.",
-      "expected_output": "Selects query-builder-rqb and mentions relational queries plus transaction boundaries.",
+      "prompt": "Write a Drizzle relational query with nested posts and comments, filters, and a transaction for a follow-up update.",
+      "expected_output": "mentions relational queries plus transaction boundaries.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: query-builder-rqb",
         "containsAny:db.query|findMany|with",
         "containsAny:callback|alias|imported table",
         "containsAny:transaction|tx"
@@ -32,12 +30,11 @@
     {
       "id": 3,
       "name": "migration-flow",
-      "prompt": "Start with `Selected: <playbook or decision>`. A team changed Drizzle schema in TypeScript and needs a safe production migration flow with Drizzle Kit.",
-      "expected_output": "Selects migration-flow and avoids production push by default.",
+      "prompt": "A team changed Drizzle schema in TypeScript and needs a safe production migration flow with Drizzle Kit.",
+      "expected_output": "avoids production push by default.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: migration-flow",
         "containsAny:generate|migrate|check",
         "containsAny:push|production|avoid",
         "containsAny:drizzle.config.ts|Drizzle Kit"
@@ -46,12 +43,11 @@
     {
       "id": 4,
       "name": "elysia-typebox-bridge",
-      "prompt": "Start with `Selected: <playbook or decision>`. Convert a Drizzle user table into Elysia request and response schemas with drizzle-typebox and avoid TypeBox symbol conflicts.",
-      "expected_output": "Selects elysia-typebox-bridge and handles generated schema variables and TypeBox pinning.",
+      "prompt": "Convert a Drizzle user table into Elysia request and response schemas with drizzle-typebox and avoid TypeBox symbol conflicts.",
+      "expected_output": "handles generated schema variables and TypeBox pinning.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: elysia-typebox-bridge",
         "containsAny:drizzle-typebox|createInsertSchema|createSelectSchema",
         "containsAny:@sinclair/typebox|TypeBox|symbol",
         "containsAny:t.Omit|variable|infinite"
@@ -60,12 +56,11 @@
     {
       "id": 5,
       "name": "migration-strategy",
-      "prompt": "Start with `Selected: <playbook or decision>`. Choose between database-first pull, drizzle-kit push, generated SQL migrations, and external migration tools.",
-      "expected_output": "Selects migration-strategy and compares the supported migration approaches.",
+      "prompt": "Choose between database-first pull, drizzle-kit push, generated SQL migrations, and external migration tools.",
+      "expected_output": "compares the supported migration approaches.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: migration-strategy",
         "containsAny:pull|database-first",
         "containsAny:push|prototype|direct",
         "containsAny:generate|migrate|external"
@@ -74,12 +69,11 @@
     {
       "id": 6,
       "name": "connection-serverless",
-      "prompt": "Start with `Selected: <playbook or decision>`. Choose between pooled connections, serverless connection (HTTP/Data API), and read-replica topology for a Bun + Elysia backend using Drizzle.",
-      "expected_output": "Selects connection-serverless and discusses topology tradeoffs.",
+      "prompt": "Choose between pooled connections, serverless connection (HTTP/Data API), and read-replica topology for a Bun + Elysia backend using Drizzle.",
+      "expected_output": "discusses topology tradeoffs.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: connection-serverless",
         "containsAny:pooled|serverless|read replica|topology",
         "containsAny:connection|pool|HTTP|Data API"
       ]
@@ -87,12 +81,11 @@
     {
       "id": 7,
       "name": "dialect-driver",
-      "prompt": "Start with `Selected: <playbook or decision>`. Choose between PostgreSQL, MySQL, and SQLite dialects and their drivers for a Bun + Elysia backend using Drizzle.",
-      "expected_output": "Selects dialect-driver and recommends appropriate dialect/driver.",
+      "prompt": "Choose between PostgreSQL, MySQL, and SQLite dialects and their drivers for a Bun + Elysia backend using Drizzle.",
+      "expected_output": "recommends appropriate dialect/driver.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: dialect-driver",
         "containsAny:PostgreSQL|MySQL|SQLite|dialect|driver",
         "containsAny:pg|mysql|sqlite|better-sqlite3|turso"
       ]

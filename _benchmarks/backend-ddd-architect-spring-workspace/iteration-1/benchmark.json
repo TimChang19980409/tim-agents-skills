@@ -1,0 +1,150 @@
+{
+  "skill_name": "backend-ddd-architect-spring",
+  "generated_at": "2026-03-14T08:50:41.795Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "bounded-context-discovery",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26753,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: bounded-context-discovery\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26049,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: bounded-context-discovery\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "aggregate-design",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26555,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: aggregate-design\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25561,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: aggregate-design\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "context-map",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27916,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: context-map\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26878,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: context-map\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "event-integration",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26980,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: event-integration\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27333,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: event-integration\"",
+          "passed": true
+        }
+      },
+      "delta": -0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "when-to-delegate-to-boot-or-persistence",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27124,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: when-to-delegate-to-boot-or-persistence\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 25211,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: when-to-delegate-to-boot-or-persistence\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 0.95,
+    "without_skill_average_pass_rate": 0.95,
+    "with_skill_wins": 1,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

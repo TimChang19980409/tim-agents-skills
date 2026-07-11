@@ -1,0 +1,150 @@
+{
+  "skill_name": "jasperreports-engineer",
+  "generated_at": "2026-03-14T08:50:41.795Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "subreport-debug",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 36045,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: subreport-debug\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 31236,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: subreport-debug\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "migration-recompile",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27530,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: migration-recompile\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25185,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: migration-recompile\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "font-extension-packaging",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26747,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: font-extension-packaging\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 25391,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: font-extension-packaging\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "large-export-performance",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 34440,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: large-export-performance\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26788,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: large-export-performance\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "library-vs-server-scope",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26673,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: library-vs-server-scope\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25335,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: library-vs-server-scope\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.9,
+    "with_skill_wins": 2,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

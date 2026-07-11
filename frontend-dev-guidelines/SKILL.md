@@ -2,7 +2,7 @@
 name: frontend-dev-guidelines
 description: |
   Build, refactor, and review React/TypeScript frontends with repo-aware accessibility and performance checks.
-  Use for application code and audits. Do not use for reusable component API design or browser automation;
+  Use when building, refactoring, or statically auditing an existing frontend application. Do not use for reusable component API design or browser automation;
   route those to react-component-designer or stagehand-aria-e2e.
 metadata:
   framework_role: host

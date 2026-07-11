@@ -1,0 +1,177 @@
+{
+  "skill_name": "firecrawl",
+  "generated_at": "2026-03-14T07:06:58.418Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "search-react-docs",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26861,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: search\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 29564,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: search\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "scrape-one-page",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 25946,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: scrape\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 25056,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: scrape\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "map-docs-site",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26941,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: map\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 28263,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: map\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "verify-current-facts",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 25952,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: verify-current-facts\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25626,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: verify-current-facts\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "when-to-browse-local-task",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 28476,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: when-to-browse, Selected: no-browsing, Selected: No-browsing",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 25260,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: when-to-browse, Selected: no-browsing, Selected: No-browsing",
+          "passed": false
+        }
+      },
+      "delta": 0.3333
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "source-priority-tech-docs",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26855,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: source-priority\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25276,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: source-priority\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 6,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.7778,
+    "with_skill_wins": 5,
+    "selected_pass_count": 6,
+    "selected_total": 6,
+    "selected_pass_rate": 1
+  }
+}

@@ -2,7 +2,7 @@
 name: spring-persistence-engineer
 description: |
   Implement Spring Data JPA and Hibernate mappings, fetch plans, locking, batching, and portability.
-  Use when persistence behavior is central. Do not use for controllers, security, or domain boundaries;
+  Use when a JPA/Hibernate mapping, fetch, transaction, locking, batching, or ORM-version decision is required. Do not use for controllers, security, or domain boundaries;
   route those to spring-boot-engineer or backend-ddd-architect-spring.
 metadata:
   framework_role: specialist

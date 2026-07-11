@@ -1,0 +1,150 @@
+{
+  "skill_name": "bun-ts-scripting-policy",
+  "generated_at": "2026-03-14T13:03:34.440Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "new-bun-script",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26695,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: new-bun-script\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26548,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: new-bun-script\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "node-to-bun-migration",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27774,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: node-to-bun-migration\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 43458,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: node-to-bun-migration\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "cli-automation-review",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28423,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: cli-automation-review\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 27472,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: cli-automation-review\"",
+          "passed": true
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "parser-or-codegen-script",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27023,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: parser-or-codegen-script\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25929,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: parser-or-codegen-script\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "script-output-contract",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26527,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: script-output-contract\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25171,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: script-output-contract\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.8,
+    "with_skill_wins": 3,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

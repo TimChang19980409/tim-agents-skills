@@ -1,0 +1,150 @@
+{
+  "skill_name": "frontend-dev-guidelines",
+  "generated_at": "2026-03-26T11:02:52.082Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "build-comment-panel",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 24697,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: build\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 28580,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: build\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "refactor-settings-page",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 24350,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: refactor\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 28331,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: refactor\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "accessibility-dialog-audit",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 24499,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: accessibility-audit\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 28011,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: accessibility-audit\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "performance-activity-feed",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 24556,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: performance-review\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 28119,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: performance-review\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "component-boundary-decision",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28174,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: component-boundaries, Selected: react-component-designer",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27609,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: component-boundaries, Selected: react-component-designer",
+          "passed": true
+        }
+      },
+      "delta": 0
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.65,
+    "with_skill_wins": 4,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

@@ -1042,7 +1042,7 @@
       "decision_guides": [],
       "archive_extensions": [],
       "delegates_to": [],
-      "eval_suite": null,
+      "eval_suite": "evals/evals.json",
       "portability": "portable-first",
       "version": "1.0.0",
       "changelog": [

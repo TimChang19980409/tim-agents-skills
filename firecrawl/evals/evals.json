@@ -3,103 +3,43 @@
   "evals": [
     {
       "id": 1,
-      "name": "search-react-docs",
-      "prompt": "Start with `Selected: <playbook or decision>`. Then give the exact Firecrawl command you would run to search for recent official React compiler docs and explain why that command fits.",
-      "expected_output": "Selects the search playbook and proposes a structured firecrawl search command.",
-      "fixture_dir": "evals/files/search-react-docs",
-      "files": [
-        "evals/files/search-react-docs/request.md"
-      ],
-      "support_skills": [],
-      "expectations": [
-        "contains:Selected: search",
-        "contains:firecrawl search",
-        "containsAny:--json|-o .firecrawl",
-        "containsAny:official|docs"
-      ]
+      "name": "bounded-v2-crawl",
+      "prompt": "Plan a Firecrawl v2 crawl of a documentation site limited to /docs, with a 2,000-page cap and retained job status.",
+      "expected_output": "Defines bounded crawl scope, async status handling, and retained outputs.",
+      "files": [], "support_skills": [],
+      "expectations": ["containsAny:include|/docs|scope", "containsAny:job|status|poll", "containsAny:limit|2000|2,000"]
     },
     {
       "id": 2,
-      "name": "scrape-one-page",
-      "prompt": "Start with `Selected: <playbook or decision>`. Give the exact Firecrawl command you would use to scrape the page below as markdown and explain any options you would add.",
-      "expected_output": "Selects the scrape playbook and uses firecrawl scrape with quoted URL handling.",
-      "fixture_dir": "evals/files/scrape-one-page",
-      "files": [
-        "evals/files/scrape-one-page/url.md"
-      ],
-      "support_skills": [],
-      "expectations": [
-        "contains:Selected: scrape",
-        "contains:firecrawl scrape",
-        "containsAny:\"https://|only-main-content|--format markdown"
-      ]
+      "name": "structured-extraction",
+      "prompt": "Extract product name, price, availability, and source URL across a site with Firecrawl v2 using a JSON schema.",
+      "expected_output": "Uses schema-shaped extraction with provenance and validation.",
+      "files": [], "support_skills": [],
+      "expectations": ["containsAny:JSON schema|schema", "containsAny:source URL|provenance", "containsAny:validate|missing|failure"]
     },
     {
       "id": 3,
-      "name": "map-docs-site",
-      "prompt": "Start with `Selected: <playbook or decision>`. Recommend the exact Firecrawl command for mapping the site's documentation URLs and filtering for blog pages.",
-      "expected_output": "Selects the map playbook and uses firecrawl map with search or json output.",
-      "fixture_dir": "evals/files/map-docs-site",
-      "files": [
-        "evals/files/map-docs-site/request.md"
-      ],
-      "support_skills": [],
-      "expectations": [
-        "contains:Selected: map",
-        "contains:firecrawl map",
-        "containsAny:--search|--json",
-        "containsAny:blog|docs"
-      ]
+      "name": "map-before-scrape",
+      "prompt": "Map all product and pricing URLs first, then choose the smallest Firecrawl scrape set.",
+      "expected_output": "Separates URL mapping from scoped scraping.",
+      "files": [], "support_skills": [],
+      "expectations": ["containsAny:map|URL inventory", "containsAny:filter|pricing|product", "containsAny:scrape|smallest|scope"]
     },
     {
       "id": 4,
-      "name": "verify-current-facts",
-      "prompt": "Start with `Selected: verify-current-facts`. This is a planning-only response. Do not perform the research yet and do not answer the user yet. Explain how you would verify the latest Stagehand release notes with dates and links before answering, and say that you would prefer official or primary sources first.",
-      "expected_output": "Selects the verify-current-facts playbook and emphasizes dated sources.",
-      "fixture_dir": "evals/files/verify-current-facts",
-      "files": [
-        "evals/files/verify-current-facts/request.md"
-      ],
-      "support_skills": [],
-      "expectations": [
-        "contains:Selected: verify-current-facts",
-        "containsAny:date|latest|release",
-        "containsAny:official|primary",
-        "containsAny:link|source"
-      ]
+      "name": "partial-failure",
+      "prompt": "A 5,000-page Firecrawl crawl has partial failures and rate limits; design the retry and evidence contract.",
+      "expected_output": "Handles job identity, partial failures, bounded retries, and output retention.",
+      "files": [], "support_skills": [],
+      "expectations": ["containsAny:job ID|job", "containsAny:retry|backoff|rate limit", "containsAny:failed URL|partial failure"]
     },
     {
       "id": 5,
-      "name": "when-to-browse-local-task",
-      "prompt": "Start with `Selected: <playbook or decision>`. Decide whether this task needs browsing: \"Summarize the TypeScript types already in this repo and suggest a rename.\"",
-      "expected_output": "Selects the when-to-browse guide and keeps the task local.",
-      "fixture_dir": "evals/files/when-to-browse-local-task",
-      "files": [
-        "evals/files/when-to-browse-local-task/request.md"
-      ],
-      "support_skills": [],
-      "expectations": [
-        "contains:Selected: when-to-browse",
-        "containsAny:stay local|do not browse|local-only",
-        "notContains:firecrawl search"
-      ]
-    },
-    {
-      "id": 6,
-      "name": "source-priority-tech-docs",
-      "prompt": "Start with `Selected: <playbook or decision>`. Choose the right source priority for a question about configuring a framework API where the user also wants a community pitfall note.",
-      "expected_output": "Selects the source-priority guide and keeps official docs first.",
-      "fixture_dir": "evals/files/source-priority-tech-docs",
-      "files": [
-        "evals/files/source-priority-tech-docs/request.md"
-      ],
-      "support_skills": [],
-      "expectations": [
-        "contains:Selected: source-priority",
-        "containsAny:official|primary",
-        "containsAny:community|pitfall",
-        "containsAny:Context7|context7-auto-research"
-      ]
+      "name": "native-web-boundary",
+      "prompt": "Decide whether Firecrawl should handle a one-off request to look up today's exchange rate with a citation.",
+      "expected_output": "Routes ordinary current-fact lookup to native Web rather than Firecrawl.",
+      "files": [], "support_skills": [],
+      "expectations": ["containsAny:native Web|host Web|ordinary browsing", "notContains:Firecrawl crawl"]
     }
   ]
 }

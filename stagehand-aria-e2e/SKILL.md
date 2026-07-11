@@ -2,7 +2,7 @@
 name: stagehand-aria-e2e
 description: |
   Build Stagehand v3 browser tests using ARIA snapshots, layout-tree assertions, and targeted screenshots.
-  Use when semantic browser behavior must be verified. Do not use for static frontend review or general browser use;
+  Use when a repeatable browser test must verify keyboard, focus, ARIA, or layout behavior. Do not use for static frontend review or general browser use;
   route those to frontend-dev-guidelines or the host browser capability.
 metadata:
   framework_role: specialist

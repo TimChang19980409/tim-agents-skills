@@ -1,0 +1,150 @@
+{
+  "skill_name": "java-pro",
+  "generated_at": "2026-03-14T07:15:12.064Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "virtual-thread-migration",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27803,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: virtual-thread-migration\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 28987,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: virtual-thread-migration\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "jvm-diagnostics",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27582,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: jvm-diagnostics\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27080,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: jvm-diagnostics\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "benchmark-design",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26430,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: benchmark-design\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26646,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: benchmark-design\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "runtime-packaging",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26530,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: runtime-packaging, Selected: hotspot-vs-native",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25313,
+        "selectedExpectation": {
+          "text": "The output contains any of: Selected: runtime-packaging, Selected: hotspot-vs-native",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "choose-concurrency-model",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26651,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: choose-concurrency-model\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25344,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: choose-concurrency-model\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.8,
+    "with_skill_wins": 4,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

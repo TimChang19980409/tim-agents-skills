@@ -2,7 +2,7 @@
 name: firecrawl
 description: |
   Run Firecrawl v2 bulk scrape, crawl, map, and structured extraction workflows.
-  Use when a site-scale Firecrawl operation is required. Do not use for local-only work or ordinary
+  Use when Firecrawl is required for a multi-page crawl, URL map, bulk scrape, or schema extraction. Do not use for local-only work or ordinary
   current-fact browsing; use the host's native Web capability for those.
 metadata:
   framework_role: host

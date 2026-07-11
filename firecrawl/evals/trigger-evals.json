@@ -1,38 +1,10 @@
 [
-  {
-    "query": "Search for the latest pricing changes for AWS EC2 instances and give me a summary with dates.",
-    "should_trigger": true
-  },
-  {
-    "query": "I need to scrape the main content from this article URL and extract the key points without ads or navigation.",
-    "should_trigger": true
-  },
-  {
-    "query": "Map out the entire documentation structure of example.com so I can understand what endpoints they expose.",
-    "should_trigger": true
-  },
-  {
-    "query": "Verify whether the release date for React 19 was actually March 2024 or if it slipped to later.",
-    "should_trigger": true
-  },
-  {
-    "query": "I have a PDF file with scanned pages. Extract all the text and return it as structured JSON per page.",
-    "should_trigger": true
-  },
-  {
-    "query": "Build me a Spring Boot REST controller with request validation and a global exception handler.",
-    "should_trigger": false
-  },
-  {
-    "query": "Help me design the bounded contexts and aggregate roots for an e-commerce domain with orders, inventory, and payments.",
-    "should_trigger": false
-  },
-  {
-    "query": "My Obsidian vault has a corrupted index. Can you reload the plugin and inspect the DOM to find what's broken?",
-    "should_trigger": false
-  },
-  {
-    "query": "Write a Bun script that reads a CSV file and outputs the aggregated sums per category as JSON.",
-    "should_trigger": false
-  }
+  {"query":"Crawl this 3,000-page documentation site with Firecrawl v2 and retain job status plus failed URLs.","should_trigger":true},
+  {"query":"Map every product and pricing URL on this site before we choose a scrape set.","should_trigger":true},
+  {"query":"請用 Firecrawl v2 批次擷取網站，依 JSON schema 輸出產品資料與來源網址。","should_trigger":true},
+  {"query":"Set up a repeatable bulk scrape for JavaScript-rendered pages with structured results stored on disk.","should_trigger":true},
+  {"query":"Look up today's exchange rate and cite an authoritative current source.","should_trigger":false},
+  {"query":"Read this one public documentation page and summarize the relevant section.","should_trigger":false},
+  {"query":"Summarize the TypeScript types already present in this local repository.","should_trigger":false},
+  {"query":"OCR this scanned PDF and return structured JSON per page.","should_trigger":false}
 ]

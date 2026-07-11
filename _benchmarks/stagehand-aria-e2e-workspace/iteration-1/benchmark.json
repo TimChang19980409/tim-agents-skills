@@ -1,0 +1,150 @@
+{
+  "skill_name": "stagehand-aria-e2e",
+  "generated_at": "2026-03-14T08:09:33.824Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "aria-snapshot-flow",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27076,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: aria-snapshot-flow\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26868,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: aria-snapshot-flow\"",
+          "passed": true
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "layout-tree-assertion",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26692,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: layout-tree-assertion\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 27192,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: layout-tree-assertion\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "screenshot-migration",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28677,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: screenshot-migration\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 29765,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: screenshot-migration\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "install-check",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 29635,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: install-check\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25737,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: install-check\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "assertion-layer",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26672,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: assertion-layer\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 26697,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: assertion-layer\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 0.95,
+    "without_skill_average_pass_rate": 0.75,
+    "with_skill_wins": 3,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

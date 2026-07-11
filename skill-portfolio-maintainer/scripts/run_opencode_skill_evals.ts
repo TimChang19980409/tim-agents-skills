@@ -2,6 +2,7 @@
 
 import { spawnSync } from "node:child_process";
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { homedir } from "node:os";
 import { basename, join, relative, resolve } from "node:path";
 
 import { skillWorkspaceDir } from "../../scripts/lib/layout.ts";
@@ -68,7 +69,7 @@ const HELP_TEXT = `Usage:
 Options:
   --skill-root <path>  Skill root (default: current skill directory)
   --workspace <path>   Iteration workspace (default: _benchmarks/<skill>-workspace/iteration-1)
-  --model <id>         OpenCode model ID (default: minimax-coding-plan/MiniMax-M2.5)
+  --model <id>         OpenCode model ID (default: opencode/nemotron-3-ultra-free)
   --eval <ids>         Comma-separated eval ids
   --run-set <mode>     both, with_skill, or without_skill
   --timeout-ms <ms>    Per-run timeout in milliseconds
@@ -81,7 +82,7 @@ function parseArgs(argv: string[]): CliOptions {
     return {
       workspace: "",
       skillRoot: "",
-      model: "minimax-coding-plan/MiniMax-M2.5",
+      model: "opencode/nemotron-3-ultra-free",
       evalIds: null,
       prepareOnly: false,
       runSet: "both",
@@ -92,7 +93,7 @@ function parseArgs(argv: string[]): CliOptions {
 
   let skillRoot = resolve(import.meta.dir, "..", "..", "frontend-dev-guidelines");
   let workspace = skillWorkspaceDir(resolve(import.meta.dir, "..", ".."), "frontend-dev-guidelines");
-  let model = "minimax-coding-plan/MiniMax-M2.5";
+  let model = "opencode/nemotron-3-ultra-free";
   let evalIds: Set<number> | null = null;
   let prepareOnly = false;
   let runSet: RunSet = "both";
@@ -441,6 +442,7 @@ function main(): void {
       const command = [
         "opencode",
         "run",
+        "--pure",
         taskPrompt,
         "--model",
         options.model,
@@ -482,11 +484,19 @@ function main(): void {
         continue;
       }
 
+      ensureDir(join(runDir, "home"));
+      ensureDir(join(runDir, "xdg-config"));
+      ensureDir(join(runDir, "opencode-config-dir"));
+
       const result = spawnSync(command[0], command.slice(1), {
         cwd: projectDir,
         env: {
           ...process.env,
+          HOME: join(runDir, "home"),
+          XDG_CONFIG_HOME: join(runDir, "xdg-config"),
+          XDG_DATA_HOME: process.env.XDG_DATA_HOME ?? join(homedir(), ".local/share"),
           OPENCODE_CONFIG: workspaceConfigPath,
+          OPENCODE_CONFIG_DIR: join(runDir, "opencode-config-dir"),
         },
         encoding: "utf8",
         maxBuffer: 10 * 1024 * 1024,

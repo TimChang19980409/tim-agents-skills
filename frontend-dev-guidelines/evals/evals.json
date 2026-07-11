@@ -4,8 +4,8 @@
     {
       "id": 1,
       "name": "build-comment-panel",
-      "prompt": "Start with `Selected: <playbook or decision>`. Then outline the smallest repo-native implementation plan for the requested comment panel and mention how you would verify it.",
-      "expected_output": "Selects the build playbook and stays inside the frontend host with a small implementation plan.",
+      "prompt": "Then outline the smallest repo-native implementation plan for the requested comment panel and mention how you would verify it.",
+      "expected_output": "",
       "fixture_dir": "evals/files/build-comment-panel",
       "files": [
         "evals/files/build-comment-panel/requirements.md",
@@ -13,7 +13,6 @@
       ],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: build",
         "containsAny:smallest|minimal|focused",
         "containsAny:existing pattern|repo pattern|existing app pattern|PostComposer",
         "containsAny:verify|test|type-check"
@@ -22,15 +21,14 @@
     {
       "id": 2,
       "name": "refactor-settings-page",
-      "prompt": "Start with `Selected: <playbook or decision>`. Review the file and propose a refactor that preserves behavior while reducing mixed responsibilities.",
-      "expected_output": "Selects the refactor playbook and recommends a smaller boundary with preserved behavior.",
+      "prompt": "Review the file and propose a refactor that preserves behavior while reducing mixed responsibilities.",
+      "expected_output": "",
       "fixture_dir": "evals/files/refactor-settings-page",
       "files": [
         "evals/files/refactor-settings-page/src/routes/SettingsPage.tsx"
       ],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: refactor",
         "containsAny:split|extract|separate",
         "containsAny:behavior|regression|preserve",
         "containsAny:state|effect|responsib"
@@ -39,15 +37,14 @@
     {
       "id": 3,
       "name": "accessibility-dialog-audit",
-      "prompt": "Start with `Selected: <playbook or decision>`. Audit the dialog for accessibility issues and return concrete findings with user-facing impact.",
-      "expected_output": "Selects the accessibility audit playbook and calls out keyboard or naming issues.",
+      "prompt": "Audit the dialog for accessibility issues and return concrete findings with user-facing impact.",
+      "expected_output": "",
       "fixture_dir": "evals/files/accessibility-dialog-audit",
       "files": [
         "evals/files/accessibility-dialog-audit/src/components/ProfileDialog.tsx"
       ],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: accessibility-audit",
         "containsAny:focus|keyboard",
         "containsAny:label|accessible name|aria",
         "containsAny:user|screen reader|announc"
@@ -56,15 +53,14 @@
     {
       "id": 4,
       "name": "performance-activity-feed",
-      "prompt": "Start with `Selected: <playbook or decision>`. Review the feed component for likely performance problems and prioritize the highest-impact fixes first.",
-      "expected_output": "Selects the performance review playbook and prioritizes waterfalls or render churn.",
+      "prompt": "Review the feed component for likely performance problems and prioritize the highest-impact fixes first.",
+      "expected_output": "",
       "fixture_dir": "evals/files/performance-activity-feed",
       "files": [
         "evals/files/performance-activity-feed/src/components/ActivityFeed.tsx"
       ],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: performance-review",
         "containsAny:waterfall|parallel|duplicate request",
         "containsAny:render|re-render|subscription|effect",
         "containsAny:highest-impact|priority|first"
@@ -73,15 +69,14 @@
     {
       "id": 5,
       "name": "component-boundary-decision",
-      "prompt": "Start with `Selected: <playbook or decision>`. This is a routing-only decision. Do not design the component API and do not hand off execution. Decide whether this request should stay in the frontend host or route to another skill, then explain the tradeoff. The request is: \"Design a reusable combobox API with slots, controlled/uncontrolled state, and a headless mode.\"",
-      "expected_output": "Selects the component-boundaries guide and hands the task to react-component-designer.",
+      "prompt": "This is a routing-only decision. Do not design the component API and do not hand off execution. Decide whether this request should stay in the frontend host or route to another skill, then explain the tradeoff. The request is: \"Design a reusable combobox API with slots, controlled/uncontrolled state, and a headless mode.\"",
+      "expected_output": "",
       "fixture_dir": "evals/files/component-boundary-decision",
       "files": [
         "evals/files/component-boundary-decision/request.md"
       ],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: component-boundaries",
         "contains:react-component-designer",
         "containsAny:API|slot|controlled|headless",
         "containsAny:tradeoff|boundary|delegate"

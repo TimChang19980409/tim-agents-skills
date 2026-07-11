@@ -1,0 +1,177 @@
+{
+  "skill_name": "obsidian-cli",
+  "generated_at": "2026-03-14T06:55:31.671Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "vault-ops-note-update",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26671,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: vault-ops\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 25599,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: vault-ops\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "plugin-debug-loop",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 26896,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: plugin-debug\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 26778,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: plugin-debug\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "dom-inspect-theme",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 26686,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: dom-inspect\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 26681,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: dom-inspect\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "property-task-management",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 26782,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: property-task-management\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 27265,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: property-task-management\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "choose-surface-bases",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 0.6666666666666666,
+        "total": 3,
+        "passed": 2,
+        "tokens": 25680,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: choose-obsidian-surface\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 25395,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: choose-obsidian-surface\"",
+          "passed": true
+        }
+      },
+      "delta": -0.3333
+    },
+    {
+      "eval_id": 6,
+      "eval_name": "handoff-pdf-reader",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 25442,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: handoff-to-pdf-reader\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 3,
+        "passed": 3,
+        "tokens": 25086,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: handoff-to-pdf-reader\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    }
+  ],
+  "summary": {
+    "comparable_evals": 6,
+    "with_skill_average_pass_rate": 0.9444,
+    "without_skill_average_pass_rate": 0.9167,
+    "with_skill_wins": 1,
+    "selected_pass_count": 6,
+    "selected_total": 6,
+    "selected_pass_rate": 1
+  }
+}

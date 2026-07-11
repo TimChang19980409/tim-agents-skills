@@ -1,0 +1,150 @@
+{
+  "skill_name": "skill-portfolio-maintainer",
+  "generated_at": "2026-03-14T14:13:18.907Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "draft-skill",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 32057,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: draft-skill\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 27970,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: draft-skill\"",
+          "passed": true
+        }
+      },
+      "delta": 0.5
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "framework-migration",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 84351,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: framework-migration\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.25,
+        "total": 4,
+        "passed": 1,
+        "tokens": 51002,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: framework-migration\"",
+          "passed": false
+        }
+      },
+      "delta": 0.75
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "benchmark-skill",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 32930,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: benchmark-skill\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27526,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: benchmark-skill\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "improve-triggering",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 32457,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: improve-triggering\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 32930,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: improve-triggering\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "artifact-retention",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 33870,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: artifact-retention\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25494,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: artifact-retention\"",
+          "passed": true
+        }
+      },
+      "delta": 0.25
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.7,
+    "with_skill_wins": 3,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

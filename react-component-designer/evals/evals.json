@@ -3,30 +3,39 @@
   "evals": [
     {
       "id": 1,
-      "name": "trigger-with-skill",
-      "prompt": "Selected: <playbook or decision>. Design a reusable Button component with compound support for icon, text, and loading states.",
-      "expected_output": "Selects react-component-designer and addresses component API design.",
+      "name": "controlled-combobox-api",
+      "prompt": "Design a reusable React combobox API with controlled and uncontrolled state, named slots, and a headless escape hatch.",
+      "expected_output": "Defines a minimal public TypeScript contract and explicit state precedence.",
       "files": [],
       "support_skills": [],
-      "expectations": [
-        "contains:Selected:",
-        "containsAny:component|API|props|interface|type",
-        "containsAny:Button|button|reusable|compound",
-        "containsAny:design|interface|state|props"
-      ]
+      "expectations": ["containsAny:value|defaultValue|controlled|uncontrolled", "containsAny:slot|composition|children", "containsAny:ARIA|keyboard|focus"]
     },
     {
       "id": 2,
-      "name": "trigger-without-skill",
-      "prompt": "Selected: <playbook or decision>. How do I configure my webpack build for production optimization?",
-      "expected_output": "Does NOT select react-component-designer; selects a different skill better suited for build configuration.",
+      "name": "compound-dialog",
+      "prompt": "Choose and define the public API for a reusable Dialog whose trigger and content can be reordered while focus behavior remains internal.",
+      "expected_output": "Chooses a justified composition pattern without leaking internal context.",
       "files": [],
       "support_skills": [],
-      "expectations": [
-        "notContains:react-component-designer",
-        "containsAny:webpack|build|production|optimization",
-        "containsAny:Selected:"
-      ]
+      "expectations": ["containsAny:compound|context", "containsAny:focus|accessibility|ARIA", "containsAny:public API|props|TypeScript"]
+    },
+    {
+      "id": 3,
+      "name": "slot-boundary",
+      "prompt": "Design the replaceable header, toolbar, empty, and footer regions of a data-grid component without offering overlapping customization mechanisms.",
+      "expected_output": "Defines semantic slots, fallbacks, and clear ownership.",
+      "files": [],
+      "support_skills": [],
+      "expectations": ["containsAny:named slot|slots", "containsAny:fallback|null|optional", "containsAny:render prop|overlap|extension point"]
+    },
+    {
+      "id": 4,
+      "name": "do-not-overengineer",
+      "prompt": "Review a simple reusable Badge API and decide whether compound components, render props, or a headless hook are actually warranted.",
+      "expected_output": "Keeps the API props-driven unless concrete requirements justify more machinery.",
+      "files": [],
+      "support_skills": [],
+      "expectations": ["containsAny:props|className|children", "containsAny:simple|minimal|not warranted", "containsAny:compound|render prop|headless"]
     }
   ]
 }

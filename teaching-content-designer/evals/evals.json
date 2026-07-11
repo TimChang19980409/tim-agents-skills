@@ -4,12 +4,11 @@
     {
       "id": 1,
       "name": "lesson-outline",
-      "prompt": "Start with `Selected: <playbook or decision>`. Create a 20-minute lesson outline for teaching React useEffect to junior frontend developers. It should avoid cramming and include learner interaction.",
-      "expected_output": "Selects lesson-outline and includes goals, progression, interaction, and retrieval.",
+      "prompt": "Create a 20-minute lesson outline for teaching React useEffect to junior frontend developers. It should avoid cramming and include learner interaction.",
+      "expected_output": "includes goals, progression, interaction, and retrieval.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: lesson-outline",
         "containsAny:learning goal|學習目標|observable",
         "containsAny:concept progression|概念階梯|概念脈絡",
         "containsAny:interaction|互動|retrieval|提問"
@@ -18,12 +17,11 @@
     {
       "id": 2,
       "name": "teaching-script",
-      "prompt": "Start with `Selected: <playbook or decision>`. Write a speaker-ready script for explaining DDD Aggregate to junior backend engineers, including pauses and common misconceptions.",
-      "expected_output": "Selects teaching-script and uses speaker cues, learner questions, and misconception repair.",
+      "prompt": "Write a speaker-ready script for explaining DDD Aggregate to junior backend engineers, including pauses and common misconceptions.",
+      "expected_output": "uses speaker cues, learner questions, and misconception repair.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: teaching-script",
         "containsAny:pause|停頓|speaker|講者",
         "containsAny:misconception|誤解|confusion",
         "containsAny:question|提問|learner|學員"
@@ -32,12 +30,11 @@
     {
       "id": 3,
       "name": "teaching-document",
-      "prompt": "Start with `Selected: <playbook or decision>`. Turn a dense architecture explanation into a learner-facing teaching document with examples and checks for understanding.",
-      "expected_output": "Selects teaching-document and structures the material for learning rather than reference.",
+      "prompt": "Turn a dense architecture explanation into a learner-facing teaching document with examples and checks for understanding.",
+      "expected_output": "structures the material for learning rather than reference.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: teaching-document",
         "containsAny:example|範例|scenario|情境",
         "containsAny:check for understanding|理解檢核|檢核",
         "containsAny:recap|摘要|review|複習"
@@ -46,12 +43,11 @@
     {
       "id": 4,
       "name": "interaction-plan",
-      "prompt": "Start with `Selected: <playbook or decision>`. Design an interaction plan for a 90-minute programming workshop with retrieval questions, exercises, and feedback checkpoints.",
-      "expected_output": "Selects interaction-plan and includes timed learner activities and feedback.",
+      "prompt": "Design an interaction plan for a 90-minute programming workshop with retrieval questions, exercises, and feedback checkpoints.",
+      "expected_output": "includes timed learner activities and feedback.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: interaction-plan",
         "containsAny:timed|時間|90",
         "containsAny:retrieval|回想|提取|quiz",
         "containsAny:feedback|回饋|debrief|討論"
@@ -60,12 +56,11 @@
     {
       "id": 5,
       "name": "concept-progression",
-      "prompt": "Start with `Selected: <playbook or decision>`. Build a concept progression for teaching dependency inversion, from concrete intuition to architecture tradeoffs.",
-      "expected_output": "Selects concept-progression and sequences intuition, naming, contrast, and transfer.",
+      "prompt": "Build a concept progression for teaching dependency inversion, from concrete intuition to architecture tradeoffs.",
+      "expected_output": "sequences intuition, naming, contrast, and transfer.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: concept-progression",
         "containsAny:intuition|直覺|anchor|熟悉",
         "containsAny:contrast|對比|tradeoff|取捨",
         "containsAny:transfer|遷移|apply|應用"
@@ -74,12 +69,11 @@
     {
       "id": 6,
       "name": "domain-delegation",
-      "prompt": "Start with `Selected: <playbook or decision>`. This is a routing-only decision. A user asks for a teaching flow plus an editable PPTX about current Spring Security behavior. Decide what stays here and what should delegate.",
-      "expected_output": "Selects domain-delegation and mentions teaching-content responsibility plus firecrawl or Spring/PPT delegation.",
+      "prompt": "This is a routing-only decision. A user asks for a teaching flow plus an editable PPTX about current Spring Security behavior. Decide what stays here and what should delegate.",
+      "expected_output": "mentions teaching-content responsibility plus firecrawl or Spring/PPT delegation.",
       "files": [],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: domain-delegation",
         "containsAny:teaching flow|教學脈絡|teaching structure",
         "containsAny:ppt-generation|PPTX|deck",
         "containsAny:firecrawl|spring-boot-engineer|Spring Security|current"

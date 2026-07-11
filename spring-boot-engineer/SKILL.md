@@ -2,7 +2,7 @@
 name: spring-boot-engineer
 description: |
   Implement Spring Boot REST, Security, configuration, profiles, and Spring-native tests.
-  Use for concrete application features and test boundaries. Do not use for JPA/Hibernate internals or
+  Use when implementing Spring controllers, Security, configuration, profiles, or application tests. Do not use for JPA/Hibernate internals or
   domain decomposition; route those to spring-persistence-engineer or backend-ddd-architect-spring.
 metadata:
   framework_role: specialist

@@ -4,7 +4,7 @@
     {
       "id": 1,
       "name": "obsidian-handoff",
-      "prompt": "Start with `Selected: <playbook or decision>`. Decide whether this request belongs in pdf-reader or obsidian-cli: \"OCR the scanned PDF attachment and return per-page JSON.\"",
+      "prompt": "Decide whether this request belongs in pdf-reader or obsidian-cli: \"OCR the scanned PDF attachment and return per-page JSON.\"",
       "expected_output": "Routes the task to pdf-reader because extraction is the hard part.",
       "fixture_dir": "evals/files/obsidian-handoff",
       "files": [
@@ -12,14 +12,14 @@
       ],
       "support_skills": [],
       "expectations": [
-        "contains:Selected: obsidian-handoff",
-        "containsAny:OCR|per-page JSON|extract"
+        "containsAny:OCR|per-page JSON|extract",
+        "containsAny:pdf-reader|PDF extraction|scanned page"
       ]
     },
     {
       "id": 2,
       "name": "chunk-large-pdf",
-      "prompt": "Start with `Selected: <playbook or decision>`. Explain the first extraction command you would run for a 200-page PDF when the user only needs pages 10-20 in JSON.",
+      "prompt": "Explain the first extraction command you would run for a 200-page PDF when the user only needs pages 10-20 in JSON.",
       "expected_output": "Uses pdf-reader with pages and json flags.",
       "fixture_dir": "evals/files/chunk-large-pdf",
       "files": [
@@ -29,6 +29,32 @@
       "expectations": [
         "containsAny:--pages 10-20|--pages 10-20 --json",
         "containsAny:--json|page"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mixed-ocr",
+      "prompt": "Plan extraction for a mixed PDF where only some pages are scanned, preserving page numbers and reporting OCR failures.",
+      "expected_output": "Uses text extraction first and OCR only where required.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:text extraction|extract first|native text",
+        "containsAny:OCR|scanned",
+        "containsAny:page number|per-page|failure"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "token-budget-json",
+      "prompt": "Define a per-page JSON and chunking contract for a 300-page PDF that must stay within a downstream token budget.",
+      "expected_output": "Keeps page provenance and deterministic chunk limits.",
+      "files": [],
+      "support_skills": [],
+      "expectations": [
+        "containsAny:JSON|structured",
+        "containsAny:token budget|max chars|chunk",
+        "containsAny:page|provenance"
       ]
     }
   ]

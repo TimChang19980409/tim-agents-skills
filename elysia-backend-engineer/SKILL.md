@@ -2,7 +2,7 @@
 name: elysia-backend-engineer
 description: |
   Implement Bun-first Elysia APIs: routes, validation, OpenAPI, plugins, lifecycle, Eden, tests, and streaming.
-  Use when Elysia application behavior is central. Do not use for SQL schema, query, or migration work;
+  Use when implementing or testing Elysia routes, handlers, plugins, lifecycle, context, or clients. Do not use for SQL schema, query, or migration work;
   route those to drizzle-persistence-engineer.
 metadata:
   framework_role: host

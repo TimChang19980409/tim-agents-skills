@@ -1,0 +1,150 @@
+{
+  "skill_name": "spring-persistence-engineer",
+  "generated_at": "2026-03-14T07:30:48.301Z",
+  "rows": [
+    {
+      "eval_id": 1,
+      "eval_name": "entity-mapping",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27103,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: entity-mapping\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25210,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: entity-mapping\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "fetch-plan-fix",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 28749,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: fetch-plan-fix\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 54571,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: fetch-plan-fix\"",
+          "passed": true
+        }
+      },
+      "delta": 0
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "locking-strategy",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27987,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: locking-strategy\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25352,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: locking-strategy\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "batching-import",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 26577,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: batching-import\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.75,
+        "total": 4,
+        "passed": 3,
+        "tokens": 25152,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: batching-import\"",
+          "passed": false
+        }
+      },
+      "delta": 0.25
+    },
+    {
+      "eval_id": 5,
+      "eval_name": "compatibility-lane",
+      "with_skill": {
+        "label": "with_skill",
+        "passRate": 1,
+        "total": 4,
+        "passed": 4,
+        "tokens": 27710,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: compatibility-lane\"",
+          "passed": true
+        }
+      },
+      "without_skill": {
+        "label": "without_skill",
+        "passRate": 0.5,
+        "total": 4,
+        "passed": 2,
+        "tokens": 26895,
+        "selectedExpectation": {
+          "text": "The output contains \"Selected: compatibility-lane\"",
+          "passed": false
+        }
+      },
+      "delta": 0.5
+    }
+  ],
+  "summary": {
+    "comparable_evals": 5,
+    "with_skill_average_pass_rate": 1,
+    "without_skill_average_pass_rate": 0.75,
+    "with_skill_wins": 4,
+    "selected_pass_count": 5,
+    "selected_total": 5,
+    "selected_pass_rate": 1
+  }
+}

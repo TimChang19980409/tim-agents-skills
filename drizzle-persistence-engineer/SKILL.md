@@ -2,7 +2,7 @@
 name: drizzle-persistence-engineer
 description: |
   Implement Drizzle ORM schemas, relations, queries, transactions, drivers, migrations, and validation bridges.
-  Use when TypeScript SQL persistence is central. Do not use for Elysia routes or lifecycle;
+  Use when a Drizzle schema, relation, query, transaction, driver, or migration decision is required. Do not use for Elysia routes or lifecycle;
   route those to elysia-backend-engineer.
 metadata:
   framework_role: specialist

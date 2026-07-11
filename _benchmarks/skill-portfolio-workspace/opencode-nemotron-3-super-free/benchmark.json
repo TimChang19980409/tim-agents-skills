@@ -1,0 +1,1757 @@
+{
+  "workspace": "/Users/ss105213025/.agents/skills/_benchmarks/skill-portfolio-workspace/opencode-nemotron-3-super-free",
+  "generated_at": "2026-04-06T10:55:49.689Z",
+  "overall": {
+    "model": "opencode/nemotron-3-super-free",
+    "status": "completed",
+    "total_queries": 180,
+    "total_runs": 540,
+    "timed_out_runs": 92,
+    "query_pass_rate": 0.8278,
+    "run_pass_rate": 0.8278
+  },
+  "per_skill": [
+    {
+      "skill": "backend-ddd-architect-spring",
+      "queries": 12,
+      "timed_out_runs": 1,
+      "query_pass_rate": 0.9445,
+      "run_pass_rate": 0.9444,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "bun-ts-scripting-policy",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "firecrawl",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "frontend-dev-guidelines",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "jasperreports-engineer",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "java-pro",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "obsidian-cli",
+      "queries": 12,
+      "timed_out_runs": 1,
+      "query_pass_rate": 0.9722,
+      "run_pass_rate": 0.9722,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "opencode-configurator",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "pdf-reader",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "ppt-generation",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "react-component-designer",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "skill-creator",
+      "queries": 12,
+      "timed_out_runs": 0,
+      "query_pass_rate": 1,
+      "run_pass_rate": 1,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "spring-boot-engineer",
+      "queries": 12,
+      "timed_out_runs": 18,
+      "query_pass_rate": 0.5,
+      "run_pass_rate": 0.5,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "spring-persistence-engineer",
+      "queries": 12,
+      "timed_out_runs": 36,
+      "query_pass_rate": 0,
+      "run_pass_rate": 0,
+      "false_positive_rate": 0
+    },
+    {
+      "skill": "stagehand-aria-e2e",
+      "queries": 12,
+      "timed_out_runs": 36,
+      "query_pass_rate": 0,
+      "run_pass_rate": 0,
+      "false_positive_rate": 0
+    }
+  ],
+  "queries": [
+    {
+      "id": "backend-ddd-architect-spring-1",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "bounded context discovery",
+      "prompt": "A user asks for help with bounded context discovery. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-2",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "bounded context discovery",
+      "prompt": "Pick the best local skill for this task: bounded context discovery.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-3",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "bounded context discovery",
+      "prompt": "Route this request to one skill only: bounded context discovery.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-4",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "aggregate design",
+      "prompt": "A user asks for help with aggregate design. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 2,
+      "pass_rate": 0.6667
+    },
+    {
+      "id": "backend-ddd-architect-spring-5",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "aggregate design",
+      "prompt": "Pick the best local skill for this task: aggregate design.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-6",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "aggregate design",
+      "prompt": "Route this request to one skill only: aggregate design.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-7",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "context map",
+      "prompt": "A user asks for help with context map. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-8",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "context map",
+      "prompt": "Pick the best local skill for this task: context map.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-9",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "context map",
+      "prompt": "Route this request to one skill only: context map.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-10",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "event integration",
+      "prompt": "A user asks for help with event integration. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-11",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "event integration",
+      "prompt": "Pick the best local skill for this task: event integration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "backend-ddd-architect-spring-12",
+      "expected_skill": "backend-ddd-architect-spring",
+      "source_tag": "event integration",
+      "prompt": "Route this request to one skill only: event integration.",
+      "runs": 3,
+      "correct_runs": 2,
+      "pass_rate": 0.6667
+    },
+    {
+      "id": "bun-ts-scripting-policy-1",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "new bun script",
+      "prompt": "A user asks for help with new bun script. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-2",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "new bun script",
+      "prompt": "Pick the best local skill for this task: new bun script.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-3",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "new bun script",
+      "prompt": "Route this request to one skill only: new bun script.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-4",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "node to bun migration",
+      "prompt": "A user asks for help with node to bun migration. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-5",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "node to bun migration",
+      "prompt": "Pick the best local skill for this task: node to bun migration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-6",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "node to bun migration",
+      "prompt": "Route this request to one skill only: node to bun migration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-7",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "cli automation review",
+      "prompt": "A user asks for help with cli automation review. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-8",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "cli automation review",
+      "prompt": "Pick the best local skill for this task: cli automation review.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-9",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "cli automation review",
+      "prompt": "Route this request to one skill only: cli automation review.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-10",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "parser codegen script",
+      "prompt": "A user asks for help with parser codegen script. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-11",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "parser codegen script",
+      "prompt": "Pick the best local skill for this task: parser codegen script.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "bun-ts-scripting-policy-12",
+      "expected_skill": "bun-ts-scripting-policy",
+      "source_tag": "parser codegen script",
+      "prompt": "Route this request to one skill only: parser codegen script.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-1",
+      "expected_skill": "firecrawl",
+      "source_tag": "web search",
+      "prompt": "A user asks for help with web search. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-2",
+      "expected_skill": "firecrawl",
+      "source_tag": "web search",
+      "prompt": "Pick the best local skill for this task: web search.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-3",
+      "expected_skill": "firecrawl",
+      "source_tag": "web search",
+      "prompt": "Route this request to one skill only: web search.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-4",
+      "expected_skill": "firecrawl",
+      "source_tag": "scrape page",
+      "prompt": "A user asks for help with scrape page. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-5",
+      "expected_skill": "firecrawl",
+      "source_tag": "scrape page",
+      "prompt": "Pick the best local skill for this task: scrape page.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-6",
+      "expected_skill": "firecrawl",
+      "source_tag": "scrape page",
+      "prompt": "Route this request to one skill only: scrape page.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-7",
+      "expected_skill": "firecrawl",
+      "source_tag": "map site",
+      "prompt": "A user asks for help with map site. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-8",
+      "expected_skill": "firecrawl",
+      "source_tag": "map site",
+      "prompt": "Pick the best local skill for this task: map site.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-9",
+      "expected_skill": "firecrawl",
+      "source_tag": "map site",
+      "prompt": "Route this request to one skill only: map site.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-10",
+      "expected_skill": "firecrawl",
+      "source_tag": "verify current facts",
+      "prompt": "A user asks for help with verify current facts. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-11",
+      "expected_skill": "firecrawl",
+      "source_tag": "verify current facts",
+      "prompt": "Pick the best local skill for this task: verify current facts.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "firecrawl-12",
+      "expected_skill": "firecrawl",
+      "source_tag": "verify current facts",
+      "prompt": "Route this request to one skill only: verify current facts.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-1",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "react build",
+      "prompt": "A user asks for help with react build. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-2",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "react build",
+      "prompt": "Pick the best local skill for this task: react build.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-3",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "react build",
+      "prompt": "Route this request to one skill only: react build.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-4",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "frontend refactor",
+      "prompt": "A user asks for help with frontend refactor. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-5",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "frontend refactor",
+      "prompt": "Pick the best local skill for this task: frontend refactor.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-6",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "frontend refactor",
+      "prompt": "Route this request to one skill only: frontend refactor.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-7",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "ui review",
+      "prompt": "A user asks for help with ui review. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-8",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "ui review",
+      "prompt": "Pick the best local skill for this task: ui review.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-9",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "ui review",
+      "prompt": "Route this request to one skill only: ui review.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-10",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "accessibility audit",
+      "prompt": "A user asks for help with accessibility audit. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-11",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "accessibility audit",
+      "prompt": "Pick the best local skill for this task: accessibility audit.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "frontend-dev-guidelines-12",
+      "expected_skill": "frontend-dev-guidelines",
+      "source_tag": "accessibility audit",
+      "prompt": "Route this request to one skill only: accessibility audit.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-1",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "subreport debug",
+      "prompt": "A user asks for help with subreport debug. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-2",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "subreport debug",
+      "prompt": "Pick the best local skill for this task: subreport debug.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-3",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "subreport debug",
+      "prompt": "Route this request to one skill only: subreport debug.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-4",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "jasper migration",
+      "prompt": "A user asks for help with jasper migration. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-5",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "jasper migration",
+      "prompt": "Pick the best local skill for this task: jasper migration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-6",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "jasper migration",
+      "prompt": "Route this request to one skill only: jasper migration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-7",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "font extension packaging",
+      "prompt": "A user asks for help with font extension packaging. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-8",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "font extension packaging",
+      "prompt": "Pick the best local skill for this task: font extension packaging.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-9",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "font extension packaging",
+      "prompt": "Route this request to one skill only: font extension packaging.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-10",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "large export performance",
+      "prompt": "A user asks for help with large export performance. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-11",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "large export performance",
+      "prompt": "Pick the best local skill for this task: large export performance.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "jasperreports-engineer-12",
+      "expected_skill": "jasperreports-engineer",
+      "source_tag": "large export performance",
+      "prompt": "Route this request to one skill only: large export performance.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-1",
+      "expected_skill": "java-pro",
+      "source_tag": "virtual thread migration",
+      "prompt": "A user asks for help with virtual thread migration. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-2",
+      "expected_skill": "java-pro",
+      "source_tag": "virtual thread migration",
+      "prompt": "Pick the best local skill for this task: virtual thread migration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-3",
+      "expected_skill": "java-pro",
+      "source_tag": "virtual thread migration",
+      "prompt": "Route this request to one skill only: virtual thread migration.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-4",
+      "expected_skill": "java-pro",
+      "source_tag": "jvm diagnostics",
+      "prompt": "A user asks for help with jvm diagnostics. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-5",
+      "expected_skill": "java-pro",
+      "source_tag": "jvm diagnostics",
+      "prompt": "Pick the best local skill for this task: jvm diagnostics.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-6",
+      "expected_skill": "java-pro",
+      "source_tag": "jvm diagnostics",
+      "prompt": "Route this request to one skill only: jvm diagnostics.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-7",
+      "expected_skill": "java-pro",
+      "source_tag": "jmh benchmark design",
+      "prompt": "A user asks for help with jmh benchmark design. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-8",
+      "expected_skill": "java-pro",
+      "source_tag": "jmh benchmark design",
+      "prompt": "Pick the best local skill for this task: jmh benchmark design.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-9",
+      "expected_skill": "java-pro",
+      "source_tag": "jmh benchmark design",
+      "prompt": "Route this request to one skill only: jmh benchmark design.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-10",
+      "expected_skill": "java-pro",
+      "source_tag": "hotspot vs native image",
+      "prompt": "A user asks for help with hotspot vs native image. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-11",
+      "expected_skill": "java-pro",
+      "source_tag": "hotspot vs native image",
+      "prompt": "Pick the best local skill for this task: hotspot vs native image.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "java-pro-12",
+      "expected_skill": "java-pro",
+      "source_tag": "hotspot vs native image",
+      "prompt": "Route this request to one skill only: hotspot vs native image.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-1",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian daily note cli",
+      "prompt": "A user asks for help with obsidian daily note cli. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 2,
+      "pass_rate": 0.6667
+    },
+    {
+      "id": "obsidian-cli-2",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian daily note cli",
+      "prompt": "Pick the best local skill for this task: obsidian daily note cli.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-3",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian daily note cli",
+      "prompt": "Route this request to one skill only: obsidian daily note cli.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-4",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian plugin:reload",
+      "prompt": "A user asks for help with obsidian plugin:reload. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-5",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian plugin:reload",
+      "prompt": "Pick the best local skill for this task: obsidian plugin:reload.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-6",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian plugin:reload",
+      "prompt": "Route this request to one skill only: obsidian plugin:reload.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-7",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian dev:dom selector",
+      "prompt": "A user asks for help with obsidian dev:dom selector. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-8",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian dev:dom selector",
+      "prompt": "Pick the best local skill for this task: obsidian dev:dom selector.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-9",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian dev:dom selector",
+      "prompt": "Route this request to one skill only: obsidian dev:dom selector.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-10",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian property:set",
+      "prompt": "A user asks for help with obsidian property:set. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-11",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian property:set",
+      "prompt": "Pick the best local skill for this task: obsidian property:set.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "obsidian-cli-12",
+      "expected_skill": "obsidian-cli",
+      "source_tag": "obsidian property:set",
+      "prompt": "Route this request to one skill only: obsidian property:set.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-1",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "project opencode setup",
+      "prompt": "A user asks for help with project opencode setup. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-2",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "project opencode setup",
+      "prompt": "Pick the best local skill for this task: project opencode setup.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-3",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "project opencode setup",
+      "prompt": "Route this request to one skill only: project opencode setup.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-4",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "model permission tuning",
+      "prompt": "A user asks for help with model permission tuning. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-5",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "model permission tuning",
+      "prompt": "Pick the best local skill for this task: model permission tuning.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-6",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "model permission tuning",
+      "prompt": "Route this request to one skill only: model permission tuning.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-7",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "mcp wiring",
+      "prompt": "A user asks for help with mcp wiring. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-8",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "mcp wiring",
+      "prompt": "Pick the best local skill for this task: mcp wiring.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-9",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "mcp wiring",
+      "prompt": "Route this request to one skill only: mcp wiring.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-10",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "agent mode setup",
+      "prompt": "A user asks for help with agent mode setup. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-11",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "agent mode setup",
+      "prompt": "Pick the best local skill for this task: agent mode setup.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "opencode-configurator-12",
+      "expected_skill": "opencode-configurator",
+      "source_tag": "agent mode setup",
+      "prompt": "Route this request to one skill only: agent mode setup.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-1",
+      "expected_skill": "pdf-reader",
+      "source_tag": "per-page PDF extraction",
+      "prompt": "A user asks for help with per-page PDF extraction. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-2",
+      "expected_skill": "pdf-reader",
+      "source_tag": "per-page PDF extraction",
+      "prompt": "Pick the best local skill for this task: per-page PDF extraction.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-3",
+      "expected_skill": "pdf-reader",
+      "source_tag": "per-page PDF extraction",
+      "prompt": "Route this request to one skill only: per-page PDF extraction.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-4",
+      "expected_skill": "pdf-reader",
+      "source_tag": "OCR for scanned PDF pages",
+      "prompt": "A user asks for help with OCR for scanned PDF pages. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-5",
+      "expected_skill": "pdf-reader",
+      "source_tag": "OCR for scanned PDF pages",
+      "prompt": "Pick the best local skill for this task: OCR for scanned PDF pages.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-6",
+      "expected_skill": "pdf-reader",
+      "source_tag": "OCR for scanned PDF pages",
+      "prompt": "Route this request to one skill only: OCR for scanned PDF pages.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-7",
+      "expected_skill": "pdf-reader",
+      "source_tag": "per-page PDF JSON output",
+      "prompt": "A user asks for help with per-page PDF JSON output. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-8",
+      "expected_skill": "pdf-reader",
+      "source_tag": "per-page PDF JSON output",
+      "prompt": "Pick the best local skill for this task: per-page PDF JSON output.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-9",
+      "expected_skill": "pdf-reader",
+      "source_tag": "per-page PDF JSON output",
+      "prompt": "Route this request to one skill only: per-page PDF JSON output.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-10",
+      "expected_skill": "pdf-reader",
+      "source_tag": "PDF handoff from Obsidian",
+      "prompt": "A user asks for help with PDF handoff from Obsidian. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-11",
+      "expected_skill": "pdf-reader",
+      "source_tag": "PDF handoff from Obsidian",
+      "prompt": "Pick the best local skill for this task: PDF handoff from Obsidian.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "pdf-reader-12",
+      "expected_skill": "pdf-reader",
+      "source_tag": "PDF handoff from Obsidian",
+      "prompt": "Route this request to one skill only: PDF handoff from Obsidian.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-1",
+      "expected_skill": "ppt-generation",
+      "source_tag": "ppt",
+      "prompt": "A user asks for help with ppt. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-2",
+      "expected_skill": "ppt-generation",
+      "source_tag": "ppt",
+      "prompt": "Pick the best local skill for this task: ppt.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-3",
+      "expected_skill": "ppt-generation",
+      "source_tag": "ppt",
+      "prompt": "Route this request to one skill only: ppt.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-4",
+      "expected_skill": "ppt-generation",
+      "source_tag": "簡報",
+      "prompt": "A user asks for help with 簡報. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-5",
+      "expected_skill": "ppt-generation",
+      "source_tag": "簡報",
+      "prompt": "Pick the best local skill for this task: 簡報.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-6",
+      "expected_skill": "ppt-generation",
+      "source_tag": "簡報",
+      "prompt": "Route this request to one skill only: 簡報.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-7",
+      "expected_skill": "ppt-generation",
+      "source_tag": "投影片",
+      "prompt": "A user asks for help with 投影片. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-8",
+      "expected_skill": "ppt-generation",
+      "source_tag": "投影片",
+      "prompt": "Pick the best local skill for this task: 投影片.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-9",
+      "expected_skill": "ppt-generation",
+      "source_tag": "投影片",
+      "prompt": "Route this request to one skill only: 投影片.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-10",
+      "expected_skill": "ppt-generation",
+      "source_tag": "presentation",
+      "prompt": "A user asks for help with presentation. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-11",
+      "expected_skill": "ppt-generation",
+      "source_tag": "presentation",
+      "prompt": "Pick the best local skill for this task: presentation.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "ppt-generation-12",
+      "expected_skill": "ppt-generation",
+      "source_tag": "presentation",
+      "prompt": "Route this request to one skill only: presentation.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-1",
+      "expected_skill": "react-component-designer",
+      "source_tag": "component api design",
+      "prompt": "A user asks for help with component api design. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-2",
+      "expected_skill": "react-component-designer",
+      "source_tag": "component api design",
+      "prompt": "Pick the best local skill for this task: component api design.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-3",
+      "expected_skill": "react-component-designer",
+      "source_tag": "component api design",
+      "prompt": "Route this request to one skill only: component api design.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-4",
+      "expected_skill": "react-component-designer",
+      "source_tag": "compound components",
+      "prompt": "A user asks for help with compound components. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-5",
+      "expected_skill": "react-component-designer",
+      "source_tag": "compound components",
+      "prompt": "Pick the best local skill for this task: compound components.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-6",
+      "expected_skill": "react-component-designer",
+      "source_tag": "compound components",
+      "prompt": "Route this request to one skill only: compound components.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-7",
+      "expected_skill": "react-component-designer",
+      "source_tag": "headless patterns",
+      "prompt": "A user asks for help with headless patterns. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-8",
+      "expected_skill": "react-component-designer",
+      "source_tag": "headless patterns",
+      "prompt": "Pick the best local skill for this task: headless patterns.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-9",
+      "expected_skill": "react-component-designer",
+      "source_tag": "headless patterns",
+      "prompt": "Route this request to one skill only: headless patterns.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-10",
+      "expected_skill": "react-component-designer",
+      "source_tag": "controlled vs uncontrolled",
+      "prompt": "A user asks for help with controlled vs uncontrolled. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-11",
+      "expected_skill": "react-component-designer",
+      "source_tag": "controlled vs uncontrolled",
+      "prompt": "Pick the best local skill for this task: controlled vs uncontrolled.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "react-component-designer-12",
+      "expected_skill": "react-component-designer",
+      "source_tag": "controlled vs uncontrolled",
+      "prompt": "Route this request to one skill only: controlled vs uncontrolled.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-1",
+      "expected_skill": "skill-creator",
+      "source_tag": "draft a new local skill",
+      "prompt": "A user asks for help with draft a new local skill. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-2",
+      "expected_skill": "skill-creator",
+      "source_tag": "draft a new local skill",
+      "prompt": "Pick the best local skill for this task: draft a new local skill.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-3",
+      "expected_skill": "skill-creator",
+      "source_tag": "draft a new local skill",
+      "prompt": "Route this request to one skill only: draft a new local skill.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-4",
+      "expected_skill": "skill-creator",
+      "source_tag": "migrate a skill to the framework",
+      "prompt": "A user asks for help with migrate a skill to the framework. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-5",
+      "expected_skill": "skill-creator",
+      "source_tag": "migrate a skill to the framework",
+      "prompt": "Pick the best local skill for this task: migrate a skill to the framework.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-6",
+      "expected_skill": "skill-creator",
+      "source_tag": "migrate a skill to the framework",
+      "prompt": "Route this request to one skill only: migrate a skill to the framework.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-7",
+      "expected_skill": "skill-creator",
+      "source_tag": "benchmark a skill with MiniMax",
+      "prompt": "A user asks for help with benchmark a skill with MiniMax. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-8",
+      "expected_skill": "skill-creator",
+      "source_tag": "benchmark a skill with MiniMax",
+      "prompt": "Pick the best local skill for this task: benchmark a skill with MiniMax.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-9",
+      "expected_skill": "skill-creator",
+      "source_tag": "benchmark a skill with MiniMax",
+      "prompt": "Route this request to one skill only: benchmark a skill with MiniMax.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-10",
+      "expected_skill": "skill-creator",
+      "source_tag": "improve a skill trigger description",
+      "prompt": "A user asks for help with improve a skill trigger description. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-11",
+      "expected_skill": "skill-creator",
+      "source_tag": "improve a skill trigger description",
+      "prompt": "Pick the best local skill for this task: improve a skill trigger description.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "skill-creator-12",
+      "expected_skill": "skill-creator",
+      "source_tag": "improve a skill trigger description",
+      "prompt": "Route this request to one skill only: improve a skill trigger description.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-1",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring rest feature",
+      "prompt": "A user asks for help with spring rest feature. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-2",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring rest feature",
+      "prompt": "Pick the best local skill for this task: spring rest feature.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-3",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring rest feature",
+      "prompt": "Route this request to one skill only: spring rest feature.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-4",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring security wiring",
+      "prompt": "A user asks for help with spring security wiring. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-5",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring security wiring",
+      "prompt": "Pick the best local skill for this task: spring security wiring.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-6",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring security wiring",
+      "prompt": "Route this request to one skill only: spring security wiring.",
+      "runs": 3,
+      "correct_runs": 3,
+      "pass_rate": 1
+    },
+    {
+      "id": "spring-boot-engineer-7",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "application profiles config",
+      "prompt": "A user asks for help with application profiles config. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-boot-engineer-8",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "application profiles config",
+      "prompt": "Pick the best local skill for this task: application profiles config.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-boot-engineer-9",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "application profiles config",
+      "prompt": "Route this request to one skill only: application profiles config.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-boot-engineer-10",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring test slices",
+      "prompt": "A user asks for help with spring test slices. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-boot-engineer-11",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring test slices",
+      "prompt": "Pick the best local skill for this task: spring test slices.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-boot-engineer-12",
+      "expected_skill": "spring-boot-engineer",
+      "source_tag": "spring test slices",
+      "prompt": "Route this request to one skill only: spring test slices.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-1",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "jpa entity mapping",
+      "prompt": "A user asks for help with jpa entity mapping. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-2",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "jpa entity mapping",
+      "prompt": "Pick the best local skill for this task: jpa entity mapping.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-3",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "jpa entity mapping",
+      "prompt": "Route this request to one skill only: jpa entity mapping.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-4",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "fetch plan fix",
+      "prompt": "A user asks for help with fetch plan fix. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-5",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "fetch plan fix",
+      "prompt": "Pick the best local skill for this task: fetch plan fix.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-6",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "fetch plan fix",
+      "prompt": "Route this request to one skill only: fetch plan fix.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-7",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "locking strategy",
+      "prompt": "A user asks for help with locking strategy. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-8",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "locking strategy",
+      "prompt": "Pick the best local skill for this task: locking strategy.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-9",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "locking strategy",
+      "prompt": "Route this request to one skill only: locking strategy.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-10",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "batching import",
+      "prompt": "A user asks for help with batching import. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-11",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "batching import",
+      "prompt": "Pick the best local skill for this task: batching import.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "spring-persistence-engineer-12",
+      "expected_skill": "spring-persistence-engineer",
+      "source_tag": "batching import",
+      "prompt": "Route this request to one skill only: batching import.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-1",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "aria snapshot flow",
+      "prompt": "A user asks for help with aria snapshot flow. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-2",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "aria snapshot flow",
+      "prompt": "Pick the best local skill for this task: aria snapshot flow.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-3",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "aria snapshot flow",
+      "prompt": "Route this request to one skill only: aria snapshot flow.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-4",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "layout tree assertion",
+      "prompt": "A user asks for help with layout tree assertion. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-5",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "layout tree assertion",
+      "prompt": "Pick the best local skill for this task: layout tree assertion.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-6",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "layout tree assertion",
+      "prompt": "Route this request to one skill only: layout tree assertion.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-7",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "screenshot migration",
+      "prompt": "A user asks for help with screenshot migration. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-8",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "screenshot migration",
+      "prompt": "Pick the best local skill for this task: screenshot migration.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-9",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "screenshot migration",
+      "prompt": "Route this request to one skill only: screenshot migration.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-10",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "stagehand install check",
+      "prompt": "A user asks for help with stagehand install check. Which single skill should handle this request?",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-11",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "stagehand install check",
+      "prompt": "Pick the best local skill for this task: stagehand install check.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    },
+    {
+      "id": "stagehand-aria-e2e-12",
+      "expected_skill": "stagehand-aria-e2e",
+      "source_tag": "stagehand install check",
+      "prompt": "Route this request to one skill only: stagehand install check.",
+      "runs": 3,
+      "correct_runs": 0,
+      "pass_rate": 0
+    }
+  ]
+}
