@@ -191,10 +191,6 @@
         {
           "source": "~/.config/opencode/AGENTS.md",
           "target": "~/.agents/skills/_shared/global/AGENTS.md"
-        },
-        {
-          "source": "~/.config/opencode/opencode.json",
-          "target": "~/.agents/skills/_shared/opencode/opencode.json"
         }
       ],
       "agent_links": [
@@ -217,7 +213,18 @@
         "~/.agents/skills/_shared/global/docs/testing-and-verification.md",
         "~/.agents/skills/_shared/global/docs/repo-discovery.md",
         "~/.agents/skills/_shared/global/docs/skill-routing.md"
-      ]
+      ],
+      "config_merge": {
+        "target": "~/.config/opencode/opencode.json",
+        "preserve": [
+          "model",
+          "provider",
+          "plugin",
+          "command",
+          "mcp",
+          "credential"
+        ]
+      }
     }
   }
 }

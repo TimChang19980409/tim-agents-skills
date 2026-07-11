@@ -156,6 +156,7 @@ It checks:
 6. Only `role=host` skills should own a broad trigger surface; put deep or narrow guidance in playbooks, decision guides, or archive extensions.
 7. Commit compact benchmark summaries, not raw OpenCode transcripts or staged project copies.
 8. Keep root and global entrypoint files thin; route durable detail into `_shared/global/docs/` or `_shared/repo/`.
+9. Run `bun scripts/sync-agent-projections.ts --check` after portfolio changes. Use `--apply` only for the backup-first, repo-owned home reconciliation; OpenCode config is merged rather than linked.
 
 ## Benchmark targets
 

@@ -47,6 +47,7 @@ This repository keeps `Core + Archive` as the storage and governance layer, then
 - `skills.json` is the machine-readable source of truth.
 - `bun scripts/validate-skills.ts` enforces schema, file existence, extension ownership, router-size limits, and projection path safety.
 - `bun scripts/validate-agent-context.ts` checks thin entrypoints, shared docs, OpenCode instructions, and the projection snapshot.
+- `bun scripts/sync-agent-projections.ts --check` detects repo-owned shadows, divergent copies, broken compatibility links, and missing OpenCode instructions; `--apply` creates a timestamped backup before reconciling them.
 - Portfolio trigger sweeps run natural prompts through isolated OpenCode and inspect the first native `skill` tool event.
 - Outcome evals compare `with_skill` and `without_skill` runs while committing only compact benchmark outputs.
 
