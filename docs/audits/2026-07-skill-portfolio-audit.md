@@ -75,16 +75,19 @@ An expired review is a validation failure. Official sources are required for ver
 
 ## 2026-07 measured baseline
 
-The implementation baseline is reproducible, but neither free model met the routing acceptance gate. These results are evidence about native OpenCode skill discovery with the tested models; they are not a reason to restore archived skills or add more routing text without a new controlled experiment.
+The implementation baseline is reproducible, but no tested free model met the routing acceptance gate. These results are evidence about native OpenCode skill discovery with the tested models; they are not a reason to restore archived skills or add more routing text without a new controlled experiment.
 
 | Model and suite | First-skill / boundary | Wrong skill | Null precision | Timeout | Infra | Decision |
 | --- | --- | --- | --- | --- | --- | --- |
+| `opencode/deepseek-v4-flash-free`, 100 cases x 2 | 82.0% / 81.3% | 1.0% | 100.0% | 1.0% | 1 | Passes safety and reliability gates; fails 90% trigger and 85% boundary gates |
 | `opencode/nemotron-3-ultra-free`, 100 cases x 2 | 14.1% / 14.6% | 6.0% | 100.0% | 33.5% | 1 | Fails trigger, boundary, wrong-skill, and timeout gates |
 | `opencode/north-mini-code-free`, 24 boundary + 12 null x 2 | n/a / 58.3% | 1.4% | 100.0% | 0.0% | 3 | Fails boundary gate; free endpoint returned three infrastructure failures |
 
+DeepSeek Flash is materially stronger than the original free baselines, but four skills remain below the 75% positive-recall floor: `java-pro` at 25%, and `frontend-dev-guidelines`, `skill-portfolio-maintainer`, and `spring-boot-engineer` at 62.5%. The only wrong-skill event routed one Spring Boot prompt to `opencode-configurator`. Its `ddd-pos-1` infrastructure failure was retried twice with 100% correct routing and no failures. The two-timeout `maintainer-pos-2` case was also retried: it no longer timed out, but routed correctly only once in two attempts, confirming unstable triggering.
+
 The Nemotron run completed all 200 attempts. Its single explicit infrastructure-failure case, `persistence-pos-3`, was retried twice in isolation and timed out twice, reproducing free-endpoint degradation rather than producing a recoverable scored result. Representative North Mini misses were also retried before finalizing the baseline: `b05-elysia` again loaded no skill, while `b19-maintainer` timed out after description tuning. Raw retries are intentionally not retained.
 
-Outcome fixtures remain at three or more concrete tasks per core skill, with synthetic `Selected:` assertions removed. A new free-model outcome pass was not promoted to an acceptance artifact because both models failed the prerequisite natural-trigger gate and the free service was degraded. Historical outcome runs remain evidence only. The next policy decision is whether to test a stronger model or introduce an explicit host routing policy; silently lowering the agreed thresholds would invalidate this baseline.
+Outcome fixtures remain at three or more concrete tasks per core skill, with synthetic `Selected:` assertions removed. A new free-model outcome pass was not promoted to an acceptance artifact because the tested models failed the prerequisite natural-trigger gate. Historical outcome runs remain evidence only. The next policy decision is whether to tune the four low-recall descriptions and rerun DeepSeek Flash, or introduce an explicit host routing policy; silently lowering the agreed thresholds would invalidate this baseline.
 
 ## Primary references
 

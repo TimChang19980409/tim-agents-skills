@@ -1,0 +1,1222 @@
+{
+  "generated_at": "2026-07-11T12:21:51.679Z",
+  "model": "opencode/deepseek-v4-flash-free",
+  "suite": "full",
+  "cases": 100,
+  "runs_per_case": 2,
+  "status": "completed_with_infra_failures",
+  "metrics": {
+    "macro_first_skill_accuracy": 0.8203125,
+    "boundary_accuracy": 0.8125,
+    "wrong_skill_rate": 0.01,
+    "null_case_precision": 1,
+    "timeout_rate": 0.01,
+    "infra_failures": 1
+  },
+  "thresholds": {
+    "macro_first_skill_accuracy": 0.9,
+    "per_skill_positive_recall_min": 0.75,
+    "boundary_accuracy": 0.85,
+    "wrong_skill_rate_max": 0.05,
+    "null_precision": 0.9,
+    "timeout_rate_max": 0.03
+  },
+  "per_skill": [
+    {
+      "skill": "backend-ddd-architect-spring",
+      "runs": 8,
+      "positive_recall": 0.875
+    },
+    {
+      "skill": "drizzle-persistence-engineer",
+      "runs": 8,
+      "positive_recall": 1
+    },
+    {
+      "skill": "elysia-backend-engineer",
+      "runs": 8,
+      "positive_recall": 0.75
+    },
+    {
+      "skill": "firecrawl",
+      "runs": 8,
+      "positive_recall": 0.875
+    },
+    {
+      "skill": "frontend-dev-guidelines",
+      "runs": 8,
+      "positive_recall": 0.625
+    },
+    {
+      "skill": "jasperreports-engineer",
+      "runs": 8,
+      "positive_recall": 1
+    },
+    {
+      "skill": "java-pro",
+      "runs": 8,
+      "positive_recall": 0.25
+    },
+    {
+      "skill": "obsidian-cli",
+      "runs": 8,
+      "positive_recall": 1
+    },
+    {
+      "skill": "opencode-configurator",
+      "runs": 8,
+      "positive_recall": 1
+    },
+    {
+      "skill": "pdf-reader",
+      "runs": 8,
+      "positive_recall": 0.75
+    },
+    {
+      "skill": "react-component-designer",
+      "runs": 8,
+      "positive_recall": 0.875
+    },
+    {
+      "skill": "skill-portfolio-maintainer",
+      "runs": 8,
+      "positive_recall": 0.625
+    },
+    {
+      "skill": "spring-boot-engineer",
+      "runs": 8,
+      "positive_recall": 0.625
+    },
+    {
+      "skill": "spring-persistence-engineer",
+      "runs": 8,
+      "positive_recall": 0.875
+    },
+    {
+      "skill": "stagehand-aria-e2e",
+      "runs": 8,
+      "positive_recall": 1
+    },
+    {
+      "skill": "teaching-content-designer",
+      "runs": 8,
+      "positive_recall": 1
+    }
+  ],
+  "results": [
+    {
+      "id": "ddd-pos-1",
+      "kind": "positive",
+      "expected_skill": "backend-ddd-architect-spring",
+      "first_skill_counts": {
+        "backend-ddd-architect-spring": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 1
+    },
+    {
+      "id": "ddd-pos-2",
+      "kind": "positive",
+      "expected_skill": "backend-ddd-architect-spring",
+      "first_skill_counts": {
+        "backend-ddd-architect-spring": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "ddd-pos-3",
+      "kind": "positive",
+      "expected_skill": "backend-ddd-architect-spring",
+      "first_skill_counts": {
+        "backend-ddd-architect-spring": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "ddd-pos-4",
+      "kind": "positive",
+      "expected_skill": "backend-ddd-architect-spring",
+      "first_skill_counts": {
+        "backend-ddd-architect-spring": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "drizzle-pos-1",
+      "kind": "positive",
+      "expected_skill": "drizzle-persistence-engineer",
+      "first_skill_counts": {
+        "drizzle-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "drizzle-pos-2",
+      "kind": "positive",
+      "expected_skill": "drizzle-persistence-engineer",
+      "first_skill_counts": {
+        "drizzle-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "drizzle-pos-3",
+      "kind": "positive",
+      "expected_skill": "drizzle-persistence-engineer",
+      "first_skill_counts": {
+        "drizzle-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "drizzle-pos-4",
+      "kind": "positive",
+      "expected_skill": "drizzle-persistence-engineer",
+      "first_skill_counts": {
+        "drizzle-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "elysia-pos-1",
+      "kind": "positive",
+      "expected_skill": "elysia-backend-engineer",
+      "first_skill_counts": {
+        "elysia-backend-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "elysia-pos-2",
+      "kind": "positive",
+      "expected_skill": "elysia-backend-engineer",
+      "first_skill_counts": {
+        "elysia-backend-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "elysia-pos-3",
+      "kind": "positive",
+      "expected_skill": "elysia-backend-engineer",
+      "first_skill_counts": {
+        "elysia-backend-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "elysia-pos-4",
+      "kind": "positive",
+      "expected_skill": "elysia-backend-engineer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "firecrawl-pos-1",
+      "kind": "positive",
+      "expected_skill": "firecrawl",
+      "first_skill_counts": {
+        "firecrawl": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "firecrawl-pos-2",
+      "kind": "positive",
+      "expected_skill": "firecrawl",
+      "first_skill_counts": {
+        "firecrawl": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "firecrawl-pos-3",
+      "kind": "positive",
+      "expected_skill": "firecrawl",
+      "first_skill_counts": {
+        "firecrawl": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "firecrawl-pos-4",
+      "kind": "positive",
+      "expected_skill": "firecrawl",
+      "first_skill_counts": {
+        "firecrawl": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "frontend-pos-1",
+      "kind": "positive",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "frontend-dev-guidelines": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "frontend-pos-2",
+      "kind": "positive",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "frontend-dev-guidelines": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "frontend-pos-3",
+      "kind": "positive",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "frontend-pos-4",
+      "kind": "positive",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "frontend-dev-guidelines": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "jasper-pos-1",
+      "kind": "positive",
+      "expected_skill": "jasperreports-engineer",
+      "first_skill_counts": {
+        "jasperreports-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "jasper-pos-2",
+      "kind": "positive",
+      "expected_skill": "jasperreports-engineer",
+      "first_skill_counts": {
+        "jasperreports-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "jasper-pos-3",
+      "kind": "positive",
+      "expected_skill": "jasperreports-engineer",
+      "first_skill_counts": {
+        "jasperreports-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "jasper-pos-4",
+      "kind": "positive",
+      "expected_skill": "jasperreports-engineer",
+      "first_skill_counts": {
+        "jasperreports-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "java-pos-1",
+      "kind": "positive",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "java-pos-2",
+      "kind": "positive",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "<none>": 1,
+        "java-pro": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "java-pos-3",
+      "kind": "positive",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "java-pos-4",
+      "kind": "positive",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "java-pro": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "obsidian-pos-1",
+      "kind": "positive",
+      "expected_skill": "obsidian-cli",
+      "first_skill_counts": {
+        "obsidian-cli": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "obsidian-pos-2",
+      "kind": "positive",
+      "expected_skill": "obsidian-cli",
+      "first_skill_counts": {
+        "obsidian-cli": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "obsidian-pos-3",
+      "kind": "positive",
+      "expected_skill": "obsidian-cli",
+      "first_skill_counts": {
+        "obsidian-cli": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "obsidian-pos-4",
+      "kind": "positive",
+      "expected_skill": "obsidian-cli",
+      "first_skill_counts": {
+        "obsidian-cli": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "opencode-pos-1",
+      "kind": "positive",
+      "expected_skill": "opencode-configurator",
+      "first_skill_counts": {
+        "opencode-configurator": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "opencode-pos-2",
+      "kind": "positive",
+      "expected_skill": "opencode-configurator",
+      "first_skill_counts": {
+        "opencode-configurator": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "opencode-pos-3",
+      "kind": "positive",
+      "expected_skill": "opencode-configurator",
+      "first_skill_counts": {
+        "opencode-configurator": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "opencode-pos-4",
+      "kind": "positive",
+      "expected_skill": "opencode-configurator",
+      "first_skill_counts": {
+        "opencode-configurator": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "pdf-pos-1",
+      "kind": "positive",
+      "expected_skill": "pdf-reader",
+      "first_skill_counts": {
+        "pdf-reader": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "pdf-pos-2",
+      "kind": "positive",
+      "expected_skill": "pdf-reader",
+      "first_skill_counts": {
+        "pdf-reader": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "pdf-pos-3",
+      "kind": "positive",
+      "expected_skill": "pdf-reader",
+      "first_skill_counts": {
+        "pdf-reader": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "pdf-pos-4",
+      "kind": "positive",
+      "expected_skill": "pdf-reader",
+      "first_skill_counts": {
+        "pdf-reader": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "react-pos-1",
+      "kind": "positive",
+      "expected_skill": "react-component-designer",
+      "first_skill_counts": {
+        "react-component-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "react-pos-2",
+      "kind": "positive",
+      "expected_skill": "react-component-designer",
+      "first_skill_counts": {
+        "react-component-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "react-pos-3",
+      "kind": "positive",
+      "expected_skill": "react-component-designer",
+      "first_skill_counts": {
+        "react-component-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "react-pos-4",
+      "kind": "positive",
+      "expected_skill": "react-component-designer",
+      "first_skill_counts": {
+        "react-component-designer": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "maintainer-pos-1",
+      "kind": "positive",
+      "expected_skill": "skill-portfolio-maintainer",
+      "first_skill_counts": {
+        "skill-portfolio-maintainer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "maintainer-pos-2",
+      "kind": "positive",
+      "expected_skill": "skill-portfolio-maintainer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 2,
+      "infra_failures": 0
+    },
+    {
+      "id": "maintainer-pos-3",
+      "kind": "positive",
+      "expected_skill": "skill-portfolio-maintainer",
+      "first_skill_counts": {
+        "skill-portfolio-maintainer": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "maintainer-pos-4",
+      "kind": "positive",
+      "expected_skill": "skill-portfolio-maintainer",
+      "first_skill_counts": {
+        "skill-portfolio-maintainer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "boot-pos-1",
+      "kind": "positive",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "spring-boot-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "boot-pos-2",
+      "kind": "positive",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "opencode-configurator": 1,
+        "spring-boot-engineer": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "boot-pos-3",
+      "kind": "positive",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "spring-boot-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "boot-pos-4",
+      "kind": "positive",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "persistence-pos-1",
+      "kind": "positive",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "<none>": 1,
+        "spring-persistence-engineer": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "persistence-pos-2",
+      "kind": "positive",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "spring-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "persistence-pos-3",
+      "kind": "positive",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "spring-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "persistence-pos-4",
+      "kind": "positive",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "spring-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "stagehand-pos-1",
+      "kind": "positive",
+      "expected_skill": "stagehand-aria-e2e",
+      "first_skill_counts": {
+        "stagehand-aria-e2e": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "stagehand-pos-2",
+      "kind": "positive",
+      "expected_skill": "stagehand-aria-e2e",
+      "first_skill_counts": {
+        "stagehand-aria-e2e": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "stagehand-pos-3",
+      "kind": "positive",
+      "expected_skill": "stagehand-aria-e2e",
+      "first_skill_counts": {
+        "stagehand-aria-e2e": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "stagehand-pos-4",
+      "kind": "positive",
+      "expected_skill": "stagehand-aria-e2e",
+      "first_skill_counts": {
+        "stagehand-aria-e2e": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "teaching-pos-1",
+      "kind": "positive",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "teaching-pos-2",
+      "kind": "positive",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "teaching-pos-3",
+      "kind": "positive",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "teaching-pos-4",
+      "kind": "positive",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b01-frontend",
+      "kind": "boundary",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b02-react",
+      "kind": "boundary",
+      "expected_skill": "react-component-designer",
+      "first_skill_counts": {
+        "react-component-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b03-frontend",
+      "kind": "boundary",
+      "expected_skill": "frontend-dev-guidelines",
+      "first_skill_counts": {
+        "<none>": 1,
+        "frontend-dev-guidelines": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b04-stagehand",
+      "kind": "boundary",
+      "expected_skill": "stagehand-aria-e2e",
+      "first_skill_counts": {
+        "stagehand-aria-e2e": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b05-elysia",
+      "kind": "boundary",
+      "expected_skill": "elysia-backend-engineer",
+      "first_skill_counts": {
+        "elysia-backend-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b06-drizzle",
+      "kind": "boundary",
+      "expected_skill": "drizzle-persistence-engineer",
+      "first_skill_counts": {
+        "elysia-backend-engineer": 1,
+        "drizzle-persistence-engineer": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b07-java",
+      "kind": "boundary",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "java-pro": 1,
+        "<none>": 1
+      },
+      "accuracy": 0.5,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b08-boot",
+      "kind": "boundary",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "spring-boot-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b09-boot",
+      "kind": "boundary",
+      "expected_skill": "spring-boot-engineer",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b10-persistence",
+      "kind": "boundary",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "spring-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b11-persistence",
+      "kind": "boundary",
+      "expected_skill": "spring-persistence-engineer",
+      "first_skill_counts": {
+        "spring-persistence-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b12-ddd",
+      "kind": "boundary",
+      "expected_skill": "backend-ddd-architect-spring",
+      "first_skill_counts": {
+        "backend-ddd-architect-spring": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b13-java",
+      "kind": "boundary",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "java-pro": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b14-jasper",
+      "kind": "boundary",
+      "expected_skill": "jasperreports-engineer",
+      "first_skill_counts": {
+        "jasperreports-engineer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b15-obsidian",
+      "kind": "boundary",
+      "expected_skill": "obsidian-cli",
+      "first_skill_counts": {
+        "obsidian-cli": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b16-pdf",
+      "kind": "boundary",
+      "expected_skill": "pdf-reader",
+      "first_skill_counts": {
+        "pdf-reader": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b17-firecrawl",
+      "kind": "boundary",
+      "expected_skill": "firecrawl",
+      "first_skill_counts": {
+        "firecrawl": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b18-native",
+      "kind": "boundary",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b19-maintainer",
+      "kind": "boundary",
+      "expected_skill": "skill-portfolio-maintainer",
+      "first_skill_counts": {
+        "skill-portfolio-maintainer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b20-opencode",
+      "kind": "boundary",
+      "expected_skill": "opencode-configurator",
+      "first_skill_counts": {
+        "opencode-configurator": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b21-teaching",
+      "kind": "boundary",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b22-java",
+      "kind": "boundary",
+      "expected_skill": "java-pro",
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 0,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b23-teaching",
+      "kind": "boundary",
+      "expected_skill": "teaching-content-designer",
+      "first_skill_counts": {
+        "teaching-content-designer": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "b24-native-ppt",
+      "kind": "boundary",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-01",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-02",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-03",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-04",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-05",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-06",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-07",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-08",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-09",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-10",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-11",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    },
+    {
+      "id": "null-12",
+      "kind": "null",
+      "expected_skill": null,
+      "first_skill_counts": {
+        "<none>": 2
+      },
+      "accuracy": 1,
+      "timeouts": 0,
+      "infra_failures": 0
+    }
+  ]
+}
