@@ -28,5 +28,4 @@ Pick the simplest model that fits the workload and keeps cancellation and observ
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: choose-concurrency-model`
 - State which model you chose and why the others fit worse.

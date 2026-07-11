@@ -27,5 +27,4 @@ Prefer consistency with the existing app and keep blocking work out of reactive 
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: reactive-boundary`
 - State the chosen boundary and which blocking/reactive mismatch was avoided.

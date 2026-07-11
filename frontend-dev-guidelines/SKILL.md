@@ -1,10 +1,9 @@
 ---
 name: frontend-dev-guidelines
 description: |
-  Frontend family host for modern React + TypeScript work. Use when the user is building,
-  refactoring, reviewing, auditing accessibility, or profiling performance in a frontend codebase.
-  Route reusable component API design to react-component-designer and browser-behavior validation
-  to stagehand-aria-e2e.
+  Build, refactor, and review React/TypeScript frontends with repo-aware accessibility and performance checks.
+  Use for application code and audits. Do not use for reusable component API design or browser automation;
+  route those to react-component-designer or stagehand-aria-e2e.
 metadata:
   framework_role: host
   execution_mode: inline
@@ -16,13 +15,13 @@ Use this skill as the frontend family host. Keep the active trigger surface here
 
 ## Intent Router
 
-- `build`: [references/tasks/build.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/tasks/build.md)
-- `refactor`: [references/tasks/refactor.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/tasks/refactor.md)
-- `review`: [references/tasks/review.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/tasks/review.md)
-- `accessibility audit`: [references/tasks/accessibility-audit.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/tasks/accessibility-audit.md)
-- `performance review`: [references/tasks/performance-review.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/tasks/performance-review.md)
-- `component boundaries`: [references/decisions/component-boundaries.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/decisions/component-boundaries.md)
-- `delivery surface`: [references/decisions/delivery-surface.md](/Users/ss105213025/.agents/skills/frontend-dev-guidelines/references/decisions/delivery-surface.md)
+- `build`: [references/tasks/build.md](references/tasks/build.md)
+- `refactor`: [references/tasks/refactor.md](references/tasks/refactor.md)
+- `review`: [references/tasks/review.md](references/tasks/review.md)
+- `accessibility audit`: [references/tasks/accessibility-audit.md](references/tasks/accessibility-audit.md)
+- `performance review`: [references/tasks/performance-review.md](references/tasks/performance-review.md)
+- `component boundaries`: [references/decisions/component-boundaries.md](references/decisions/component-boundaries.md)
+- `delivery surface`: [references/decisions/delivery-surface.md](references/decisions/delivery-surface.md)
 
 ## Delegation
 
@@ -52,5 +51,4 @@ Load these only when the request is narrower than the host:
 - For implementation tasks, prefer the smallest complete change over broad rewrites.
 - For review tasks, return findings first, ordered by impact, with concrete fixes.
 - For accessibility or performance tasks, describe user-facing consequences, not only code smells.
-- If the user explicitly asks you to start with `Selected:`, output `Selected: <exact router id>` using one of `build`, `refactor`, `review`, `accessibility-audit`, `performance-review`, `component-boundaries`, or `delivery-surface` before any other text.
 - Do not invent new frameworks, component systems, or styling tools unless the user asks for them.

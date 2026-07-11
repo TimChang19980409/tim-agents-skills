@@ -33,15 +33,15 @@ If the request is genuinely new (a new feature, a new module, a new subsystem, a
 
 Task playbooks:
 
-- `explore-project-context`: [references/tasks/explore-project-context.md](/Users/ss105213025/.agents/skills/brainstorming/references/tasks/explore-project-context.md)
-- `ask-clarifying-questions`: [references/tasks/ask-clarifying-questions.md](/Users/ss105213025/.agents/skills/brainstorming/references/tasks/ask-clarifying-questions.md)
-- `present-design`: [references/tasks/present-design.md](/Users/ss105213025/.agents/skills/brainstorming/references/tasks/present-design.md)
-- `write-spec`: [references/tasks/write-spec.md](/Users/ss105213025/.agents/skills/brainstorming/references/tasks/write-spec.md)
+- `explore-project-context`: [references/tasks/explore-project-context.md](references/tasks/explore-project-context.md)
+- `ask-clarifying-questions`: [references/tasks/ask-clarifying-questions.md](references/tasks/ask-clarifying-questions.md)
+- `present-design`: [references/tasks/present-design.md](references/tasks/present-design.md)
+- `write-spec`: [references/tasks/write-spec.md](references/tasks/write-spec.md)
 
 Decision guides:
 
-- `when-to-brainstorm`: [references/decisions/when-to-brainstorm.md](/Users/ss105213025/.agents/skills/brainstorming/references/decisions/when-to-brainstorm.md)
-- `terminal-handoff-target`: [references/decisions/terminal-handoff-target.md](/Users/ss105213025/.agents/skills/brainstorming/references/decisions/terminal-handoff-target.md)
+- `when-to-brainstorm`: [references/decisions/when-to-brainstorm.md](references/decisions/when-to-brainstorm.md)
+- `terminal-handoff-target`: [references/decisions/terminal-handoff-target.md](references/decisions/terminal-handoff-target.md)
 
 ## Checklist
 
@@ -97,6 +97,5 @@ Read the `terminal-handoff-target` decision guide before invoking the downstream
 - For implementation tasks, the ONLY valid terminal state is a presented spec and an explicit handoff — never a code change made from inside this skill.
 - The HARD-GATE applies to every project, including ones the user calls "trivial" or "quick".
 - If the request matches the Tripwire list, do NOT brainstorm — route to the normal host skill directly.
-- If the user explicitly asks you to start with `Selected:`, the first line must be plain text `Selected: <exact router id>` (one of the six Intent Router entries above), with no bold, no backticks, and no downstream skill name in place of the router id.
 - Do not invent new frameworks, architectures, or tooling unless the user asks for them.
 - Do not write specs into the skills repo; specs live in the consumer project.

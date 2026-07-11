@@ -27,5 +27,4 @@ Default to auto OCR unless the PDF is clearly scanned or the user explicitly wan
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: ocr-strategy`
 - State the chosen OCR mode and why the other modes fit less well.

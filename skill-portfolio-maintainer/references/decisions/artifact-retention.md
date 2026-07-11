@@ -27,7 +27,6 @@ Commit only compact benchmark artifacts unless a debugging need explicitly overr
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: artifact-retention`
 - State which files are kept and which are cleaned.
 - Name the default kept set as `benchmark.json`, `benchmark.md`, `opencode.json`, and workspace `README.md`.
 - Name the default cleaned set as raw transcripts, `stderr`, staged project trees, `results.json`, and `eval-*` directories.

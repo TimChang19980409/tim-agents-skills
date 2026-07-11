@@ -13,7 +13,6 @@ Use when editing application.yml, profiles, or @ConfigurationProperties.
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. If the prompt asks for `Selected:`, the very first line must be exactly `Selected: config-and-profiles` before any explanation, heading, or summary.
 2. Load `references/cloud.md` for deeper details only when needed.
 3. Recommend the smallest safe change or plan for config and profiles.
 4. If the repo files are missing, still provide a concrete profile split plan using `application.yml` plus `application-local.yml`, `application-test.yml`, and `application-prod.yml`, together with a sample `@ConfigurationProperties` binding shape.

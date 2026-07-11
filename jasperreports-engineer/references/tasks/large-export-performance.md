@@ -13,7 +13,6 @@ Use when large Jasper exports are slow or memory-heavy.
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. If the prompt asks for `Selected:`, start with `Selected: large-export-performance` before any heading or ranked list.
 2. Load `references/runtime-playbook.md` for deeper details only when needed.
 3. Recommend the smallest safe change or plan for large export performance.
 4. End with concrete verification steps tied to the task.

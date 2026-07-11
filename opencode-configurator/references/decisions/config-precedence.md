@@ -27,5 +27,4 @@ Modify the narrowest layer that should own the behavior after precedence is take
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: config-precedence`
 - State which layer wins and how to confirm the effective config.

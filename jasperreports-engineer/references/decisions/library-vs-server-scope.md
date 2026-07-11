@@ -26,5 +26,4 @@ Keep the skill in library/studio scope unless the user explicitly asks for Jaspe
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: library-vs-server-scope`
 - State the chosen scope and what made it library/studio vs server.

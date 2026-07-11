@@ -27,5 +27,4 @@ Recommend native image only when startup gains clearly outweigh compatibility an
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: hotspot-vs-native`
 - State the chosen runtime and the measurement gate before rollout.

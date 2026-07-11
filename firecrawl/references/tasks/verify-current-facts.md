@@ -12,7 +12,6 @@ Use this playbook when the task depends on up-to-date facts such as docs, prices
 
 ## Steps
 
-1. If the prompt asks you to start with `Selected:`, begin with `Selected: verify-current-facts` before any explanation.
 1. Search for the fact with recency or source filters when needed.
 2. Compare at least two relevant sources for unstable facts.
 3. Prefer official or primary sources for technical and high-stakes questions.

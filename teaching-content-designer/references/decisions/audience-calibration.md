@@ -20,7 +20,6 @@ Choose the teaching depth, language, pacing, and scaffolding for the audience be
 
 ## Recommendation rule
 
-If the prompt asks for `Selected:`, the first line must be exactly `Selected: audience-calibration`.
 
 Default to mixed-audience scaffolding when the audience is not specified: a simple main path, optional depth, and low-pressure checks.
 

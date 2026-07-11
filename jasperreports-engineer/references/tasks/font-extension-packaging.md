@@ -13,7 +13,6 @@ Use when PDF export fails for Unicode text and runtime font packaging is missing
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. If the prompt asks for `Selected:`, start with `Selected: font-extension-packaging` before any heading or recommendation.
 2. Load `references/troubleshooting-matrix.md` for deeper details only when needed.
 3. Recommend the smallest safe change or plan for font extension packaging.
 4. End with concrete verification steps tied to the task.

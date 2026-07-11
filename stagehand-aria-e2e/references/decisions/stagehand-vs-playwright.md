@@ -27,5 +27,4 @@ Use Stagehand when semantic planning meaningfully reduces brittleness; otherwise
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: stagehand-vs-playwright`
 - State the chosen tool boundary and why it fits the flow.

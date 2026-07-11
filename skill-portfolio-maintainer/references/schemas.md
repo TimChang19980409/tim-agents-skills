@@ -20,7 +20,6 @@ Defines the evals for a skill. Located at `evals/evals.json` within the skill di
       "fixture_dir": "evals/files/sample-fixture",
       "support_skills": ["pdf-reader"],
       "expectations": [
-        "contains:Selected: vault-ops",
         "containsAny:pdf-reader|obsidian-cli"
       ]
     }
@@ -50,8 +49,6 @@ For deterministic OpenCode grading, `expectations` may use these prefixes:
 
 For the current framework waves, each eval should follow this contract:
 
-- The first expectation should be `contains:Selected: <exact router id>` or, for intentionally looser routing, `containsAny:Selected: ...`
-- Add at least two task-specific content markers after the `Selected:` assertion
 - Use `notContains:` when you need to protect against a likely neighboring-skill false positive
 - Prefer prompt-only evals unless the task truly needs staged files or fixtures
 
@@ -255,7 +252,6 @@ Output from the current OpenCode benchmark grader. Located at `_benchmarks/<skil
         "passed": 3,
         "tokens": 2400,
         "selectedExpectation": {
-          "text": "The output contains \"Selected: page-extraction\"",
           "passed": true
         }
       },
@@ -285,9 +281,7 @@ Output from the current OpenCode benchmark grader. Located at `_benchmarks/<skil
 - `generated_at`: ISO timestamp for the grading pass
 - `rows[]`: One row per eval, comparing `with_skill` and `without_skill`
   - `with_skill` / `without_skill`: Pass-rate summary for that configuration, or `null` if the run is missing
-  - `with_skill.selectedExpectation`: Compact copy of the first `Selected:` router assertion when present, so wave summaries survive cleanup
   - `delta`: `with_skill.passRate - without_skill.passRate`
-- `summary`: Comparable-eval count, average pass rates, number of wins, and compact `Selected:` router totals
 - Keep the benchmark workspace compact by retaining `benchmark.json`, `benchmark.md`, `opencode.json`, and `README.md`; remove `results.json` after compaction unless debugging requires it.
 
 ## portfolio benchmark.json

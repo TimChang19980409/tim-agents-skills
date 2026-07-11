@@ -27,5 +27,4 @@ Default to structured JSON for automation-facing scripts; keep human-readable te
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: script-output-contract`
 - State the chosen output contract and how errors are surfaced.

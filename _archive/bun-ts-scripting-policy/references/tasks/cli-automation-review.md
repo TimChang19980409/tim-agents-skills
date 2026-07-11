@@ -13,9 +13,7 @@ Use when reviewing a script or CLI helper for argument handling, output shape, o
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: cli-automation-review` when the prompt asks for it.
 3. Recommend the smallest safe change or plan for CLI automation review, including stdout/stderr separation and exit-code cleanup.
-4. If the prompt is planning-only, do not add a preamble before `Selected:`; go straight into stdout/stderr, exit-code, and JSON contract guidance.
 4. End with concrete verification steps tied to the task.
 
 ## Safety gates

@@ -20,7 +20,7 @@ This repository is the canonical source for shared agent skills and cross-tool i
 
 After structural changes, run:
 
-- `bun /Users/ss105213025/.agents/skills/scripts/validate-skills.ts`
-- `bun /Users/ss105213025/.agents/skills/scripts/validate-agent-context.ts`
+- `bun scripts/validate-skills.ts`
+- `bun scripts/validate-agent-context.ts`
 
 Do not rely on live Claude/Codex/OpenCode runs for this repository's structural checks.

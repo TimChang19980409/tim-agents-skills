@@ -1,9 +1,9 @@
 ---
 name: drizzle-persistence-engineer
 description: |
-  Drizzle ORM specialist for TypeScript SQL persistence. Use for Drizzle schema,
-  relations, dialect/driver setup, queries, transactions, Drizzle Kit migrations,
-  and Elysia TypeBox validation bridges.
+  Implement Drizzle ORM schemas, relations, queries, transactions, drivers, migrations, and validation bridges.
+  Use when TypeScript SQL persistence is central. Do not use for Elysia routes or lifecycle;
+  route those to elysia-backend-engineer.
 metadata:
   framework_role: specialist
   execution_mode: inline
@@ -15,13 +15,13 @@ Use this skill as the Drizzle ORM persistence specialist. Pick one task playbook
 
 ## Intent Router
 
-- `schema-relations`: [references/tasks/schema-relations.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/tasks/schema-relations.md)
-- `query-builder-rqb`: [references/tasks/query-builder-rqb.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/tasks/query-builder-rqb.md)
-- `migration-flow`: [references/tasks/migration-flow.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/tasks/migration-flow.md)
-- `elysia-typebox-bridge`: [references/tasks/elysia-typebox-bridge.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/tasks/elysia-typebox-bridge.md)
-- `dialect-driver`: [references/decisions/dialect-driver.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/decisions/dialect-driver.md)
-- `migration-strategy`: [references/decisions/migration-strategy.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/decisions/migration-strategy.md)
-- `connection-serverless`: [references/decisions/connection-serverless.md](/Users/ss105213025/.agents/skills/drizzle-persistence-engineer/references/decisions/connection-serverless.md)
+- `schema-relations`: [references/tasks/schema-relations.md](references/tasks/schema-relations.md)
+- `query-builder-rqb`: [references/tasks/query-builder-rqb.md](references/tasks/query-builder-rqb.md)
+- `migration-flow`: [references/tasks/migration-flow.md](references/tasks/migration-flow.md)
+- `elysia-typebox-bridge`: [references/tasks/elysia-typebox-bridge.md](references/tasks/elysia-typebox-bridge.md)
+- `dialect-driver`: [references/decisions/dialect-driver.md](references/decisions/dialect-driver.md)
+- `migration-strategy`: [references/decisions/migration-strategy.md](references/decisions/migration-strategy.md)
+- `connection-serverless`: [references/decisions/connection-serverless.md](references/decisions/connection-serverless.md)
 
 ## Delegation
 
@@ -42,5 +42,4 @@ Use this skill as the Drizzle ORM persistence specialist. Pick one task playbook
 
 - Do not default to `drizzle-kit push` for production rollout.
 - Do not add Prisma or another ORM for a Drizzle task.
-- If the user asks to start with `Selected:`, the first line must be `Selected: <exact router id>` with no prose before it.
 - If no dialect is discoverable, state the assumption and default examples to PostgreSQL.

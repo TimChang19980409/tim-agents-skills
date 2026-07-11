@@ -27,5 +27,4 @@ Split only when language, ownership, and operational pressure all point to a rea
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: when-to-split-service`
 - State the chosen split level and what evidence supports it.

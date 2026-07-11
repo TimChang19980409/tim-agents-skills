@@ -13,7 +13,6 @@ Use when creating a new CLI or helper script and Bun + TypeScript should be the 
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: new-bun-script` when the prompt asks for it.
 3. Recommend a concrete Bun + TypeScript CLI shape with flags, stdout/stderr behavior, and explicit exit codes.
 4. End with concrete verification steps tied to the task and say how to run the help or type-check command.
 

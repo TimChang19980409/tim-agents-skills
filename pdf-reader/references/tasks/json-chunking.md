@@ -13,7 +13,6 @@ Use when the user needs per-page JSON or token-budget-aware chunking for a large
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: json-chunking` when the prompt asks for it.
 3. Prefer the bundled command shape `bun scripts/read-pdf.ts <file.pdf> --pages <range> --json --max-chars <n>`.
 4. If the file path is unknown, still answer with the exact command template rather than blocking on a missing file.
 5. End with concrete verification steps tied to the task.

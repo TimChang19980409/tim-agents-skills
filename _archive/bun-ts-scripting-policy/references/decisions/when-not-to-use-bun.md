@@ -27,5 +27,4 @@ Default to Bun/TS unless the repo or user has a concrete incompatible constraint
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: when-not-to-use-bun`
 - State whether Bun remains the default or why it was overridden.

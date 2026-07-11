@@ -27,5 +27,4 @@ Prefer the narrowest Spring test slice that still exercises the contract the use
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: choose-test-scope`
 - State the chosen annotation set and why narrower or broader scopes were rejected.

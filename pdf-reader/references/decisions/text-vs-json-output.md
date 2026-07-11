@@ -27,5 +27,4 @@ Default to JSON when the task includes chunking, per-page logic, or downstream a
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: text-vs-json-output`
 - State the chosen output format and why it fits the task.

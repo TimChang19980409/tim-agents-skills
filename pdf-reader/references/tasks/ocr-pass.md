@@ -13,7 +13,6 @@ Use when the PDF is scanned or image-heavy and needs OCR.
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: ocr-pass` when the prompt asks for it.
 3. Prefer the bundled command shape `bun scripts/read-pdf.ts <file.pdf> --ocr-all --ocr-lang <lang>`.
 4. If the file path is unknown, still show the exact OCR command template with `--ocr-all` and `--ocr-lang`.
 5. End with concrete verification steps tied to the task.

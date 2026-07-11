@@ -13,7 +13,6 @@ Use when migrating an older skill to the host/playbook/decision framework shape.
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. If the prompt asks for `Selected:`, start with `Selected: framework-migration` before any explanatory text.
 2. Load `references/schemas.md` for deeper details only when needed.
 3. Recommend the smallest safe change or plan for framework migration using the exact vocabulary `thin router`, `playbooks`, and `decision guides`.
 4. End with concrete verification steps tied to the task.

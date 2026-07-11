@@ -26,5 +26,4 @@ If the difficult part is getting text or structure out of a PDF, use `pdf-reader
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: handoff-to-pdf-reader`
 - For routing-only prompts, state whether the chosen tool is solving extraction or vault operations and do not attempt extraction

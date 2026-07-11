@@ -28,5 +28,4 @@ Use the CLI host for actions against a running vault. Use extensions when the ta
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: choose-obsidian-surface`
 - For routing-only prompts, name the chosen surface and the reason the others were narrower or broader without creating files or executing the downstream work

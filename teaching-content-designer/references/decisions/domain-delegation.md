@@ -21,7 +21,6 @@ Choose when teaching-content design should stay in this host and when technical,
 
 ## Recommendation rule
 
-If the prompt asks for `Selected:`, the first line must be exactly `Selected: domain-delegation`.
 
 Keep the teaching structure here, then delegate only the exact technical or production layer that needs specialist handling.
 
@@ -35,4 +34,3 @@ Keep the teaching structure here, then delegate only the exact technical or prod
 
 - Name the retained teaching responsibility and the delegated responsibility.
 - Confirm that any delegated work has a stable teaching goal and audience assumption.
-- Avoid using a downstream skill name as the `Selected:` router id.

@@ -27,5 +27,4 @@ Default to portability when more than one RDBMS matters; use vendor-specific fea
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: portability-choice`
 - Name the chosen vendor stance and the rejected tradeoff.

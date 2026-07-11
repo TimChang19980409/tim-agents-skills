@@ -1,10 +1,9 @@
 ---
 name: obsidian-cli
 description: |
-  Obsidian operational host for vault actions, plugin debugging, DOM inspection, and property/task work.
-  Use when the user is operating on a running Obsidian instance or wants help choosing the right
-  Obsidian surface. Load archived syntax, Bases, Canvas, or translation extensions only when the
-  task is narrower than the CLI host. Hand PDF extraction off to pdf-reader.
+  Operate a running Obsidian vault: CLI actions, plugin debugging, DOM inspection, properties, and tasks.
+  Use when Obsidian-specific runtime behavior matters. Do not use for plain Markdown editing or PDF extraction;
+  route PDF/OCR work to pdf-reader.
 metadata:
   framework_role: host
   execution_mode: inline
@@ -16,12 +15,12 @@ Use this skill as the Obsidian operational host. Pick one task playbook or decis
 
 ## Intent Router
 
-- `vault ops`: [references/tasks/vault-ops.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/vault-ops.md)
-- `plugin debug`: [references/tasks/plugin-debug.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/plugin-debug.md)
-- `dom inspect`: [references/tasks/dom-inspect.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/dom-inspect.md)
-- `property and task management`: [references/tasks/property-task-management.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/tasks/property-task-management.md)
-- `choose surface`: [references/decisions/choose-obsidian-surface.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/decisions/choose-obsidian-surface.md)
-- `handoff to pdf-reader`: [references/decisions/handoff-to-pdf-reader.md](/Users/ss105213025/.agents/skills/obsidian-cli/references/decisions/handoff-to-pdf-reader.md)
+- `vault ops`: [references/tasks/vault-ops.md](references/tasks/vault-ops.md)
+- `plugin debug`: [references/tasks/plugin-debug.md](references/tasks/plugin-debug.md)
+- `dom inspect`: [references/tasks/dom-inspect.md](references/tasks/dom-inspect.md)
+- `property and task management`: [references/tasks/property-task-management.md](references/tasks/property-task-management.md)
+- `choose surface`: [references/decisions/choose-obsidian-surface.md](references/decisions/choose-obsidian-surface.md)
+- `handoff to pdf-reader`: [references/decisions/handoff-to-pdf-reader.md](references/decisions/handoff-to-pdf-reader.md)
 
 ## Extension Packs
 
@@ -45,5 +44,4 @@ Use this skill as the Obsidian operational host. Pick one task playbook or decis
 
 - Assume Obsidian must be open for live CLI interaction unless the task is only planning.
 - Prefer exact commands over vague procedural advice.
-- If the user explicitly asks you to start with `Selected:`, output `Selected: <exact router id>` using one of `vault-ops`, `plugin-debug`, `dom-inspect`, `property-task-management`, `choose-obsidian-surface`, or `handoff-to-pdf-reader` before any other text.
 - Do not route PDF extraction through Obsidian commands when `pdf-reader` is the real tool.

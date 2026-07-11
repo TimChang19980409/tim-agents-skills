@@ -151,6 +151,10 @@ function lineCount(text: string): number {
   return text.length === 0 ? 0 : text.split(/\r?\n/).length;
 }
 
+function nonBlankLineCount(text: string): number {
+  return text.split(/\r?\n/).filter((line) => line.trim().length > 0).length;
+}
+
 function parseDescriptionLength(text: string): number | null {
   const singleLine = text.match(/^description:\s*(.+)$/m);
   if (singleLine) {
@@ -348,8 +352,8 @@ for (const skill of skills) {
 
     const skillText = readSkillFile(absoluteEntry);
     const skillLines = lineCount(skillText);
-    if (skillLines > 500) {
-      errors.push(`Core skill ${skill.name} exceeds the 500-line router budget (${skillLines}).`);
+    if (skillLines < 20 || skillLines > 60) {
+      errors.push(`Core skill ${skill.name} must stay within the 20-60 line router budget (${skillLines}).`);
     }
 
     const descriptionLength = parseDescriptionLength(skillText);
@@ -357,6 +361,32 @@ for (const skill of skills) {
       errors.push(`Could not parse description from ${skill.name}/SKILL.md`);
     } else if (descriptionLength > 1024) {
       errors.push(`Description for ${skill.name} exceeds 1024 characters (${descriptionLength}).`);
+    }
+
+    const descriptionBlock = skillText.match(/^description:[\s\S]*?(?=^metadata:|^---$)/m)?.[0] ?? "";
+    if (!descriptionBlock.includes("Use") || !descriptionBlock.includes("Do not use")) {
+      errors.push(`${skill.name} description must say what it does, when to use it, and when not to use it.`);
+    }
+
+    for (const relativePath of [...skill.task_playbooks, ...skill.decision_guides]) {
+      const text = readSkillFile(join(absoluteDir, relativePath));
+      const contentLines = nonBlankLineCount(text);
+      if (contentLines < 10 || contentLines > 30) {
+        errors.push(`${skill.name}/${relativePath} must contain 10-30 non-blank lines (${contentLines}).`);
+      }
+      if (text.includes("Selected:")) {
+        errors.push(`${skill.name}/${relativePath} leaks the retired Selected: benchmark protocol.`);
+      }
+      if (text.includes("/Users/")) {
+        errors.push(`${skill.name}/${relativePath} contains a user-specific absolute path.`);
+      }
+    }
+
+    if (skillText.includes("Selected:")) {
+      errors.push(`${skill.name}/SKILL.md leaks the retired Selected: benchmark protocol.`);
+    }
+    if (skillText.includes("/Users/")) {
+      errors.push(`${skill.name}/SKILL.md contains a user-specific absolute path.`);
     }
 
     if (skill.role === "host" || skill.role === "gate") {

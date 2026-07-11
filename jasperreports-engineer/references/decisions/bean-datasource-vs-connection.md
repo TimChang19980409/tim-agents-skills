@@ -27,5 +27,4 @@ Default to bean/collection datasources when application code already owns the da
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: bean-datasource-vs-connection`
 - State which datasource style was chosen and why.

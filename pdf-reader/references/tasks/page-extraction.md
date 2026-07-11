@@ -13,7 +13,6 @@ Use when extracting a specific page range or section from a PDF.
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: page-extraction` when the prompt asks for it.
 3. Prefer the bundled command shape `bun scripts/read-pdf.ts <file.pdf> --pages <range>`.
 4. If the file path is unknown, still show the exact command template with `--pages`.
 5. End with concrete verification steps tied to the task.

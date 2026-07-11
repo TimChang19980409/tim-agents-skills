@@ -13,7 +13,6 @@ Use when an Obsidian-related task is really about PDF extraction, OCR, or per-pa
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: obsidian-handoff` when the prompt asks for it.
 3. Load `references/decisions/obsidian-handoff.md` for deeper details only when needed.
 4. For surface-routing prompts coming from Obsidian, prefer `obsidian-handoff` over extraction playbooks such as `json-chunking`.
 5. Recommend the smallest safe change or plan for obsidian handoff.

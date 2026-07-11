@@ -28,5 +28,4 @@ Detect lane from package.json/lockfile first; if ambiguous, recommend smallest c
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: version-lane`
 - State the chosen lane and why it is active.

@@ -27,5 +27,4 @@ Lock the lane first; if the lane is ambiguous, recommend the smallest cross-lane
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: compatibility-lane`
 - State the chosen lane and why it is active.

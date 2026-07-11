@@ -13,7 +13,6 @@ Use when the task is generating code, parsing structured input, or building a de
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. Start with plain text `Selected: parser-or-codegen-script` when the prompt asks for it.
 3. Recommend a concrete Bun + TypeScript parser or codegen plan with deterministic input/output flags.
 4. Mention the exact structured formats, for example `CSV` input to `JSON` output for a codegen pipeline.
 5. End with concrete verification steps tied to the task.

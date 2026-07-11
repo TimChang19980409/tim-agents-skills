@@ -27,5 +27,4 @@ Default to concrete task prompts and add routing-only cases only where boundary 
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: eval-strategy`
 - State the chosen eval mix and why it fits the skill.

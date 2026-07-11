@@ -1,49 +1,23 @@
 # Elysia TypeBox Bridge
 
-## When to use
+## Use
 
-Use when Drizzle schemas feed Elysia validation models, OpenAPI docs, or Eden client contracts.
+Use when deriving Elysia request/response schemas from Drizzle tables.
 
-## Inputs
+## Apply
 
-- Installed bridge package (`drizzle-typebox` or equivalent)
-- Elysia version (1.4+ supports Standard Schema: Zod/Valibot/ArkType)
-- TypeBox version (pin to match Elysia if duplicates appear)
-- Drizzle schema shape with target table(s)
+1. Match the bridge to the installed Drizzle lane; v1 provides `drizzle-orm/typebox`.
+2. Derive select/insert/update schemas and override only transport-specific rules.
+3. Exclude generated IDs, timestamps, and server-owned fields from request bodies.
+4. Keep one TypeBox/Standard Schema type source across the route boundary.
+5. Separate database nullability from optional request fields deliberately.
 
-## Steps
+## Failure modes
 
-1. Inspect installed packages and prefer the bridge already used by the repo.
-2. For Elysia docs-compatible setup, use `drizzle-typebox` and Elysia `t` refinements when present.
-3. Pin or align `@sinclair/typebox` with Elysia if duplicate TypeBox symbols appear.
-4. Assign generated schemas to a variable before applying `t.Pick`, `t.Omit`, or refinements.
-5. Exclude generated, private, or server-managed columns from insert request bodies.
-6. Keep database schema and API schema related but not identical when security requires it.
+- Keeping obsolete `drizzle-typebox` imports after the v1 migration.
+- Exposing persistence-only or generated columns to clients.
+- Duplicate TypeBox packages producing incompatible symbols.
 
-## Safety gates
+## Verify
 
-- Do not inline `createInsertSchema(...)` inside `t.Omit` if it triggers infinite type instantiation.
-- Do not expose password hashes, salts, internal IDs, or timestamps in request schemas by default.
-- Do not mix multiple TypeBox packages without checking symbol compatibility.
-
-## Outputs
-
-- Derived validation schema with Elysia TypeBox refinements applied
-- One route validation test proving schema accepts/rejects expected payloads
-
-## Anti-patterns
-
-### Common Mistakes
-- [ ] Inlining `createInsertSchema(...)` inside `t.Omit` when infinite type instantiation occurs
-- [ ] Exposing password hashes or internal IDs in request schemas by default
-- [ ] Mixing TypeBox packages without symbol compatibility checks
-
-### Negative Examples
-**Don't trust generated schemas blindly** — manually review and refine for security before using in public APIs.
-
-## Verification
-
-- Run TypeScript checks.
-- Add one route validation test that proves the derived schema accepts and rejects the expected payloads.
-
-**Cross-skill reference:** Load ../../elysia-backend-engineer/references/version-matrix.md for Elysia version-specific TypeBox/Standard Schema changes.
+Type-check the Elysia route and test one accepted and one rejected payload.

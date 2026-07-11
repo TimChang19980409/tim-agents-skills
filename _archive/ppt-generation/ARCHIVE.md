@@ -7,10 +7,9 @@ Native presentation tooling is the default. The bundled `image-generation` helpe
 
 ## Router
 
-1. Start with `Selected: presentation-generation` for presentation requests.
 2. Read `references/tasks/presentation-generation.md` for the workflow.
 3. Read `references/decisions/choose-style.md` to choose the visual style.
-4. Use `/Users/ss105213025/.agents/skills/image-generation/README.md` and `/Users/ss105213025/.agents/skills/image-generation/scripts/generate.py` for slide imagery.
+4. Use `image-generation/README.md` and `image-generation/scripts/generate.py` for slide imagery.
 5. Compose the PPTX with `scripts/generate.py` after slide images are generated.
 
 ## Guardrails

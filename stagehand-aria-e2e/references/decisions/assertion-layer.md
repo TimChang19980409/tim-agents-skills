@@ -28,5 +28,4 @@ Default to semantic or structural assertions before screenshot-based proof.
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: assertion-layer`
 - State the chosen assertion layer and what alternative was rejected.

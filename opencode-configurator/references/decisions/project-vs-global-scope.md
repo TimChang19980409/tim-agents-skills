@@ -27,5 +27,4 @@ Default to project config when the behavior is repo-specific; use user config on
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: project-vs-global-scope`
 - State the chosen scope and why the other layer was not the primary owner.

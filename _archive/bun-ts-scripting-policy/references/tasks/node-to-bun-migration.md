@@ -13,7 +13,6 @@ Use when migrating an existing Node/JS script to Bun + TypeScript.
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. If the prompt asks for `Selected:`, start with `Selected: node-to-bun-migration` with no backticks.
 2. Load `SKILL.md` for deeper details only when needed.
 3. Recommend the smallest safe change or plan for node to bun migration.
 4. If the source file is missing, still provide a concrete `.mjs` to `.ts` migration plan that preserves command behavior, entrypoint shape, and docs updates.

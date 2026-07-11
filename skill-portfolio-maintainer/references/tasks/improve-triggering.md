@@ -13,7 +13,6 @@ Use when tightening a skill description, intent tags, or delegation boundary to 
 ## Steps
 
 1. Classify the request into this task instead of a neighboring skill or decision.
-2. If the prompt asks for `Selected:`, the first non-empty line must be exactly `Selected: improve-triggering` with no intro, heading, or analysis before it.
 3. Do not start with phrases like "Based on the improve-triggering task", "Here's my analysis", or any other preface before the route line.
 4. Load `references/schemas.md` for deeper details only when needed.
 5. If the prompt is a benchmark-style request with no attached files or current description text, answer directly from the prompt instead of exploring the workspace or running tools to hunt for more context.
@@ -28,11 +27,8 @@ Use when tightening a skill description, intent tags, or delegation boundary to 
 
 ## Outputs
 
-- Required opening when `Selected:` was requested:
-  `Selected: improve-triggering`
 - A focused recommendation or implementation plan for improve triggering
 - Boundary edits that explicitly mention description, intent tags, neighbor skills, and regression prompts
-- If `Selected:` was requested, keep the route line separate from the analysis body instead of wrapping it in an intro.
 
 ## Anti-patterns
 

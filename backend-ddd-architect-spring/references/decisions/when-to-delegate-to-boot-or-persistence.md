@@ -18,7 +18,6 @@ Choose whether a task should stay in DDD architecture work or be handed to Sprin
 
 ## Recommendation rule
 
-If the prompt asks for `Selected:`, the very first line must be exactly `Selected: when-to-delegate-to-boot-or-persistence`.
 
 Keep DDD here only when the hard part is the architecture decision; delegate once the task becomes mostly implementation mechanics.
 
@@ -29,5 +28,4 @@ Keep DDD here only when the hard part is the architecture decision; delegate onc
 
 ## Verification
 
-- If the prompt asks for `Selected:`, start with `Selected: when-to-delegate-to-boot-or-persistence`
 - State the chosen owner and why the other skills were narrower or broader.

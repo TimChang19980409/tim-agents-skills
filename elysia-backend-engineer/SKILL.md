@@ -1,9 +1,9 @@
 ---
 name: elysia-backend-engineer
 description: |
-  ElysiaJS backend host for Bun-first TypeScript APIs. Use for Elysia routes,
-  handlers, validation, OpenAPI, plugins, lifecycle, context extension, Eden clients,
-  tests, WebSocket/SSE, and deployment-surface decisions.
+  Implement Bun-first Elysia APIs: routes, validation, OpenAPI, plugins, lifecycle, Eden, tests, and streaming.
+  Use when Elysia application behavior is central. Do not use for SQL schema, query, or migration work;
+  route those to drizzle-persistence-engineer.
 metadata:
   framework_role: host
   execution_mode: inline
@@ -15,13 +15,13 @@ Use this skill as the Elysia application host. Pick one task playbook or one dec
 
 ## Intent Router
 
-- `route-handler-contract`: [references/tasks/route-handler-contract.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/tasks/route-handler-contract.md)
-- `validation-openapi`: [references/tasks/validation-openapi.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/tasks/validation-openapi.md)
-- `plugin-lifecycle-context`: [references/tasks/plugin-lifecycle-context.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/tasks/plugin-lifecycle-context.md)
-- `eden-testing-client`: [references/tasks/eden-testing-client.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/tasks/eden-testing-client.md)
-- `runtime-deployment-surface`: [references/decisions/runtime-deployment-surface.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/decisions/runtime-deployment-surface.md)
-- `when-to-delegate-drizzle`: [references/decisions/when-to-delegate-drizzle.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/decisions/when-to-delegate-drizzle.md)
-- `version-lane`: [references/decisions/version-lane.md](/Users/ss105213025/.agents/skills/elysia-backend-engineer/references/decisions/version-lane.md)
+- `route-handler-contract`: [references/tasks/route-handler-contract.md](references/tasks/route-handler-contract.md)
+- `validation-openapi`: [references/tasks/validation-openapi.md](references/tasks/validation-openapi.md)
+- `plugin-lifecycle-context`: [references/tasks/plugin-lifecycle-context.md](references/tasks/plugin-lifecycle-context.md)
+- `eden-testing-client`: [references/tasks/eden-testing-client.md](references/tasks/eden-testing-client.md)
+- `runtime-deployment-surface`: [references/decisions/runtime-deployment-surface.md](references/decisions/runtime-deployment-surface.md)
+- `when-to-delegate-drizzle`: [references/decisions/when-to-delegate-drizzle.md](references/decisions/when-to-delegate-drizzle.md)
+- `version-lane`: [references/decisions/version-lane.md](references/decisions/version-lane.md)
 
 ## Delegation
 
@@ -41,5 +41,4 @@ Use this skill as the Elysia application host. Pick one task playbook or one dec
 
 - Use `status()` over `set.status` when return type narrowing matters.
 - Do not split Eden, OpenAPI, or deployment into new skills unless the user asks for that broader portfolio change.
-- If the user asks to start with `Selected:`, the first line must be `Selected: <exact router id>` with no prose before it.
 - Do not invent a project scaffold when the task is an edit to an existing Elysia app.
