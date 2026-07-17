@@ -1,5 +1,7 @@
 # 2026-07 Agent Skill Portfolio Audit
 
+English | [繁體中文](2026-07-skill-portfolio-audit.zh-TW.md)
+
 Status: implementation complete; free-model trigger acceptance failed
 Scope: canonical `~/.agents/skills` portfolio and its Codex, Cursor, OpenCode, Claude, and Antigravity projections  
 Decision date: 2026-07-11

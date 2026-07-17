@@ -1,5 +1,7 @@
 # Task Execution
 
+English | [繁體中文](task-execution.zh-TW.md)
+
 - Explore the repository and current files before changing behavior.
 - For substantial work, form a short plan, then execute end-to-end instead of stopping after analysis.
 - Prefer the narrowest effective change surface and keep follow-up steps obvious.

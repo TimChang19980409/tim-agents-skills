@@ -1,5 +1,7 @@
 # Testing And Verification
 
+English | [繁體中文](testing-and-verification.zh-TW.md)
+
 - Run the smallest verification that proves the change and scales up only when needed.
 - Prefer repository-native validation commands and static checks over ad hoc spot checks.
 - If a task changes routing, configuration, or generated artifacts, add or update a check that makes regressions visible.

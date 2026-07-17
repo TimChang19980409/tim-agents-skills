@@ -1,5 +1,7 @@
 # Coding Principles
 
+English | [繁體中文](coding-principles.zh-TW.md)
+
 - Prefer small, explicit changes over broad rewrites.
 - Preserve user edits and unrelated work already present in the tree.
 - Use ASCII by default unless the file already relies on Unicode.

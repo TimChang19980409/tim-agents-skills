@@ -15,11 +15,34 @@ Framework 層加入以下概念：
 
 - `role`：`host`、`specialist`、`policy`、`utility` 或 `extension`
 - `execution_mode`：`inline`、`manual` 或 `forked`
-- task playbooks：`references/tasks/*.md`
-- decision guides：`references/decisions/*.md`
-- archive extensions：由 host 擁有、必須明確載入的封存套件
+- `task playbooks`：`references/tasks/*.md`
+- `decision guides`：`references/decisions/*.md`
+- `archive extensions`：由 host 擁有、必須明確載入的封存套件
 
 Framework 契約請參閱 [AGENT_SKILL_FRAMEWORK.md](AGENT_SKILL_FRAMEWORK.md)。
+
+## 人類可讀文件
+
+由開發人員或 skill 使用者直接閱讀的 canonical guides 與 audits，都提供可切換的英文與繁體中文版本：
+
+| 文件 | English | 繁體中文 |
+| --- | --- | --- |
+| Agent-skill framework | [English](AGENT_SKILL_FRAMEWORK.md) | [繁體中文](AGENT_SKILL_FRAMEWORK.zh-TW.md) |
+| Skills repository 規則 | [English](_shared/repo/skills-repo.md) | [繁體中文](_shared/repo/skills-repo.zh-TW.md) |
+| Coding 原則 | [English](_shared/global/docs/coding-principles.md) | [繁體中文](_shared/global/docs/coding-principles.zh-TW.md) |
+| Repository 探索 | [English](_shared/global/docs/repo-discovery.md) | [繁體中文](_shared/global/docs/repo-discovery.zh-TW.md) |
+| Skill routing | [English](_shared/global/docs/skill-routing.md) | [繁體中文](_shared/global/docs/skill-routing.zh-TW.md) |
+| 任務執行 | [English](_shared/global/docs/task-execution.md) | [繁體中文](_shared/global/docs/task-execution.zh-TW.md) |
+| 測試與驗證 | [English](_shared/global/docs/testing-and-verification.md) | [繁體中文](_shared/global/docs/testing-and-verification.zh-TW.md) |
+| OpenCode 共用設定 | [English](_shared/opencode/README.md) | [繁體中文](_shared/opencode/README.zh-TW.md) |
+| 2026-03 global audit | [English](GLOBAL_SKILL_AUDIT_2026-03-11.md) | [繁體中文](GLOBAL_SKILL_AUDIT_2026-03-11.zh-TW.md) |
+| 2026-03 評分矩陣 | [English TSV](GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.tsv) | [繁體中文 TSV](GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.zh-TW.tsv) |
+| 2026-03 persistence 差異說明 | [English](JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.md) | [繁體中文](JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.zh-TW.md) |
+| 2026-07 portfolio audit | [English](docs/audits/2026-07-skill-portfolio-audit.md) | [繁體中文](docs/audits/2026-07-skill-portfolio-audit.zh-TW.md) |
+| 2026-07 決策 matrix | [English](docs/audits/2026-07-skill-portfolio-matrix.md) | [繁體中文](docs/audits/2026-07-skill-portfolio-matrix.zh-TW.md) |
+| 已封存的 image-generation helper | [English](_archive/ppt-generation/image-generation/README.md) | [繁體中文](_archive/ppt-generation/image-generation/README.zh-TW.md) |
+
+Agent 可執行進入點、`SKILL.md` routers、playbooks、eval fixtures、archives 與生成的 benchmark artifacts 維持單一英文來源，避免翻譯副本影響 discovery 或 runtime 行為。
 
 ## Portfolio 目錄結構
 

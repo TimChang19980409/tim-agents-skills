@@ -21,6 +21,29 @@ The framework layer adds these concepts:
 
 See [AGENT_SKILL_FRAMEWORK.md](AGENT_SKILL_FRAMEWORK.md) for the framework contract.
 
+## Human-facing documentation
+
+Canonical guides and audits maintained for developers or skill users have switchable English and Traditional Chinese editions:
+
+| Document | English | Traditional Chinese |
+| --- | --- | --- |
+| Agent-skill framework | [English](AGENT_SKILL_FRAMEWORK.md) | [繁體中文](AGENT_SKILL_FRAMEWORK.zh-TW.md) |
+| Skills repository rules | [English](_shared/repo/skills-repo.md) | [繁體中文](_shared/repo/skills-repo.zh-TW.md) |
+| Coding principles | [English](_shared/global/docs/coding-principles.md) | [繁體中文](_shared/global/docs/coding-principles.zh-TW.md) |
+| Repository discovery | [English](_shared/global/docs/repo-discovery.md) | [繁體中文](_shared/global/docs/repo-discovery.zh-TW.md) |
+| Skill routing | [English](_shared/global/docs/skill-routing.md) | [繁體中文](_shared/global/docs/skill-routing.zh-TW.md) |
+| Task execution | [English](_shared/global/docs/task-execution.md) | [繁體中文](_shared/global/docs/task-execution.zh-TW.md) |
+| Testing and verification | [English](_shared/global/docs/testing-and-verification.md) | [繁體中文](_shared/global/docs/testing-and-verification.zh-TW.md) |
+| OpenCode shared config | [English](_shared/opencode/README.md) | [繁體中文](_shared/opencode/README.zh-TW.md) |
+| 2026-03 global audit | [English](GLOBAL_SKILL_AUDIT_2026-03-11.md) | [繁體中文](GLOBAL_SKILL_AUDIT_2026-03-11.zh-TW.md) |
+| 2026-03 scoring matrix | [English TSV](GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.tsv) | [繁體中文 TSV](GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.zh-TW.tsv) |
+| 2026-03 persistence delta | [English](JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.md) | [繁體中文](JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.zh-TW.md) |
+| 2026-07 portfolio audit | [English](docs/audits/2026-07-skill-portfolio-audit.md) | [繁體中文](docs/audits/2026-07-skill-portfolio-audit.zh-TW.md) |
+| 2026-07 decision matrix | [English](docs/audits/2026-07-skill-portfolio-matrix.md) | [繁體中文](docs/audits/2026-07-skill-portfolio-matrix.zh-TW.md) |
+| Archived image-generation helper | [English](_archive/ppt-generation/image-generation/README.md) | [繁體中文](_archive/ppt-generation/image-generation/README.zh-TW.md) |
+
+Agent-executable entrypoints, `SKILL.md` routers, playbooks, eval fixtures, archives, and generated benchmark artifacts remain single-source English so translation copies cannot affect discovery or runtime behavior.
+
 ## Portfolio layout
 
 - Top-level `*/SKILL.md`: the active core roster only

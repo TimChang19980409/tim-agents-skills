@@ -1,0 +1,35 @@
+skill	family	U	C	R	F	O	V	disposition	host_or_note_zh_tw
+firecrawl	Research / Web	4	2	5	4	2	5	core	保留為 family host；稍後重寫 trigger language
+context7-auto-research	Research / Web	3	3	4	4	2	4	archive	保留為 official-doc extension，不作為預設有效 skill
+defuddle	Research / Web	1	3	5	2	1	2	retire	改用 Firecrawl main-content extraction
+find-skills	Research / Web	3	4	2	3	1	3	archive	有用，但更適合作為 secondary meta utility
+frontend-dev-guidelines	Frontend / React / UI	4	4	3	4	2	5	core	主要 frontend implementation host
+react-component-designer	Frontend / React / UI	5	4	2	4	1	5	core	保留為 API-design specialist
+react-best-practices	Frontend / React / UI	2	3	5	4	1	3	merge	將 performance 規則合併至 frontend host
+vercel-react-best-practices	Frontend / React / UI	3	3	4	4	2	4	merge	作為 frontend host 內的 reference pack
+web-design-guidelines	Frontend / React / UI	3	4	4	4	1	4	merge	Live-review 指引應放在 frontend review flow 下
+ui-ux-pro-max	Frontend / React / UI	2	1	5	3	4	3	archive	範圍太廣，不適合留在主要有效層
+react-storybook-vite-workflow	Frontend / React / UI	4	4	2	4	1	4	archive	強大的 extension，但作為 core 過於狹窄
+ladle-component-workflow	Frontend / React / UI	3	4	3	3	1	3	archive	保留為 niche component-workbench extension
+tailwind-best-practices	Frontend / React / UI	2	4	4	3	1	3	archive	Repo-specific styling policy
+solidjs-patterns	Frontend / React / UI	4	4	1	3	1	3	archive	獨立，但只適用於 OpenWork／SolidJS niche
+java-pro	Java / Spring / Backend	5	5	1	4	1	5	core	Portfolio 中邊界最清楚的 skill
+spring-boot-engineer	Java / Spring / Backend	5	4	2	4	2	5	core	與 java-pro 維持分離；稍後調整
+backend-ddd-architect-spring	Java / Spring / Backend	5	4	1	4	2	4	core	獨特的 architecture specialty
+pebble-official-best-practices	Java / Spring / Backend	4	4	1	4	1	3	archive	合理的 niche extension，不作為 core
+stagehand-aria-e2e	Testing / Browser Automation	4	4	2	5	3	4	core	Behavior-driven browser validation 的 family host
+e2e-tests-studio	Testing / Browser Automation	3	4	3	3	2	3	archive	有價值的 repo-specific extension
+obsidian-cli	Obsidian / Knowledge	5	4	1	4	3	4	core	Obsidian workflows 的 operational host
+pdf-reader	Obsidian / Knowledge	5	4	1	4	4	4	core	獨立 OCR／PDF ingestion utility
+obsidian-markdown	Obsidian / Knowledge	4	4	2	4	1	4	archive	保留為 syntax extension，不作為主要 trigger
+obsidian-bases	Obsidian / Knowledge	4	4	1	5	1	3	archive	保留為 Bases extension
+json-canvas	Obsidian / Knowledge	4	4	1	5	1	3	archive	保留為 canvas-format extension
+book-translation	Obsidian / Knowledge	3	4	1	3	1	2	archive	Project-specific workflow，不作為 core global skill
+bun-ts-scripting-policy	Workflow / Meta / General	4	4	2	4	1	5	core	強大的 repo-wide policy skill
+skill-creator	Workflow / Meta / General	5	4	2	4	3	5	core	價值最高的 portfolio maintenance skill
+opencode-configurator	Workflow / Meta / General	4	4	1	4	2	4	core	範圍窄且內容最新
+coding-teacher	Workflow / Meta / General	4	4	1	4	2	3	archive	有價值的 mode skill，但不屬於預設有效層
+monorepo-management	Workflow / Meta / General	3	4	2	2	1	3	archive	重新提升為 core 前必須更新
+typescript-advanced-types	Workflow / Meta / General	4	4	2	3	1	3	archive	有用的深入 reference，但作為 core 過廣
+developer-growth-analysis	Workflow / Meta / General	4	3	1	2	4	2	archive	具有外部交付 dependency 的專門 workflow
+pdf-reader.__preinit_backup	Noise / Backup	1	1	1	1	1	1	retire	Backup artifact；不應繼續顯示

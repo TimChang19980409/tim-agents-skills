@@ -1,5 +1,7 @@
 # 2026-07 Portfolio Decision Matrix
 
+English | [繁體中文](2026-07-skill-portfolio-matrix.zh-TW.md)
+
 | Current skill | Target | Value retained | Native overlap / boundary | Freshness |
 | --- | --- | --- | --- | --- |
 | `java-pro` | core | JVM runtime, concurrency, diagnostics, packaging | Generic Java feature work routes to Spring/application host | release-driven |

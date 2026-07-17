@@ -1,5 +1,7 @@
 # Java / Spring Persistence Audit Delta (2026-03-13)
 
+English | [繁體中文](JAVA_SPRING_PERSISTENCE_AUDIT_DELTA_2026-03-13.zh-TW.md)
+
 This note records the portfolio change that adds `spring-persistence-engineer` as a new core host and preserves
 `rdbms-data-modeling` as an archive specialist.
 

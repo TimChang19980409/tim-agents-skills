@@ -1,5 +1,7 @@
 # Skill Routing
 
+English | [繁體中文](skill-routing.zh-TW.md)
+
 - Treat `~/.agents/skills` as the canonical skill root.
 - Route to a skill when the user names it or the request clearly matches its description.
 - Open that skill's `SKILL.md` first, then follow its playbooks and references with progressive disclosure.

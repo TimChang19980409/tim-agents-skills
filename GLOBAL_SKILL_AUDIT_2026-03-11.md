@@ -1,5 +1,9 @@
 # Global Skill Audit
 
+English | [繁體中文](GLOBAL_SKILL_AUDIT_2026-03-11.zh-TW.md)
+
+Scoring matrix: [English TSV](GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.tsv) | [繁體中文 TSV](GLOBAL_SKILL_AUDIT_MATRIX_2026-03-11.zh-TW.tsv)
+
 Date: 2026-03-11
 Scope: `.agents/skills` only
 Method: `Core + Archive`

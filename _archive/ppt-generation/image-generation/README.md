@@ -1,5 +1,7 @@
 # Image Generation Helper
 
+English | [繁體中文](README.zh-TW.md)
+
 This directory now holds the slide-image helper used by `ppt-generation`.
 It is no longer an active top-level skill surface.
 

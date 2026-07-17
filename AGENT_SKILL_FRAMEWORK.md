@@ -1,5 +1,7 @@
 # Agent-Skill Framework
 
+English | [繁體中文](AGENT_SKILL_FRAMEWORK.zh-TW.md)
+
 This repository keeps `Core + Archive` as the storage and governance layer, then adds a framework layer that makes active skills more task-oriented and decision-oriented.
 
 ## Layers

@@ -1,5 +1,7 @@
 # Skills Repository Rules
 
+English | [繁體中文](skills-repo.zh-TW.md)
+
 This repository is the canonical source for shared agent skills and cross-tool instruction projections.
 
 ## Layout
