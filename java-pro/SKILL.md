@@ -1,10 +1,12 @@
 ---
 name: java-pro
 description: |
-  Use for JVM- or JDK-specific work: Java 21/25/26 version and preview-versus-stable decisions such
-  as Structured Concurrency, virtual-thread migrations with ThreadLocal/pinning/connection-limit
-  audits, JFR/thread-dump/GC diagnosis, JMH benchmarks, concurrency, and packaging. Do not use for
-  Spring application or persistence features; route those to spring-boot-engineer or
+  Diagnose JVM runtime evidence and decide JDK release or API status. Use for virtual-thread
+  migrations with ThreadLocal, pinning, and connection-limit audits; JFR, thread-dump, or GC-log
+  diagnosis; JMH benchmarks; runtime packaging; or Java 21/25/26 comparisons, including whether
+  Structured Concurrency is preview or stable. Use even when the request already chooses virtual
+  threads, supplies JVM evidence, or only asks to verify a Java version or API status. Do not use
+  for Spring application or persistence features; route those to spring-boot-engineer or
   spring-persistence-engineer.
 metadata:
   framework_role: specialist
