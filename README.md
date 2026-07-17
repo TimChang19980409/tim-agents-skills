@@ -1,5 +1,7 @@
 # Tim Agent Skills
 
+English | [繁體中文](README.zh-TW.md)
+
 This repository now uses a `Core + Archive` portfolio model with a shared cross-tool layer on top.
 
 - `core`: top-level skills with active `SKILL.md` entrypoints
@@ -7,7 +9,7 @@ This repository now uses a `Core + Archive` portfolio model with a shared cross-
 - `archive`: preserved specialist skills kept out of automatic discovery
 - `retire`: removed from active use, kept only for history or migration context
 
-The machine-readable source of truth is [skills.json](skills.json). Run [scripts/validate-skills.ts](scripts/validate-skills.ts) and [scripts/validate-agent-context.ts](scripts/validate-agent-context.ts) after structural changes.
+The machine-readable source of truth is [skills.json](skills.json). Run the full [validation suite](#validation) after structural changes.
 
 The framework layer adds these concepts:
 
@@ -30,7 +32,7 @@ See [AGENT_SKILL_FRAMEWORK.md](AGENT_SKILL_FRAMEWORK.md) for the framework contr
 - `_benchmarks/`: benchmark groups, retained workspaces, portfolio trigger outputs, and wave summaries
 - `_archive/<skill>/ARCHIVE.md`: preserved non-core skills, including merged sources
 - `_retired/<skill>/RETIRED.md`: retired skills and backup artifacts
-- `skills.json`: status, family, host, and storage metadata
+- `skills.json`: schema v5 portfolio status, roles, storage, trigger suites, freshness, and official-source metadata
 - `references/tasks/*.md`: task-oriented playbooks owned by a host
 - `references/decisions/*.md`: decision-oriented guides owned by a host
 - `GLOBAL_SKILL_AUDIT_2026-03-11.md`: historical audit memo
@@ -41,17 +43,17 @@ See [AGENT_SKILL_FRAMEWORK.md](AGENT_SKILL_FRAMEWORK.md) for the framework contr
 
 | Skill | Family | Purpose |
 | --- | --- | --- |
-| `firecrawl` | Research / Web | Primary host for live web content, online docs, and current facts |
+| `firecrawl` | Research / Web | Firecrawl v2 host for bulk scrape, crawl, map, and schema-driven extraction; ordinary current-fact browsing stays native to the host |
 | `frontend-dev-guidelines` | Frontend / React / UI | Primary host for frontend implementation, performance review, and UI/accessibility review |
 | `elysia-backend-engineer` | TypeScript / Bun / Backend | ElysiaJS routes, validation, plugins, Eden clients, tests, and runtime decisions |
 | `drizzle-persistence-engineer` | TypeScript / Bun / Backend | Drizzle ORM schema, query, migration, and Elysia TypeBox bridge specialist |
 | `react-component-designer` | Frontend / React / UI | Reusable component API design specialist |
 | `java-pro` | Java / Spring / Backend | Java platform, concurrency, JVM, and profiling specialist |
 | `jasperreports-engineer` | Java / Spring / Backend | JasperReports Library and Jaspersoft Studio implementation specialist |
-| `spring-persistence-engineer` | Java / Spring / Backend | Spring Data JPA, Hibernate 6/7, and RDBMS portability persistence host |
+| `spring-persistence-engineer` | Java / Spring / Backend | Spring Data JPA, Hibernate 6/7, and RDBMS portability specialist |
 | `spring-boot-engineer` | Java / Spring / Backend | Spring Boot application implementation specialist |
 | `backend-ddd-architect-spring` | Java / Spring / Backend | DDD and bounded-context architecture specialist |
-| `stagehand-aria-e2e` | Testing / Browser Automation | Behavior-first browser testing host |
+| `stagehand-aria-e2e` | Testing / Browser Automation | Stagehand v3 ARIA, keyboard, focus, and layout browser-testing specialist |
 | `obsidian-cli` | Obsidian / Knowledge | Obsidian vault and plugin/debug operations host |
 | `pdf-reader` | Obsidian / Knowledge | PDF/OCR ingestion and extraction |
 | `skill-portfolio-maintainer` | Workflow / Meta / General | Portfolio governance, migration, eval, freshness, and projection maintenance |
@@ -114,10 +116,14 @@ Active skill-specific requirements:
 
 ## Validation
 
-Run:
+Run the complete repository validation suite:
 
 ```bash
 bun scripts/validate-skills.ts
+bun scripts/validate-agent-context.ts
+bun scripts/validate-trigger-suite.ts
+bun scripts/render-agent-projections.ts --check
+bun scripts/sync-agent-projections.ts --check
 ```
 
 The validator checks:
@@ -133,18 +139,14 @@ The validator checks:
 - valid `merge -> core host` relationships
 - benchmark-group roster coverage, wave summaries, and broken projection symlinks
 
-Run the agent-context validator with:
-
-```bash
-bun scripts/validate-agent-context.ts
-```
-
-It checks:
+The agent-context validator checks:
 
 - thin root/global `AGENTS.md` and `CLAUDE.md` entrypoints
 - shared global docs and OpenCode instruction paths
 - the checked-in projection snapshot under `_shared/projections/`
 - that global entrypoints stay cross-repo and do not leak repo-specific guidance
+
+The trigger-suite validator checks the 64 positive, 24 boundary, and 12 null cases plus each core skill's concrete outcome evals. The projection checks verify that the checked-in snapshot is current and that runtime projections have no broken links, archive shadows, or unmanaged duplicates.
 
 ## Maintenance rules
 
@@ -160,11 +162,13 @@ It checks:
 
 ## Benchmark targets
 
-Natural trigger acceptance uses `opencode/nemotron-3-ultra-free` for all 100 cases and `opencode/north-mini-code-free` for boundary/null smoke. The runner observes OpenCode's native `skill` tool events under `--pure` isolation. Historical wave summaries remain reference material, not the current acceptance baseline.
+The current measured baseline uses `opencode/deepseek-v4-flash-free` for all 100 natural prompts. Its final 2026-07 run reached 90.6% macro first-skill accuracy and 85.4% boundary accuracy, but the portfolio is not fully accepted because `frontend-dev-guidelines` remains below the per-skill recall floor and two infrastructure failures remain. See the [current benchmark summary](_benchmarks/skill-portfolio-workspace/opencode-deepseek-v4-flash-free/benchmark.md) and [2026-07 audit](docs/audits/2026-07-skill-portfolio-audit.md).
+
+Nemotron 3 Ultra and North Mini remain historical free-model comparison runs, not the current acceptance baseline. The runner observes OpenCode's native `skill` tool events under `--pure` isolation.
 
 ```bash
-bun skill-portfolio-maintainer/scripts/run_portfolio_opencode_trigger_eval.ts --suite full
-bun skill-portfolio-maintainer/scripts/run_portfolio_opencode_trigger_eval.ts --suite boundary
+bun skill-portfolio-maintainer/scripts/run_portfolio_opencode_trigger_eval.ts --suite full --model opencode/deepseek-v4-flash-free
+bun skill-portfolio-maintainer/scripts/run_portfolio_opencode_trigger_eval.ts --suite boundary --model opencode/north-mini-code-free
 bun test scripts/lib/opencode-skill-events.test.ts
 ```
 
