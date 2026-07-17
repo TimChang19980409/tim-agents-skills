@@ -12,7 +12,7 @@ description: |
 
 ## Extension Metadata
 
-- Host owner: `skill-creator`
+- Host owner: `skill-portfolio-maintainer`
 - Load when: Load when the user wants an explicit developer-growth report or coaching-style delivery artifact.
 
 

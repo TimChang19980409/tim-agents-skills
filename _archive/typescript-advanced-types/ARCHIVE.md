@@ -7,7 +7,7 @@ description: Master TypeScript's advanced type system including generics, condit
 
 ## Extension Metadata
 
-- Host owner: `skill-creator`
+- Host owner: `skill-portfolio-maintainer`
 - Load when: Load when the user explicitly wants deep TypeScript type-system guidance beyond the active policy layer.
 
 

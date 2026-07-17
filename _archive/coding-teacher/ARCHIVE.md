@@ -8,8 +8,8 @@ description: |
 
 ## Extension Metadata
 
-- Host owner: `skill-creator`
-- Load when: Load when the user wants pedagogy-first explanations, onboarding language, or teaching-oriented reframing.
+- Host owner: `teaching-content-designer`
+- Load when: Load when the user wants direct learner tutoring, step-by-step course progression, homework submission, auto-scan, or code-review feedback for a learner.
 
 
 ## Non-negotiables (Safety Gate)

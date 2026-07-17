@@ -7,7 +7,7 @@ description: Master monorepo management with Turborepo, Nx, and pnpm workspaces 
 
 ## Extension Metadata
 
-- Host owner: `skill-creator`
+- Host owner: `skill-portfolio-maintainer`
 - Load when: Load when the user explicitly needs archived Turborepo/Nx monorepo guidance and accepts that it may need freshness review.
 
 
