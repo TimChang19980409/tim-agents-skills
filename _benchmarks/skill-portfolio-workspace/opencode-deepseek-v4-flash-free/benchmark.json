@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-11T13:40:33.896Z",
+  "generated_at": "2026-07-17T02:27:41.549Z",
   "model": "opencode/deepseek-v4-flash-free",
   "suite": "full",
   "cases": 100,
   "runs_per_case": 2,
   "status": "completed_with_infra_failures",
   "metrics": {
-    "macro_first_skill_accuracy": 0.8671875,
+    "macro_first_skill_accuracy": 0.90625,
     "boundary_accuracy": 0.8541666666666666,
     "wrong_skill_rate": 0.01,
     "null_case_precision": 1,
-    "timeout_rate": 0.07,
-    "infra_failures": 1
+    "timeout_rate": 0,
+    "infra_failures": 2
   },
   "thresholds": {
     "macro_first_skill_accuracy": 0.9,
@@ -25,27 +25,27 @@
     {
       "skill": "backend-ddd-architect-spring",
       "runs": 8,
-      "positive_recall": 0.875
+      "positive_recall": 1
     },
     {
       "skill": "drizzle-persistence-engineer",
       "runs": 8,
-      "positive_recall": 1
+      "positive_recall": 0.875
     },
     {
       "skill": "elysia-backend-engineer",
       "runs": 8,
-      "positive_recall": 0.75
+      "positive_recall": 0.875
     },
     {
       "skill": "firecrawl",
       "runs": 8,
-      "positive_recall": 0.875
+      "positive_recall": 1
     },
     {
       "skill": "frontend-dev-guidelines",
       "runs": 8,
-      "positive_recall": 0.375
+      "positive_recall": 0.625
     },
     {
       "skill": "jasperreports-engineer",
@@ -55,7 +55,7 @@
     {
       "skill": "java-pro",
       "runs": 8,
-      "positive_recall": 0.625
+      "positive_recall": 1
     },
     {
       "skill": "obsidian-cli",
@@ -75,7 +75,7 @@
     {
       "skill": "react-component-designer",
       "runs": 8,
-      "positive_recall": 0.75
+      "positive_recall": 0.875
     },
     {
       "skill": "skill-portfolio-maintainer",
@@ -85,7 +85,7 @@
     {
       "skill": "spring-boot-engineer",
       "runs": 8,
-      "positive_recall": 0.875
+      "positive_recall": 0.75
     },
     {
       "skill": "spring-persistence-engineer",
@@ -95,12 +95,12 @@
     {
       "skill": "stagehand-aria-e2e",
       "runs": 8,
-      "positive_recall": 1
+      "positive_recall": 0.875
     },
     {
       "skill": "teaching-content-designer",
       "runs": 8,
-      "positive_recall": 1
+      "positive_recall": 0.875
     }
   ],
   "results": [
@@ -109,12 +109,11 @@
       "kind": "positive",
       "expected_skill": "backend-ddd-architect-spring",
       "first_skill_counts": {
-        "backend-ddd-architect-spring": 1,
-        "<none>": 1
+        "backend-ddd-architect-spring": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
-      "infra_failures": 1
+      "infra_failures": 0
     },
     {
       "id": "ddd-pos-2",
@@ -187,9 +186,10 @@
       "kind": "positive",
       "expected_skill": "drizzle-persistence-engineer",
       "first_skill_counts": {
-        "drizzle-persistence-engineer": 2
+        "elysia-backend-engineer": 1,
+        "drizzle-persistence-engineer": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -231,9 +231,10 @@
       "kind": "positive",
       "expected_skill": "elysia-backend-engineer",
       "first_skill_counts": {
-        "<none>": 2
+        "elysia-backend-engineer": 1,
+        "<none>": 1
       },
-      "accuracy": 0,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -253,10 +254,9 @@
       "kind": "positive",
       "expected_skill": "firecrawl",
       "first_skill_counts": {
-        "firecrawl": 1,
-        "<none>": 1
+        "firecrawl": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -287,9 +287,9 @@
       "kind": "positive",
       "expected_skill": "frontend-dev-guidelines",
       "first_skill_counts": {
-        "<none>": 2
+        "frontend-dev-guidelines": 2
       },
-      "accuracy": 0,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -309,9 +309,10 @@
       "kind": "positive",
       "expected_skill": "frontend-dev-guidelines",
       "first_skill_counts": {
-        "frontend-dev-guidelines": 2
+        "frontend-dev-guidelines": 1,
+        "<none>": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -320,10 +321,9 @@
       "kind": "positive",
       "expected_skill": "frontend-dev-guidelines",
       "first_skill_counts": {
-        "frontend-dev-guidelines": 1,
-        "<none>": 1
+        "frontend-dev-guidelines": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -387,10 +387,9 @@
       "kind": "positive",
       "expected_skill": "java-pro",
       "first_skill_counts": {
-        "<none>": 1,
-        "java-pro": 1
+        "java-pro": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -399,9 +398,9 @@
       "kind": "positive",
       "expected_skill": "java-pro",
       "first_skill_counts": {
-        "<none>": 2
+        "java-pro": 2
       },
-      "accuracy": 0,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -520,10 +519,9 @@
       "kind": "positive",
       "expected_skill": "pdf-reader",
       "first_skill_counts": {
-        "<none>": 1,
-        "pdf-reader": 1
+        "pdf-reader": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -532,9 +530,10 @@
       "kind": "positive",
       "expected_skill": "pdf-reader",
       "first_skill_counts": {
-        "pdf-reader": 2
+        "pdf-reader": 1,
+        "<none>": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -587,9 +586,10 @@
       "kind": "positive",
       "expected_skill": "react-component-designer",
       "first_skill_counts": {
-        "<none>": 2
+        "react-component-designer": 1,
+        "<none>": 1
       },
-      "accuracy": 0,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -675,10 +675,9 @@
       "kind": "positive",
       "expected_skill": "spring-boot-engineer",
       "first_skill_counts": {
-        "<none>": 1,
-        "spring-boot-engineer": 1
+        "<none>": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 0,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -687,10 +686,9 @@
       "kind": "positive",
       "expected_skill": "spring-persistence-engineer",
       "first_skill_counts": {
-        "spring-persistence-engineer": 1,
-        "<none>": 1
+        "spring-persistence-engineer": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -710,9 +708,10 @@
       "kind": "positive",
       "expected_skill": "spring-persistence-engineer",
       "first_skill_counts": {
-        "spring-persistence-engineer": 2
+        "java-pro": 1,
+        "spring-persistence-engineer": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -743,9 +742,10 @@
       "kind": "positive",
       "expected_skill": "stagehand-aria-e2e",
       "first_skill_counts": {
-        "stagehand-aria-e2e": 2
+        "stagehand-aria-e2e": 1,
+        "<none>": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -776,11 +776,12 @@
       "kind": "positive",
       "expected_skill": "teaching-content-designer",
       "first_skill_counts": {
-        "teaching-content-designer": 2
+        "<none>": 1,
+        "teaching-content-designer": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
-      "infra_failures": 0
+      "infra_failures": 1
     },
     {
       "id": "teaching-pos-2",
@@ -820,9 +821,10 @@
       "kind": "boundary",
       "expected_skill": "frontend-dev-guidelines",
       "first_skill_counts": {
-        "frontend-dev-guidelines": 2
+        "<none>": 1,
+        "frontend-dev-guidelines": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -842,10 +844,9 @@
       "kind": "boundary",
       "expected_skill": "frontend-dev-guidelines",
       "first_skill_counts": {
-        "frontend-dev-guidelines": 1,
-        "<none>": 1
+        "<none>": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 0,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -865,10 +866,9 @@
       "kind": "boundary",
       "expected_skill": "elysia-backend-engineer",
       "first_skill_counts": {
-        "elysia-backend-engineer": 1,
-        "<none>": 1
+        "elysia-backend-engineer": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -877,10 +877,9 @@
       "kind": "boundary",
       "expected_skill": "drizzle-persistence-engineer",
       "first_skill_counts": {
-        "drizzle-persistence-engineer": 1,
-        "elysia-backend-engineer": 1
+        "drizzle-persistence-engineer": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -911,8 +910,8 @@
       "kind": "boundary",
       "expected_skill": "spring-boot-engineer",
       "first_skill_counts": {
-        "spring-boot-engineer": 1,
-        "<none>": 1
+        "<none>": 1,
+        "spring-boot-engineer": 1
       },
       "accuracy": 0.5,
       "timeouts": 0,
@@ -923,9 +922,10 @@
       "kind": "boundary",
       "expected_skill": "spring-persistence-engineer",
       "first_skill_counts": {
-        "spring-persistence-engineer": 2
+        "<none>": 1,
+        "spring-persistence-engineer": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -934,10 +934,9 @@
       "kind": "boundary",
       "expected_skill": "spring-persistence-engineer",
       "first_skill_counts": {
-        "spring-persistence-engineer": 1,
-        "backend-ddd-architect-spring": 1
+        "spring-persistence-engineer": 2
       },
-      "accuracy": 0.5,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -990,9 +989,10 @@
       "kind": "boundary",
       "expected_skill": "pdf-reader",
       "first_skill_counts": {
-        "pdf-reader": 2
+        "pdf-reader": 1,
+        "<none>": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -1023,11 +1023,12 @@
       "kind": "boundary",
       "expected_skill": "skill-portfolio-maintainer",
       "first_skill_counts": {
-        "skill-portfolio-maintainer": 2
+        "skill-portfolio-maintainer": 1,
+        "<none>": 1
       },
-      "accuracy": 1,
+      "accuracy": 0.5,
       "timeouts": 0,
-      "infra_failures": 0
+      "infra_failures": 1
     },
     {
       "id": "b20-opencode",
@@ -1056,9 +1057,9 @@
       "kind": "boundary",
       "expected_skill": "java-pro",
       "first_skill_counts": {
-        "<none>": 2
+        "java-pro": 2
       },
-      "accuracy": 0,
+      "accuracy": 1,
       "timeouts": 0,
       "infra_failures": 0
     },
@@ -1147,7 +1148,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     },
     {
@@ -1158,7 +1159,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     },
     {
@@ -1169,7 +1170,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     },
     {
@@ -1180,7 +1181,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     },
     {
@@ -1191,7 +1192,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     },
     {
@@ -1202,7 +1203,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     },
     {
@@ -1213,7 +1214,7 @@
         "<none>": 2
       },
       "accuracy": 1,
-      "timeouts": 2,
+      "timeouts": 0,
       "infra_failures": 0
     }
   ]

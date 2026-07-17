@@ -79,11 +79,15 @@ The implementation baseline is reproducible, but no tested free model met the ro
 
 | Model and suite | First-skill / boundary | Wrong skill | Null precision | Timeout | Infra | Decision |
 | --- | --- | --- | --- | --- | --- | --- |
-| `opencode/deepseek-v4-flash-free`, tuned, 100 cases x 2 | 86.7% / 85.4% | 1.0% | 100.0% | 7.0% | 1 | Passes boundary and wrong-skill gates; fails 90% trigger, per-skill recall, and timeout gates |
+| `opencode/deepseek-v4-flash-free`, Java retuned, 100 cases x 2 | 90.6% / 85.4% | 1.0% | 100.0% | 0.0% | 2 | Java and aggregate gates pass; portfolio still fails the frontend recall floor and has intermittent infra failures |
 | `opencode/nemotron-3-ultra-free`, 100 cases x 2 | 14.1% / 14.6% | 6.0% | 100.0% | 33.5% | 1 | Fails trigger, boundary, wrong-skill, and timeout gates |
 | `opencode/north-mini-code-free`, 24 boundary + 12 null x 2 | n/a / 58.3% | 1.4% | 100.0% | 0.0% | 3 | Fails boundary gate; free endpoint returned three infrastructure failures |
 
-Targeted description tuning raised DeepSeek Flash macro recall from 82.0% to 86.7% and boundary accuracy from 81.3% to 85.4%. `skill-portfolio-maintainer` improved from 62.5% to 100%, and `spring-boot-engineer` from 62.5% to 87.5%. Two skills remain below the 75% positive-recall floor: `frontend-dev-guidelines` at 37.5% and `java-pro` at 62.5%. The two wrong-skill runs occurred at the existing Elysia/Drizzle and DDD/persistence boundaries; the earlier Spring Boot/OpenCode collision did not recur.
+The 2026-07-11 targeted description tuning raised DeepSeek Flash macro recall from 82.0% to 86.7% and boundary accuracy from 81.3% to 85.4%. `skill-portfolio-maintainer` improved from 62.5% to 100%, and `spring-boot-engineer` from 62.5% to 87.5%. Two skills remained below the 75% positive-recall floor: `frontend-dev-guidelines` at 37.5% and `java-pro` at 62.5%. The two wrong-skill runs occurred at the existing Elysia/Drizzle and DDD/persistence boundaries; the earlier Spring Boot/OpenCode collision did not recur.
+
+On 2026-07-17, `java-pro` was narrowed around supplied JVM evidence, selected virtual-thread migrations, and read-only JDK/API-status questions. Its same-day pre-change targeted baseline was 6/8 (75%); both post-change targeted passes were 8/8 (100%). The final full run also scored Java positives at 8/8 and the three Java-side boundary cases at 6/6. Portfolio macro accuracy reached 90.6%, boundary accuracy 85.4%, wrong-skill rate 1.0%, null precision 100%, and timeout rate 0%. The portfolio is not fully accepted because `frontend-dev-guidelines` remains at 62.5%, below the 75% per-skill floor.
+
+The final run had two non-Java infrastructure failures. `teaching-pos-1` recovered at 2/2 on retry; `b19-maintainer` retried with one correct route and one repeated provider failure. No Java case had an infrastructure failure.
 
 All 14 timeouts occurred in the final seven null cases after the free endpoint degraded. A post-run `ddd-pos-1` retry also timed out twice, confirming that the late failures crossed prompt categories. A third wording experiment was stopped under the same degraded service and reverted rather than committed without evidence. Raw retries are intentionally not retained.
 
